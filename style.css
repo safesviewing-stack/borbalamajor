@@ -1,102 +1,313 @@
-/* Estilos Generales */
+/* ================= RESET ================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "IBM Plex Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 body {
-    background: #fff;
-    color: #111;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  background: #f8f8f8;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Navegación */
+/* ================= HEADER ================= */
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #000;
-    padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #f1b0c3; /* Rosa suave */
+  z-index: 100;
 }
 
 .nav {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
+  max-width: 1200px;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
 }
 
-.nav ul {
-    display: flex;
-    gap: 36px;
-    list-style: none;
+.logo {
+  color: #fff;
+  font-weight: 600;
 }
 
-.nav label {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  list-style: none;
 }
 
-/* Pestañas y Secciones */
-input[type="radio"] {
-    display: none;
+nav li {
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+
+nav li.active {
+  font-weight: 500;
+}
+
+nav li::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: .25s;
+}
+
+nav li:hover::after {
+  width: 100%;
+}
+
+.lang button {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 11px;
+  padding: 4px 10px;
+  margin-left: 6px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.lang button.active {
+  background: #fff;
+  color: #000;
+}
+
+/* ================= LAYOUT ================= */
+main {
+  padding-top: 70px;
+  flex-grow: 1;
 }
 
 section {
-    display: none;
-    padding: 40px 0;
+  display: none;
 }
 
-input:checked + section {
-    display: block;
-}
-
-#home, #about, #cv, #portfolio, #contact {
-    padding: 40px;
-    text-align: center;
+section.active {
+  display: block;
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
 }
 
-/* Diseño de imagen */
-.profile-image {
-    width: 200px;
-    border-radius: 50%;
+.spaced {
+  padding: 90px 0;
 }
 
-/* Portfolio */
+/* ================= TYPO ================= */
+h1 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInSlideUp 1s ease-out forwards;
+}
+
+h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInSlideUp 1s ease-out forwards;
+}
+
+p, li {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInSlideUp 1s ease-out forwards;
+}
+
+/* ================= HERO ================= */
+.home {
+  background: url('portada.jpg') center/cover no-repeat;
+}
+
+.hero {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-box {
+  background: rgba(0, 0, 0, .75);
+  color: #fff;
+  padding: 40px;
+  max-width: 560px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInSlideUp 1s ease-out forwards;
+}
+
+.hero-cta {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  padding: 12px 26px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.primary {
+  background: #fff;
+  color: #000;
+}
+
+.secondary {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+/* ================= Animación de Fade In + Slide Up ================= */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= CV ================= */
+.cv {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 64px;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.list {
+  list-style: none;
+}
+
+.list li {
+  margin-bottom: 6px;
+}
+
+.cv img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 6px;
+}
+
+.download {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 12px 26px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* ================= PORTFOLIO ================= */
 .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
 
 .case {
-    padding: 20px;
-    background: #e0e0e0;
-    text-align: center;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+  border-top: 1px solid #ddd;
+  padding-top: 16px;
 }
 
-.case:hover {
-    transform: scale(1.05);
+.case span {
+  font-size: 12px;
+  color: #666;
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #000;
-    color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 11px;
+  color: #fff;
+  background-color: #f1b0c3; /* Rosa suave */
 }
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px) {
+  .cv {
+    grid-template-columns: 1fr;
+  }
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= Ajuste de imagen en "Sobre mí" ================= */
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.about-image {
+  width: auto;
+  max-width: 290px;
+  height: auto;
+  margin-left: 20px;
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(40%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ================= Estilo de texto en "Sobre mí" ================= */
+#about-text {
+  font-size: 14px;
+  line-height: 1.65;
+  margin-bottom: 30px;
+  max-width: 500px;
+  color: #555;
+}
+</style>
+</head>
+<body>
+  <!-- El código HTML previamente proporcionado aquí -->
+</body>
+</html>
