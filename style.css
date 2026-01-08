@@ -202,57 +202,53 @@ p, li {
 
 /* ================= CV ================= */
 .cv {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-  margin-top: 40px;
+  display: block; /* Cambiar de grid a bloque para una sola columna */
+  gap: 32px; /* Añadir espacio entre secciones */
+  margin-top: 40px; /* Agregar espacio en la parte superior */
 }
 
-.cv-section {
-  background-color: #f5e1a4; /* Beige suave */
-  padding: 20px;
-  border-radius: 6px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.cv-section h2 {
-  font-size: 24px;
-  font-weight: 600;
+.cv h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
   color: #333;
-  margin-bottom: 15px;
 }
 
-.cv-section p, .cv-section ul {
+.cv p {
   font-size: 16px;
   line-height: 1.6;
   color: #555;
+  margin-bottom: 20px;
 }
 
-.cv-section ul {
+.list {
   list-style: none;
-  padding-left: 20px;
+  padding-left: 0;
 }
 
-.cv-section ul li {
+.list li {
+  font-size: 14px;
   margin-bottom: 10px;
+  color: #777;
 }
 
-/* Estilo del enlace de descarga */
+.cv img {
+  width: 100%;
+  max-width: 360px; /* Tamaño ajustado para una sola columna */
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
 .download {
   display: inline-block;
   margin-top: 28px;
   padding: 12px 26px;
-  background: #d8c7a1; /* Beige oscuro */
+  background: #000;
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 4px;
-  text-align: center;
-}
-
-.download:hover {
-  background: #bfa280; /* Un tono más oscuro al pasar el ratón */
+  margin-left: 0;
 }
 
 /* ================= PORTFOLIO ================= */
