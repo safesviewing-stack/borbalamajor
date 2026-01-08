@@ -199,41 +199,47 @@ p, li{
 
 /* ================= CV ================= */
 .cv-box {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 20px;
+  margin-bottom: 40px;
   background-color: #f8f8f8;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Importante para que la imagen no se salga */
 }
 
 /* Contenido dentro de la caja: imagen y texto */
 .cv-box-content {
   display: flex;
+  min-height: 220px; /* Da presencia a la caja */
+}
+
+/* Columna izquierda (imagen) */
+.cv-image-wrapper {
+  width: 35%;
+  background: #eaeaea;
+  display: flex;
   align-items: center;
-  gap: 20px; /* Espacio entre la imagen y el texto */
+  justify-content: center;
 }
 
-/* Estilo de las imágenes dentro de las cajas */
 .cv-image {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* NO se corta, la imagen se adapta */
 }
 
-/* Estilo del texto dentro de las cajas */
+/* Columna derecha (texto) */
 .cv-text {
-  flex: 1;
+  width: 65%;
+  padding: 30px;
 }
 
-/* Títulos de las secciones */
-#cv-profile-title, #cv-skills-title, #cv-languages-title {
-  margin-top: 0;
-  margin-bottom: 15px;
-  line-height: 1.6;
-  font-weight: bold;
-  font-size: 1.5rem;
+/* Títulos fuera de la caja */
+#cv-profile-title,
+#cv-skills-title,
+#cv-languages-title {
+  margin: 40px 0 15px;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 /* Estilo para el texto de "Formación y experiencia" */
