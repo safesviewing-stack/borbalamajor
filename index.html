@@ -207,33 +207,54 @@ p, li{
 }
 
 /* ================= CV ================= */
-.cv{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:64px;
-  max-height:700px;
+.cv {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 64px;
+  max-height: 700px;
   overflow: hidden;
+  margin-top: 50px; /* Espacio superior para separar el CV de la sección anterior */
 }
 
-.list{list-style:none}
-.list li{margin-bottom:6px}
-
-.cv img{
-  width:100%;
-  max-width:360px;
-  border-radius:6px;
+/* Estilo para los títulos (h2) dentro del CV */
+#cv-profile-title, #cv-skills-title, #cv-education-title, #cv-languages-title {
+  margin-top: 25px;  /* Espacio superior para separar de los elementos previos */
+  margin-bottom: 15px;  /* Espacio inferior para separar de los siguientes elementos */
 }
 
-.download{
-  display:inline-block;
-  margin-top:28px;
-  padding:12px 26px;
-  background:#000;
-  color:#fff;
-  font-size:12px;
-  text-transform:uppercase;
-  text-decoration:none;
-  border-radius:4px;
+/* Estilo para las listas de habilidades, formación e idiomas */
+#cv-skills, #cv-education, #cv-languages {
+  margin-top: 20px; /* Separación superior de la lista */
+  margin-bottom: 35px; /* Separación inferior de la lista */
+}
+
+/* Estilo para las listas dentro del CV */
+.list {
+  list-style: none;
+}
+
+.list li {
+  margin-bottom: 10px; /* Separación entre los elementos de la lista */
+}
+
+/* Estilo para las imágenes dentro del CV */
+.cv img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 6px;
+}
+
+/* Estilo para el botón de descarga */
+.download {
+  display: inline-block;
+  margin-top: 28px; /* Margen superior */
+  padding: 12px 26px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
 }
 
 /* ================= PORTFOLIO ================= */
