@@ -198,24 +198,14 @@ p, li{
 }
 
 /* ================= CV ================= */
-.cv-box {
-  margin-bottom: 40px;
-  background-color: #f8f8f8;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Importante para que la imagen no se salga */
-}
-
-/* Contenido dentro de la caja: imagen y texto */
 .cv-box-content {
   display: flex;
-  min-height: 220px; /* Da presencia a la caja */
+  margin-bottom: 40px; /* Espacio entre las secciones */
 }
 
 /* Columna izquierda (imagen) */
 .cv-image-wrapper {
   width: 35%;
-  background: #eaeaea;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -223,14 +213,15 @@ p, li{
 
 .cv-image {
   width: 100%;
-  height: 100%;
-  object-fit: contain; /* NO se corta, la imagen se adapta */
+  height: auto;
+  object-fit: contain; /* La imagen no se corta y se adapta bien */
 }
 
 /* Columna derecha (texto) */
 .cv-text {
   width: 65%;
-  padding: 30px;
+  padding: 20px;
+  line-height: 1.6;
 }
 
 /* Títulos fuera de la caja */
@@ -246,7 +237,7 @@ p, li{
 #cv-profile-text {
   margin-top: 0;
   margin-bottom: 20px;
-  line-height: 1.6;
+  font-size: 1rem;
 }
 
 /* Estilo para la lista de habilidades */
