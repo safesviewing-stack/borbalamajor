@@ -211,27 +211,29 @@ p, li{
 /* ================= CV ================= */
 .cv-box-content {
   display: flex;
-  flex-direction: column; /* Para que las imágenes se apilen verticalmente */
   margin-bottom: 40px; /* Espacio entre las secciones */
 }
 
 /* Columna izquierda (imagen) */
 .cv-image-wrapper {
-  width: 100%; /* La imagen ocupa todo el ancho */
+  width: 35%; /* Imagen ocupa el 35% del espacio */
   display: flex;
+  flex-direction: column; /* Las imágenes se apilan verticalmente */
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px; /* Separación entre la imagen y el texto */
+  gap: 10px; /* Espacio entre las imágenes */
 }
 
 .cv-image {
   width: 100%;
   height: auto;
   object-fit: contain; /* La imagen no se corta y se adapta bien */
+  background-color: transparent; /* Asegura que el fondo sea transparente */
 }
 
 /* Columna derecha (texto) */
 .cv-text {
+  width: 65%;
   padding: 20px;
   line-height: 1.6;
 }
@@ -434,11 +436,12 @@ footer{
   <div class="container spaced">
     <h1 id="cv-title">Currículum Vitae</h1>
 
-    <!-- Formación y experiencia -->
+    <!-- Formación -->
     <h2 id="cv-profile-title">Formación</h2>
     <div class="cv-box-content">
       <div class="cv-image-wrapper">
-        <img src="profile2.jpg" alt="Profile2" class="cv-image">
+        <img src="profile2.png" alt="Profile2" class="cv-image"> <!-- Imagen con fondo transparente -->
+        <img src="profile3.png" alt="Profile3" class="cv-image"> <!-- Imagen con fondo transparente -->
       </div>
       <div class="cv-text">
         <p id="cv-profile-text">
@@ -448,24 +451,11 @@ footer{
       </div>
     </div>
 
-    <!-- Segunda imagen debajo de la primera -->
-    <h2 id="cv-profile-title">Formación Continua</h2>
-    <div class="cv-box-content">
-      <div class="cv-image-wrapper">
-        <img src="profile3.jpg" alt="Profile3" class="cv-image">
-      </div>
-      <div class="cv-text">
-        <p id="cv-profile-text">
-          Especialización en nuevas tecnologías y diseño sustentable con un enfoque en la industria 4.0.
-        </p>
-      </div>
-    </div>
-
     <!-- Experiencia -->
     <h2 id="cv-profile-title">Experiencia</h2>
     <div class="cv-box-content">
       <div class="cv-image-wrapper">
-        <img src="profile4.jpg" alt="Profile4" class="cv-image">
+        <img src="profile4.png" alt="Profile4" class="cv-image"> <!-- Imagen con fondo transparente -->
       </div>
       <div class="cv-text">
         <p id="cv-profile-text">
