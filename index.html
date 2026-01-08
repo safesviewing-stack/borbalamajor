@@ -209,53 +209,48 @@ p, li{
 }
 
 /* ================= CV ================= */
-.cv {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 64px;
-  max-height: 900px;
-  overflow: hidden;
-  margin-top: 50px; /* Espacio superior para separar el CV de la sección anterior */
-}
-
-/* Caja de la sección de "Formación y experiencia" */
-#cv-profile-section {
-  margin-top: 30px;  /* Separación superior de la caja */
-  margin-bottom: 30px;  /* Separación inferior de la caja */
-  padding: 20px;  /* Espacio interno de la caja */
-  background-color: #f8f8f8; /* Fondo opcional para la caja */
-  border-radius: 6px;  /* Bordes redondeados */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional */
-}
-
-/* Estilo para el título de la sección "Formación y experiencia" */
-#cv-profile-title {
-  margin-top: 0;  /* Eliminar margen superior */
-  margin-bottom: 15px; /* Separación entre el título y el texto */
-  line-height: 1.6; /* Ajuste de interlineado */
-}
-
-/* Estilo para el texto de "Formación y experiencia" */
-#cv-profile-text {
-  margin-top: 0; /* Eliminar margen superior */
-  margin-bottom: 20px; /* Espacio entre el texto y la siguiente sección */
-  line-height: 1.6; /* Ajuste de interlineado */
-}
-
-/* Caja de la sección de "Habilidades" */
-#cv-skills-section {
+.cv-box {
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 20px;
   background-color: #f8f8f8;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para el título de la sección "Habilidades" */
-#cv-skills-title {
+/* Contenido dentro de la caja: imagen y texto */
+.cv-box-content {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilo de las imágenes dentro de las cajas */
+.cv-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Estilo del texto dentro de las cajas */
+.cv-text {
+  flex: 1;
+}
+
+/* Títulos de las secciones */
+#cv-profile-title, #cv-skills-title, #cv-languages-title {
   margin-top: 0;
-  margin-bottom: 15px; /* Separación entre el título y el texto */
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Estilo para el texto de "Formación y experiencia" */
+#cv-profile-text {
+  margin-top: 0;
+  margin-bottom: 20px;
   line-height: 1.6;
 }
 
@@ -263,41 +258,26 @@ p, li{
 #cv-skills {
   margin-top: 10px;
   margin-bottom: 20px;
-  padding-left: 20px;  /* Espacio a la izquierda de la lista */
+  padding-left: 20px;
+  list-style-type: none;
 }
 
-/* Estilo para los elementos de la lista de habilidades */
-.list li {
+#cv-skills li {
   margin-bottom: 6px;
-}
-
-/* Caja de la sección de "Idiomas" */
-#cv-languages-section {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo para el título de la sección "Idiomas" */
-#cv-languages-title {
-  margin-top: 0;
-  margin-bottom: 15px;
-  line-height: 1.6;
+  font-size: 1rem;
 }
 
 /* Estilo para la lista de idiomas */
 #cv-education {
   margin-top: 10px;
   margin-bottom: 20px;
-  padding-left: 20px;  /* Espacio a la izquierda de la lista */
+  padding-left: 20px;
+  list-style-type: none;
 }
 
-/* Estilo para los elementos de la lista de idiomas */
 #cv-education li {
   margin-bottom: 6px;
+  font-size: 1rem;
 }
 
 /* Estilo para el botón de descarga */
@@ -311,6 +291,11 @@ p, li{
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.download:hover {
+  background-color: #444;
 }
 /* ================= PORTFOLIO ================= */
 .grid-3{
@@ -445,42 +430,62 @@ footer{
 <!-- CV -->
 <section id="cv">
   <div class="container spaced">
-    <!-- Título principal del CV -->
     <h1 id="cv-title">Currículum Vitae</h1>
 
     <div class="cv">
-      <div>
-        <!-- Formación y experiencia como texto -->
-        <h2 id="cv-profile-title">Formación y experiencia</h2>
-        <p id="cv-profile-text">
-          Graduada en Diseño Industrial por la principal Universidad Técnica de Hungría en Budapest (BME), con experiencia en empresa de diseño de mobiliario.
-        </p>
+      <!-- Caja de "Formación y experiencia" con imagen profile2 -->
+      <div class="cv-box">
+        <div class="cv-box-content">
+          <img src="profile2.jpg" alt="Profile 2" class="cv-image">
+          <div class="cv-text">
+            <h2 id="cv-profile-title">Formación y experiencia</h2>
+            <p id="cv-profile-text">
+              Graduada en Diseño Industrial por la principal Universidad Técnica de Hungría en Budapest (BME), con experiencia en empresa de diseño de mobiliario.
+            </p>
+          </div>
+        </div>
+      </div>
 
-        <!-- Habilidades -->
-        <h2 id="cv-skills-title">Habilidades</h2>
-        <ul class="list" id="cv-skills">
-          <li>Modelado 3D (Autocad, Blender, Rhino, Solidworks, Inventor, Fusion360)</li>
-          <li>Diseño gráfico (Photoshop, Illustrator)</li>
-          <li>Diseño técnico</li>
-          <li>Procesos de fabricación</li>
-          <li>Trabajo multidisciplinario</li>
-          <li>Sostenibilidad</li>
-          <li>Investigación de mercado</li>
-          <li>Técnicas de visualización</li>
-          <!-- Agrega más habilidades si lo deseas -->
-        </ul>
+      <!-- Caja de "Habilidades" con imagen profile3 -->
+      <div class="cv-box">
+        <div class="cv-box-content">
+          <img src="profile3.jpg" alt="Profile 3" class="cv-image">
+          <div class="cv-text">
+            <h2 id="cv-skills-title">Habilidades</h2>
+            <ul class="list" id="cv-skills">
+              <li>Modelado 3D (Autocad, Blender, Rhino, Solidworks, Inventor, Fusion360)</li>
+              <li>Diseño gráfico (Photoshop, Illustrator)</li>
+              <li>Diseño técnico</li>
+              <li>Procesos de fabricación</li>
+              <li>Trabajo multidisciplinario</li>
+              <li>Sostenibilidad</li>
+              <li>Investigación de mercado</li>
+              <li>Técnicas de visualización</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-        <!-- Educación -->
-        <h2 id="cv-education-title">Idiomas</h2>
-        <ul class="list" id="cv-education">
-          <li>Español C1</li>
-          <li>Inglés C1</li>
-          <li>Húngaro (nativo)</li>
-          <!-- Agrega más idiomas si lo deseas -->
-        </ul>
+      <!-- Caja de "Idiomas" con imagen profile4 -->
+      <div class="cv-box">
+        <div class="cv-box-content">
+          <img src="profile4.jpg" alt="Profile 4" class="cv-image">
+          <div class="cv-text">
+            <h2 id="cv-languages-title">Idiomas</h2>
+            <ul class="list" id="cv-education">
+              <li>Español C1</li>
+              <li>Inglés C1</li>
+              <li>Húngaro (nativo)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-        <!-- Enlace para descargar el CV -->
-        <a href="cv.pdf" class="download" id="cv-download">Descargar CV</a>
+      <!-- Enlace para descargar el CV -->
+      <div class="cv-box">
+        <div class="cv-box-content">
+          <a href="cv.pdf" class="download" id="cv-download">Descargar CV</a>
+        </div>
       </div>
     </div>
   </div>
