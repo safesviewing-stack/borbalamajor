@@ -204,15 +204,15 @@ p, li{
 }
 
 /* Estilo para los títulos (h2) dentro del CV */
-#cv-profile-title, #cv-skills-title, #cv-education-title {
-  margin-top: 20px;  /* Espacio superior para separar de los elementos previos */
+#cv-profile-title, #cv-skills-title, #cv-education-title, #cv-languages-title {
+  margin-top: 25px;  /* Espacio superior para separar de los elementos previos */
   margin-bottom: 15px;  /* Espacio inferior para separar de los siguientes elementos */
 }
 
-/* Estilo para las listas de habilidades y educación */
-#cv-skills, #cv-education {
-  margin-top: 40px; /* Separación superior de la lista */
-  margin-bottom: 30px; /* Separación inferior de la lista */
+/* Estilo para las listas de habilidades, formación e idiomas */
+#cv-skills, #cv-education, #cv-languages {
+  margin-top: 20px; /* Separación superior de la lista */
+  margin-bottom: 35px; /* Separación inferior de la lista */
 }
 
 /* Estilo para las listas dentro del CV */
@@ -221,7 +221,7 @@ p, li{
 }
 
 .list li {
-  margin-bottom: 6px; /* Separación entre los elementos de la lista */
+  margin-bottom: 10px; /* Separación entre los elementos de la lista */
 }
 
 /* Estilo para las imágenes dentro del CV */
