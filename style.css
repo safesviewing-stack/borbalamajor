@@ -200,15 +200,17 @@ p, li{
 /* ================= CV ================= */
 .cv-box-content {
   display: flex;
+  flex-direction: column; /* Para que las imágenes se apilen verticalmente */
   margin-bottom: 40px; /* Espacio entre las secciones */
 }
 
 /* Columna izquierda (imagen) */
 .cv-image-wrapper {
-  width: 35%;
+  width: 100%; /* La imagen ocupa todo el ancho */
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px; /* Separación entre la imagen y el texto */
 }
 
 .cv-image {
@@ -219,7 +221,6 @@ p, li{
 
 /* Columna derecha (texto) */
 .cv-text {
-  width: 65%;
   padding: 20px;
   line-height: 1.6;
 }
