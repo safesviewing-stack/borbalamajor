@@ -209,24 +209,14 @@ p, li{
 }
 
 /* ================= CV ================= */
-.cv-box {
-  margin-bottom: 40px;
-  background-color: #f8f8f8;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Importante para que la imagen no se salga */
-}
-
-/* Contenido dentro de la caja: imagen y texto */
 .cv-box-content {
   display: flex;
-  min-height: 220px; /* Da presencia a la caja */
+  margin-bottom: 40px; /* Espacio entre las secciones */
 }
 
 /* Columna izquierda (imagen) */
 .cv-image-wrapper {
   width: 35%;
-  background: #eaeaea;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -234,14 +224,15 @@ p, li{
 
 .cv-image {
   width: 100%;
-  height: 100%;
-  object-fit: contain; /* NO se corta, la imagen se adapta */
+  height: auto;
+  object-fit: contain; /* La imagen no se corta y se adapta bien */
 }
 
 /* Columna derecha (texto) */
 .cv-text {
   width: 65%;
-  padding: 30px;
+  padding: 20px;
+  line-height: 1.6;
 }
 
 /* Títulos fuera de la caja */
@@ -257,7 +248,7 @@ p, li{
 #cv-profile-text {
   margin-top: 0;
   margin-bottom: 20px;
-  line-height: 1.6;
+  font-size: 1rem;
 }
 
 /* Estilo para la lista de habilidades */
@@ -441,64 +432,56 @@ footer{
     <div class="cv">
       <!-- FORMACION Y EXPERIENCIA -->
       <h2 id="cv-profile-title">Formación y experiencia</h2>
-      <div class="cv-box">
-        <div class="cv-box-content">
-          <div class="cv-image-wrapper">
-            <img src="profile 2.jpg" alt="Profile 2" class="cv-image">
-          </div>
-          <div class="cv-text">
-            <p id="cv-profile-text">
-              Graduada en Diseño Industrial por la principal Universidad Técnica de Hungría en Budapest (BME),
-              con experiencia en empresa de diseño de mobiliario.
-            </p>
-          </div>
+      <div class="cv-box-content">
+        <div class="cv-image-wrapper">
+          <img src="profile 2.jpg" alt="Profile 2" class="cv-image">
+        </div>
+        <div class="cv-text">
+          <p id="cv-profile-text">
+            Graduada en Diseño Industrial por la principal Universidad Técnica de Hungría en Budapest (BME),
+            con experiencia en empresa de diseño de mobiliario.
+          </p>
         </div>
       </div>
 
       <!-- HABILIDADES -->
       <h2 id="cv-skills-title">Habilidades</h2>
-      <div class="cv-box">
-        <div class="cv-box-content">
-          <div class="cv-image-wrapper">
-            <img src="profile 3.jpg" alt="Profile 3" class="cv-image">
-          </div>
-          <div class="cv-text">
-            <ul class="list" id="cv-skills">
-              <li>Modelado 3D (Autocad, Blender, Rhino, Solidworks, Inventor, Fusion360)</li>
-              <li>Diseño gráfico (Photoshop, Illustrator)</li>
-              <li>Diseño técnico</li>
-              <li>Procesos de fabricación</li>
-              <li>Trabajo multidisciplinario</li>
-              <li>Sostenibilidad</li>
-              <li>Investigación de mercado</li>
-              <li>Técnicas de visualización</li>
-            </ul>
-          </div>
+      <div class="cv-box-content">
+        <div class="cv-image-wrapper">
+          <img src="profile 3.jpg" alt="Profile 3" class="cv-image">
+        </div>
+        <div class="cv-text">
+          <ul class="list" id="cv-skills">
+            <li>Modelado 3D (Autocad, Blender, Rhino, Solidworks, Inventor, Fusion360)</li>
+            <li>Diseño gráfico (Photoshop, Illustrator)</li>
+            <li>Diseño técnico</li>
+            <li>Procesos de fabricación</li>
+            <li>Trabajo multidisciplinario</li>
+            <li>Sostenibilidad</li>
+            <li>Investigación de mercado</li>
+            <li>Técnicas de visualización</li>
+          </ul>
         </div>
       </div>
 
       <!-- IDIOMAS -->
       <h2 id="cv-languages-title">Idiomas</h2>
-      <div class="cv-box">
-        <div class="cv-box-content">
-          <div class="cv-image-wrapper">
-            <img src="profile 4.jpg" alt="Profile 4" class="cv-image">
-          </div>
-          <div class="cv-text">
-            <ul class="list" id="cv-education">
-              <li>Español C1</li>
-              <li>Inglés C1</li>
-              <li>Húngaro (nativo)</li>
-            </ul>
-          </div>
+      <div class="cv-box-content">
+        <div class="cv-image-wrapper">
+          <img src="profile 4.jpg" alt="Profile 4" class="cv-image">
+        </div>
+        <div class="cv-text">
+          <ul class="list" id="cv-education">
+            <li>Español C1</li>
+            <li>Inglés C1</li>
+            <li>Húngaro (nativo)</li>
+          </ul>
         </div>
       </div>
 
       <!-- Enlace para descargar el CV -->
-      <div class="cv-box">
-        <div class="cv-box-content">
-          <a href="cv.pdf" class="download" id="cv-download">Descargar CV</a>
-        </div>
+      <div class="cv-box-content">
+        <a href="cv.pdf" class="download" id="cv-download">Descargar CV</a>
       </div>
     </div>
   </div>
