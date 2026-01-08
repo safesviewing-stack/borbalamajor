@@ -28,13 +28,22 @@ body{
 }
 
 /* ================= HEADER ================= */
-header{
-  position: fixed;
-  top:0;
-  width:100%;
-  height:70px;
-  background:#eaeceb; /* Rosa suave */
-  z-index:100;
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #eaeceb; /* Rosa suave */
+  z-index: 100;
+  transition: top 0.3s ease-in-out; /* Animar el movimiento hacia arriba */
+}
+
+body.scrolling-up header {
+  top: 0;
+}
+
+body.scrolling-down header {
+  top: -70px; /* Esto mueve la barra fuera de la vista */
 }
 
 .nav{
