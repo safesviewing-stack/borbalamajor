@@ -225,6 +225,11 @@ p, li{
   background-color: transparent;
 }
 
+.cv-image-small {
+  width: 80%;
+}
+
+
 .small-images .cv-image {
   width: 70%; /* reduce profile2 y profile3 */
 }
