@@ -76,7 +76,7 @@ nav li:hover::after {
 
 .lang button{
   background:none;
-  border:1px solid #000;
+  border:1px solid #d2d4d3;
   color:#fff;
   font-size:11px;
   padding:4px 10px;
@@ -87,7 +87,7 @@ nav li:hover::after {
 }
 
 .lang button.active{
-  background:#000;
+  background:#d2d4d3;
   color:#fff;
 }
 
