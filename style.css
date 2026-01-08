@@ -203,6 +203,11 @@ p, li{
   margin-bottom: 80px;
 }
 
+/* Separación extra entre bloques consecutivos */
+.cv-box-content + .cv-box-content {
+  margin-top: 40px;
+}
+
 /* Columna izquierda (imágenes) */
 .cv-image-wrapper {
   width: 35%;
