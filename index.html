@@ -215,13 +215,19 @@ p, li{
 }
 
 /* Columna izquierda (imagen) */
+.cv-box-content {
+  display: flex;
+  margin-bottom: 80px;
+}
+
+/* Columna izquierda (imágenes) */
 .cv-image-wrapper {
   width: 35%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px; /* ⬅️ Más aire entre imágenes */
+  gap: 24px;
 }
 
 .cv-image {
@@ -231,29 +237,30 @@ p, li{
   background-color: transparent;
 }
 
-/* Columna derecha (texto) */
+/* Columna derecha (texto centrado verticalmente) */
 .cv-text {
   width: 65%;
-  padding: 32px; /* ⬅️ Más aire interior */
+  padding: 32px;
   line-height: 1.7;
+
+  display: flex;
+  align-items: center;   /* ⬅️ centra el texto verticalmente */
 }
 
 /* ================= TÍTULOS ================= */
 
-/* Título principal: Currículum Vitae */
 #cv-title {
   margin-top: 80px;
-  margin-bottom: 100px; /* ⬅️ GRAN separación con Formación */
+  margin-bottom: 100px;
   font-size: 28px;
   font-weight: 600;
   color: #333;
 }
 
-/* Títulos de sección */
 #cv-profile-title,
 #cv-skills-title,
 #cv-languages-title {
-  margin-top: 80px;   /* ⬅️ Más separación entre secciones */
+  margin-top: 80px;
   margin-bottom: 30px;
   font-size: 24px;
   font-weight: 600;
@@ -263,8 +270,7 @@ p, li{
 /* ================= TEXTO ================= */
 
 #cv-profile-text {
-  margin-top: 0;
-  margin-bottom: 24px;
+  margin: 0;
   font-size: 14px;
   color: #444;
 }
@@ -273,15 +279,13 @@ p, li{
 
 #cv-skills,
 #cv-education {
-  margin-top: 0;
-  margin-bottom: 0;
   padding-left: 20px;
   list-style-type: none;
 }
 
 #cv-skills li,
 #cv-education li {
-  margin-bottom: 12px; /* ⬅️ Más aire entre ítems */
+  margin-bottom: 12px;
   font-size: 14px;
   color: #555;
 }
@@ -290,7 +294,7 @@ p, li{
 
 .download {
   display: inline-block;
-  margin-top: 60px; /* ⬅️ Más separación visual */
+  margin-top: 60px;
   padding: 14px 32px;
   background: #000;
   color: #fff;
