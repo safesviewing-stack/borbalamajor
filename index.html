@@ -59,31 +59,32 @@ nav ul{
   list-style:none;
 }
 
-nav li{
-  color:#fff;
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  cursor:pointer;
-  position:relative;
+nav li {
+  color: #000; /* Cambiar el color del texto de los títulos a negro */
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
 }
 
-nav li.active{
-  font-weight:500;
+nav li.active {
+  font-weight: 500;
 }
 
-nav li::after{
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0;
-  height:1px;
-  background:#fff;
-  transition:.25s;
+nav li::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #000; /* Cambiar el color de la línea inferior activa a negro */
+  transition: .25s;
 }
 
-nav li:hover::after{width:100%}
+nav li:hover::after {
+  width: 100%; /* Efecto de subrayado al pasar el cursor */
 
 .lang button{
   background:none;
