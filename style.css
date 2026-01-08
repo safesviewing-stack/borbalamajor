@@ -20,158 +20,63 @@ body {
     padding: 20px;
 }
 
-/* Estilos de la sección de inicio */
-.inicio {
-    background-color: #f9c6c9;
-    text-align: center;
-    padding: 50px 0;
-}
-
-.inicio h1 {
-    font-size: 2.5rem;
-    color: #5a4f5d;
-}
-
-.inicio p {
-    font-size: 1.2rem;
-    color: #333;
-}
-
-/* Estilos de la sección sobre mí */
-.sobre-mi {
-    background-color: #e4e9f2;
-    padding: 50px 0;
-    text-align: center;
-}
-
-.sobre-mi h2 {
-    color: #5a4f5d;
-    margin-bottom: 20px;
-}
-
-.sobre-mi p {
-    font-size: 1.1rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.sobre-mi .perfil {
-    max-width: 150px;
-    border-radius: 50%;
-    margin-top: 20px;
-}
-
-/* Estilos de la sección de currículum */
-.curriculum {
-    background-color: #f7f7f7;
-    padding: 50px 0;
-}
-
-.curriculum h2 {
-    text-align: center;
-    color: #5a4f5d;
-    margin-bottom: 20px;
-}
-
-.curriculum ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-}
-
-.curriculum ul li {
-    font-size: 1.1rem;
-    margin: 10px 0;
-}
-
-.curriculum a {
-    color: #6b8a5d;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Estilos de la sección de portfolio */
-.portfolio {
-    background-color: #f9c6c9;
-    padding: 50px 0;
-}
-
-.portfolio h2 {
-    text-align: center;
-    color: #5a4f5d;
-    margin-bottom: 30px;
-}
-
-.proyectos {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.proyecto {
-    width: 45%;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.proyecto img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.proyecto h3 {
-    margin-top: 10px;
-    color: #5a4f5d;
-}
-
-/* Estilos de la sección de contacto */
-.contacto {
-    background-color: #e4e9f2;
-    padding: 50px 0;
-}
-
-.contacto h2 {
-    text-align: center;
-    color: #5a4f5d;
-    margin-bottom: 30px;
-}
-
-.contacto form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contacto label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-.contacto input, .contacto textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.contacto button {
-    padding: 10px 20px;
+/* Estilos de la barra de navegación */
+.tabs {
     background-color: #6b8a5d;
     color: white;
-    border: none;
-    border-radius: 5px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.tabs ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.tabs li {
+    margin: 0 15px;
+    padding: 10px 20px;
     cursor: pointer;
 }
 
-.contacto button:hover {
+.tabs .tab:hover {
     background-color: #5a6e4a;
 }
 
-/* Estilos del pie de página */
+/* Estilos de contenido de las pestañas */
+.tab-content {
+    padding: 20px;
+    display: none;
+}
+
+.tab-pane {
+    display: none;
+    padding: 20px;
+}
+
+.tab-pane img {
+    max-width: 150px;
+    border-radius: 50%;
+}
+
 footer {
-    background-color: #5a4f5d;
+    background-color: #6b8a5d;
     color: white;
     padding: 20px 0;
     text-align: center;
+}
+
+/* Estilos cuando una pestaña está activa */
+.tab-content.active {
+    display: block;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/* Estilos de las pestañas activas */
+.tabs .tab.active {
+    background-color: #5a6e4a;
 }
