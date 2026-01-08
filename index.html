@@ -8,26 +8,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Sección de Inicio -->
-    <header class="inicio">
-        <div class="container">
+    <!-- Navegación de pestañas -->
+    <nav class="tabs">
+        <ul>
+            <li class="tab" data-tab="inicio">Inicio</li>
+            <li class="tab" data-tab="sobre-mi">Sobre mí</li>
+            <li class="tab" data-tab="curriculum">Currículum</li>
+            <li class="tab" data-tab="portfolio">Portfolio</li>
+            <li class="tab" data-tab="contacto">Contacto</li>
+        </ul>
+    </nav>
+
+    <!-- Contenido de las pestañas -->
+    <div class="tab-content">
+        <!-- Sección de Inicio -->
+        <div class="tab-pane" id="inicio">
             <h1>Bienvenidos a mi página web</h1>
             <p>Soy [Nombre], una diseñadora apasionada por la creatividad y la funcionalidad.</p>
         </div>
-    </header>
 
-    <!-- Sección Sobre mí -->
-    <section class="sobre-mi">
-        <div class="container">
+        <!-- Sección Sobre mí -->
+        <div class="tab-pane" id="sobre-mi">
             <h2>Sobre mí</h2>
             <p>Soy una diseñadora con una mezcla de pasión por el arte y el diseño técnico. Me encanta crear soluciones innovadoras que mejoren la experiencia del usuario.</p>
             <img src="foto-perfil.jpg" alt="Foto de [Nombre]" class="perfil">
         </div>
-    </section>
 
-    <!-- Sección de Currículum -->
-    <section class="curriculum">
-        <div class="container">
+        <!-- Sección de Currículum -->
+        <div class="tab-pane" id="curriculum">
             <h2>Currículum</h2>
             <ul>
                 <li><strong>Formación:</strong> [Tu título o grado]</li>
@@ -36,11 +44,9 @@
                 <li><a href="curriculum.pdf" target="_blank">Descargar Currículum (PDF)</a></li>
             </ul>
         </div>
-    </section>
 
-    <!-- Sección de Portfolio -->
-    <section class="portfolio">
-        <div class="container">
+        <!-- Sección de Portfolio -->
+        <div class="tab-pane" id="portfolio">
             <h2>Portfolio</h2>
             <div class="proyectos">
                 <div class="proyecto">
@@ -56,11 +62,9 @@
                 <!-- Agrega más proyectos aquí -->
             </div>
         </div>
-    </section>
 
-    <!-- Sección de Contacto -->
-    <section class="contacto">
-        <div class="container">
+        <!-- Sección de Contacto -->
+        <div class="tab-pane" id="contacto">
             <h2>Contacto</h2>
             <form action="mailto:tuemail@dominio.com" method="post" enctype="text/plain">
                 <label for="nombre">Nombre:</label>
@@ -72,13 +76,12 @@
                 <button type="submit">Enviar</button>
             </form>
         </div>
-    </section>
+    </div>
 
-    <!-- Pie de página -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 [Nombre]. Todos los derechos reservados.</p>
-        </div>
+        <p>&copy; 2026 [Nombre]. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
