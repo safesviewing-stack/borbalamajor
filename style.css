@@ -263,6 +263,9 @@ p, li{
   color: #555;
 }
 
+.cv-experience-title {
+  margin-bottom: 50px;
+}
 /* ================= TEXTO ================= */
 
 #cv-profile-text {
