@@ -200,95 +200,90 @@ p, li{
 /* ================= CV ================= */
 .cv-box-content {
   display: flex;
-  margin-bottom: 40px; /* Espacio entre las secciones */
+  margin-bottom: 80px; /* ⬅️ MÁS espacio entre bloques */
 }
 
 /* Columna izquierda (imagen) */
 .cv-image-wrapper {
-  width: 35%; /* Imagen ocupa el 35% del espacio */
+  width: 35%;
   display: flex;
-  flex-direction: column; /* Las imágenes se apilan verticalmente */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Espacio entre las imágenes */
+  gap: 24px; /* ⬅️ Más aire entre imágenes */
 }
 
 .cv-image {
   width: 100%;
   height: auto;
-  object-fit: contain; /* La imagen no se corta y se adapta bien */
-  background-color: transparent; /* Asegura que el fondo sea transparente */
+  object-fit: contain;
+  background-color: transparent;
 }
 
 /* Columna derecha (texto) */
 .cv-text {
   width: 65%;
-  padding: 20px;
-  line-height: 1.6;
+  padding: 32px; /* ⬅️ Más aire interior */
+  line-height: 1.7;
 }
 
-/* Títulos fuera de la caja */
+/* ================= TÍTULOS ================= */
+
+/* Título principal: Currículum Vitae */
 #cv-title {
-  margin-top: 60px; /* Aumenta este valor para más espacio entre títulos */
-  margin-bottom: 30;   /* ← separación con “Formación” */
-  font-size: 24px; /* Tamaño del título de currículum */
+  margin-top: 80px;
+  margin-bottom: 100px; /* ⬅️ GRAN separación con Formación */
+  font-size: 28px;
   font-weight: 600;
   color: #333;
 }
 
+/* Títulos de sección */
 #cv-profile-title,
 #cv-skills-title,
 #cv-languages-title {
-  margin: 40px 0 15px;
-  font-size: 24px;  /* Título de sección */
+  margin-top: 80px;   /* ⬅️ Más separación entre secciones */
+  margin-bottom: 30px;
+  font-size: 24px;
   font-weight: 600;
-  color: #333;  /* Color de título */
+  color: #333;
 }
 
-/* Estilo para el texto de "Formación y experiencia" */
+/* ================= TEXTO ================= */
+
 #cv-profile-text {
   margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 14px;  /* Texto normal */
-  color: #444;  /* Color de texto */
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: #444;
 }
 
-/* Estilo para la lista de habilidades */
-#cv-skills {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  padding-left: 20px;
-  list-style-type: none;
-}
+/* ================= LISTAS ================= */
 
-#cv-skills li {
-  margin-bottom: 6px;
-  font-size: 14px;  /* Tamaño de texto en la lista */
-  color: #555;  /* Color de los ítems de la lista */
-}
-
-/* Estilo para la lista de idiomas */
+#cv-skills,
 #cv-education {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
   padding-left: 20px;
   list-style-type: none;
 }
 
+#cv-skills li,
 #cv-education li {
-  margin-bottom: 6px;
-  font-size: 14px;  /* Tamaño de texto en la lista */
-  color: #555;  /* Color de los ítems de la lista */
+  margin-bottom: 12px; /* ⬅️ Más aire entre ítems */
+  font-size: 14px;
+  color: #555;
 }
 
-/* Estilo para el botón de descarga */
+/* ================= BOTÓN ================= */
+
 .download {
   display: inline-block;
-  margin-top: 28px;
-  padding: 12px 26px;
+  margin-top: 60px; /* ⬅️ Más separación visual */
+  padding: 14px 32px;
   background: #000;
   color: #fff;
-  font-size: 16px;  /* Tamaño del texto en el botón */
+  font-size: 16px;
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 4px;
