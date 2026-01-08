@@ -229,15 +229,17 @@ p, li{
 #cv-skills-title,
 #cv-languages-title {
   margin: 40px 0 15px;
-  font-size: 1.6rem;
+  font-size: 32px;  /* Título de sección */
   font-weight: 600;
+  color: #333;  /* Color de título */
 }
 
 /* Estilo para el texto de "Formación y experiencia" */
 #cv-profile-text {
   margin-top: 0;
   margin-bottom: 20px;
-  font-size: 1rem;
+  font-size: 16px;  /* Texto normal */
+  color: #444;  /* Color de texto */
 }
 
 /* Estilo para la lista de habilidades */
@@ -250,7 +252,8 @@ p, li{
 
 #cv-skills li {
   margin-bottom: 6px;
-  font-size: 1rem;
+  font-size: 16px;  /* Tamaño de texto en la lista */
+  color: #555;  /* Color de los ítems de la lista */
 }
 
 /* Estilo para la lista de idiomas */
@@ -263,7 +266,8 @@ p, li{
 
 #cv-education li {
   margin-bottom: 6px;
-  font-size: 1rem;
+  font-size: 16px;  /* Tamaño de texto en la lista */
+  color: #555;  /* Color de los ítems de la lista */
 }
 
 /* Estilo para el botón de descarga */
@@ -273,7 +277,7 @@ p, li{
   padding: 12px 26px;
   background: #000;
   color: #fff;
-  font-size: 12px;
+  font-size: 16px;  /* Tamaño del texto en el botón */
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 4px;
