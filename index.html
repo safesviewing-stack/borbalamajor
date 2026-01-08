@@ -470,22 +470,23 @@ footer{
 
 <script>
 // Navegación y cambio de idiomas
-document.querySelectorAll(".tab").forEach(tab=>{
-  tab.onclick=()=>{
-    document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+document.querySelectorAll(".tab").forEach(tab => {
+  tab.onclick = () => {
+    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
     document.getElementById(tab.dataset.tab).classList.add("active");
 
-    document.querySelectorAll("nav li").forEach(l=>l.classList.remove("active"));
+    document.querySelectorAll("nav li").forEach(l => l.classList.remove("active"));
     tab.classList.add("active");
   };
 });
 
-const content={
-  es:{
-    heroTitle:"Ingeniería de diseño industrial aplicada al desarrollo de producto",
-    heroSub:"Diseño técnico, fabricación y optimización de productos industriales.",
-    aboutTitle:"Sobre mí",
-    aboutText:"Soy Borbála, una joven de 23 años de Hungría, graduada de la Universidad Técnica de Budapest (BME) y actualmente buscando oportunidades profesionales en España. Aunque mi formación es más técnica, me apasiona combinar lo artístico y lo técnico. Me considero una persona emotiva, lo que me permite comprender mejor a los usuarios y crear soluciones más empáticas y funcionales. Disfruto trabajar en equipo, ya que valoro la colaboración y el intercambio de ideas. Además, soy muy detallista y creo que la atención a los pequeños aspectos del diseño marca la diferencia. Siempre busco aprender, enfrentar nuevos retos y adaptarme para seguir creciendo profesional y personalmente.",
+// Función para cambiar el idioma
+const content = {
+  es: {
+    heroTitle: "Ingeniería de diseño industrial aplicada al desarrollo de producto",
+    heroSub: "Diseño técnico, fabricación y optimización de productos industriales.",
+    aboutTitle: "Sobre mí",
+    aboutText: "Soy Luis Blasco-Ibáñez Berbel, un diseñador industrial de 24 años, originario de Valencia...",
     cvTitle: "Currículum",
     cvProfileTitle: "Perfil profesional",
     cvProfileText: "Diseñador industrial con enfoque técnico y sensibilidad por el producto.",
@@ -496,14 +497,14 @@ const content={
     cvDownload: "Descargar CV",
     portfolioTitle: "Portfolio",
     contactTitle: "Contacto",
-    contactEmail: "📧 majorbori@gmail.com",
-    contactPhone: "📞 +36 30 820 3716"
+    contactEmail: "📧 luisblascoibanezberbel@gmail.com",
+    contactPhone: "📞 +34 630 51 18 06"
   },
-  en:{
-    heroTitle:"Industrial design engineering applied to product development",
-    heroSub:"Technical design, manufacturing and industrial product optimization.",
-    aboutTitle:"About me",
-    aboutText:"I’m Borbála, a 23-year-old from Hungary, graduated from the Budapest University of Technology and Economics (BME), and currently seeking professional opportunities in Spain. Although my background is more technical, I’m passionate about combining art and technology. I consider myself an emotional person, which allows me to better understand users and create more empathetic and functional solutions. I enjoy working in teams, as I value collaboration and the exchange of ideas. Additionally, I’m detail-oriented and believe that attention to the small aspects of design makes a difference. I’m always eager to learn, take on new challenges, and adapt in order to keep growing both professionally and personally.",
+  en: {
+    heroTitle: "Industrial design engineering applied to product development",
+    heroSub: "Technical design, manufacturing and industrial product optimization.",
+    aboutTitle: "About me",
+    aboutText: "I am Luis Blasco-Ibáñez Berbel, a 24-year-old industrial designer from Valencia...",
     cvTitle: "Curriculum Vitae",
     cvProfileTitle: "Professional profile",
     cvProfileText: "Industrial designer with a technical mindset and product-oriented approach.",
@@ -514,47 +515,50 @@ const content={
     cvDownload: "Download CV",
     portfolioTitle: "Portfolio",
     contactTitle: "Contact",
-    contactEmail: "📧 majorbori@gmail.com",
-    contactPhone: "📞 +36 30 820 3716"
+    contactEmail: "📧 luisblascoibanezberbel@gmail.com",
+    contactPhone: "📞 +34 630 51 18 06"
   }
 };
 
-function setLang(lang){
-  document.getElementById("hero-title").innerText=content[lang].heroTitle;
-  document.getElementById("hero-sub").innerText=content[lang].heroSub;
-  document.getElementById("about-title").innerText=content[lang].aboutTitle;
-  document.getElementById("about-text").innerText=content[lang].aboutText;
-  
-  document.getElementById("cv-title").innerText=content[lang].cvTitle;
-  document.getElementById("cv-profile-title").innerText=content[lang].cvProfileTitle;
-  document.getElementById("cv-profile-text").innerText=content[lang].cvProfileText;
-  
-  document.getElementById("cv-skills-title").innerText=content[lang].cvSkillsTitle;
+// Función para cambiar los textos al idioma seleccionado
+function setLang(lang) {
+  document.getElementById("hero-title").innerText = content[lang].heroTitle;
+  document.getElementById("hero-sub").innerText = content[lang].heroSub;
+  document.getElementById("about-title").innerText = content[lang].aboutTitle;
+  document.getElementById("about-text").innerText = content[lang].aboutText;
+
+  document.getElementById("cv-title").innerText = content[lang].cvTitle;
+  document.getElementById("cv-profile-title").innerText = content[lang].cvProfileTitle;
+  document.getElementById("cv-profile-text").innerText = content[lang].cvProfileText;
+
+  document.getElementById("cv-skills-title").innerText = content[lang].cvSkillsTitle;
   const skills = document.getElementById("cv-skills");
   skills.innerHTML = "";
   content[lang].cvSkills.forEach(skill => skills.innerHTML += `<li>${skill}</li>`);
 
-  document.getElementById("cv-education-title").innerText=content[lang].cvEducationTitle;
+  document.getElementById("cv-education-title").innerText = content[lang].cvEducationTitle;
   const education = document.getElementById("cv-education");
   education.innerHTML = "";
   content[lang].cvEducation.forEach(edu => education.innerHTML += `<li>${edu}</li>`);
-  
-  document.getElementById("cv-download").innerText=content[lang].cvDownload;
-  
-  document.getElementById("portfolio-title").innerText=content[lang].portfolioTitle;
-  
-  document.getElementById("contact-title").innerText=content[lang].contactTitle;
-  document.getElementById("contact-email").innerText=content[lang].contactEmail;
-  document.getElementById("contact-phone").innerText=content[lang].contactPhone;
+
+  document.getElementById("cv-download").innerText = content[lang].cvDownload;
+
+  document.getElementById("portfolio-title").innerText = content[lang].portfolioTitle;
+
+  document.getElementById("contact-title").innerText = content[lang].contactTitle;
+  document.getElementById("contact-email").innerText = content[lang].contactEmail;
+  document.getElementById("contact-phone").innerText = content[lang].contactPhone;
 
   // Cambiar el botón activo
   document.getElementById("btn-es").classList.toggle("active", lang === "es");
   document.getElementById("btn-en").classList.toggle("active", lang === "en");
 }
 
-setLang("es");
-document.getElementById("btn-es").onclick=()=>setLang("es");
-document.getElementById("btn-en").onclick=()=>setLang("en");
+setLang("es");  // Establecer idioma por defecto
+
+// Event listeners para los botones de idioma
+document.getElementById("btn-es").onclick = () => setLang("es");
+document.getElementById("btn-en").onclick = () => setLang("en");
 </script>
 
 </body>
