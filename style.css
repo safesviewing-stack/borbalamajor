@@ -213,9 +213,13 @@ p, li{
   width: 35%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 10px;
+}
+
+.cv-image-wrapper {
+  padding-left: 10px;
 }
 
 .cv-image {
