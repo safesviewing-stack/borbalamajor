@@ -10,50 +10,38 @@ body {
     line-height: 1.6;
     background-color: #f7f7f7;
     color: #333;
-    overflow: hidden;  /* Para evitar el scroll */
 }
 
-/* Contenedor común */
-.container {
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Estilos de la barra de navegación */
+/* Contenedor de las pestañas */
 .tabs {
-    background-color: #6b8a5d;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-.tabs ul {
-    list-style: none;
     display: flex;
     justify-content: center;
+    background-color: #6b8a5d;
+    padding: 10px 0;
 }
 
-.tabs li {
-    margin: 0 15px;
+.tabs input[type="radio"] {
+    display: none;
+}
+
+.tabs label {
+    background-color: #8f9e6d;
+    color: white;
     padding: 10px 20px;
+    margin: 0 15px;
     cursor: pointer;
-    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.tabs .tab:hover {
-    background-color: #5a6e4a;
-}
-
-.tabs .active {
+.tabs input[type="radio"]:checked + label {
     background-color: #5a6e4a;
 }
 
 /* Estilos de contenido de las pestañas */
 .tab-content {
-    padding: 20px;
     display: block;
+    padding: 20px;
 }
 
 .tab-pane {
@@ -61,19 +49,36 @@ body {
     padding: 20px;
 }
 
-.tab-pane img {
+.tabs input[type="radio"]:checked ~ .tab-content #inicio {
+    display: block;
+}
+
+.tabs input[type="radio"]:checked ~ .tab-content #sobre-mi {
+    display: block;
+}
+
+.tabs input[type="radio"]:checked ~ .tab-content #curriculum {
+    display: block;
+}
+
+.tabs input[type="radio"]:checked ~ .tab-content #portfolio {
+    display: block;
+}
+
+.tabs input[type="radio"]:checked ~ .tab-content #contacto {
+    display: block;
+}
+
+/* Estilo para la imagen de perfil */
+.perfil {
     max-width: 150px;
     border-radius: 50%;
 }
 
+/* Estilos de pie de página */
 footer {
     background-color: #6b8a5d;
     color: white;
     padding: 20px 0;
     text-align: center;
-}
-
-/* Estilos cuando una pestaña está activa */
-.tab-pane.active {
-    display: block;
 }
