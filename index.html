@@ -28,81 +28,109 @@ body{
 }
 
 /* ================= HEADER ================= */
-header{
-  position: fixed;
-  top:0;
-  width:100%;
-  height:70px;
-  background:#eaeceb; /* Rosa suave */
-  z-index:100;
+header {
+  position: fixed; /* Fija el header en la parte superior */
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #eaeceb; /* Rosa suave */
+  z-index: 100;
+  transition: top 0.3s ease-in-out; /* Para animar el movimiento hacia arriba */
 }
 
-.nav{
-  max-width:1200px;
-  width:90%;
-  height:100%;
-  margin:auto;
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  align-items:center;
+/* Contenedor de la navegación */
+.nav {
+  max-width: 1200px;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
 }
 
-.logo{
-  color:#555;
-  font-weight:300;
+/* Logo */
+.logo {
+  color: #555;
+  font-weight: 300;
   font-size: 14px;
 }
 
-nav ul{
-  display:flex;
-  justify-content:center;
-  gap:36px;
-  list-style:none;
+/* Lista de elementos del menú */
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  list-style: none;
 }
 
-nav li{
-  color:#555;
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  cursor:pointer;
-  position:relative;
+/* Estilo de los elementos de la lista */
+nav li {
+  color: #555;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
 }
 
-nav li.active{
-  font-weight:700;
+/* Estilo para cuando el elemento está activo */
+nav li.active {
+  font-weight: 700;
 }
 
-nav li::after{
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0;
-  height:1px;
-  background:#000;
-  transition:.25s;
+/* Efecto de subrayado */
+nav li::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: .25s;
 }
 
 nav li:hover::after {
   width: 100%; /* Efecto de subrayado al pasar el cursor */
 }
 
-.lang button{
-  background:none;
-  border:1px solid #c7c9c8;
-  color:#c7c9c8;
-  font-size:11px;
-  padding:4px 10px;
-  margin-left:6px;
-  cursor:pointer;
-  border-radius:4px;
+/* Botón de idioma */
+.lang button {
+  background: none;
+  border: 1px solid #c7c9c8;
+  color: #c7c9c8;
+  font-size: 11px;
+  padding: 4px 10px;
+  margin-left: 6px;
+  cursor: pointer;
+  border-radius: 4px;
   transition: background-color 0.3s;
 }
 
-.lang button.active{
-  background:#c7c9c8;
-  color:#fff;
+.lang button.active {
+  background: #c7c9c8;
+  color: #fff;
+}
+
+/* Simulación del efecto de ocultación del header al hacer scroll hacia abajo */
+body {
+  margin-top: 70px; /* Evita que el contenido quede debajo del header */
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  top: -70px;  /* Mueve el header hacia arriba */
+  width: 100%;
+  height: 70px;
+  background: #eaeceb;
+  z-index: 100;
+  transition: top 0.3s ease-in-out;
+}
+
+body:active:before {
+  top: 0;  /* Vuelve a la posición original cuando se hace scroll hacia arriba */
 }
 /* ================= LAYOUT ================= */
 main{
@@ -634,6 +662,5 @@ document.getElementById("btn-es").onclick=()=>setLang("es");
 document.getElementById("btn-en").onclick=()=>setLang("en");
 </script>
   
-<script src="path/to/scroll-effect.js"></script>
 </body>
 </html>
