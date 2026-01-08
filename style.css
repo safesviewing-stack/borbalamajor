@@ -229,7 +229,7 @@ p, li{
 #cv-skills-title,
 #cv-languages-title {
   margin: 40px 0 15px;
-  font-size: 32px;  /* Título de sección */
+  font-size: 24px;  /* Título de sección */
   font-weight: 600;
   color: #333;  /* Color de título */
 }
@@ -238,7 +238,7 @@ p, li{
 #cv-profile-text {
   margin-top: 0;
   margin-bottom: 20px;
-  font-size: 16px;  /* Texto normal */
+  font-size: 14px;  /* Texto normal */
   color: #444;  /* Color de texto */
 }
 
@@ -252,7 +252,7 @@ p, li{
 
 #cv-skills li {
   margin-bottom: 6px;
-  font-size: 16px;  /* Tamaño de texto en la lista */
+  font-size: 14px;  /* Tamaño de texto en la lista */
   color: #555;  /* Color de los ítems de la lista */
 }
 
@@ -266,7 +266,7 @@ p, li{
 
 #cv-education li {
   margin-bottom: 6px;
-  font-size: 16px;  /* Tamaño de texto en la lista */
+  font-size: 14px;  /* Tamaño de texto en la lista */
   color: #555;  /* Color de los ítems de la lista */
 }
 
