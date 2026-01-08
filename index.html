@@ -8,21 +8,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navegación de pestañas -->
-    <nav class="tabs">
-        <ul>
-            <li class="tab active" data-tab="inicio">Inicio</li>
-            <li class="tab" data-tab="sobre-mi">Sobre mí</li>
-            <li class="tab" data-tab="curriculum">Currículum</li>
-            <li class="tab" data-tab="portfolio">Portfolio</li>
-            <li class="tab" data-tab="contacto">Contacto</li>
-        </ul>
-    </nav>
+    <!-- Navegación de pestañas con formularios -->
+    <div class="tabs">
+        <input type="radio" name="tab" id="tab-inicio" checked>
+        <label for="tab-inicio">Inicio</label>
+
+        <input type="radio" name="tab" id="tab-sobre-mi">
+        <label for="tab-sobre-mi">Sobre mí</label>
+
+        <input type="radio" name="tab" id="tab-curriculum">
+        <label for="tab-curriculum">Currículum</label>
+
+        <input type="radio" name="tab" id="tab-portfolio">
+        <label for="tab-portfolio">Portfolio</label>
+
+        <input type="radio" name="tab" id="tab-contacto">
+        <label for="tab-contacto">Contacto</label>
+    </div>
 
     <!-- Contenido de las pestañas -->
     <div class="tab-content">
         <!-- Sección de Inicio -->
-        <div class="tab-pane active" id="inicio">
+        <div class="tab-pane" id="inicio">
             <h1>Bienvenidos a mi página web</h1>
             <p>Soy [Nombre], una diseñadora apasionada por la creatividad y la funcionalidad.</p>
         </div>
@@ -82,6 +89,5 @@
         <p>&copy; 2026 [Nombre]. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
