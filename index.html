@@ -211,13 +211,12 @@ p, li{
 /* ================= CV ================= */
 .cv-box-content {
   display: flex;
-  margin-bottom: 80px; /* ⬅️ MÁS espacio entre bloques */
+  margin-bottom: 80px;
 }
 
-/* Columna izquierda (imagen) */
-.cv-box-content {
-  display: flex;
-  margin-bottom: 80px;
+/* Separación extra entre bloques consecutivos */
+.cv-box-content + .cv-box-content {
+  margin-top: 40px;
 }
 
 /* Columna izquierda (imágenes) */
@@ -446,19 +445,35 @@ footer{
     <h1 id="cv-title">Currículum Vitae</h1> <!-- Título de la sección con margen aumentado -->
 
     <!-- Formación -->
-    <h2 id="cv-profile-title">Formación</h2>
-    <div class="cv-box-content">
-      <div class="cv-image-wrapper">
-        <img src="profile3.jpg" alt="Profile3" class="cv-image">
-        <img src="profile2.jpg" alt="Profile2" class="cv-image">
-      </div>
-      <div class="cv-text">
-        <p id="cv-profile-text">
-          Graduada en Diseño Industrial por la principal Universidad Técnica de Hungría en Budapest (BME),
-          con experiencia en empresa de diseño de mobiliario.
-        </p>
-      </div>
-    </div>
+   <h2 id="cv-profile-title">Formación</h2>
+
+<!-- Formación · Bloque 1 -->
+<div class="cv-box-content">
+  <div class="cv-image-wrapper small-images">
+    <img src="profile3.jpg" alt="Profile3" class="cv-image">
+  </div>
+
+  <div class="cv-text">
+    <p id="cv-profile-text">
+      Graduada en Diseño Industrial por la principal Universidad Técnica de Hungría en Budapest (BME),
+      con experiencia en empresa de diseño de mobiliario.
+    </p>
+  </div>
+</div>
+
+<!-- Formación · Bloque 2 -->
+<div class="cv-box-content">
+  <div class="cv-image-wrapper small-images">
+    <img src="profile2.jpg" alt="Profile2" class="cv-image">
+  </div>
+
+  <div class="cv-text">
+    <p id="cv-profile-text">
+      Graduada en Diseño Industrial por la principal Universidad Técnica de Hungría en Budapest (BME),
+      con experiencia en empresa de diseño de mobiliario.
+    </p>
+  </div>
+</div>
 
     <!-- Experiencia -->
     <h2 id="cv-profile-title">Experiencia</h2>
