@@ -216,53 +216,92 @@ p, li{
   margin-top: 50px; /* Espacio superior para separar el CV de la sección anterior */
 }
 
-/* Estilo para los títulos (h2) dentro del CV */
-#cv-profile-title, #cv-skills-title, #cv-education-title, #cv-languages-title {
-  line-height: 1.6; /* Ajusta el interlineado */
-  margin-top: 20px;  /* Espacio superior para separar de los elementos previos */
-  margin-bottom: 5px; /* Espacio inferior reducido para mantener cerca del texto */
+/* Caja de la sección de "Formación y experiencia" */
+#cv-profile-section {
+  margin-top: 30px;  /* Separación superior de la caja */
+  margin-bottom: 30px;  /* Separación inferior de la caja */
+  padding: 20px;  /* Espacio interno de la caja */
+  background-color: #f8f8f8; /* Fondo opcional para la caja */
+  border-radius: 6px;  /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional */
 }
 
-/* Estilo para los textos de las secciones (cerca del título) */
-#cv-profile-text, #cv-skills-text, #cv-education-text, #cv-languages-text, .cv p {
-  margin-top: 0;  /* Eliminar margen superior para mantener el texto cerca del título */
-  margin-bottom: 40px; /* Espacio entre el texto y la siguiente sección */
-  line-height: 1.6; /* Ajusta el interlineado del texto */
+/* Estilo para el título de la sección "Formación y experiencia" */
+#cv-profile-title {
+  margin-top: 0;  /* Eliminar margen superior */
+  margin-bottom: 15px; /* Separación entre el título y el texto */
+  line-height: 1.6; /* Ajuste de interlineado */
 }
 
-/* Estilo para la sección de Idiomas */
-#cv-languages {
-  margin-top: 50px; /* Espacio superior adicional para separar de las secciones anteriores */
-  margin-bottom: 30px; /* Espacio inferior para separar de las siguientes secciones */
-  line-height: 1.6; /* Ajusta el interlineado para la sección de idiomas */
+/* Estilo para el texto de "Formación y experiencia" */
+#cv-profile-text {
+  margin-top: 0; /* Eliminar margen superior */
+  margin-bottom: 20px; /* Espacio entre el texto y la siguiente sección */
+  line-height: 1.6; /* Ajuste de interlineado */
 }
 
-/* Estilo para las listas de habilidades, formación e idiomas */
-#cv-skills, #cv-education {
-  margin-top: 10px; /* Separación superior de la lista */
-  margin-bottom: 20px; /* Separación entre las secciones */
-}
-
-/* Estilo para las listas dentro del CV */
-.list {
-  list-style: none;
-}
-
-.list li {
-  margin-bottom: 6px; /* Separación entre los elementos de la lista */
-}
-
-/* Estilo para las imágenes dentro del CV */
-.cv img {
-  width: 100%;
-  max-width: 360px;
+/* Caja de la sección de "Habilidades" */
+#cv-skills-section {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f8f8f8;
   border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el título de la sección "Habilidades" */
+#cv-skills-title {
+  margin-top: 0;
+  margin-bottom: 15px; /* Separación entre el título y el texto */
+  line-height: 1.6;
+}
+
+/* Estilo para la lista de habilidades */
+#cv-skills {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 20px;  /* Espacio a la izquierda de la lista */
+}
+
+/* Estilo para los elementos de la lista de habilidades */
+.list li {
+  margin-bottom: 6px;
+}
+
+/* Caja de la sección de "Idiomas" */
+#cv-languages-section {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el título de la sección "Idiomas" */
+#cv-languages-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Estilo para la lista de idiomas */
+#cv-education {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 20px;  /* Espacio a la izquierda de la lista */
+}
+
+/* Estilo para los elementos de la lista de idiomas */
+#cv-education li {
+  margin-bottom: 6px;
 }
 
 /* Estilo para el botón de descarga */
 .download {
   display: inline-block;
-  margin-top: 28px; /* Margen superior */
+  margin-top: 28px;
   padding: 12px 26px;
   background: #000;
   color: #fff;
