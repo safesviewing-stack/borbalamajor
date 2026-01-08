@@ -274,6 +274,13 @@ p, li {
     grid-template-columns: 1fr;
   }
 }
+
+#contact-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
 /* ================= FOOTER ================= */
 footer {
   text-align: center;
