@@ -22,7 +22,15 @@ header {
   height: 70px;
   background: #eaeceb; /* Rosa suave */
   z-index: 100;
-  transition: top 0.3s ease-in-out; /* Para animar el movimiento hacia arriba */
+  transition: top 0.3s ease-in-out; /* Animar el movimiento hacia arriba */
+}
+
+body.scrolling-up header {
+  top: 0;
+}
+
+body.scrolling-down header {
+  top: -70px; /* Esto mueve la barra fuera de la vista */
 }
 
 .nav{
@@ -92,7 +100,6 @@ nav li:hover::after {
   background:#c7c9c8;
   color:#fff;
 }
-
 /* ================= LAYOUT ================= */
 main{
   padding-top:70px;
