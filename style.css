@@ -226,7 +226,7 @@ p, li{
 }
 
 .small-images .cv-image {
-  width: 80%; /* reduce profile2 y profile3 */
+  width: 60%; /* reduce profile2 y profile3 */
 }
 
 /* Columna derecha (texto centrado verticalmente) */
