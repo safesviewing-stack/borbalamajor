@@ -220,13 +220,20 @@ p, li{
 #cv-profile-title, #cv-skills-title, #cv-education-title, #cv-languages-title {
   line-height: 1; /* Ajusta el interlineado */
   margin-top: 20px;  /* Espacio superior para separar de los elementos previos */
-  margin-bottom: 10px; /* Reducir espacio inferior para mantener cerca del texto */
+  margin-bottom: 5px; /* Espacio inferior reducido para mantener cerca del texto */
+}
+
+/* Estilo para los textos de las secciones (cerca del título) */
+#cv-profile-text, #cv-skills-text, #cv-education-text, #cv-languages-text, .cv p {
+  margin-top: 0;  /* Eliminar margen superior para mantener el texto cerca del título */
+  margin-bottom: 20px; /* Espacio entre el texto y la siguiente sección */
+  line-height: 1.6; /* Ajusta el interlineado del texto */
 }
 
 /* Estilo para las listas de habilidades, formación e idiomas */
 #cv-skills, #cv-education, #cv-languages {
-  margin-top: 20px; /* Separación superior de la lista */
-  margin-bottom: 10px; /* Separación entre las secciones */
+  margin-top: 10px; /* Separación superior de la lista */
+  margin-bottom: 20px; /* Separación entre las secciones */
 }
 
 /* Estilo para las listas dentro del CV */
