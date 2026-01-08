@@ -200,27 +200,29 @@ p, li{
 /* ================= CV ================= */
 .cv-box-content {
   display: flex;
-  flex-direction: column; /* Para que las imágenes se apilen verticalmente */
   margin-bottom: 40px; /* Espacio entre las secciones */
 }
 
 /* Columna izquierda (imagen) */
 .cv-image-wrapper {
-  width: 100%; /* La imagen ocupa todo el ancho */
+  width: 35%; /* Imagen ocupa el 35% del espacio */
   display: flex;
+  flex-direction: column; /* Las imágenes se apilan verticalmente */
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px; /* Separación entre la imagen y el texto */
+  gap: 10px; /* Espacio entre las imágenes */
 }
 
 .cv-image {
   width: 100%;
   height: auto;
   object-fit: contain; /* La imagen no se corta y se adapta bien */
+  background-color: transparent; /* Asegura que el fondo sea transparente */
 }
 
 /* Columna derecha (texto) */
 .cv-text {
+  width: 65%;
   padding: 20px;
   line-height: 1.6;
 }
