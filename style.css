@@ -219,10 +219,6 @@ p, li{
   gap: 5px;
 }
 
-.cv-image-wrapper {
-  padding-left: 10px;
-}
-
 .cv-image {
   width: 100%;
   height: auto;
