@@ -212,7 +212,7 @@ p, li{
 
 /* Estilo para las listas de habilidades, formación e idiomas */
 #cv-skills, #cv-education, #cv-languages {
-  margin-top: 20px; /* Separación superior de la lista */
+  margin-top: 40px; /* Separación superior de la lista */
   margin-bottom: 35px; /* Separación inferior de la lista */
 }
 
