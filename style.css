@@ -343,11 +343,7 @@ footer{
   height: auto;
   margin-left: auto; /* Empuja la imagen hacia la derecha */
   margin-right: 20px; /* Agrega algo de espacio a la derecha */
-  margin-top: 20px; /* Espacio adicional arriba */
   margin-bottom: 100px; /* Espacio adicional abajo */
-  padding: 10px; /* Relleno alrededor de la imagen para separarla del fondo */
-  background-color: #fff; /* Fondo blanco para separar la imagen del fondo */
-  border-radius: 8px; /* Bordes redondeados para mejorar la estética */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la imagen */
   animation: slideInFromRight 1s ease-out forwards;
 }
