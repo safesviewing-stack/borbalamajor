@@ -3,91 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página web personal de [Nombre], diseñadora profesional.">
-    <title>[Nombre] - Diseño</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Página web personal de Luis Blasco-Ibáñez, diseñador industrial.">
+    <title>Luis Blasco-Ibáñez · Diseñador Industrial</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navegación de pestañas con formularios -->
-    <div class="tabs">
-        <input type="radio" name="tab" id="tab-inicio" checked>
-        <label for="tab-inicio">Inicio</label>
 
-        <input type="radio" name="tab" id="tab-sobre-mi">
-        <label for="tab-sobre-mi">Sobre mí</label>
-
-        <input type="radio" name="tab" id="tab-curriculum">
-        <label for="tab-curriculum">Currículum</label>
-
-        <input type="radio" name="tab" id="tab-portfolio">
-        <label for="tab-portfolio">Portfolio</label>
-
-        <input type="radio" name="tab" id="tab-contacto">
-        <label for="tab-contacto">Contacto</label>
-    </div>
-
-    <!-- Contenido de las pestañas -->
-    <div class="tab-content">
-        <!-- Sección de Inicio -->
-        <div class="tab-pane" id="inicio">
-            <h1>Bienvenidos a mi página web</h1>
-            <p>Soy [Nombre], una diseñadora apasionada por la creatividad y la funcionalidad.</p>
-        </div>
-
-        <!-- Sección Sobre mí -->
-        <div class="tab-pane" id="sobre-mi">
-            <h2>Sobre mí</h2>
-            <p>Soy una diseñadora con una mezcla de pasión por el arte y el diseño técnico. Me encanta crear soluciones innovadoras que mejoren la experiencia del usuario.</p>
-            <img src="foto-perfil.jpg" alt="Foto de [Nombre]" class="perfil">
-        </div>
-
-        <!-- Sección de Currículum -->
-        <div class="tab-pane" id="curriculum">
-            <h2>Currículum</h2>
+<!-- Navegación -->
+<header>
+    <div class="nav">
+        <div class="logo">LB</div>
+        <nav>
             <ul>
-                <li><strong>Formación:</strong> [Tu título o grado]</li>
-                <li><strong>Experiencia:</strong> [Tu experiencia laboral relevante]</li>
-                <li><strong>Habilidades:</strong> Diseño gráfico, UX/UI, Herramientas: Adobe XD, Figma, etc.</li>
-                <li><a href="curriculum.pdf" target="_blank">Descargar Currículum (PDF)</a></li>
+                <li><label for="tab-home">Inicio</label></li>
+                <li><label for="tab-about">Sobre mí</label></li>
+                <li><label for="tab-cv">Currículum</label></li>
+                <li><label for="tab-portfolio">Portfolio</label></li>
+                <li><label for="tab-contact">Contacto</label></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Contenido Principal -->
+<main>
+    <input type="radio" name="tabs" id="tab-home" checked>
+    <section id="home">
+        <div class="container">
+            <h1>Bienvenidos a mi página web</h1>
+            <p>Diseñador industrial enfocado en soluciones creativas y técnicas.</p>
+        </div>
+    </section>
+
+    <input type="radio" name="tabs" id="tab-about">
+    <section id="about">
+        <div class="container">
+            <h1>Sobre mí</h1>
+            <p>Soy Luis Blasco-Ibáñez, un diseñador industrial con pasión por lo artístico y técnico. Estudio Diseño Industrial en la UPV y tengo formación en electricidad, lo que me permite combinar creatividad con precisión técnica.</p>
+            <img src="profile.jpg" alt="Luis Blasco-Ibáñez" class="profile-image">
+        </div>
+    </section>
+
+    <input type="radio" name="tabs" id="tab-cv">
+    <section id="cv">
+        <div class="container">
+            <h1>Currículum</h1>
+            <h2>Formación</h2>
+            <ul>
+                <li>Grado en Diseño Industrial</li>
+                <li>Formación Profesional en Electricidad</li>
+            </ul>
+            <h2>Habilidades</h2>
+            <ul>
+                <li>Diseño de productos</li>
+                <li>Impresión 3D</li>
+                <li>Diseño técnico</li>
             </ul>
         </div>
+    </section>
 
-        <!-- Sección de Portfolio -->
-        <div class="tab-pane" id="portfolio">
-            <h2>Portfolio</h2>
-            <div class="proyectos">
-                <div class="proyecto">
-                    <img src="proyecto1.jpg" alt="Proyecto 1">
-                    <h3>Proyecto 1</h3>
-                    <p>Descripción breve del proyecto.</p>
-                </div>
-                <div class="proyecto">
-                    <img src="proyecto2.jpg" alt="Proyecto 2">
-                    <h3>Proyecto 2</h3>
-                    <p>Descripción breve del proyecto.</p>
-                </div>
-                <!-- Agrega más proyectos aquí -->
+    <input type="radio" name="tabs" id="tab-portfolio">
+    <section id="portfolio">
+        <div class="container">
+            <h1>Portfolio</h1>
+            <div class="grid-3">
+                <article class="case">
+                    <h2>Enclosure eléctrico</h2>
+                    <span>Producto industrial</span>
+                    <p>Diseño y desarrollo orientado a la fabricación industrial.</p>
+                </article>
+                <article class="case">
+                    <h2>Prototipos 3D</h2>
+                    <span>Prototipado</span>
+                    <p>Creación de prototipos funcionales utilizando impresión 3D.</p>
+                </article>
+                <article class="case">
+                    <h2>Optimización de productos</h2>
+                    <span>Ingeniería</span>
+                    <p>Optimización de geometrías para mejorar la eficiencia y la funcionalidad.</p>
+                </article>
             </div>
         </div>
+    </section>
 
-        <!-- Sección de Contacto -->
-        <div class="tab-pane" id="contacto">
-            <h2>Contacto</h2>
-            <form action="mailto:tuemail@dominio.com" method="post" enctype="text/plain">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
+    <input type="radio" name="tabs" id="tab-contact">
+    <section id="contact">
+        <div class="container">
+            <h1>Contacto</h1>
+            <p>📧 luisblascoibanezberbel@gmail.com</p>
+            <p>📞 +34 630 51 18 06</p>
         </div>
-    </div>
+    </section>
+</main>
 
-    <footer>
-        <p>&copy; 2026 [Nombre]. Todos los derechos reservados.</p>
-    </footer>
+<footer>
+    <p>&copy; 2025 Luis Blasco-Ibáñez · Diseñador Industrial</p>
+</footer>
 
 </body>
 </html>
