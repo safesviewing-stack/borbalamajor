@@ -215,7 +215,7 @@ p, li{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 17px;
+  gap: 15px;
 }
 
 .cv-image {
@@ -252,7 +252,7 @@ p, li{
 #cv-skills-title,
 #cv-languages-title {
   margin-top: 40px;
-  margin-bottom: 40px;  /* ⬅️ controla distancia a la imagen */
+  margin-bottom: 15px;  /* ⬅️ controla distancia a la imagen */
   font-size: 20px;
   font-weight: 600;
   color: #555;
