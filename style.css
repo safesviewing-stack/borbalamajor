@@ -333,14 +333,15 @@ footer{
 .about-content {
   display: flex;
   align-items: flex-start;
-  gap:20px;
+  gap: 20px;
 }
 
 .about-image {
   width: auto;
-  max-width:290px;
+  max-width: 230px; /* Hacer la imagen más estrecha */
   height: auto;
-  margin-left:20px;
+  margin-left: auto; /* Esto empuja la imagen hacia la derecha */
+  margin-right: 20px; /* Agregar algo de espacio a la derecha */
   animation: slideInFromRight 1s ease-out forwards;
 }
 
@@ -357,9 +358,9 @@ footer{
 
 /* ================= Estilo de texto en "Sobre mí" ================= */
 #about-text {
-  font-size:14px;
-  line-height:1.65;
-  margin-bottom:30px;
-  max-width:500px;
-  color:#555;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 520px;
+  color: #555;
 }
