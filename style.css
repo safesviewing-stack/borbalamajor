@@ -235,7 +235,7 @@ p, li{
 #cv-title {
   margin-bottom: 70px;
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 300;
   color: #333;
 }
 
@@ -243,8 +243,8 @@ p, li{
 #cv-skills-title,
 #cv-languages-title {
   margin-top: 80px;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 200;
   color: #333;
 }
 
