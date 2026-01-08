@@ -205,13 +205,13 @@ p, li{
 
 /* Estilo para los títulos (h2) dentro del CV */
 #cv-profile-title, #cv-skills-title, #cv-education-title {
-  margin-top: 40px;  /* Espacio superior para separar de los elementos previos */
+  margin-top: 20px;  /* Espacio superior para separar de los elementos previos */
   margin-bottom: 15px;  /* Espacio inferior para separar de los siguientes elementos */
 }
 
 /* Estilo para las listas de habilidades y educación */
 #cv-skills, #cv-education {
-  margin-top: 15px; /* Separación superior de la lista */
+  margin-top: 40px; /* Separación superior de la lista */
   margin-bottom: 30px; /* Separación inferior de la lista */
 }
 
