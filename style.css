@@ -35,7 +35,7 @@ header{
 }
 
 .logo{
-  color:#fff;
+  color:#000;
   font-weight:600;
 }
 
@@ -70,7 +70,9 @@ nav li::after{
   transition:.25s;
 }
 
-nav li:hover::after{width:100%}
+nav li:hover::after {
+  width: 100%; /* Efecto de subrayado al pasar el cursor */
+}
 
 .lang button{
   background:none;
