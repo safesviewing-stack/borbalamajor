@@ -209,108 +209,37 @@ p, li{
 }
 
 /* ================= CV ================= */
-.cv {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 64px;
-  max-height: 900px;
-  overflow: hidden;
-  margin-top: 50px; /* Espacio superior para separar el CV de la sección anterior */
-}
-
-/* Caja de la sección de "Formación y experiencia" */
-#cv-profile-section {
-  margin-top: 30px;  /* Separación superior de la caja */
-  margin-bottom: 30px;  /* Separación inferior de la caja */
-  padding: 20px;  /* Espacio interno de la caja */
-  background-color: #f8f8f8; /* Fondo opcional para la caja */
-  border-radius: 6px;  /* Bordes redondeados */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional */
-}
-
-/* Estilo para el título de la sección "Formación y experiencia" */
-#cv-profile-title {
-  margin-top: 0;  /* Eliminar margen superior */
-  margin-bottom: 15px; /* Separación entre el título y el texto */
-  line-height: 1.6; /* Ajuste de interlineado */
-}
-
-/* Estilo para el texto de "Formación y experiencia" */
-#cv-profile-text {
-  margin-top: 0; /* Eliminar margen superior */
-  margin-bottom: 20px; /* Espacio entre el texto y la siguiente sección */
-  line-height: 1.6; /* Ajuste de interlineado */
-}
-
-/* Caja de la sección de "Habilidades" */
-#cv-skills-section {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: #f8f8f8;
+.cv-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #f8f8f8;
+  padding: 18px;
   border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo para el título de la sección "Habilidades" */
-#cv-skills-title {
-  margin-top: 0;
-  margin-bottom: 15px; /* Separación entre el título y el texto */
-  line-height: 1.6;
-}
-
-/* Estilo para la lista de habilidades */
-#cv-skills {
-  margin-top: 10px;
   margin-bottom: 20px;
-  padding-left: 20px;  /* Espacio a la izquierda de la lista */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-/* Estilo para los elementos de la lista de habilidades */
-.list li {
-  margin-bottom: 6px;
-}
-
-/* Caja de la sección de "Idiomas" */
-#cv-languages-section {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo para el título de la sección "Idiomas" */
-#cv-languages-title {
-  margin-top: 0;
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-/* Estilo para la lista de idiomas */
-#cv-education {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  padding-left: 20px;  /* Espacio a la izquierda de la lista */
-}
-
-/* Estilo para los elementos de la lista de idiomas */
-#cv-education li {
-  margin-bottom: 6px;
-}
-
-/* Estilo para el botón de descarga */
-.download {
-  display: inline-block;
-  margin-top: 28px;
-  padding: 12px 26px;
-  background: #000;
-  color: #fff;
-  font-size: 12px;
-  text-transform: uppercase;
-  text-decoration: none;
+.cv-box img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
   border-radius: 4px;
+}
+
+.cv-box-text h3 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.cv-box-text p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Separación entre secciones */
+.spaced-section {
+  margin-top: 60px;
 }
 /* ================= PORTFOLIO ================= */
 .grid-3{
