@@ -203,36 +203,56 @@ p, li {
 /* ================= CV ================= */
 .cv {
   display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 64px;
-  max-height: 700px;
-  overflow: hidden;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 40px;
 }
 
-.list {
-  list-style: none;
-}
-
-.list li {
-  margin-bottom: 6px;
-}
-
-.cv img {
-  width: 100%;
-  max-width: 360px;
+.cv-section {
+  background-color: #f5e1a4; /* Beige suave */
+  padding: 20px;
   border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.cv-section h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.cv-section p, .cv-section ul {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.cv-section ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.cv-section ul li {
+  margin-bottom: 10px;
+}
+
+/* Estilo del enlace de descarga */
 .download {
   display: inline-block;
   margin-top: 28px;
   padding: 12px 26px;
-  background: #000;
+  background: #d8c7a1; /* Beige oscuro */
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 4px;
+  text-align: center;
+}
+
+.download:hover {
+  background: #bfa280; /* Un tono más oscuro al pasar el ratón */
 }
 
 /* ================= PORTFOLIO ================= */
