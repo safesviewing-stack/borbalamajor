@@ -274,6 +274,16 @@ p, li{
   color: #555;
 }
 
+#cv-profile-title::before,
+#cv-skills-title::before,
+#cv-languages-title::before {
+  content: "•";
+  margin-right: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #555;
+}
+  
   #cv-profile-title {
   margin-top: 40px;
   margin-bottom: 60px;  /* ⬅️ Aumenta el espacio entre el título y la imagen */
@@ -462,7 +472,7 @@ footer{
     <h1 id="cv-title">Currículum Vitae</h1> <!-- Título de la sección con margen aumentado -->
 
     <!-- Formación -->
-   <h2 id="cv-profile-title">• Formación</h2>
+   <h2 id="cv-profile-title">Formación</h2>
 
 <!-- Formación · Bloque 1 -->
 <div class="cv-box-content">
@@ -493,7 +503,7 @@ footer{
 </div>
 
     <!-- Experiencia -->
-    <h2 id="cv-profile-title" class="cv-experience-title">• Experiencia en diseño</h2>
+    <h2 id="cv-profile-title" class="cv-experience-title">Experiencia en diseño</h2>
     <div class="cv-box-content">
       <div class="cv-image-wrapper">
         <img src="profile4.jpg" alt="Profile4" class="cv-image cv-image-small">
@@ -506,7 +516,7 @@ footer{
     </div>
 
     <!-- Habilidades -->
-    <h2 id="cv-skills-title">• Habilidades</h2>
+    <h2 id="cv-skills-title">Habilidades</h2>
     <div class="cv-box-content">
       <div class="cv-text">
         <ul class="list" id="cv-skills">
@@ -523,7 +533,7 @@ footer{
     </div>
 
     <!-- Idiomas -->
-    <h2 id="cv-languages-title">• Idiomas</h2>
+    <h2 id="cv-languages-title">Idiomas</h2>
     <div class="cv-box-content">
       <div class="cv-text">
         <ul class="list" id="cv-education">
@@ -619,9 +629,9 @@ const content={
     aboutTitle:"Sobre mí",
     aboutText:"Soy Borbála, una joven de 23 años de Hungría, graduada de la Universidad Técnica de Budapest (BME) y actualmente buscando oportunidades profesionales en España. Aunque mi formación es más técnica, me apasiona combinar lo artístico y lo técnico. Me considero una persona emotiva, lo que me permite comprender mejor a los usuarios y crear soluciones más empáticas y funcionales. Disfruto trabajar en equipo, ya que valoro la colaboración y el intercambio de ideas. Además, soy muy detallista y creo que la atención a los pequeños aspectos del diseño marca la diferencia. Siempre busco aprender, enfrentar nuevos retos y adaptarme para seguir creciendo profesional y personalmente.",
     cvTitle: "Currículum",
-    cvProfileTitle: "• Formación académica",
+    cvProfileTitle: "Formación académica",
     cvProfileText: "Graduada en Diseño Industrial por la principal Universidad Técnica de Hungría en Budapest (BME), con experiencia en empresa de diseño de mobiliario.",
-    cvSkillsTitle: "• Habilidades",
+    cvSkillsTitle: "Habilidades",
     cvSkills: ["Modelado 3D (Autocad, Blender, Rhino, Solidworks, Inventor, Fusion360)", "Diseño gráfico (Photoshop, Illustrator)", "Diseño técnico", "Procesos de fabricación", "Trabajo multidisciplinario", "Sostenibilidad", "Investigación de mercado", "Técnicas de visualización"],
     cvEducationTitle: "• Idiomas",
     cvEducation: ["Español C1", "Inglés C1", "Húngaro (nativo)"],
