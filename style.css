@@ -321,6 +321,7 @@ footer{
   font-size:11px;
   color:#fff;
   background-color: #eaeceb; /* Rosa suave */
+  margin-top: 60px; /* Aumentado para separar más el footer de la imagen */
 }
 
 /* ================= RESPONSIVE ================= */
@@ -366,7 +367,7 @@ footer{
 #about-text {
   font-size: 14px;
   line-height: 1.6;
-  margin-bottom: 300px;
-  max-width: 520px;
+  margin-bottom: 30px;
+  max-width: 510px;
   color: #555;
 }
