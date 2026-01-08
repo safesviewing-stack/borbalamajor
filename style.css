@@ -216,7 +216,7 @@ p, li{
   align-items: flex-start;
   justify-content: center;
   padding-left: 25px;
-  gap: 10px;
+  gap: 5px;
 }
 
 .cv-image-wrapper {
