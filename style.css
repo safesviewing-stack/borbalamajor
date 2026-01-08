@@ -35,7 +35,7 @@ header{
 }
 
 .logo{
-  color:#000;
+  color:#555;
   font-weight:300;
 }
 
@@ -47,7 +47,7 @@ nav ul{
 }
 
 nav li{
-  color:#000;
+  color:#555;
   font-size:12px;
   letter-spacing:.12em;
   text-transform:uppercase;
@@ -88,7 +88,7 @@ nav li:hover::after {
 
 .lang button.active{
   background:#d2d4d3;
-  color:#fff;
+  color:#555;
 }
 
 /* ================= LAYOUT ================= */
@@ -175,12 +175,12 @@ p, li{
 
 .primary{
   background:#fff;
-  color:#000;
+  color:#555;
 }
 
 .secondary{
   border:1px solid #fff;
-  color:#fff;
+  color:#555;
 }
 
 /* ================= Animación de Fade In + Slide Up ================= */
@@ -321,7 +321,7 @@ footer{
   text-align:center;
   padding:8px;
   font-size:11px;
-  color:#000;
+  color:#555;
   background-color: #eaeceb; /* Rosa suave */
   margin-top: 60px; /* Aumentado para separar más el footer de la imagen */
 }
@@ -367,5 +367,5 @@ footer{
   line-height: 1.6;
   margin-bottom: 30px;
   max-width: 515px;
-  color: #000;
+  color: #555;
 }
