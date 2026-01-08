@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="style.css">
   
 <style>
 /* ================= RESET ================= */
@@ -104,6 +104,7 @@ nav li:hover::after {
   background:#c7c9c8;
   color:#fff;
 }
+
 /* ================= LAYOUT ================= */
 main{
   padding-top:70px;
@@ -123,7 +124,7 @@ section.active{display:block}
   padding:90px 0;
 }
 
-/* ================= TYPO ================= */
+/* ================= TÍTULOS Y TEXTOS ================= */
 h1{
   font-size:30px;
   font-weight:500;
@@ -149,54 +150,7 @@ p, li{
   animation: fadeInSlideUp 1s ease-out forwards;
 }
 
-/* ================= HERO ================= */
-.home{
-  background:url('portada.jpg') center/cover no-repeat;
-}
-
-.hero{
-  min-height:75vh;
-  display:flex;
-  align-items:center;
-}
-
-.hero-box{
-  background:rgba(0,0,0,.75);
-  color:#fff;
-  padding:40px;
-  max-width:560px;
-  opacity:0;
-  transform:translateY(40px);
-  animation: fadeInSlideUp 1s ease-out forwards;
-}
-
-.hero-cta{
-  margin-top:24px;
-  display:flex;
-  gap:16px;
-}
-
-.btn{
-  padding:12px 26px;
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  text-decoration:none;
-  cursor:pointer;
-  border-radius:4px;
-}
-
-.primary{
-  background:#fff;
-  color:#555;
-}
-
-.secondary{
-  border:1px solid #fff;
-  color:#fff;
-}
-
-/* ================= Animación de Fade In + Slide Up ================= */
+/* ================= ANIMACIÓN DE FADE IN + SLIDE UP ================= */
 @keyframes fadeInSlideUp {
   0% {
     opacity: 0;
@@ -208,7 +162,26 @@ p, li{
   }
 }
 
-/* ================= CV ================= */
+/* ================= CURRÍCULUM ================= */
+.cv {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 64px;
+  max-height: 900px;
+  overflow: hidden;
+  margin-top: 50px; /* Espacio superior para separar el CV de la sección anterior */
+}
+
+.cv-section-title {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Separación entre secciones */
+.spaced-section {
+  margin-top: 60px;
+}
+
 .cv-box {
   display: flex;
   align-items: center;
@@ -237,80 +210,37 @@ p, li{
   color: #666;
 }
 
-/* Separación entre secciones */
-.spaced-section {
-  margin-top: 60px;
-}
-/* ================= PORTFOLIO ================= */
-.grid-3{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:32px;
+/* LISTA DE HABILIDADES */
+.cv-list {
+  list-style: disc;
+  padding-left: 20px;
 }
 
-.case{
-  border-top:1px solid #ddd;
-  padding-top:16px;
+.cv-list li {
+  margin-bottom: 8px;
 }
 
-.case span{
-  font-size:12px;
-  color:#666;
+/* ===== IDIOMAS ===== */
+.cv-lang {
+  font-size: 14px;
+  margin-bottom: 6px;
 }
 
-/* ================= FOOTER ================= */
-footer{
-  text-align:center;
-  padding:8px;
-  font-size:11px;
-  color:#555;
-  background-color: #eaeceb; /* Rosa suave */
-  margin-top: 50px; /* Aumentado para separar más el footer de la imagen */
-
+.download {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 12px 26px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
 }
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:900px){
   .cv{grid-template-columns:1fr}
-  .grid-3{grid-template-columns:1fr}
-}
-
-/* ================= Ajuste de imagen en "Sobre mí" ================= */
-.about-content {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.about-image {
-  width: auto;
-  max-width: 290px; /* Aumentado el tamaño máximo de la imagen */
-  height: auto;
-  margin-left: auto; /* Empuja la imagen hacia la derecha */
-  margin-right: 20px; /* Agrega algo de espacio a la derecha */
-  margin-bottom: 70px; /* Espacio adicional abajo */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la imagen */
-  animation: slideInFromRight 1s ease-out forwards;
-}
-
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(40%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* ================= Estilo de texto en "Sobre mí" ================= */
-#about-text {
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  max-width: 515px;
-  color: #555;
 }
 
 </style>
@@ -341,80 +271,75 @@ footer{
 
 <main>
 
-<!-- HOME -->
-<section id="home" class="home active">
-  <div class="container hero">
-    <div class="hero-box">
-      <h1 id="hero-title"></h1>
-      <p id="hero-sub"></p>
-
-      <div class="hero-cta">
-        <a class="btn primary tab" data-tab="cv">Ver CV</a>
-        <a class="btn secondary tab" data-tab="contact">Contactar</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="container spaced">
-    <h1 id="about-title"></h1>
-    
-    <div class="about-content">
-      <p id="about-text">
-        Soy Borbála, una joven de 23 años de Hungría, graduada de la Universidad Técnica de Budapest (BME) y actualmente buscando oportunidades profesionales en España. Aunque mi formación es más técnica, me apasiona combinar lo artístico y lo técnico. Me considero una persona emotiva, lo que me permite comprender mejor a los usuarios y crear soluciones más empáticas y funcionales. Disfruto trabajar en equipo, ya que valoro la colaboración y el intercambio de ideas. Además, soy muy detallista y creo que la atención a los pequeños aspectos del diseño marca la diferencia. Siempre busco aprender, enfrentar nuevos retos y adaptarme para seguir creciendo profesional y personalmente.
-      </p>
-      
-      <img src="profile.jpg" alt="Luis Blasco-Ibáñez Berbel" class="about-image"> 
-    </div>
-  </div>
-</section>
-
-<!-- CV -->
+<!-- CURRÍCULUM -->
 <section id="cv">
   <div class="container spaced">
 
-    <!-- TÍTULO PRINCIPAL (NO SE TOCA) -->
+    <!-- TÍTULO PRINCIPAL -->
     <h1 id="cv-title">Currículum</h1>
 
     <!-- ===== FORMACIÓN ===== -->
     <h2 class="cv-section-title">Formación</h2>
 
-<div class="cv-box">
-  <img src="profile2.jpg" alt="Formación 1">
-  <div class="cv-box-text">
-    <h3>Grado en Diseño Industrial</h3>
-    <p>Universidad Técnica de Budapest (BME)</p>
-  </div>
-</div>
+    <div class="cv-box">
+      <img src="profile2.jpg" alt="Formación 1">
+      <div class="cv-box-text">
+        <h3>Grado en Diseño Industrial</h3>
+        <p>Universidad Técnica de Budapest (BME)</p>
+      </div>
+    </div>
 
-<div class="cv-box">
-  <img src="profile3.jpg" alt="Formación 2">
-  <div class="cv-box-text">
-    <h3>Especialización en Producto</h3>
-    <p>Diseño, desarrollo y prototipado</p>
-  </div>
-</div>
+    <div class="cv-box">
+      <img src="profile3.jpg" alt="Formación 2">
+      <div class="cv-box-text">
+        <h3>Especialización en Diseño de Producto</h3>
+        <p>Desarrollo, prototipado y procesos de fabricación</p>
+      </div>
+    </div>
 
-<div class="cv-box">
-  <img src="profile4.jpg" alt="Formación 3">
-  <div class="cv-box-text">
-    <h3>Impresión 3D</h3>
-    <p>Modelado y fabricación aditiva</p>
-  </div>
-</div>
+    <div class="cv-box">
+      <img src="profile4.jpg" alt="Formación 3">
+      <div class="cv-box-text">
+        <h3>Impresión 3D</h3>
+        <p>Modelado 3D y fabricación aditiva</p>
+      </div>
+    </div>
 
-<!-- ===== EXPERIENCIA ===== -->
-<h2 class="cv-section-title spaced-section">Experiencia</h2>
+    <!-- ===== EXPERIENCIA ===== -->
+    <h2 class="cv-section-title spaced-section">Experiencia</h2>
 
-<div class="cv-box">
-  <img src="profile2.jpg" alt="Experiencia">
-  <div class="cv-box-text">
-    <h3>Diseñadora junior</h3>
-    <p>Empresa de diseño de mobiliario</p>
+    <div class="cv-box">
+      <img src="profile2.jpg" alt="Experiencia">
+      <div class="cv-box-text">
+        <h3>Diseñadora junior</h3>
+        <p>Empresa de diseño de mobiliario</p>
+      </div>
+    </div>
+
+    <!-- ===== HABILIDADES ===== -->
+    <h2 class="cv-section-title spaced-section">Habilidades</h2>
+
+    <ul class="cv-list">
+      <li>Modelado 3D</li>
+      <li>Impresión 3D</li>
+      <li>Diseño técnico</li>
+      <li>Prototipado</li>
+      <li>Trabajo en equipo</li>
+      <li>Creatividad</li>
+      <li>Atención al detalle</li>
+      <li>Adaptabilidad</li>
+    </ul>
+
+    <!-- ===== IDIOMAS ===== -->
+    <h2 class="cv-section-title spaced-section">Idiomas</h2>
+
+    <p class="cv-lang">Inglés C1</p>
+    <p class="cv-lang">Español C1</p>
+    <p class="cv-lang">Húngaro Nativo</p>
+
   </div>
-</div>
+</section>
+
 <!-- PORTFOLIO -->
 <section id="portfolio">
   <div class="container spaced">
@@ -563,6 +488,5 @@ setLang("es");
 document.getElementById("btn-es").onclick=()=>setLang("es");
 document.getElementById("btn-en").onclick=()=>setLang("en");
 </script>
-  
 </body>
 </html>
