@@ -206,12 +206,12 @@ p, li{
 /* Estilo para los títulos (h2) dentro del CV */
 #cv-profile-title, #cv-skills-title, #cv-education-title, #cv-languages-title {
   line-height: 1.5; /* Ajusta el interlineado */
-  margin-top: 40px;  /* Espacio superior para separar de los elementos previos */
+  margin-top: 25px;  /* Espacio superior para separar de los elementos previos */
 }
 
 /* Estilo para las listas de habilidades, formación e idiomas */
 #cv-skills, #cv-education, #cv-languages {
-  margin-top: 40px; /* Separación superior de la lista */
+  margin-top: 25px; /* Separación superior de la lista */
 }
 
 /* Estilo para las listas dentro del CV */
