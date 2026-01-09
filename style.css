@@ -266,7 +266,7 @@ p, li{
 #cv-profile-title,
 #cv-skills-title,
 #cv-languages-title {
-  margin-top: 40px;
+  margin-top: 30px;
   margin-bottom: 15px;  /* ⬅️ controla distancia a la imagen */
   font-size: 20px;
   font-weight: 600;
@@ -332,7 +332,7 @@ p, li{
   font-size: 16px;
   text-transform: uppercase;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 6px;
   transition: background-color 0.3s;
 }
 
