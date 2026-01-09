@@ -444,3 +444,35 @@ footer{
   transform: translateY(40px);
   animation: fadeInSlideUp 1s ease-out forwards;
 }
+
+
+/* ================= BOTÓN DESCARGAR CV ================= */
+
+.cv-download-wrapper {
+  margin-top: 90px;        /* MÁS abajo del bloque */
+  margin-left: 200px;      /* alineado con el texto */
+}
+
+.cv-download-btn {
+  display: inline-block;
+  background-color: #000;  /* fondo negro */
+  color: #fff;             /* texto blanco */
+  padding: 16px 36px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  border-radius: 8px;      /* esquinas redondeadas */
+  transition: background-color 0.3s ease;
+}
+
+.cv-download-btn:hover {
+  background-color: #333;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .cv-download-wrapper {
+    margin-left: 0;
+  }
+}
