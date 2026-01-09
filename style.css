@@ -375,7 +375,7 @@ footer{
 }
 
 .cv-block-image {
-  flex: 0 0 180px;              /* imagen mucho más grande */
+  flex: 0 0 200px;              /* imagen mucho más grande */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -383,7 +383,7 @@ footer{
 
 .cv-block-image img {
   width: 100%;
-  max-width: 180px;
+  max-width: 200px;
   height: auto;
 }
 
