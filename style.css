@@ -443,7 +443,7 @@ footer{
 
 .cv-block-image img {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateX(40px);
   animation: fadeInSlideUp 1s ease-out forwards;
 }
 
