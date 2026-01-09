@@ -255,7 +255,12 @@ p, li{
 }
 
 .cv-image-small { 
-  width: 65%; }
+  width: 65%; 
+}
+
+.cv-image-right {
+  margin-left: 10px;
+}
 
 /* Imagen más pequeña para profile2 y profile3 */
 .small-images .cv-image {
