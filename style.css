@@ -99,6 +99,18 @@ main{
   flex-grow: 1;
 }
 
+section {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Mostrar sección activa */
+section.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 
 .container{
   width:90%;
