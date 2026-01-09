@@ -99,8 +99,6 @@ main{
   flex-grow: 1;
 }
 
-section{display:none}
-section.active{display:block}
 
 .container{
   width:90%;
