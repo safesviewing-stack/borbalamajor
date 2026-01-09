@@ -532,6 +532,7 @@ footer{
 /* CONTENIDO (AQUÍ VA LO QUE PREGUNTABAS 👇) */
 .portfolio-content {
   padding: 20px 24px 28px;
+   padding-left: 16px;
 }
 
 /* TEXTO */
