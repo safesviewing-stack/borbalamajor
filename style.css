@@ -396,3 +396,22 @@ footer{
   max-width: 490px;
   color: #555;
 }
+
+
+section {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0s 0.5s; /* Transición suave */
+}
+
+/* Mostrar la sección activa con animación */
+section.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease;
+}
+
+/* Animación de las imágenes cuando la sección CV es visible */
+#cv.active .cv-image {
+  animation: fadeInSlideLeft 1s ease-out forwards;
+}
