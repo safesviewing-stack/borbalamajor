@@ -577,3 +577,28 @@ footer{
     grid-template-columns: 1fr;
   }
 }
+
+/* === Animación base portfolio === */
+@keyframes portfolioFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.portfolio-item {
+  opacity: 0;
+  animation: portfolioFadeUp 0.8s ease forwards;
+}
+
+/* Delay progresivo */
+.portfolio-item:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-item:nth-child(2) { animation-delay: 0.25s; }
+.portfolio-item:nth-child(3) { animation-delay: 0.4s; }
+.portfolio-item:nth-child(4) { animation-delay: 0.55s; }
+.portfolio-item:nth-child(5) { animation-delay: 0.7s; }
+.portfolio-item:nth-child(6) { animation-delay: 0.85s; }
