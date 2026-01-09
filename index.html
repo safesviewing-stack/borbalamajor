@@ -209,95 +209,92 @@ p, li{
 }
 
 /* ================= CV ================= */
+#cv-title {
+  margin-bottom: 100px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
 #cv-profile-title {
   margin-top: 40px;
-  margin-bottom: 60px; /* Espacio hasta la imagen */
+  margin-bottom: 60px;
   font-size: 20px;
   font-weight: 600;
-  color: #555;
 }
 
-/* Títulos de "Habilidades" e "Idiomas" (listas) */
 #cv-skills-title,
 #cv-languages-title {
-  margin-top: 8px;   /* Menos espacio con lo de arriba */
-  margin-bottom: 6px; /* Menos espacio con el texto inferior */
+  margin-top: 8px;
+  margin-bottom: 6px;
   font-size: 20px;
   font-weight: 600;
-  color: #555;
 }
 
-#cv-title { 
-  margin-bottom: 100px; 
-  font-size: 30px; 
-  font-weight: 500; 
-  color: #555; 
+/* Punto decorativo */
+#cv-profile-title::before,
+#cv-skills-title::before,
+#cv-languages-title::before {
+  content: "•";
+  margin-right: 10px;
+  font-size: 22px;
+  font-weight: 600;
 }
 
-/* ================= CV BOX CONTENT ================= */
-
-/* Bloque con imagen y texto */
+/* ================= CV BOX ================= */
 .cv-box-content {
   display: flex;
   margin-bottom: 80px;
 }
 
-/* Separación extra entre bloques consecutivos */
 .cv-box-content + .cv-box-content {
   margin-top: 50px;
 }
 
-/* Columna izquierda (imágenes) */
+/* Columna imágenes */
 .cv-image-wrapper {
   width: 35%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alineación a la izquierda */
+  align-items: flex-start;
   justify-content: center;
   padding-left: 40px;
-  gap: 5px; /* Espacio reducido entre imágenes */
+  gap: 5px;
 }
 
-#cv .cv-image {
-  opacity: 0;
-  transform: translateX(-40px);
+.cv-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background-color: transparent;
 }
 
-/* Animación SOLO cuando CV está activo */
-#cv.active .cv-image {
-  animation: fadeInSlideLeft 0.9s ease-out forwards;
+.cv-image-small {
+  width: 65%;
 }
 
-.cv-image-small { 
-  width: 65%; 
+.small-images .cv-image {
+  width: 70%;
 }
 
 .cv-image-right {
   margin-left: 10px;
 }
 
-/* Imagen más pequeña para profile2 y profile3 */
-.small-images .cv-image {
-  width: 70%;
-}
-
-/* Columna derecha (texto centrado verticalmente) */
+/* Texto CV */
 .cv-text {
   width: 65%;
   padding: 32px;
   line-height: 1.5;
   display: flex;
-  align-items: center; /* Centrado vertical */
+  align-items: center;
 }
 
 /* ================= LISTAS ================= */
-
-/* Estilo común para las listas de habilidades e idiomas */
 #cv-skills,
 #cv-education {
-  list-style-type: none;
-  margin-top: 0;        /* No espacio extra arriba */
-  margin-bottom: 20px;  /* Distancia controlada al final */
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 20px;
   padding-left: 20px;
 }
 
@@ -305,11 +302,9 @@ p, li{
 #cv-education li {
   margin-bottom: 12px;
   font-size: 14px;
-  color: #555;
 }
 
 /* ================= BOTÓN ================= */
-
 .download {
   display: inline-block;
   margin-top: 20px;
@@ -320,11 +315,6 @@ p, li{
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 6px;
-  transition: background-color 0.3s;
-}
-
-.download:hover {
-  background-color: #444;
 }
 /* ================= PORTFOLIO ================= */
 .grid-3{
