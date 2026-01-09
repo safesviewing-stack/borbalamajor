@@ -563,9 +563,10 @@ footer{
 
 .portfolio-item img {
   width: 100%;
-  height: auto;
-  margin-bottom: 16px;
-  border-radius: 4px;
+  height: 220;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border-radius: 6px;
 }
 
 .portfolio-item h2 {
