@@ -451,15 +451,15 @@ footer{
 /* ================= BOTÓN DESCARGAR CV ================= */
 
 .cv-download-wrapper {
-  margin-top: 105px;        /* MÁS abajo del bloque */
+  margin-top: 115px;        /* MÁS abajo del bloque */
 }
 
 .cv-download-btn {
   display: inline-block;
   background-color: #000;  /* fondo negro */
   color: #fff;             /* texto blanco */
-  padding: 14px 34px;
-  font-size: 13px;
+  padding: 12px 30px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-decoration: none;
