@@ -206,11 +206,11 @@ li {
 /* ================= CV BOX ================= */
 .cv-box-content {
   display: flex;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 }
 
 .cv-box-content + .cv-box-content {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 /* Columna imágenes */
