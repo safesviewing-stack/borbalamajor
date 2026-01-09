@@ -509,8 +509,9 @@ footer{
 
 .portfolio-item img {
   width: 100%;
-  height: auto;
-  margin-bottom: 18px;
+  height: 240px;
+  object-fit: cover;
+  display: block;
 }
 
 .portfolio-item h2 {
@@ -551,8 +552,8 @@ footer{
 
 .portfolio-item {
   background: #eaeceb;
-  padding: 24px;
-  border-radius: 8px;
+  border-radius: 12px;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
