@@ -1,14 +1,14 @@
 /* ================= RESET ================= */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:"Poppins",sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-body{
-  background:#ffffff;
-  color:#333;
+body {
+  background: #ffffff;
+  color: #555;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -16,287 +16,248 @@ body{
 
 /* ================= HEADER ================= */
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   height: 70px;
-  background: #eaeceb; /* Rosa suave */
+  background: #eaeceb;
   z-index: 100;
-  transition: top 0.3s ease-in-out; /* Para animar el movimiento hacia arriba */
 }
 
-.nav{
-  max-width:1200px;
-  width:90%;
-  height:100%;
-  margin:auto;
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  align-items:center;
+.nav {
+  max-width: 1200px;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
 }
 
-.logo{
-  color:#555;
-  font-weight:300;
+.logo {
+  font-weight: 300;
   font-size: 14px;
+  color: #555;
 }
 
-nav ul{
-  display:flex;
-  justify-content:center;
-  gap:36px;
-  list-style:none;
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  list-style: none;
 }
 
-nav li{
-  color:#555;
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  cursor:pointer;
-  position:relative;
+nav li {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  color: #555;
 }
 
-nav li.active{
-  font-weight:700;
+nav li.active {
+  font-weight: 700;
 }
 
-nav li::after{
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0;
-  height:1px;
-  background:#000;
-  transition:.25s;
+nav li::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: 0.25s;
 }
 
 nav li:hover::after {
-  width: 100%; /* Efecto de subrayado al pasar el cursor */
+  width: 100%;
 }
 
-.lang button{
-  background:none;
-  border:1px solid #babdbc;
-  color:#c7c9c8;
-  font-size:11px;
-  padding:4px 10px;
-  margin-left:6px;
-  cursor:pointer;
-  border-radius:4px;
-  transition: background-color 0.3s;
+.lang button {
+  background: none;
+  border: 1px solid #babdbc;
+  color: #babdbc;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.lang button.active{
-  background:#babdbc;
-  color:#fff;
+.lang button.active {
+  background: #babdbc;
+  color: #fff;
 }
 
 /* ================= LAYOUT ================= */
-main{
-  padding-top:70px;
+main {
+  padding-top: 70px;
   flex-grow: 1;
 }
 
 section {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
 }
 
-/* Mostrar sección activa */
 section.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+  display: block;
 }
 
-.container{
-  width:90%;
-  max-width:960px;
-  margin:auto;
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
 }
 
-.spaced{
-  padding:90px 0;
+.spaced {
+  padding: 90px 0;
 }
 
 /* ================= TYPO ================= */
-h1{
-  font-size:30px;
-  font-weight:500;
-  margin-bottom:28px;
+h1 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 28px;
   opacity: 0;
   transform: translateY(40px);
   animation: fadeInSlideUp 1s ease-out forwards;
 }
 
-h2{
-  font-size:16px;
-  margin-bottom:10px;
+h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
   opacity: 0;
   transform: translateY(40px);
   animation: fadeInSlideUp 1s ease-out forwards;
 }
 
-p, li{
-  font-size:15px;
-  line-height:1.6;
+p,
+li {
+  font-size: 15px;
+  line-height: 1.5;
   opacity: 0;
   transform: translateY(40px);
   animation: fadeInSlideUp 1s ease-out forwards;
 }
 
-/* ================= HERO ================= */
-.home{
-  background:url('portada.jpg') center/cover no-repeat;
-}
-
-.hero{
-  min-height:75vh;
-  display:flex;
-  align-items:center;
-}
-
-.hero-box{
-  background:rgba(0,0,0,.75);
-  color:#fff;
-  padding:40px;
-  max-width:560px;
-  opacity:0;
-  transform:translateY(40px);
-  animation: fadeInSlideUp 1s ease-out forwards;
-}
-
-.hero-cta{
-  margin-top:24px;
-  display:flex;
-  gap:16px;
-}
-
-.btn{
-  padding:12px 26px;
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  text-decoration:none;
-  cursor:pointer;
-  border-radius:4px;
-}
-
-.primary{
-  background:#fff;
-  color:#555;
-}
-
-.secondary{
-  border:1px solid #fff;
-  color:#555;
-}
-
-/* ================= Animación de Fade In + Slide Up ================= */
+/* ================= ANIMACIÓN GENERAL ================= */
 @keyframes fadeInSlideUp {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(40px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* ================= HERO ================= */
+.home {
+  background: url("portada.jpg") center / cover no-repeat;
+}
+
+.hero {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-box {
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 40px;
+  max-width: 560px;
+}
+
 /* ================= CV ================= */
+#cv-title {
+  margin-bottom: 100px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
 #cv-profile-title {
   margin-top: 40px;
-  margin-bottom: 60px; /* Espacio hasta la imagen */
+  margin-bottom: 60px;
   font-size: 20px;
   font-weight: 600;
-  color: #555;
 }
 
-/* Títulos de "Habilidades" e "Idiomas" (listas) */
 #cv-skills-title,
 #cv-languages-title {
-  margin-top: 8px;   /* Menos espacio con lo de arriba */
-  margin-bottom: 6px; /* Menos espacio con el texto inferior */
+  margin-top: 8px;
+  margin-bottom: 6px;
   font-size: 20px;
   font-weight: 600;
-  color: #555;
 }
 
-#cv-title { 
-  margin-bottom: 100px; 
-  font-size: 30px; 
-  font-weight: 500; 
-  color: #555; 
+/* Punto decorativo */
+#cv-profile-title::before,
+#cv-skills-title::before,
+#cv-languages-title::before {
+  content: "•";
+  margin-right: 10px;
+  font-size: 22px;
+  font-weight: 600;
 }
 
-/* ================= CV BOX CONTENT ================= */
-
-/* Bloque con imagen y texto */
+/* ================= CV BOX ================= */
 .cv-box-content {
   display: flex;
   margin-bottom: 80px;
 }
 
-/* Separación extra entre bloques consecutivos */
 .cv-box-content + .cv-box-content {
   margin-top: 50px;
 }
 
-/* Columna izquierda (imágenes) */
+/* Columna imágenes */
 .cv-image-wrapper {
   width: 35%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alineación a la izquierda */
+  align-items: flex-start;
   justify-content: center;
   padding-left: 40px;
-  gap: 5px; /* Espacio reducido entre imágenes */
+  gap: 5px;
 }
 
-#cv .cv-image {
-  opacity: 0;
-  transform: translateX(-40px);
+.cv-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background-color: transparent;
 }
 
-/* Animación SOLO cuando CV está activo */
-#cv.active .cv-image {
-  animation: fadeInSlideLeft 0.9s ease-out forwards;
+.cv-image-small {
+  width: 65%;
 }
 
-.cv-image-small { 
-  width: 65%; 
+.small-images .cv-image {
+  width: 70%;
 }
 
 .cv-image-right {
   margin-left: 10px;
 }
 
-/* Imagen más pequeña para profile2 y profile3 */
-.small-images .cv-image {
-  width: 70%;
-}
-
-/* Columna derecha (texto centrado verticalmente) */
+/* Texto CV */
 .cv-text {
   width: 65%;
   padding: 32px;
   line-height: 1.5;
   display: flex;
-  align-items: center; /* Centrado vertical */
+  align-items: center;
 }
 
 /* ================= LISTAS ================= */
-
-/* Estilo común para las listas de habilidades e idiomas */
 #cv-skills,
 #cv-education {
-  list-style-type: none;
-  margin-top: 0;        /* No espacio extra arriba */
-  margin-bottom: 20px;  /* Distancia controlada al final */
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 20px;
   padding-left: 20px;
 }
 
@@ -304,11 +265,9 @@ p, li{
 #cv-education li {
   margin-bottom: 12px;
   font-size: 14px;
-  color: #555;
 }
 
 /* ================= BOTÓN ================= */
-
 .download {
   display: inline-block;
   margin-top: 20px;
@@ -319,46 +278,26 @@ p, li{
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 6px;
-  transition: background-color 0.3s;
 }
 
-.download:hover {
-  background-color: #444;
-}
 /* ================= PORTFOLIO ================= */
-.grid-3{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:32px;
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
 
-.case{
-  border-top:1px solid #ddd;
-  padding-top:16px;
+.case {
+  border-top: 1px solid #ddd;
+  padding-top: 16px;
 }
 
-.case span{
-  font-size:12px;
-  color:#666;
+.case span {
+  font-size: 12px;
+  color: #666;
 }
 
-/* ================= FOOTER ================= */
-footer{
-  text-align:center;
-  padding:8px;
-  font-size:11px;
-  color:#555;
-  background-color: #eaeceb; /* Rosa suave */
-  margin-top: 50px; /* Aumentado para separar más el footer de la imagen */
-}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:900px){
-  .cv{grid-template-columns:1fr}
-  .grid-3{grid-template-columns:1fr}
-}
-
-/* ================= Ajuste de imagen en "Sobre mí" ================= */
+/* ================= ABOUT ================= */
 .about-content {
   display: flex;
   align-items: flex-start;
@@ -366,62 +305,34 @@ footer{
 }
 
 .about-image {
-  width: auto;
-  max-width: 290px; /* Aumentado el tamaño máximo de la imagen */
-  height: auto;
-  margin-left: auto; /* Empuja la imagen hacia la derecha */
-  margin-right: 20px; /* Agrega algo de espacio a la derecha */
-  margin-bottom: 70px; /* Espacio adicional abajo */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la imagen */
-  animation: slideInFromRight 1s ease-out forwards;
+  max-width: 290px;
+  margin-left: auto;
+  margin-bottom: 70px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(40%);
-    opacity: 0;
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 8px;
+  font-size: 11px;
+  background-color: #eaeceb;
+  margin-top: 50px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .cv-box-content {
+    flex-direction: column;
   }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
+
+  .cv-image-wrapper,
+  .cv-text {
+    width: 100%;
+    padding-left: 0;
   }
-}
 
-@keyframes fadeInSlideLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-40px);
+  .grid-3 {
+    grid-template-columns: 1fr;
   }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* ================= Estilo de texto en "Sobre mí" ================= */
-#about-text {
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 30px;
-  max-width: 490px;
-  color: #555;
-}
-
-
-section {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0s 0.5s; /* Transición suave */
-}
-
-/* Mostrar la sección activa con animación */
-section.active {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.5s ease;
-}
-
-/* Animación de las imágenes cuando la sección CV es visible */
-#cv.active .cv-image {
-  animation: fadeInSlideLeft 1s ease-out forwards;
 }
