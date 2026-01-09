@@ -119,56 +119,11 @@ h1 {
   font-size: 30px;
   font-weight: 500;
   margin-bottom: 28px;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeInSlideUp 1s ease-out forwards;
 }
 
 h2 {
   font-size: 16px;
   margin-bottom: 10px;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeInSlideUp 1s ease-out forwards;
-}
-
-p,
-li {
-  font-size: 15px;
-  line-height: 1.5;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeInSlideUp 1s ease-out forwards;
-}
-
-/* ================= ANIMACIÓN GENERAL ================= */
-@keyframes fadeInSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ================= HERO ================= */
-.home {
-  background: url("portada.jpg") center / cover no-repeat;
-}
-
-.hero {
-  min-height: 75vh;
-  display: flex;
-  align-items: center;
-}
-
-.hero-box {
-  background: rgba(0, 0, 0, 0.75);
-  color: #fff;
-  padding: 40px;
-  max-width: 560px;
 }
 
 /* ================= CV ================= */
@@ -281,6 +236,13 @@ li {
 }
 
 /* ================= PORTFOLIO ================= */
+#portfolio-title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #555;
+}
+
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
