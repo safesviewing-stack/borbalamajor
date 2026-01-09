@@ -239,7 +239,7 @@ p, li{
 .cv-text {
   width: 65%;
   padding: 32px;
-  line-height: 1.7;
+  line-height: 1.5;
 
   display: flex;
   align-items: center;   /* ⬅️ centra el texto verticalmente */
