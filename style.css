@@ -510,7 +510,7 @@ footer{
 
 /* CAJA */
 .portfolio-item {
-  background: #eaeceb;
+  background: #ffffff;
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
