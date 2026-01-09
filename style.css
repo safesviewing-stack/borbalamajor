@@ -443,8 +443,15 @@ footer{
 
 .cv-block-image img {
   opacity: 0;
-  transform: translateX(40px);
-  animation: fadeInSlideUp 1s ease-out forwards;
+  transform: translateX(-40px);
+  animation: fadeInFromLeft 1s ease-out forwards;
+}
+
+@keyframes fadeInFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 
