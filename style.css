@@ -389,12 +389,12 @@ footer{
 
 .cv-block-text {
   flex: 1;
-  max-width: 520px;             /* evita textos demasiado largos */
+  max-width: 600px;             /* evita textos demasiado largos */
 }
 
 .cv-block-text h2 {
   margin-bottom: 14px;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .cv-block-text p {
