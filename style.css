@@ -423,3 +423,15 @@ footer{
     max-width: 100%;
   }
 }
+
+.cv-main-title {
+  font-size: 36px;
+  margin-bottom: 72px;
+}
+
+/* Títulos de sección */
+.cv-section-title {
+  font-size: 22px;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
