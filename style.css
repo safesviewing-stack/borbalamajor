@@ -371,3 +371,60 @@ footer{
   max-width: 515px;
   color: #555;
 }
+
+
+/* ================= CV VERTICAL ================= */
+
+.cv-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.cv-block {
+  display: flex;
+  align-items: center; /* centra verticalmente texto respecto a la imagen */
+  gap: 32px;
+}
+
+.cv-block-image {
+  flex: 0 0 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cv-block-image img {
+  width: 100%;
+  max-width: 80px;
+  height: auto;
+}
+
+.cv-block-content {
+  flex: 1;
+}
+
+.cv-block-content h2 {
+  margin-bottom: 8px;
+}
+
+.cv-block-content ul {
+  padding-left: 18px;
+}
+
+.cv-block-content li {
+  margin-bottom: 6px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 700px) {
+  .cv-block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cv-block-image {
+    flex: none;
+  }
+}
