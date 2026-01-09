@@ -372,26 +372,14 @@ footer{
   color: #555;
 }
 
-.cv-left, .cv-right {
+.cv-right {
   display: flex;
-  flex-direction: column;
-  gap: 36px;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.cv-block {
-  background: #f8f8f8;
-  padding: 22px;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-}
-
-.cv-item-title {
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-
-.cv-item-sub {
-  font-size: 13px;
-  color: #777;
-  margin-bottom: 10px;
+@media (max-width: 900px) {
+  .cv-right {
+    margin-top: 40px;
+  }
 }
