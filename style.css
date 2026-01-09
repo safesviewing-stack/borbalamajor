@@ -396,8 +396,8 @@ footer{
 /* ================= Estilo de texto en "Sobre mí" ================= */
 #about-text {
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.5;
   margin-bottom: 30px;
-  max-width: 515px;
+  max-width: 490px;
   color: #555;
 }
