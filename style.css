@@ -206,7 +206,7 @@ li {
 /* ================= CV BOX ================= */
 .cv-box-content {
   display: flex;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .cv-box-content + .cv-box-content {
