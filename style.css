@@ -367,20 +367,15 @@ footer{
 
 /* ================= CV VERTICAL ================= */
 
-.cv-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-
 .cv-block {
   display: flex;
-  align-items: center; /* centra verticalmente texto respecto a la imagen */
-  gap: 32px;
+  align-items: center;          /* centra verticalmente */
+  gap: 56px;                    /* MÁS separación imagen-texto */
+  margin-top: 64px;             /* MÁS espacio entre bloques */
 }
 
 .cv-block-image {
-  flex: 0 0 96px;
+  flex: 0 0 180px;              /* imagen mucho más grande */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -388,24 +383,27 @@ footer{
 
 .cv-block-image img {
   width: 100%;
-  max-width: 80px;
+  max-width: 180px;
   height: auto;
 }
 
-.cv-block-content {
+.cv-block-text {
   flex: 1;
+  max-width: 520px;             /* evita textos demasiado largos */
 }
 
-.cv-block-content h2 {
-  margin-bottom: 8px;
+.cv-block-text h2 {
+  margin-bottom: 14px;
 }
 
-.cv-block-content ul {
-  padding-left: 18px;
+.cv-block-text p {
+  margin-top: 8px;
+  line-height: 1.8;             /* más aire vertical */
 }
 
-.cv-block-content li {
-  margin-bottom: 6px;
+/* Espacio grande entre secciones */
+.cv-section-separator {
+  height: 120px;                /* separación clara entre Formación / Experiencia */
 }
 
 /* ================= RESPONSIVE ================= */
@@ -414,44 +412,14 @@ footer{
   .cv-block {
     flex-direction: column;
     align-items: flex-start;
+    gap: 24px;
   }
 
   .cv-block-image {
     flex: none;
   }
-}
 
-.cv-block {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  margin-top: 40px;
-}
-
-.cv-block-image {
-  flex: 0 0 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cv-block-image img {
-  width: 100%;
-  max-width: 120px;
-  height: auto;
-}
-
-.cv-block-text {
-  flex: 1;
-}
-
-.cv-section-separator {
-  height: 90px;
-}
-
-@media (max-width: 700px) {
-  .cv-block {
-    flex-direction: column;
-    align-items: flex-start;
+  .cv-block-text {
+    max-width: 100%;
   }
 }
