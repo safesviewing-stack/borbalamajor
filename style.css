@@ -209,7 +209,7 @@ p, li{
 /* Títulos de "Habilidades" e "Idiomas" (listas) */
 #cv-skills-title,
 #cv-languages-title {
-  margin-top: 20px;   /* Menos espacio con lo de arriba */
+  margin-top: 8px;   /* Menos espacio con lo de arriba */
   margin-bottom: 6px; /* Menos espacio con el texto inferior */
   font-size: 20px;
   font-weight: 600;
