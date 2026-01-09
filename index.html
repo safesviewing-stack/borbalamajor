@@ -209,6 +209,38 @@ p, li{
 }
 
 /* ================= CV ================= */
+#cv-profile-title {
+  margin-top: 40px;
+  margin-bottom: 60px; /* Espacio hasta la imagen */
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Títulos de "Habilidades" e "Idiomas" (listas) */
+#cv-skills-title,
+#cv-languages-title {
+  margin-top: 20px;   /* Menos espacio con lo de arriba */
+  margin-bottom: 6px; /* Menos espacio con el texto inferior */
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Punto decorativo en los títulos */
+#cv-profile-title::before,
+#cv-skills-title::before,
+#cv-languages-title::before {
+  content: "•";
+  margin-right: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* ================= CV BOX CONTENT ================= */
+
+/* Bloque con imagen y texto */
 .cv-box-content {
   display: flex;
   margin-bottom: 80px;
@@ -224,10 +256,10 @@ p, li{
   width: 35%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; /* Alineación a la izquierda */
   justify-content: center;
   padding-left: 40px;
-  gap: 5px;
+  gap: 5px; /* Espacio reducido entre imágenes */
 }
 
 .cv-image {
@@ -237,12 +269,9 @@ p, li{
   background-color: transparent;
 }
 
-.cv-image-small {
-  width: 75%;
-}
-  
+/* Imagen más pequeña para profile2 y profile3 */
 .small-images .cv-image {
-  width: 70%; /* reduce profile2 y profile3 */
+  width: 70%;
 }
 
 /* Columna derecha (texto centrado verticalmente) */
@@ -250,81 +279,21 @@ p, li{
   width: 65%;
   padding: 32px;
   line-height: 1.5;
-
   display: flex;
-  align-items: center;   /* ⬅️ centra el texto verticalmente */
-}
-
-/* ================= TÍTULOS ================= */
-
-#cv-title {
-  margin-bottom: 120px;
-  font-size: 30px;
-  font-weight: 500;
-  color: #555;
-}
-
-#cv-skills-title,
-#cv-languages-title {
-  margin-top: 30px;   /* Menos espacio arriba del título */
-  margin-bottom: 5px; /* Menos espacio entre el título y el texto */
-  font-size: 24px;
-  font-weight: 600;
-  color: #555;
-}
-  
-#cv-profile-title,
-#cv-skills-title,
-#cv-languages-title {
-  margin-top: 30px;
-  margin-bottom: 15px;  /* ⬅️ controla distancia a la imagen */
-  font-size: 20px;
-  font-weight: 600;
-  color: #555;
-}
-
-#cv-profile-title::before,
-#cv-skills-title::before,
-#cv-languages-title::before {
-  content: "•";
-  margin-right: 10px;
-  font-size: 22px;
-  font-weight: 600;
-  color: #555;
-}
-  
-  #cv-profile-title {
-  margin-top: 40px;
-  margin-bottom: 50px;  /* ⬅️ Aumenta el espacio entre el título y la imagen */
-  font-size: 20px;
-  font-weight: 600;
-  color: #555;
-}
-  .cv-experience-title {
-  margin-bottom: 70px;
-}
-
-/* ================= TEXTO ================= */
-
-#cv-profile-text {
-  margin: 0;
-  font-size: 14px;
-  color: #444;
+  align-items: center; /* Centrado vertical */
 }
 
 /* ================= LISTAS ================= */
 
+/* Estilo común para las listas de habilidades e idiomas */
 #cv-skills,
 #cv-education {
   list-style-type: none;
+  margin-top: 0;        /* No espacio extra arriba */
+  margin-bottom: 20px;  /* Distancia controlada al final */
+  padding-left: 20px;
 }
 
-#cv-education {
-  margin-bottom: 20px;
-  padding-left: 20px;
-  list-style-type: none;
-}
-  
 #cv-skills li,
 #cv-education li {
   margin-bottom: 12px;
