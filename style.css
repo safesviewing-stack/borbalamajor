@@ -398,7 +398,8 @@ footer{
 
 .cv-block-text p {
   margin-top: 8px;
-  line-height: 1.8;             /* más aire vertical */
+  font-size: 14px;
+  line-height: 1.5;             /* más aire vertical */
 }
 
 /* Espacio grande entre secciones */
