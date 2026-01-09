@@ -247,14 +247,14 @@ p, li{
   gap: 5px; /* Espacio reducido entre imágenes */
 }
 
-.cv-image {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  background-color: transparent;
+#cv .cv-image {
   opacity: 0;
   transform: translateX(-40px);
-  animation: fadeInSlideLeft 1s ease-out forwards;
+}
+
+/* Animación SOLO cuando CV está activo */
+#cv.active .cv-image {
+  animation: fadeInSlideLeft 0.9s ease-out forwards;
 }
 
 .cv-image-small { 
