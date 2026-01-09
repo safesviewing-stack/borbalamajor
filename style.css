@@ -395,7 +395,6 @@ footer{
 
 .cv-block-text h2 {
   margin-bottom: 14px;
-  font-size: 22px;
   font-weight: 700;
 }
 
@@ -431,12 +430,13 @@ footer{
 .cv-main-title {
   font-size: 30px;
   margin-bottom: 100px;
+  font-weight: 300;
 }
 
 /* Títulos de sección */
 .cv-section-title {
-  font-size: 24px;
-  font-weight: 300; 
+  font-size: 22px;
+  font-weight: 200; 
   margin-bottom: 20px;
   margin-top: 0;
 }
