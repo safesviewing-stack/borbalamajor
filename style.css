@@ -335,7 +335,7 @@ footer{
 
 .about-image {
   width: auto;
-  max-width: 290px; /* Aumentado el tamaño máximo de la imagen */
+  max-width: 280px; /* Aumentado el tamaño máximo de la imagen */
   height: auto;
   margin-left: auto; /* Empuja la imagen hacia la derecha */
   margin-right: 20px; /* Agrega algo de espacio a la derecha */
