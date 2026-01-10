@@ -520,12 +520,12 @@ footer{
   background: #ffffff;
   border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.portfolio-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+.portfolio-link:hover .portfolio-item {
+  transform: scale(1.05);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.12);
 }
 
 /* IMAGEN */
@@ -563,6 +563,13 @@ footer{
   font-size: 14px;
   line-height: 1.5;
   color: #555;
+}
+
+.portfolio-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
 }
 
 /* RESPONSIVE */
