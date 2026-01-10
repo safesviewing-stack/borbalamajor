@@ -495,17 +495,11 @@ footer{
 
 /* ================= PORTFOLIO ================= */
 
+/* ================= PORTFOLIO ================= */
+
 #portfolio-title {
   font-weight: 300;
   margin-bottom: 40px;
-}
-
-.portfolio-intro {
-  max-width: 520px;
-  font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 80px;
-  color: #555;
 }
 
 /* GRID */
@@ -520,9 +514,15 @@ footer{
   background: #ffffff;
   border-radius: 10px;
   overflow: hidden;
+
+  /* estado inicial */
   opacity: 0;
-  transform: translateY(50px) scale(0.96);
-  will-change: transform, opacity;
+  transform: translateY(40px);
+
+  /* animación */
+  animation: portfolioSlideUp 0.8s ease forwards;
+
+  /* hover */
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -539,11 +539,9 @@ footer{
   display: block;
 }
 
-/* CONTENIDO (AQUÍ VA LO QUE PREGUNTABAS 👇) */
+/* CONTENIDO */
 .portfolio-content {
   padding: 20px 24px 28px;
-  padding-left: 16px;
-  padding-bottom: 8px;
 }
 
 /* TEXTO */
@@ -559,21 +557,38 @@ footer{
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #999;
-  margin-bottom: 12px;
 }
 
-.portfolio-item p {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #555;
-}
-
+/* LINKS */
 .portfolio-link {
   text-decoration: none;
   color: inherit;
   display: block;
-  cursor: pointer;
 }
+
+/* ================= ANIMACIÓN ================= */
+
+@keyframes portfolioSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= ORDEN DOMINÓ ================= */
+/* 0.5s entre cada caja */
+
+.portfolio-item:nth-of-type(1) { animation-delay: 0.2s; }
+.portfolio-item:nth-of-type(2) { animation-delay: 0.7s; }
+.portfolio-item:nth-of-type(3) { animation-delay: 1.2s; }
+.portfolio-item:nth-of-type(4) { animation-delay: 1.7s; }
+.portfolio-item:nth-of-type(5) { animation-delay: 2.2s; }
+.portfolio-item:nth-of-type(6) { animation-delay: 2.7s; }
+.portfolio-item:nth-of-type(7) { animation-delay: 3.2s; }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
@@ -612,34 +627,3 @@ footer{
 .cv-block:nth-of-type(2) { animation-delay: 0.3s; }
 .cv-block:nth-of-type(3) { animation-delay: 0.5s; }
 .cv-block:nth-of-type(4) { animation-delay: 0.7s; }
-
-/* === Animación portfolio premium === */
-@keyframes portfolioReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(50px) scale(0.96);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-4px) scale(1.01);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-
-
-section#portfolio.active .portfolio-item {
-  animation: portfolioReveal 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Delay progresivo */
-.portfolio-link:nth-child(1) .portfolio-item { animation-delay: 0.3s; }
-.portfolio-link:nth-child(2) .portfolio-item { animation-delay: 0.9s; }
-.portfolio-link:nth-child(3) .portfolio-item { animation-delay: 1.5s; }
-.portfolio-link:nth-child(4) .portfolio-item { animation-delay: 2.1s; }
-.portfolio-link:nth-child(5) .portfolio-item { animation-delay: 2.7s; }
-.portfolio-link:nth-child(6) .portfolio-item { animation-delay: 3.3s; }
-.portfolio-link:nth-child(7) .portfolio-item { animation-delay: 3.9s; }
