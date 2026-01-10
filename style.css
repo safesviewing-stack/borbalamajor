@@ -636,21 +636,21 @@ footer{
 .cv-block:nth-of-type(4) { animation-delay: 0.7s; }
 
 
-/* ===== PORTFOLIO ZOOM ON HOVER ===== */
+/* ===== PORTFOLIO FRAME GROW ON HOVER ===== */
+
+.portfolio-link{
+  display: block;
+}
 
 .portfolio-item{
   position: relative;
-  overflow: hidden; /* Recorta la imagen al hacer zoom */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-origin: center bottom; /* Crece hacia arriba y lados */
 }
 
-.portfolio-item img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-/* Zoom al pasar el ratón */
-.portfolio-link:hover .portfolio-item img{
-  transform: scale(1.1);
+/* El marco crece */
+.portfolio-link:hover .portfolio-item{
+  transform: scale(1.08);
+  z-index: 2;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
