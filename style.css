@@ -586,34 +586,7 @@ footer{
   }
 }
 
-/* === Animación base portfolio === */
-@keyframes portfolioFadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-.portfolio-item {
-  opacity: 0;
-}
-
-section#portfolio.active .portfolio-item {
-  animation: portfolioFadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Delay progresivo */
-.portfolio-link:nth-child(1) .portfolio-item { animation-delay: 0.2s; }
-.portfolio-link:nth-child(2) .portfolio-item { animation-delay: 0.6s; }
-.portfolio-link:nth-child(3) .portfolio-item { animation-delay: 1s; }
-.portfolio-link:nth-child(4) .portfolio-item { animation-delay: 1.4s; }
-.portfolio-link:nth-child(5) .portfolio-item { animation-delay: 1.8s; }
-.portfolio-link:nth-child(6) .portfolio-item { animation-delay: 2.2s; }
-.portfolio-link:nth-child(7) .portfolio-item { animation-delay: 2.6s; }
 /* ================= ANIMACIÓN CV HORIZONTAL ================= */
 
 @keyframes cvSlideIn {
@@ -637,3 +610,38 @@ section#portfolio.active .portfolio-item {
 .cv-block:nth-of-type(2) { animation-delay: 0.3s; }
 .cv-block:nth-of-type(3) { animation-delay: 0.5s; }
 .cv-block:nth-of-type(4) { animation-delay: 0.7s; }
+
+/* === Animación portfolio premium === */
+@keyframes portfolioReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.96);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.portfolio-item {
+  opacity: 0;
+  transform: translateY(50px) scale(0.96);
+  will-change: transform, opacity;
+}
+
+section#portfolio.active .portfolio-item {
+  animation: portfolioReveal 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Delay progresivo */
+.portfolio-link:nth-child(1) .portfolio-item { animation-delay: 0.2s; }
+.portfolio-link:nth-child(2) .portfolio-item { animation-delay: 0.6s; }
+.portfolio-link:nth-child(3) .portfolio-item { animation-delay: 1s; }
+.portfolio-link:nth-child(4) .portfolio-item { animation-delay: 1.4s; }
+.portfolio-link:nth-child(5) .portfolio-item { animation-delay: 1.8s; }
+.portfolio-link:nth-child(6) .portfolio-item { animation-delay: 2.2s; }
+.portfolio-link:nth-child(7) .portfolio-item { animation-delay: 2.6s; }
