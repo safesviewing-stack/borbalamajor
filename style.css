@@ -528,6 +528,20 @@ footer{
   box-shadow: 0 14px 32px rgba(0,0,0,0.12);
 }
 
+.portfolio-link {
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.portfolio-link:hover {
+  transform: scale(1.05);
+}
+
+/* Sombra sigue en el item */
+.portfolio-link:hover .portfolio-item {
+  box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+}
+
 /* IMAGEN */
 .portfolio-item img {
   width: 100%;
