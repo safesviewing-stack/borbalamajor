@@ -360,7 +360,7 @@ footer{
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 50px;
-  max-width: 550px;
+  max-width: 580px;
   color: #555;
   text-align: justify;
 }
@@ -520,6 +520,7 @@ footer{
   background: #ffffff;
   border-radius: 10px;
   overflow: hidden;
+  transform-origin: top center;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
