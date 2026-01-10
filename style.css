@@ -524,7 +524,7 @@ footer{
 }
 
 .portfolio-link:hover .portfolio-item {
-  transform: scale(1.15);
+  transform: scale(1.6);
   box-shadow: 0 14px 32px rgba(0,0,0,0.12);
 }
 
