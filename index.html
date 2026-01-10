@@ -110,8 +110,17 @@ main{
   flex-grow: 1;
 }
 
-section{display:none}
-section.active{display:block}
+section {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+section.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
 
 .container{
   width:90%;
