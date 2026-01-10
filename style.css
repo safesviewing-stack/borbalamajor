@@ -520,7 +520,9 @@ footer{
   background: #ffffff;
   border-radius: 10px;
   overflow: hidden;
-  transform-origin: top center;
+  opacity: 0;
+  transform: translateY(50px) scale(0.96);
+  will-change: transform, opacity;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -627,21 +629,17 @@ footer{
   }
 }
 
-.portfolio-item {
-  opacity: 0;
-  transform: translateY(50px) scale(0.96);
-  will-change: transform, opacity;
-}
+
 
 section#portfolio.active .portfolio-item {
   animation: portfolioReveal 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 /* Delay progresivo */
-.portfolio-link:nth-child(1) .portfolio-item { animation-delay: 0.2s; }
-.portfolio-link:nth-child(2) .portfolio-item { animation-delay: 0.6s; }
-.portfolio-link:nth-child(3) .portfolio-item { animation-delay: 1s; }
-.portfolio-link:nth-child(4) .portfolio-item { animation-delay: 1.4s; }
-.portfolio-link:nth-child(5) .portfolio-item { animation-delay: 1.8s; }
-.portfolio-link:nth-child(6) .portfolio-item { animation-delay: 2.2s; }
-.portfolio-link:nth-child(7) .portfolio-item { animation-delay: 2.6s; }
+.portfolio-link:nth-child(1) .portfolio-item { animation-delay: 0.3s; }
+.portfolio-link:nth-child(2) .portfolio-item { animation-delay: 0.9s; }
+.portfolio-link:nth-child(3) .portfolio-item { animation-delay: 1.5s; }
+.portfolio-link:nth-child(4) .portfolio-item { animation-delay: 2.1s; }
+.portfolio-link:nth-child(5) .portfolio-item { animation-delay: 2.7s; }
+.portfolio-link:nth-child(6) .portfolio-item { animation-delay: 3.3s; }
+.portfolio-link:nth-child(7) .portfolio-item { animation-delay: 3.9s; }
