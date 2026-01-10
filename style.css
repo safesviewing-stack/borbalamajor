@@ -611,7 +611,10 @@ footer{
 
 .portfolio-item {
   opacity: 0;
-  
+}
+
+section#portfolio.active .portfolio-item {
+  animation: portfolioFadeUp 0.8s ease forwards;
 }
 
 /* Delay progresivo */
