@@ -636,21 +636,3 @@ footer{
 .cv-block:nth-of-type(4) { animation-delay: 0.7s; }
 
 
-/* ===== PORTFOLIO FRAME GROW ON HOVER ===== */
-
-.portfolio-link{
-  display: block;
-}
-
-.portfolio-item{
-  position: relative;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  transform-origin: center bottom; /* Crece hacia arriba y lados */
-}
-
-/* El marco crece */
-.portfolio-link:hover .portfolio-item{
-  transform: scale(1.08);
-  z-index: 2;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-}
