@@ -611,10 +611,11 @@ footer{
 
 .portfolio-item {
   opacity: 0;
+   transform: translateY(40px);
 }
 
 section#portfolio.active .portfolio-item {
-  animation: portfolioFadeUp 0.8s ease forwards;
+  animation: portfolioFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 /* Delay progresivo */
@@ -625,7 +626,6 @@ section#portfolio.active .portfolio-item {
 .portfolio-link:nth-child(5) .portfolio-item { animation-delay: 1.1s; }
 .portfolio-link:nth-child(6) .portfolio-item { animation-delay: 1.35s; }
 .portfolio-link:nth-child(7) .portfolio-item { animation-delay: 1.6s; }
-
 /* ================= ANIMACIÓN CV HORIZONTAL ================= */
 
 @keyframes cvSlideIn {
