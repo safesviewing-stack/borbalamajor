@@ -515,6 +515,12 @@ footer{
   gap: 48px;
 }
 
+.portfolio-link{
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 /* CAJA */
 .portfolio-item {
   background: #ffffff;
