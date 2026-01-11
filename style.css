@@ -720,28 +720,8 @@ li {
     imageReveal 1.2s ease-out forwards,
     floatSoft 7s ease-in-out infinite;
 
-  animation-delay: var(--delay, 0s);
 }
 
-.home-bg img:nth-child(1) {
-  --offset: -30px;
-  --delay: 0.2s;
-}
-
-.home-bg img:nth-child(2) {
-  --offset: 10px;
-  --delay: 0.4s;
-}
-
-.home-bg img:nth-child(3) {
-  --offset: -10px;
-  --delay: 0.6s;
-}
-
-.home-bg img:nth-child(4) {
-  --offset: 25px;
-  --delay: 0.8s;
-}
 
 /* Hero por encima */
 .hero {
@@ -841,17 +821,4 @@ body:has(#home.active) footer {
   bottom: 0;
   left: 0;
   width: 100%;
-}
-
-@keyframes imageReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-    filter: blur(4px);
-  }
-  100% {
-    opacity: 0.3;
-    transform: translateY(var(--offset));
-    filter: blur(0);
-  }
 }
