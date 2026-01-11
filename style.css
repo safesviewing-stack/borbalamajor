@@ -139,9 +139,7 @@ p, li{
 }
 
 /* ================= HERO ================= */
-.home{
-  background:url('portada.jpg') center/cover no-repeat;
-}
+
 
 .hero{
   min-height:75vh;
@@ -690,52 +688,45 @@ li {
 
 .home {
   position: relative;
+  min-height: 100vh;
   overflow: hidden;
 }
 
-/* Contenedor de las 4 imágenes */
+/* Grid de fondo */
 .home-bg {
+  position: absolute;
+  inset: 0;
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 24px;
   padding: 40px;
-  justify-content: center;
+  z-index: 1;
 }
 
-/* Imágenes del inicio */
+/* Imágenes de fondo */
 .home-bg img {
-  width: 160px;
-  height: 160px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 
-  opacity: 0.35;
   filter: grayscale(100%);
-  border-radius: 14px;
+  opacity: 0.35;
 
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
-  transition: opacity 0.4s ease, filter 0.4s ease;
+  border-radius: 16px;
 }
 
-/* Hover sutil */
-.home-bg img:hover {
-  opacity: 0.6;
-  filter: grayscale(0%);
-}
-
-/* Hero por encima */
-.hero {
-  position: relative;
+/* Oscurecer fondo para legibilidad */
+.home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
   z-index: 2;
 }
 
-/* Responsive */
-@media (max-width: 800px) {
-  .home-bg {
-    grid-template-columns: repeat(2, auto);
-  }
-
-  .home-bg img {
-    width: 140px;
-    height: 140px;
-  }
+/* Hero por encima del fondo */
+.hero {
+  position: relative;
+  z-index: 3;
 }
