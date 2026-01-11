@@ -124,19 +124,27 @@ main{
   flex-grow: 1;
 }
 
+/* Por defecto solo se ve HOME */
 section {
-  position: absolute;
-  inset: 70px 0 0 0;   /* deja espacio para el header */
   display: none;
-  overflow: auto;     /* scroll interno SOLO si hace falta */
 }
 
+#home {
+  display: block;
+}
+
+/* Cuando una sección es objetivo, se muestra */
 section:target {
   display: block;
 }
 
-/* HOME visible por defecto */
-section#home {
+/* Cuando NO estamos en home, ocultamos home */
+section:target ~ #home {
+  display: none;
+}
+
+/* EXCEPCIÓN: si el target ES home */
+#home:target {
   display: block;
 }
 
