@@ -725,14 +725,39 @@ li {
   z-index: 3;
 }
 
-html,
-body {
-  height: 100%;
-  overflow: hidden; /* 👈 bloquea el scroll */
-}
+
 
 
 #home {
   padding: 0 !important;
   margin: 0 !important;
+}
+
+/* ================= RESET TOTAL SOLO PARA INICIO ================= */
+
+#home.active {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+
+/* Quitar padding superior heredado del main */
+#home.active .hero {
+  min-height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* El contenedor no añade margen vertical en inicio */
+#home.active .container {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Evitar espacios por textos */
+#home.active h1,
+#home.active p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
