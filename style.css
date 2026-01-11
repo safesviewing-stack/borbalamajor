@@ -813,3 +813,10 @@ body:has(#home.active) {
   --offset: 25px;
   animation-delay: 4.5s;
 }
+
+body:has(#home.active) footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
