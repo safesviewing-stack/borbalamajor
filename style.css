@@ -346,7 +346,7 @@ footer{
 
 @keyframes slideInFromRight {
   0% {
-    transform: translateX(30%);
+    transform: translateX(40%);
     opacity: 0;
   }
   100% {
@@ -666,9 +666,12 @@ li {
 
 /* Sobre mí */
 #about-title,
-#about-text,
-.about-image {
+#about-text, {
   animation-duration: 0.5s !important;
+}
+
+.about-image {
+  animation-duration: 0.65s;
 }
 
 /* Portfolio */
