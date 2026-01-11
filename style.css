@@ -692,25 +692,28 @@ li {
   overflow: hidden;
 }
 
-/* Grid de fondo */
+/* Contenedor del fondo */
+.home-bg {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 40px;
+  z-index: 1;
+  align-items: center;
+}
+
+/* Imágenes de fondo */
 .home-bg img {
-  width: 70%;
-  height: 70%;              /* 👈 más pequeñas */
+  width: 100%;
+  height: 70%;              /* 👈 AQUÍ se hacen más pequeñas */
   object-fit: cover;
 
   filter: grayscale(100%);
   opacity: 0.35;
 
   border-radius: 0;         /* 👈 sin bordes redondeados */
-}
-
-/* Imágenes de fondo */
-.home-bg img {
-  width: 70%;
-  height: 70%;
-  object-fit: cover;
-  filter: grayscale(100%);
-  opacity: 0.35;
 }
 
 /* Oscurecer fondo para legibilidad */
@@ -722,7 +725,7 @@ li {
   z-index: 2;
 }
 
-/* Hero por encima del fondo */
+/* Hero por encima */
 .hero {
   position: relative;
   z-index: 3;
