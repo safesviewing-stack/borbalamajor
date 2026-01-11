@@ -694,15 +694,14 @@ li {
 }
 
 /* Contenedor del fondo */
-.home-bg {
-  position: absolute;
-  inset: 0;
+.home-bg{
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  height: 100vh;
   gap: 20px;
   padding: 40px;
-  z-index: 1;
 }
 
 /* Imágenes */
@@ -742,3 +741,27 @@ li {
   object-position: center top;
   height: 80%;
 }
+
+.home-bg img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  animation: float 6s ease-in-out infinite;
+
+  /* EFECTO FLOTANTE */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+  transform: translateY(0);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.home-bg img:nth-child(1){ animation-delay: 0s; }
+.home-bg img:nth-child(2){ animation-delay: 1.5s; }
+.home-bg img:nth-child(3){ animation-delay: 3s; }
+.home-bg img:nth-child(4){ animation-delay: 4.5s; }
