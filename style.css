@@ -405,12 +405,12 @@ footer {
 
 .cv-block-text {
   flex: 1;
-  max-width: 700px;             /* evita textos demasiado largos */
+  max-width: 750px;             /* evita textos demasiado largos */
 }
 
 .cv-block-text h2 {
   margin-bottom: 14px;
-  font-weight: 700;
+  font-weight: 750;
 }
 
 .cv-block-text p {
