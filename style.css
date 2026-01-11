@@ -765,3 +765,7 @@ li {
 body:has(#home.active) {
   overflow: hidden;
 }
+
+#home.active .hero-box {
+  margin-left: 80px; /* 👈 ajusta este valor a tu gusto */
+}
