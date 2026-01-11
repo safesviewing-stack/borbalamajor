@@ -309,13 +309,13 @@ p, li{
 }
 
 /* ================= FOOTER ================= */
-footer{
-  text-align:center;
-  padding:8px;
-  font-size:11px;
-  color:#555;
-  background-color: #eaeceb; /* Rosa suave */
-  margin-top: 0px; /* Aumentado para separar más el footer de la imagen */
+footer {
+  text-align: center;
+  padding: 8px;
+  font-size: 11px;
+  color: #555;
+  background-color: #eaeceb;
+  margin-top: 0;          /* 👈 ELIMINADO */
 }
 
 /* ================= RESPONSIVE ================= */
@@ -723,4 +723,10 @@ li {
 .hero {
   position: relative;
   z-index: 3;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden; /* 👈 bloquea el scroll */
 }
