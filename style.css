@@ -690,6 +690,8 @@ li {
   position: relative;
   height: calc(100vh - 70px); /* resta el header */
   overflow: hidden;
+  background: #ffffff; /* 👈 fondo blanco real */
+
 }
 
 /* Contenedor del fondo */
@@ -707,23 +709,15 @@ li {
 /* Imágenes de fondo */
 .home-bg img {
   width: 100%;
-  height: 70%;              /* 👈 AQUÍ se hacen más pequeñas */
+  height: 70%;
   object-fit: cover;
 
-  filter: grayscale(100%);
-  opacity: 0.35;
+  opacity: 0.6;          /* 👈 ahora se ven mejor */
+  filter: grayscale(0%); /* 👈 color real */
 
-  border-radius: 0;         /* 👈 sin bordes redondeados */
+  border-radius: 0;
 }
 
-/* Oscurecer fondo para legibilidad */
-.home::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 2;
-}
 
 /* Hero por encima */
 .hero {
