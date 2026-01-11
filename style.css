@@ -706,7 +706,7 @@ li {
 .home-bg img {
   position: absolute;
   width: 180px;
-  opacity: 0;
+  opacity: 0.25;
   animation: homeImageFade 0.8s ease forwards,
              homeImageFloat 8s ease-in-out infinite;
 }
@@ -746,4 +746,14 @@ li {
 .hero-box {
   position: relative;
   z-index: 2;
+}
+
+/* Portada como overlay */
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('portada.jpg') center/cover no-repeat;
+  opacity: 0.9;              /* ajusta si quieres */
+  z-index: 0;
 }
