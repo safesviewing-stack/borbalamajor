@@ -858,7 +858,7 @@ body:has(#home.active) footer {
     enterFromTop 1.2s ease-out forwards,
     floatSoft 7s ease-in-out infinite;
 
-  animation-delay: 0.7s, 1.9s;
+  animation-delay: 0.6s, 1.8s;
 }
 
 /* FOTO 2 */
@@ -869,7 +869,7 @@ body:has(#home.active) footer {
     enterFromBottom 1.2s ease-out forwards,
     floatSoft 7s ease-in-out infinite;
 
-  animation-delay: 0.85s, 2.05s;
+  animation-delay: 0.75s, 1.95s;
 }
 
 /* FOTO 3 */
@@ -880,7 +880,7 @@ body:has(#home.active) footer {
     enterFromTop 1.2s ease-out forwards,
     floatSoft 7s ease-in-out infinite;
 
-  animation-delay: 1s, 2.2s;
+  animation-delay: 0.9s, 2.1s;
 }
 
 /* FOTO 4 */
@@ -891,5 +891,5 @@ body:has(#home.active) footer {
     enterFromBottom 1.2s ease-out forwards,
     floatSoft 7s ease-in-out infinite;
 
-  animation-delay: 1.15s, 2.35s;
+  animation-delay: 1.05s, 2.25s;
 }
