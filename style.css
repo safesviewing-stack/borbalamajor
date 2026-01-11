@@ -708,8 +708,8 @@ li {
 
 /* Imágenes de fondo */
 .home-bg img {
-  width: 100%;
-  height: 70%;
+  width: 90%;
+  height: 80%;
   object-fit: cover;
 
   opacity: 0.3;          /* 👈 ahora se ven mejor */
