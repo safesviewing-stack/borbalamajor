@@ -112,8 +112,18 @@ main{
   flex-grow: 1;
 }
 
-section{display:none}
-section.active{display:block}
+section {
+  display: none;
+}
+
+section:target {
+  display: block;
+}
+
+/* HOME por defecto */
+section#home {
+  display: block;
+}
 
 .container{
   width:90%;
