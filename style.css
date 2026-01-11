@@ -16,12 +16,12 @@ body{
 
 /* ================= HEADER ================= */
 header {
-  position: sticky;
+  position: relative;
   top: 0;
   width: 100%;
   height: 70px;
   background: #eaeceb; /* Rosa suave */
-  z-index: 100;
+  z-index: 9999;
   transition: top 0.3s ease-in-out; /* Para animar el movimiento hacia arriba */
 }
 
@@ -715,6 +715,7 @@ li {
   padding: 40px;
   z-index: 1;
   align-items: center;
+  pointer-events: none;
 }
 
 /* Imágenes de fondo */
