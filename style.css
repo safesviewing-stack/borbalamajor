@@ -940,8 +940,3 @@ header {
   position: relative;
   z-index: 10000 !important;
 }
-
-#home,
-#home *:not(header):not(header *) {
-  pointer-events: none;
-}
