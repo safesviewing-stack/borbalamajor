@@ -932,3 +932,8 @@ header {
   pointer-events: none;
 }
 
+/* Reactivamos solo la caja negra */
+.hero-box,
+.hero-box * {
+  pointer-events: auto;
+}
