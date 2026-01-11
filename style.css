@@ -687,73 +687,58 @@ li {
   animation-duration: 0.5s !important;
 }
 
-/* ================= HOME DECORATIVE BACKGROUND ================= */
+/* ================= HOME DECORATIVE BACKGROUND (FIXED) ================= */
 
 .home {
   position: relative;
   overflow: hidden;
 }
 
-/* Contenedor de imágenes */
-.home-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none; /* no bloquea clics */
-}
-
-/* Estilo base de las imágenes */
-.home-bg img {
-  position: absolute;
-  width: 180px;
-  opacity: 0.25;
-  animation: homeImageFade 0.8s ease forwards,
-             homeImageFloat 8s ease-in-out infinite;
-}
-
-/* Posiciones (ajústalas si quieres) */
-.home-bg img:nth-child(1) { top: 10%; left: 5%; animation-delay: 0.1s; }
-.home-bg img:nth-child(2) { top: 20%; right: 8%; animation-delay: 0.2s; }
-.home-bg img:nth-child(3) { bottom: 15%; left: 10%; animation-delay: 0.3s; }
-.home-bg img:nth-child(4) { bottom: 20%; right: 12%; animation-delay: 0.4s; }
-
-.home-bg img:nth-child(5) { top: 35%; left: 30%; animation-delay: 0.5s; }
-.home-bg img:nth-child(6) { top: 45%; right: 30%; animation-delay: 0.6s; }
-.home-bg img:nth-child(7) { bottom: 30%; left: 45%; animation-delay: 0.7s; }
-.home-bg img:nth-child(8) { bottom: 40%; right: 45%; animation-delay: 0.8s; }
-
-/* Animación de entrada */
-@keyframes homeImageFade {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 0.25;
-    transform: scale(1);
-  }
-}
-
-/* Animación flotante */
-@keyframes homeImageFloat {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
-}
-
-/* Asegurar que el contenido va por delante */
-.hero,
-.hero-box {
-  position: relative;
-  z-index: 2;
-}
-
-/* Portada como overlay */
+/* Fondo portada */
 .home::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('portada.jpg') center/cover no-repeat;
-  opacity: 0.9;              /* ajusta si quieres */
+  background: url('portada.jpg') center / cover no-repeat;
   z-index: 0;
+}
+
+/* Contenedor imágenes */
+.home-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Imágenes decorativas (SIN opacity 0) */
+.home-bg img {
+  position: absolute;
+  width: 160px;
+  opacity: 0.25;              /* 👈 CLAVE */
+  animation: homeFloat 10s ease-in-out infinite;
+}
+
+/* Posiciones */
+.home-bg img:nth-child(1) { top: 8%; left: 6%; }
+.home-bg img:nth-child(2) { top: 18%; right: 10%; }
+.home-bg img:nth-child(3) { bottom: 12%; left: 12%; }
+.home-bg img:nth-child(4) { bottom: 20%; right: 14%; }
+.home-bg img:nth-child(5) { top: 35%; left: 30%; }
+.home-bg img:nth-child(6) { top: 45%; right: 30%; }
+.home-bg img:nth-child(7) { bottom: 30%; left: 45%; }
+.home-bg img:nth-child(8) { bottom: 40%; right: 45%; }
+
+/* Animación simple y segura */
+@keyframes homeFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Hero por delante */
+.hero,
+.hero-box {
+  position: relative;
+  z-index: 2;
 }
