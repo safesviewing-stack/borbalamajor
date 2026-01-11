@@ -241,7 +241,7 @@ p, li{
 
 .cv-block-text {
   flex: 1;
-  max-width: 900px; /* ⬅️ aumenta un poco más */
+  max-width: 1000px; /* ⬅️ aumenta un poco más */
 }
 /* Caja de la sección de "Habilidades" */
 #cv-skills-section {
