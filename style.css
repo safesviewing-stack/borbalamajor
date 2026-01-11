@@ -767,7 +767,7 @@ body:has(#home.active) {
 }
 
 #home.active .hero-box {
-  margin-left: 240px; /* 👈 ajusta este valor a tu gusto */
+  margin-left: 250px; /* 👈 ajusta este valor a tu gusto */
 }
 
 .home-bg img:nth-child(1) {
