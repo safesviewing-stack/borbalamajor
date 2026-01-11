@@ -103,7 +103,7 @@ nav li:hover::after {
 /* Idioma activo */
 .lang button.active {
   background: #333;      /* combina con el texto de la web */
-  border-color: #fff;
+  border-color: #c7c9c8;
   color: #fff;
 }
 /* ================= LAYOUT ================= */
