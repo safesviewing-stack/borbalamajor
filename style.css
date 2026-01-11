@@ -697,22 +697,24 @@ li {
 .home-bg{
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* UNA FILA */
-  height: auto;
+  grid-template-columns: repeat(4, 1fr); /* una fila */
   gap: 24px;
   padding: 40px;
-  justify-content: center;
-  align-items: center;
+  justify-items: center;
 }
 
+
 /* Imágenes */
-.home-bg img {
-  width: 100%;
-  height: 100%;
+.home-bg img{
+  width: 160px;
+  height: 160px;
   object-fit: cover;
+
   opacity: 0.35;
   filter: grayscale(100%);
-  transition: all 0.6s ease;
+  border-radius: 14px;
+
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
 }
 
 /* Variación visual (aspecto artístico) */
@@ -749,14 +751,10 @@ li {
 
   box-shadow: 0 20px 40px rgba(0,0,0,0.18);
 
-  animation: float 6s ease-in-out infinite;
   transition: box-shadow 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
 }
 
-@keyframes float {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+
 }
 
 .home-bg img:nth-child(1){ animation-delay: 0s; }
