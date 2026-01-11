@@ -855,7 +855,7 @@ body:has(#home.active) footer {
   --offset: -30px;
 
   animation:
-    enterFromTop 1.2s ease-out forwards,
+    enterFromTop 1.3s ease-out forwards,
     floatSoft 7s ease-in-out infinite;
 
   animation-delay: 0s, 1.2s;
