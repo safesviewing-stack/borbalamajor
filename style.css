@@ -769,3 +769,19 @@ body:has(#home.active) {
 #home.active .hero-box {
   margin-left: 220px; /* 👈 ajusta este valor a tu gusto */
 }
+
+.home-bg img:nth-child(1) {
+  transform: translateY(-30px);
+}
+
+.home-bg img:nth-child(2) {
+  transform: translateY(10px);
+}
+
+.home-bg img:nth-child(3) {
+  transform: translateY(-10px);
+}
+
+.home-bg img:nth-child(4) {
+  transform: translateY(25px);
+}
