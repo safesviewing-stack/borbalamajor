@@ -405,12 +405,12 @@ footer {
 
 .cv-block-text {
   flex: 1;
-  max-width: 750px;             /* evita textos demasiado largos */
+  max-width: 780px;             /* evita textos demasiado largos */
 }
 
 .cv-block-text h2 {
   margin-bottom: 14px;
-  font-weight: 750;
+  font-weight: 780;
 }
 
 .cv-block-text p {
@@ -426,7 +426,7 @@ footer {
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 700px) {
+@media (max-width: 780px) {
   .cv-block {
     flex-direction: column;
     align-items: flex-start;
