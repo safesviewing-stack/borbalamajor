@@ -735,12 +735,7 @@ li {
 
 /* ================= RESET TOTAL SOLO PARA INICIO ================= */
 
-#home.active {
-  margin: 0 !important;
-  padding: 0 !important;
-  height: calc(100vh - 70px);
-  overflow: hidden;
-}
+
 
 /* Quitar padding superior heredado del main */
 #home.active .hero {
@@ -760,4 +755,13 @@ li {
 #home.active p {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+#home.active {
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+
+body:has(#home.active) {
+  overflow: hidden;
 }
