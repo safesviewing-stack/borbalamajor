@@ -736,3 +736,9 @@ li {
   z-index: 2;
 }
 
+.home-bg img:nth-child(2),
+.home-bg img:nth-child(3){
+  object-fit: cover;
+  object-position: center top;
+  height: 80%;
+}
