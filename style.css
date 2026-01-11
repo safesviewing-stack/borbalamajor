@@ -76,21 +76,15 @@ nav li:hover::after {
   width: 100%; /* Efecto de subrayado al pasar el cursor */
 }
 
-.lang button{
-  background:none;
-  border:1px solid #c7c9c8;
-  color:#c7c9c8;
-  font-size:11px;
-  padding:4px 10px;
-  margin-left:6px;
-  cursor:pointer;
-  border-radius:4px;
-  transition: background-color 0.3s;
+.lang button {
+  border-radius: 20px;
+  padding: 4px 12px;
 }
 
-.lang button.active{
-  background:#c7c9c8;
-  color:#fff;
+.lang button.active {
+  background: #000;
+  color: #fff;
+  border-color: #000;
 }
 
 /* ================= LAYOUT ================= */
