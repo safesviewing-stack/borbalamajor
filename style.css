@@ -739,10 +739,10 @@ li {
 .home-gallery{
   width:90%;
   max-width:1200px;
-  margin:90px auto;
+  margin:60px auto;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:28px;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:18px;
 }
 
 .home-gallery img{
