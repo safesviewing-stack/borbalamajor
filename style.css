@@ -748,6 +748,8 @@ li {
 
   animation: float 6s ease-in-out infinite;
   transition: box-shadow 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
+
+  transform: scale(0.85); /* 👈 ESTO ES LA CLAVE */
 }
 
 @keyframes float {
