@@ -736,19 +736,3 @@ li {
   z-index: 2;
 }
 
-.home-gallery{
-  width:90%;
-  max-width:1200px;
-  margin:60px auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fill, 150px);
-  justify-content:center;
-  gap:18px;
-}
-
-.home-gallery img{
-  width:150px;
-  height:150px;
-  object-fit:cover;
-  border-radius:10px;
-}
