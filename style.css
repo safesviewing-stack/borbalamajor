@@ -82,6 +82,12 @@ nav li:hover::after {
   width: 100%; /* Efecto de subrayado al pasar el cursor */
 }
 
+nav a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
 .lang {
   display: flex;
   position: relative;
