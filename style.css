@@ -14,6 +14,12 @@ body{
   min-height: 100vh;
 }
 
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
 /* ================= HEADER ================= */
 header {
   position: relative;
@@ -113,14 +119,17 @@ main{
 }
 
 section {
+  position: absolute;
+  inset: 70px 0 0 0;   /* deja espacio para el header */
   display: none;
+  overflow: auto;     /* scroll interno SOLO si hace falta */
 }
 
 section:target {
   display: block;
 }
 
-/* HOME por defecto */
+/* HOME visible por defecto */
 section#home {
   display: block;
 }
