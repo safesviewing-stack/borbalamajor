@@ -928,6 +928,12 @@ header {
 }
 
 #home,
-#home *:not(header):not(header *) {
+#home * {
   pointer-events: none;
+}
+
+/* 👇 reactivamos SOLO la caja negra y sus botones */
+.hero-box,
+.hero-box * {
+  pointer-events: auto;
 }
