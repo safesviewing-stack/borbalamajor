@@ -712,14 +712,10 @@ li {
   height: 80%;
   object-fit: cover;
 
-  opacity: 0.3;
-  filter: grayscale(0%);
+  opacity: 0; /* empiezan invisibles */
   border-radius: 0;
 
-  animation:
-    imageReveal 1.2s ease-out forwards,
-    floatSoft 7s ease-in-out infinite;
-
+  animation-fill-mode: forwards;
 }
 
 
@@ -821,4 +817,79 @@ body:has(#home.active) footer {
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+/* Entrada desde arriba */
+@keyframes enterFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateY(var(--offset));
+  }
+}
+
+/* Entrada desde abajo */
+@keyframes enterFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateY(var(--offset));
+  }
+}
+
+/* Flotación suave */
+@keyframes floatSoft {
+  0%   { transform: translateY(var(--offset)); }
+  50%  { transform: translateY(calc(var(--offset) - 12px)); }
+  100% { transform: translateY(var(--offset)); }
+}
+
+/* FOTO 1 — entra desde arriba */
+.home-bg img:nth-child(1) {
+  --offset: -30px;
+
+  animation:
+    enterFromTop 1.2s ease-out forwards,
+    floatSoft 7s ease-in-out infinite;
+
+  animation-delay: 0s, 1.2s;
+}
+
+/* FOTO 2 — entra desde abajo */
+.home-bg img:nth-child(2) {
+  --offset: 15px;
+
+  animation:
+    enterFromBottom 1.2s ease-out forwards,
+    floatSoft 7s ease-in-out infinite;
+
+  animation-delay: 0.15s, 1.35s;
+}
+
+/* FOTO 3 — entra desde arriba */
+.home-bg img:nth-child(3) {
+  --offset: -10px;
+
+  animation:
+    enterFromTop 1.2s ease-out forwards,
+    floatSoft 7s ease-in-out infinite;
+
+  animation-delay: 0.3s, 1.5s;
+}
+
+/* FOTO 4 — entra desde abajo */
+.home-bg img:nth-child(4) {
+  --offset: 25px;
+
+  animation:
+    enterFromBottom 1.2s ease-out forwards,
+    floatSoft 7s ease-in-out infinite;
+
+  animation-delay: 0.45s, 1.65s;
 }
