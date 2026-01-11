@@ -741,13 +741,14 @@ li {
   max-width:1200px;
   margin:60px auto;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  grid-template-columns:repeat(auto-fill, 150px);
+  justify-content:center;
   gap:18px;
 }
 
 .home-gallery img{
-  width:100%;
-  aspect-ratio:4/3;
+  width:150px;
+  height:150px;
   object-fit:cover;
   border-radius:10px;
 }
