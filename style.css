@@ -695,9 +695,8 @@ li {
 
 /* Contenedor del fondo */
 .home-bg{
-  position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* una fila */
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   padding: 40px;
   justify-items: center;
@@ -709,11 +708,9 @@ li {
   width: 160px;
   height: 160px;
   object-fit: cover;
-
   opacity: 0.35;
   filter: grayscale(100%);
   border-radius: 14px;
-
   box-shadow: 0 12px 28px rgba(0,0,0,0.18);
 }
 
