@@ -736,3 +736,18 @@ li {
   z-index: 2;
 }
 
+.home-gallery{
+  width:90%;
+  max-width:1200px;
+  margin:90px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:28px;
+}
+
+.home-gallery img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border-radius:10px;
+}
