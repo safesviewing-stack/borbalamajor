@@ -304,6 +304,10 @@ p, li{
   text-decoration: none;
   border-radius: 4px;
 }
+
+.cv-erasmus .cv-block-text {
+  padding-right: 140px;
+}
 /* ================= PORTFOLIO ================= */
 .grid-3{
   display:grid;
