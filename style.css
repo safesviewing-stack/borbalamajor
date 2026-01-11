@@ -716,6 +716,8 @@ li {
   filter: grayscale(0%); /* 👈 color real */
 
   border-radius: 0;
+  animation: floatSoft 7s ease-in-out infinite;
+
 }
 
 
@@ -784,4 +786,30 @@ body:has(#home.active) {
 
 .home-bg img:nth-child(4) {
   transform: translateY(25px);
+}
+
+@keyframes floatSoft {
+  0%   { transform: translateY(var(--offset)); }
+  50%  { transform: translateY(calc(var(--offset) - 12px)); }
+  100% { transform: translateY(var(--offset)); }
+}
+
+.home-bg img:nth-child(1) {
+  --offset: -30px;
+  animation-delay: 0s;
+}
+
+.home-bg img:nth-child(2) {
+  --offset: 10px;
+  animation-delay: 1.5s;
+}
+
+.home-bg img:nth-child(3) {
+  --offset: -10px;
+  animation-delay: 3s;
+}
+
+.home-bg img:nth-child(4) {
+  --offset: 25px;
+  animation-delay: 4.5s;
 }
