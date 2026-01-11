@@ -76,17 +76,34 @@ nav li:hover::after {
   width: 100%; /* Efecto de subrayado al pasar el cursor */
 }
 
+.lang {
+  display: flex;
+  gap: 6px;
+}
+
 .lang button {
-  border-radius: 20px;
-  padding: 4px 12px;
+  background: transparent;
+  border: 1px solid #c7c9c8;
+  color: #777;
+  font-size: 11px;
+  padding: 5px 14px;
+  border-radius: 20px; /* pill */
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
+/* Hover sutil */
+.lang button:hover {
+  border-color: #999;
+  color: #333;
+}
+
+/* Idioma activo */
 .lang button.active {
-  background: #000;
+  background: #333;      /* combina con el texto de la web */
+  border-color: #333;
   color: #fff;
-  border-color: #000;
 }
-
 /* ================= LAYOUT ================= */
 main{
   padding-top:70px;
