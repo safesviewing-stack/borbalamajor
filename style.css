@@ -927,9 +927,16 @@ header {
   z-index: 10000 !important;
 }
 
-#home,
-#home * {
+/* Bloqueamos clics SOLO en el fondo */
+.home-bg,
+.home-bg * {
   pointer-events: none;
+}
+
+/* Permitimos clics en el hero */
+.hero,
+.hero * {
+  pointer-events: auto;
 }
 
 /* Reactivamos solo la caja negra */
