@@ -914,3 +914,18 @@ body:has(#home.active) footer {
 
   animation-delay: 1.05s, 2.25s;
 }
+
+header,
+header * {
+  pointer-events: auto !important;
+}
+
+header {
+  position: relative;
+  z-index: 10000 !important;
+}
+
+#home,
+#home *:not(header):not(header *) {
+  pointer-events: none;
+}
