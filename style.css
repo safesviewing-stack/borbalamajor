@@ -239,6 +239,10 @@ p, li{
   line-height: 1.6; /* Ajuste de interlineado */
 }
 
+.cv-block-text {
+  flex: 1;
+  max-width: 900px; /* ⬅️ aumenta un poco más */
+}
 /* Caja de la sección de "Habilidades" */
 #cv-skills-section {
   margin-top: 30px;
