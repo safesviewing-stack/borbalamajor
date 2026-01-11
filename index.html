@@ -617,16 +617,31 @@ footer{
 </footer>
 
 <script>
-// Navegación y cambio de idiomas
-document.querySelectorAll(".tab").forEach(tab=>{
-  tab.onclick=()=>{
-    document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+/* ===============================
+   NAVEGACIÓN ENTRE SECCIONES
+   (SOLO NAV, NO IDIOMAS)
+================================ */
+
+document.querySelectorAll("nav li.tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    // Mostrar sección activa
+    document.querySelectorAll("section").forEach(section =>
+      section.classList.remove("active")
+    );
     document.getElementById(tab.dataset.tab).classList.add("active");
 
-    document.querySelectorAll("nav li").forEach(l=>l.classList.remove("active"));
+    // Marcar botón activo en navegación
+    document.querySelectorAll("nav li").forEach(li =>
+      li.classList.remove("active")
+    );
     tab.classList.add("active");
-  };
+  });
 });
+
+
+/* ===============================
+   CONTENIDO MULTIIDIOMA
+================================ */
 
 const content = {
   es: {
@@ -651,24 +666,17 @@ const content = {
     /* CV */
     cvMainTitle: "Currículum",
     cvEducationTitle: "Formación académica",
-
-    cvEdu1Title:
-      "Grado en Ingeniería de Diseño Industrial y desarrollo de productos 2022–2026",
+    cvEdu1Title: "Grado en Ingeniería de Diseño Industrial y desarrollo de productos 2022–2026",
     cvEdu1Text:
       "Graduada en Diseño Industrial por la Universidad de Tecnología y Economía de Budapest (BME), con una formación interdisciplinar en diseño de producto, procesos de fabricación y desarrollo técnico.",
-
     cvEdu2Title:
       "Grado en Ingeniería de Diseño Industrial y desarrollo de productos (Erasmus) 2025–2026",
     cvEdu2Text:
       "Formación académica en Diseño Industrial cursada durante un año en la Universitat Politècnica de València (UPV), mediante un programa Erasmus en la Universidad de Tecnología y Economía de Budapest (BME).",
-
     cvExperienceTitle: "Experiencia en diseño",
-
-    cvExpTitle:
-      "Experiencia profesional en empresa Sixay 2025–2026",
+    cvExpTitle: "Experiencia profesional en empresa Sixay 2025–2026",
     cvExpText:
       "Experiencia profesional de un año en la empresa Sixay, enfocada al diseño de mobiliario, con participación activa en el desarrollo de productos, diseño técnico, optimización de componentes y trabajo colaborativo multidisciplinar.",
-
     cvDownload: "Descargar CV",
 
     /* PORTFOLIO */
@@ -685,8 +693,7 @@ const content = {
     contactTitle: "Contacto",
 
     /* FOOTER */
-    footer:
-      "© 2026 · Borbala Major · Industrial Design Engineer"
+    footer: "© 2026 · Borbala Major · Industrial Design Engineer"
   },
 
   en: {
@@ -698,10 +705,8 @@ const content = {
     navContact: "Contact",
 
     /* HERO */
-    heroTitle:
-      "Industrial design engineering applied to product development",
-    heroSub:
-      "Technical design, manufacturing and optimization of industrial products.",
+    heroTitle: "Industrial design engineering applied to product development",
+    heroSub: "Technical design, manufacturing and optimization of industrial products.",
     heroBtnCv: "View CV",
     heroBtnContact: "Contact",
 
@@ -713,24 +718,18 @@ const content = {
     /* CV */
     cvMainTitle: "Curriculum Vitae",
     cvEducationTitle: "Academic background",
-
     cvEdu1Title:
       "Bachelor’s Degree in Industrial Design Engineering and Product Development 2022–2026",
     cvEdu1Text:
       "Graduated in Industrial Design from the Budapest University of Technology and Economics (BME), with interdisciplinary training in product design, manufacturing processes, and technical development.",
-
     cvEdu2Title:
       "Bachelor’s Degree in Industrial Design Engineering and Product Development (Erasmus) 2025–2026",
     cvEdu2Text:
       "Academic training in Industrial Design completed during one year at the Universitat Politècnica de València (UPV) through an Erasmus exchange program with the Budapest University of Technology and Economics (BME).",
-
     cvExperienceTitle: "Design experience",
-
-    cvExpTitle:
-      "Professional experience at Sixay company 2025–2026",
+    cvExpTitle: "Professional experience at Sixay company 2025–2026",
     cvExpText:
       "One year of professional experience at Sixay, focused on furniture design, with active participation in product development, technical design, component optimization, and multidisciplinary collaborative work.",
-
     cvDownload: "Download CV",
 
     /* PORTFOLIO */
@@ -747,50 +746,79 @@ const content = {
     contactTitle: "Contact",
 
     /* FOOTER */
-    footer:
-      "© 2026 · Borbala Major · Industrial Design Engineer"
+    footer: "© 2026 · Borbala Major · Industrial Design Engineer"
   }
 };
 
-function setLang(lang){
-  document.getElementById("hero-title").innerText=content[lang].heroTitle;
-  document.getElementById("hero-sub").innerText=content[lang].heroSub;
-  document.getElementById("about-title").innerText=content[lang].aboutTitle;
-  document.getElementById("about-text").innerText=content[lang].aboutText;
-  
-  document.getElementById("cv-title").innerText=content[lang].cvTitle;
-  document.getElementById("cv-profile-title").innerText=content[lang].cvProfileTitle;
-  document.getElementById("cv-profile-text").innerText=content[lang].cvProfileText;
-  
-  document.getElementById("cv-skills-title").innerText=content[lang].cvSkillsTitle;
-  const skills = document.getElementById("cv-skills");
-  skills.innerHTML = "";
-  content[lang].cvSkills.forEach(skill => skills.innerHTML += `<li>${skill}</li>`);
 
-  document.getElementById("cv-education-title").innerText=content[lang].cvEducationTitle;
-  const education = document.getElementById("cv-education");
-  education.innerHTML = "";
-  content[lang].cvEducation.forEach(edu => education.innerHTML += `<li>${edu}</li>`);
-  
-  document.getElementById("cv-download").innerText=content[lang].cvDownload;
-  
-  document.getElementById("portfolio-title").innerText=content[lang].portfolioTitle;
-  
-  document.getElementById("contact-title").innerText=content[lang].contactTitle;
-  document.getElementById("contact-email").innerText=content[lang].contactEmail;
-  document.getElementById("contact-phone").innerText=content[lang].contactPhone;
+/* ===============================
+   FUNCIÓN DE CAMBIO DE IDIOMA
+================================ */
 
-  // Cambiar el botón activo
+function setLang(lang) {
+  const c = content[lang];
+
+  // NAV
+  document.querySelector('[data-tab="home"]').innerText = c.navHome;
+  document.querySelector('[data-tab="about"]').innerText = c.navAbout;
+  document.querySelector('[data-tab="cv"]').innerText = c.navCv;
+  document.querySelector('[data-tab="portfolio"]').innerText = c.navPortfolio;
+  document.querySelector('[data-tab="contact"]').innerText = c.navContact;
+
+  // HERO
+  document.getElementById("hero-title").innerText = c.heroTitle;
+  document.getElementById("hero-sub").innerText = c.heroSub;
+  document.querySelector(".hero-cta .primary").innerText = c.heroBtnCv;
+  document.querySelector(".hero-cta .secondary").innerText = c.heroBtnContact;
+
+  // ABOUT
+  document.getElementById("about-title").innerText = c.aboutTitle;
+  document.getElementById("about-text").innerText = c.aboutText;
+
+  // CV
+  document.querySelector(".cv-main-title").innerText = c.cvMainTitle;
+  document.querySelectorAll(".cv-section-title")[0].innerText = c.cvEducationTitle;
+  document.querySelectorAll(".cv-section-title")[1].innerText = c.cvExperienceTitle;
+
+  const cvTitles = document.querySelectorAll(".cv-block-text h2");
+  const cvTexts = document.querySelectorAll(".cv-block-text p");
+
+  cvTitles[0].innerText = c.cvEdu1Title;
+  cvTexts[0].innerText = c.cvEdu1Text;
+  cvTitles[1].innerText = c.cvEdu2Title;
+  cvTexts[1].innerText = c.cvEdu2Text;
+  cvTitles[2].innerText = c.cvExpTitle;
+  cvTexts[2].innerText = c.cvExpText;
+
+  document.querySelector(".cv-download-btn").innerText = c.cvDownload;
+
+  // PORTFOLIO
+  document.getElementById("portfolio-title").innerText = c.portfolioTitle;
+  const spans = document.querySelectorAll(".portfolio-item span");
+  spans[0].innerText = c.portfolioBaori;
+  spans[1].innerText = c.portfolioLumora;
+  spans[2].innerText = c.portfolioEliptria;
+  spans[3].innerText = c.portfolioSixay;
+  spans[4].innerText = c.portfolioNode;
+  spans[5].innerText = c.portfolioSyncro;
+  spans[6].innerText = c.portfolioKate;
+
+  // CONTACT + FOOTER
+  document.getElementById("contact-title").innerText = c.contactTitle;
+  document.querySelector("footer").innerText = c.footer;
+
+  // BOTONES ACTIVO
   document.getElementById("btn-es").classList.toggle("active", lang === "es");
   document.getElementById("btn-en").classList.toggle("active", lang === "en");
 }
 
-setLang("es");
-document.getElementById("btn-es").onclick=()=>setLang("es");
-document.getElementById("btn-en").onclick=()=>setLang("en");
-</script>
 
-<script src="script.js"></script>
-  
-</body>
-</html>
+/* ===============================
+   INICIALIZACIÓN
+================================ */
+
+setLang("es");
+
+document.getElementById("btn-es").onclick = () => setLang("es");
+document.getElementById("btn-en").onclick = () => setLang("en");
+</script>
