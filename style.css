@@ -937,3 +937,19 @@ header {
 .hero-box * {
   pointer-events: auto;
 }
+
+section {
+  display: none;
+}
+
+#home {
+  display: block;
+}
+
+section:target {
+  display: block;
+}
+
+section:target ~ #home {
+  display: none;
+}
