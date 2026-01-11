@@ -938,4 +938,33 @@ header {
   pointer-events: auto;
 }
 
+/* ================= NAVEGACIÓN SIN JS (SEGURO) ================= */
+
+section {
+  display: none;
+}
+
+#home {
+  display: block;
+}
+
+/* Mostrar sección objetivo */
+section:target {
+  display: block;
+}
+
+/* Si el target NO es home, ocultamos home */
+section:target:not(#home) ~ footer {
+  display: block;
+}
+
+section:target:not(#home) {
+  position: relative;
+  z-index: 5;
+}
+
+section:target:not(#home) ~ #home {
+  display: none;
+}
+
 
