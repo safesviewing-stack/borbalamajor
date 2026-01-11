@@ -712,7 +712,7 @@ li {
   height: 70%;
   object-fit: cover;
 
-  opacity: 0.6;          /* 👈 ahora se ven mejor */
+  opacity: 0.3;          /* 👈 ahora se ven mejor */
   filter: grayscale(0%); /* 👈 color real */
 
   border-radius: 0;
