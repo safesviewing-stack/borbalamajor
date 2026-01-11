@@ -730,3 +730,9 @@ body {
   height: 100%;
   overflow: hidden; /* 👈 bloquea el scroll */
 }
+
+
+#home {
+  padding: 0 !important;
+  margin: 0 !important;
+}
