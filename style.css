@@ -78,6 +78,8 @@ nav li:hover::after {
 
 .lang {
   display: flex;
+  position: relative;
+  z-index: 10001 !important;
   gap: 6px;
 }
 
