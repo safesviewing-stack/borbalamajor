@@ -626,17 +626,36 @@ footer{
 
 document.querySelectorAll(".tab").forEach(tab => {
   tab.addEventListener("click", () => {
-    // Mostrar sección activa
+
+    // 1. Cambiar sección
     document.querySelectorAll("section").forEach(section =>
       section.classList.remove("active")
     );
-    document.getElementById(tab.dataset.tab).classList.add("active");
 
-    // Marcar botón activo en navegación
+    const targetSection = document.getElementById(tab.dataset.tab);
+    targetSection.classList.add("active");
+
+    // 2. Marcar activo solo en el menú
     document.querySelectorAll("nav li").forEach(li =>
       li.classList.remove("active")
     );
-    tab.classList.add("active");
+    if (tab.tagName === "LI") {
+      tab.classList.add("active");
+    }
+
+    // 3. ANIMACIÓN SOLO PARA "VER CV"
+    if (tab.dataset.tab === "cv" && tab.classList.contains("primary")) {
+      setTimeout(() => {
+        const downloadBtn = document.querySelector(".cv-download-btn");
+        if (downloadBtn) {
+          downloadBtn.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }
+      }, 300); // pequeño delay para que el CV aparezca primero
+    }
+
   });
 });
 
