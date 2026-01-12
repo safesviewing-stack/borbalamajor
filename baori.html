@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
 /* ================= RESET ================= */
 * {
   margin: 0;
@@ -59,30 +60,30 @@ header {
   gap: 8px;
 }
 
-.lang button{
-  background:none;
-  border:1px solid #c7c9c8;
-  color:#c7c9c8;
-  font-size:11px;
-  padding:4px 10px;
-  margin-left:6px;
-  cursor:pointer;
-  border-radius:4px;
-  transition: background-color 0.3s;
+.lang-btn {
+  background: transparent;
+  border: 1px solid #d0d0d0;
+  color: #777;
+  font-size: 11px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.lang button.active{
-  background:#c7c9c8;
-  color:#fff;
+.lang-btn.active {
+  background: #d6d6d6;
+  border-color: #d6d6d6;
+  color: #333;
 }
 
 .lang-btn:hover {
-  background: #e5e5e5;
+  background: #ececec;
 }
 
 /* ================= LAYOUT ================= */
 main {
-  padding-top: 140px; /* separa del header */
+  padding-top: 150px; /* alineado con la web principal */
 }
 
 .container {
@@ -105,7 +106,7 @@ main {
   height: 320px;
   object-fit: cover;
   display: block;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
   animation: fadeUp 0.8s ease forwards;
 }
 
@@ -113,7 +114,7 @@ main {
   width: 100%;
   height: auto;
   display: block;
-  margin: 70px 0 18px;
+  margin: 64px 0 18px;
   animation: fadeUp 0.8s ease forwards;
 }
 
@@ -123,8 +124,8 @@ main {
   line-height: 1.5;
   color: #555;
   text-align: justify;
+  margin-bottom: 36px;
   max-width: 100%;
-  margin-bottom: 42px;
   animation: fadeUp 0.8s ease forwards;
 }
 
@@ -149,6 +150,7 @@ footer {
     transform: translateY(0);
   }
 }
+
 </style>
 </head>
 
@@ -169,25 +171,20 @@ footer {
 <main>
   <div class="container">
 
-    <h1 class="project-title" id="title">BAORI</h1>
+    <h1 class="project-title">BAORI</h1>
 
     <!-- Imagen principal -->
     <img src="profile5.jpg" alt="BAORI proyecto" class="hero-image">
 
-    <p class="project-text" id="text-1">
-      BAORI es un proyecto de diseño de espacio colectivo que fomenta el encuentro,
-      la pausa y el uso compartido mediante una composición equilibrada de formas limpias
-      y materiales honestos, con influencias del diseño español y nórdico. El proyecto
-      fue ganador de un concurso de diseño para la empresa STADLER.
+    <p class="project-text">
+      BAORI es un proyecto de diseño de espacio colectivo que fomenta el encuentro y el uso compartido mediante una composición equilibrada de formas limpias y materiales honestos, con influencias del diseño español y nórdico. El proyecto fue ganador de un concurso de diseño para la empresa STADLER.
     </p>
 
     <!-- Imagen 2 -->
     <img src="profile20.jpg" alt="BAORI detalle" class="project-image">
 
-    <p class="project-text" id="text-2">
-      El proyecto se concibe desde una perspectiva modular y adaptable, permitiendo
-      diferentes configuraciones según el contexto de uso. La escala humana, la ergonomía
-      y la flexibilidad funcional han sido factores clave durante todo el proceso de diseño.
+    <p class="project-text">
+      El proyecto se concibe desde una perspectiva modular y adaptable, permitiendo distintas configuraciones según el contexto de uso. La ergonomía, la escala humana y la flexibilidad espacial han sido claves en el desarrollo del sistema.
     </p>
 
     <!-- Imagen 3 -->
@@ -196,46 +193,26 @@ footer {
   </div>
 </main>
 
-<footer id="footer">
-© 2026 · Borbala Major · Ingeniera en diseño industrial
+<footer>
+© 2026 · Borbala Major · Industrial Design Engineer
 </footer>
 
+<!-- ================= JS IDIOMAS ================= -->
 <script>
-const content = {
-  es: {
-    title: "BAORI",
-    text1:
-      "BAORI es un proyecto de diseño de espacio colectivo que fomenta el encuentro, la pausa y el uso compartido mediante una composición equilibrada de formas limpias y materiales honestos, con influencias del diseño español y nórdico. El proyecto fue ganador de un concurso de diseño para la empresa STADLER.",
-    text2:
-      "El proyecto se concibe desde una perspectiva modular y adaptable, permitiendo diferentes configuraciones según el contexto de uso. La escala humana, la ergonomía y la flexibilidad funcional han sido factores clave durante todo el proceso de diseño.",
-    footer:
-      "© 2026 · Borbala Major · Industrial Design Engineer"
-  },
-  en: {
-    title: "BAORI",
-    text1:
-      "BAORI is a collective space design project that encourages social interaction, pause and shared use through a balanced composition of clean forms and honest materials, with influences from Spanish and Nordic design. The project won a design competition for the company STADLER.",
-    text2:
-      "The project is conceived from a modular and adaptable perspective, allowing different configurations depending on the context of use. Human scale, ergonomics and functional flexibility were key factors throughout the design process.",
-    footer:
-      "© 2026 · Borbala Major · Industrial Design Engineer"
-  }
+const btnEs = document.getElementById("btn-es");
+const btnEn = document.getElementById("btn-en");
+
+btnEs.onclick = () => {
+  btnEs.classList.add("active");
+  btnEn.classList.remove("active");
+  document.documentElement.lang = "es";
 };
 
-function setLang(lang) {
-  document.getElementById("title").innerText = content[lang].title;
-  document.getElementById("text-1").innerText = content[lang].text1;
-  document.getElementById("text-2").innerText = content[lang].text2;
-  document.getElementById("footer").innerText = content[lang].footer;
-
-  document.getElementById("btn-es").classList.toggle("active", lang === "es");
-  document.getElementById("btn-en").classList.toggle("active", lang === "en");
-}
-
-setLang("es");
-
-document.getElementById("btn-es").onclick = () => setLang("es");
-document.getElementById("btn-en").onclick = () => setLang("en");
+btnEn.onclick = () => {
+  btnEn.classList.add("active");
+  btnEs.classList.remove("active");
+  document.documentElement.lang = "en";
+};
 </script>
 
 </body>
