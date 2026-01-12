@@ -1,77 +1,102 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>BAORI · Proyecto</title>
+  <title>BAORI · Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS GLOBAL -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS SOLO PARA EL PROYECTO -->
   <style>
-    .project-container {
-      max-width: 960px;
-      width: 90%;
-      margin: 120px auto 120px;
+    /* ================= RESET ================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
     }
 
-    .back-btn {
-      display: inline-block;
+    body {
+      background: #ffffff;
+      color: #555;
+    }
+
+    /* ================= LAYOUT ================= */
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 80px 24px 120px;
+    }
+
+    /* ================= BACK BUTTON ================= */
+    .back {
       margin-bottom: 60px;
+    }
+
+    .back a {
+      text-decoration: none;
       font-size: 12px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      text-decoration: none;
       color: #555;
       border: 1px solid #ccc;
-      padding: 10px 22px;
+      padding: 10px 18px;
       border-radius: 20px;
       transition: all 0.25s ease;
     }
 
-    .back-btn:hover {
+    .back a:hover {
       background: #000;
       color: #fff;
       border-color: #000;
     }
 
-    .project-image {
-      width: 100%;
-      margin: 60px 0;
+    /* ================= TITLES ================= */
+    h1 {
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 60px;
     }
 
-    /* Imagen controlada (no gigante) */
-    .project-image img {
+    /* ================= PROJECT BLOCK ================= */
+    .project-block {
+      max-width: 900px;
+      margin: 0 auto 100px;
+    }
+
+    .project-block img {
       width: 100%;
       height: auto;
       display: block;
-      border: none;        /* ❌ sin bordes */
-      box-shadow: none;    /* ❌ sin sombra */
     }
 
-    .project-text {
-      max-width: 640px;
+    /* profile20 & profile21: tamaño real */
+    .project-block img.real-size {
+      width: auto;
+      max-width: 100%;
+    }
+
+    .project-block p {
+      margin-top: 26px;
       font-size: 15px;
       line-height: 1.6;
+      max-width: 100%;
       color: #555;
-      margin: 0 0 80px;
     }
 
-    .project-text h2 {
-      font-size: 22px;
-      font-weight: 400;
-      margin-bottom: 18px;
-    }
-
-    /* Responsive */
-    @media (max-width: 700px) {
-      .project-container {
-        margin-top: 100px;
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 26px;
       }
 
-      .project-text {
-        max-width: 100%;
+      .page {
+        padding: 60px 20px 100px;
+      }
+
+      .project-block {
+        margin-bottom: 80px;
       }
     }
   </style>
@@ -79,52 +104,47 @@
 
 <body>
 
-  <div class="project-container">
+  <main class="page">
 
-    <!-- VOLVER -->
-    <a href="index.html#portfolio" class="back-btn">← Volver al portfolio</a>
-
-    <!-- FOTO 1 -->
-    <div class="project-image">
-      <img src="profile5.jpg" alt="BAORI · Vista general">
+    <!-- BOTÓN VOLVER -->
+    <div class="back">
+      <a href="index.html#portfolio">← Back to portfolio</a>
     </div>
 
-    <!-- TEXTO 1 -->
-    <div class="project-text">
-      <h2>BAORI</h2>
+    <!-- TÍTULO -->
+    <h1>BAORI</h1>
+
+    <!-- BLOQUE 1 -->
+    <div class="project-block">
+      <img src="profile5.jpg" alt="BAORI modular furniture system">
       <p>
-        BAORI es un proyecto de mobiliario concebido como un espacio de uso colectivo,
-        diseñado para fomentar la interacción social y el encuentro en entornos públicos.
-        El diseño busca un equilibrio entre funcionalidad, identidad visual y presencia
-        espacial, adaptándose a diferentes contextos de uso.
+        BAORI is a modular furniture system designed for collective and public
+        spaces. The project focuses on flexibility, adaptability, and efficient
+        use of space, allowing multiple configurations depending on user needs.
       </p>
     </div>
 
-    <!-- FOTO 2 (tamaño real) -->
-    <div class="project-image">
-      <img src="profile20.jpg" alt="BAORI · Detalle constructivo">
-    </div>
-
-    <!-- TEXTO 2 -->
-    <div class="project-text">
+    <!-- BLOQUE 2 -->
+    <div class="project-block">
+      <img src="profile20.jpg" alt="BAORI modules overview" class="real-size">
       <p>
-        La propuesta se apoya en una estructura clara y repetible, permitiendo su
-        fabricación mediante procesos industriales estandarizados. El sistema modular
-        facilita tanto el montaje como la adaptación del conjunto a distintas escalas
-        y configuraciones.
+        The system is composed of individual modules that can be combined to
+        create seating areas, workspaces, or storage solutions. Each module is
+        designed to be intuitive, easy to use, and visually coherent.
       </p>
     </div>
 
-    <!-- FOTO 3 (tamaño real) -->
-    <div class="project-image">
-      <img src="profile21.jpg" alt="BAORI · Uso en espacio colectivo">
+    <!-- BLOQUE 3 -->
+    <div class="project-block">
+      <img src="profile21.jpg" alt="BAORI materials and components" class="real-size">
+      <p>
+        Material selection plays a key role in the project, combining wood,
+        textiles, and metal elements to achieve a balance between durability,
+        comfort, and a warm aesthetic suitable for shared environments.
+      </p>
     </div>
 
-  </div>
-
-  <footer>
-    © 2026 · Borbala Major · Industrial Design Engineer
-  </footer>
+  </main>
 
 </body>
 </html>
