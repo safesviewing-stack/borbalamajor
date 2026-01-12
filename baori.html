@@ -26,6 +26,7 @@
       height: 70px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: 0 40px;
     }
 
@@ -37,24 +38,46 @@
       color: #333;
     }
 
+    /* Idiomas */
+    .lang {
+      display: flex;
+      gap: 8px;
+    }
+
+    .lang button {
+      background: transparent;
+      border: 1px solid #c7c9c8;
+      color: #777;
+      font-size: 11px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .lang button.active {
+      background: #333;
+      color: #fff;
+    }
+
     /* ================= CONTENIDO ================= */
     main {
       max-width: 1100px;
       margin: auto;
-      padding: 40px 20px 120px;
+      padding: 90px 20px 140px; /* 👈 BAJAMOS TODO */
     }
 
     h1 {
       font-size: 32px;
       font-weight: 400;
-      margin-bottom: 60px;
+      margin-bottom: 70px;
       opacity: 0;
       animation: fadeUp 0.8s ease forwards;
     }
 
     /* ================= BLOQUES ================= */
     .project-block {
-      margin-bottom: 120px;
+      margin-bottom: 140px;
       opacity: 0;
       animation: fadeUp 0.9s ease forwards;
     }
@@ -64,15 +87,23 @@
     .project-block:nth-of-type(3) { animation-delay: 0.6s; }
 
     /* ================= IMÁGENES ================= */
-    .project-image {
+
+    /* Primera imagen más baja */
+    .hero-image {
       width: 100%;
+      height: 380px;              /* 👈 CONTROL DE ALTURA */
+      object-fit: cover;
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
+    /* Imágenes naturales */
     .natural-image {
+      width: 100%;
       height: auto;
       object-fit: contain;
+      display: block;
+      margin-bottom: 18px;
     }
 
     /* ================= TEXTO ================= */
@@ -81,6 +112,7 @@
       line-height: 1.7;
       color: #555;
       max-width: 100%;
+      margin-top: 4px; /* 👈 TEXTO MÁS PEGADO */
     }
 
     /* ================= FOOTER ================= */
@@ -110,13 +142,21 @@
         padding: 0 20px;
       }
 
+      main {
+        padding-top: 70px;
+      }
+
       h1 {
         font-size: 26px;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
+      }
+
+      .hero-image {
+        height: 260px;
       }
 
       .project-block {
-        margin-bottom: 80px;
+        margin-bottom: 90px;
       }
     }
   </style>
@@ -126,17 +166,22 @@
 
 <header>
   <a href="index.html#portfolio" class="back-btn">← Volver al portfolio</a>
+
+  <div class="lang">
+    <button id="btn-es" class="active">ES</button>
+    <button id="btn-en">EN</button>
+  </div>
 </header>
 
 <main>
 
-  <h1>BAORI</h1>
+  <h1 id="project-title">BAORI</h1>
 
   <!-- BLOQUE 1 -->
   <section class="project-block">
-    <img src="profile5.jpg" alt="BAORI concepto" class="project-image">
+    <img src="profile5.jpg" alt="BAORI concepto" class="hero-image">
 
-    <div class="project-text">
+    <div class="project-text" id="text-1">
       BAORI es un sistema de mobiliario modular concebido para espacios de uso colectivo.
       El proyecto explora la flexibilidad formal y funcional, fomentando la interacción social
       a través de configuraciones adaptables a diferentes contextos arquitectónicos.
@@ -145,9 +190,9 @@
 
   <!-- BLOQUE 2 -->
   <section class="project-block">
-    <img src="profile20.jpg" alt="BAORI módulos" class="project-image natural-image">
+    <img src="profile20.jpg" alt="BAORI módulos" class="natural-image">
 
-    <div class="project-text">
+    <div class="project-text" id="text-2">
       El sistema se compone de módulos independientes que permiten múltiples combinaciones,
       integrando superficies de apoyo, zonas de descanso y elementos auxiliares.
       Su diseño facilita tanto el uso individual como el colectivo.
@@ -156,14 +201,44 @@
 
   <!-- BLOQUE 3 -->
   <section class="project-block">
-    <img src="profile21.jpg" alt="BAORI detalles" class="project-image natural-image">
+    <img src="profile21.jpg" alt="BAORI detalles" class="natural-image">
   </section>
 
 </main>
 
-<footer>
+<footer id="footer-text">
   © 2026 · Borbala Major · Industrial Design Engineer
 </footer>
+
+<script>
+  const content = {
+    es: {
+      title: "BAORI",
+      t1: "BAORI es un sistema de mobiliario modular concebido para espacios de uso colectivo. El proyecto explora la flexibilidad formal y funcional, fomentando la interacción social a través de configuraciones adaptables a diferentes contextos arquitectónicos.",
+      t2: "El sistema se compone de módulos independientes que permiten múltiples combinaciones, integrando superficies de apoyo, zonas de descanso y elementos auxiliares. Su diseño facilita tanto el uso individual como el colectivo.",
+      footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
+    },
+    en: {
+      title: "BAORI",
+      t1: "BAORI is a modular furniture system designed for collective-use spaces. The project explores formal and functional flexibility, encouraging social interaction through configurations adaptable to different architectural contexts.",
+      t2: "The system consists of independent modules that allow multiple combinations, integrating support surfaces, rest areas, and auxiliary elements. Its design supports both individual and collective use.",
+      footer: "© 2026 · Borbala Major · Industrial Design Engineer"
+    }
+  };
+
+  function setLang(lang) {
+    document.getElementById("project-title").innerText = content[lang].title;
+    document.getElementById("text-1").innerText = content[lang].t1;
+    document.getElementById("text-2").innerText = content[lang].t2;
+    document.getElementById("footer-text").innerText = content[lang].footer;
+
+    document.getElementById("btn-es").classList.toggle("active", lang === "es");
+    document.getElementById("btn-en").classList.toggle("active", lang === "en");
+  }
+
+  document.getElementById("btn-es").onclick = () => setLang("es");
+  document.getElementById("btn-en").onclick = () => setLang("en");
+</script>
 
 </body>
 </html>
