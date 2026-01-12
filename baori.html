@@ -42,6 +42,7 @@ header {
   justify-content: space-between;
 }
 
+/* Volver */
 .back-btn {
   text-decoration: none;
   font-size: 12px;
@@ -54,36 +55,31 @@ header {
   font-weight: 500;
 }
 
-/* ================= LANG BUTTONS ================= */
+/* Idiomas */
 .lang {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
-.lang-btn {
+.lang button {
   background: transparent;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #c7c9c8;
   color: #777;
-  font-size: 11px;
-  padding: 6px 14px;
-  border-radius: 6px;
+  font-size: 10px;          /* un poco más bajitos */
+  padding: 4px 12px;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.25s ease;
 }
 
-.lang-btn.active {
-  background: #d6d6d6;
-  border-color: #d6d6d6;
-  color: #333;
-}
-
-.lang-btn:hover {
-  background: #ececec;
+.lang button.active {
+  background: #333;
+  color: #fff;
 }
 
 /* ================= LAYOUT ================= */
 main {
-  padding-top: 150px; /* alineado con la web principal */
+  padding-top: 150px; /* baja todo un poco más */
 }
 
 .container {
@@ -96,14 +92,14 @@ main {
 .project-title {
   font-size: 32px;
   font-weight: 400;
-  margin-bottom: 18px;
+  margin-bottom: 16px; /* separación con la imagen */
   animation: fadeUp 0.8s ease forwards;
 }
 
 /* ================= IMÁGENES ================= */
 .hero-image {
   width: 100%;
-  height: 320px;
+  height: 300px;          /* más estrecha arriba/abajo */
   object-fit: cover;
   display: block;
   margin-bottom: 18px;
@@ -114,7 +110,7 @@ main {
   width: 100%;
   height: auto;
   display: block;
-  margin: 64px 0 18px;
+  margin: 80px 0 16px;
   animation: fadeUp 0.8s ease forwards;
 }
 
@@ -124,15 +120,15 @@ main {
   line-height: 1.5;
   color: #555;
   text-align: justify;
-  margin-bottom: 36px;
   max-width: 100%;
+  margin-bottom: 36px;
   animation: fadeUp 0.8s ease forwards;
 }
 
 /* ================= FOOTER ================= */
 footer {
   text-align: center;
-  padding: 6px;
+  padding: 8px;
   font-size: 11px;
   color: #555;
   background-color: #eaeceb;
@@ -159,11 +155,11 @@ footer {
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn">← Portfolio</a>
+    <a href="index.html#portfolio" class="back-btn">← Volver</a>
 
     <div class="lang">
-      <button id="btn-es" class="lang-btn active">ES</button>
-      <button id="btn-en" class="lang-btn">EN</button>
+      <button class="active">ES</button>
+      <button>EN</button>
     </div>
   </div>
 </header>
@@ -177,14 +173,20 @@ footer {
     <img src="profile5.jpg" alt="BAORI proyecto" class="hero-image">
 
     <p class="project-text">
-      BAORI es un proyecto de diseño de espacio colectivo que fomenta el encuentro y el uso compartido mediante una composición equilibrada de formas limpias y materiales honestos, con influencias del diseño español y nórdico. El proyecto fue ganador de un concurso de diseño para la empresa STADLER.
+      BAORI es un proyecto de diseño de espacio colectivo que fomenta el encuentro y el uso compartido
+      mediante una composición equilibrada de formas limpias y materiales honestos, con influencias del
+      diseño español y nórdico. El proyecto fue ganador de un concurso para la empresa STADLER,
+      destacando por su enfoque funcional y su sensibilidad espacial.
     </p>
 
     <!-- Imagen 2 -->
     <img src="profile20.jpg" alt="BAORI detalle" class="project-image">
 
     <p class="project-text">
-      El proyecto se concibe desde una perspectiva modular y adaptable, permitiendo distintas configuraciones según el contexto de uso. La ergonomía, la escala humana y la flexibilidad espacial han sido claves en el desarrollo del sistema.
+      El proyecto se concibe desde una perspectiva modular y adaptable, permitiendo múltiples
+      configuraciones según el contexto de uso, el entorno y las necesidades del usuario.
+      La escala humana, la ergonomía y la flexibilidad han sido factores clave durante todo
+      el proceso de diseño.
     </p>
 
     <!-- Imagen 3 -->
@@ -195,25 +197,8 @@ footer {
 
 <footer>
 © 2026 · Borbala Major · Ingeniera en diseño industrial
+
 </footer>
-
-<!-- ================= JS IDIOMAS ================= -->
-<script>
-const btnEs = document.getElementById("btn-es");
-const btnEn = document.getElementById("btn-en");
-
-btnEs.onclick = () => {
-  btnEs.classList.add("active");
-  btnEn.classList.remove("active");
-  document.documentElement.lang = "es";
-};
-
-btnEn.onclick = () => {
-  btnEn.classList.add("active");
-  btnEs.classList.remove("active");
-  document.documentElement.lang = "en";
-};
-</script>
 
 </body>
 </html>
