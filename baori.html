@@ -42,7 +42,6 @@ header {
   justify-content: space-between;
 }
 
-/* Volver */
 .back-btn {
   text-decoration: none;
   font-size: 12px;
@@ -55,31 +54,32 @@ header {
   font-weight: 500;
 }
 
-/* Idiomas */
+/* ================= IDIOMAS ================= */
 .lang {
   display: flex;
   gap: 6px;
 }
 
-.lang button {
+.lang-btn {
   background: transparent;
-  border: 1px solid #c7c9c8;
+  border: 1px solid #d0d0d0;
   color: #777;
-  font-size: 10px;          /* un poco más bajitos */
-  padding: 4px 10px;
-  border-radius: 20px;
+  font-size: 10px;
+  padding: 4px 10px;   /* 👈 más bajitos */
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.25s ease;
 }
 
-.lang button.active {
-  background: #333;
+.lang-btn.active {
+  background: #c7c9c8;
   color: #fff;
+  border-color: #c7c9c8;
 }
 
 /* ================= LAYOUT ================= */
 main {
-  padding-top: 150px; /* baja todo un poco más */
+  padding-top: 150px; /* alinea con Portfolio principal */
 }
 
 .container {
@@ -90,28 +90,28 @@ main {
 
 /* ================= TITULO ================= */
 .project-title {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 400;
-  margin-bottom: 16px; /* separación con la imagen */
-  animation: fadeUp 0.8s ease forwards;
+  margin-bottom: 16px;
+  animation: fadeUp 0.6s ease forwards;
 }
 
 /* ================= IMÁGENES ================= */
 .hero-image {
   width: 100%;
-  height: 300px;          /* más estrecha arriba/abajo */
+  height: 320px;
   object-fit: cover;
   display: block;
   margin-bottom: 18px;
-  animation: fadeUp 0.8s ease forwards;
+  animation: fadeUp 0.6s ease forwards;
 }
 
 .project-image {
   width: 100%;
   height: auto;
   display: block;
-  margin: 80px 0 16px;
-  animation: fadeUp 0.8s ease forwards;
+  margin: 70px 0 18px;
+  animation: fadeUp 0.6s ease forwards;
 }
 
 /* ================= TEXTO ================= */
@@ -120,19 +120,18 @@ main {
   line-height: 1.5;
   color: #555;
   text-align: justify;
-  max-width: 100%;
-  margin-bottom: 36px;
-  animation: fadeUp 0.8s ease forwards;
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s ease forwards;
 }
 
 /* ================= FOOTER ================= */
 footer {
   text-align: center;
-  padding: 8px;
+  padding: 6px;
   font-size: 11px;
   color: #555;
   background-color: #eaeceb;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 /* ================= ANIMACIONES ================= */
@@ -158,8 +157,8 @@ footer {
     <a href="index.html#portfolio" class="back-btn">← Volver</a>
 
     <div class="lang">
-      <button class="active">ES</button>
-      <button>EN</button>
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
   </div>
 </header>
@@ -172,21 +171,19 @@ footer {
     <!-- Imagen principal -->
     <img src="profile5.jpg" alt="BAORI proyecto" class="hero-image">
 
-    <p class="project-text">
+    <p class="project-text" id="text-1">
       BAORI es un proyecto de diseño de espacio colectivo que fomenta el encuentro y el uso compartido
       mediante una composición equilibrada de formas limpias y materiales honestos, con influencias del
-      diseño español y nórdico. El proyecto fue ganador de un concurso para la empresa STADLER,
-      destacando por su enfoque funcional y su sensibilidad espacial.
+      diseño español y nórdico. El proyecto fue ganador de un concurso para la empresa STADLER.
     </p>
 
     <!-- Imagen 2 -->
     <img src="profile20.jpg" alt="BAORI detalle" class="project-image">
 
-    <p class="project-text">
+    <p class="project-text" id="text-2">
       El proyecto se concibe desde una perspectiva modular y adaptable, permitiendo múltiples
-      configuraciones según el contexto de uso, el entorno y las necesidades del usuario.
-      La escala humana, la ergonomía y la flexibilidad han sido factores clave durante todo
-      el proceso de diseño.
+      configuraciones según el contexto de uso, el espacio disponible y las necesidades del usuario,
+      priorizando siempre la ergonomía, la escala humana y la funcionalidad.
     </p>
 
     <!-- Imagen 3 -->
@@ -199,6 +196,28 @@ footer {
 © 2026 · Borbala Major · Ingeniera en diseño industrial
 
 </footer>
+
+<script>
+function setLang(lang) {
+  const es = {
+    t1: "BAORI es un proyecto de diseño de espacio colectivo que fomenta el encuentro y el uso compartido mediante una composición equilibrada de formas limpias y materiales honestos, con influencias del diseño español y nórdico. El proyecto fue ganador de un concurso para la empresa STADLER.",
+    t2: "El proyecto se concibe desde una perspectiva modular y adaptable, permitiendo múltiples configuraciones según el contexto de uso, el espacio disponible y las necesidades del usuario, priorizando siempre la ergonomía, la escala humana y la funcionalidad."
+  };
+
+  const en = {
+    t1: "BAORI is a collective space design project that encourages interaction and shared use through a balanced composition of clean forms and honest materials, influenced by Spanish and Nordic design. The project won a design competition for the company STADLER.",
+    t2: "The project is conceived from a modular and adaptable perspective, allowing multiple configurations depending on the context of use, available space and user needs, always prioritizing ergonomics, human scale and functionality."
+  };
+
+  const c = lang === "es" ? es : en;
+
+  document.getElementById("text-1").innerText = c.t1;
+  document.getElementById("text-2").innerText = c.t2;
+
+  document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+  document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
+}
+</script>
 
 </body>
 </html>
