@@ -17,7 +17,7 @@
     /* Botón volver */
     .back-btn {
       display: inline-block;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       font-size: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -35,46 +35,32 @@
       border-color: #000;
     }
 
-    /* Galería elegante */
-    .project-gallery {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-      margin-top: 60px;
-    }
-
-    .project-gallery img {
+    /* Imagen de proyecto */
+    .project-image {
       width: 100%;
-      height: 100%;
+      height: 360px;            /* 👈 ancha pero no alta */
       object-fit: cover;
-      border-radius: 10px;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .project-gallery img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 16px 36px rgba(0,0,0,0.15);
-    }
-
-    /* Imagen grande arriba */
-    .hero-image {
-      width: 100%;
-      margin: 50px 0;
       border-radius: 12px;
+      margin: 60px 0 30px;
     }
 
-    /* Texto de proyecto */
+    /* Texto */
     .project-text {
-      max-width: 620px;
+      max-width: 640px;
       font-size: 15px;
       line-height: 1.6;
       color: #555;
+      margin-bottom: 20px;
+    }
+
+    /* Espaciado general */
+    .project-section {
       margin-bottom: 40px;
     }
 
     @media (max-width: 700px) {
-      .project-gallery {
-        grid-template-columns: 1fr;
+      .project-image {
+        height: 240px;
       }
     }
   </style>
@@ -85,12 +71,6 @@
 <header>
   <div class="nav">
     <div class="logo">MB · Borbala Major</div>
-
-    <nav>
-      <ul>
-        <li><a href="index.html#portfolio">Portfolio</a></li>
-      </ul>
-    </nav>
   </div>
 </header>
 
@@ -108,29 +88,37 @@
       Espacio de uso colectivo · Diseño de producto
     </p>
 
-    <!-- IMAGEN PRINCIPAL -->
-    <img src="profile5.jpg" alt="Proyecto BAORI" class="hero-image">
+    <!-- SECCIÓN 1 -->
+    <div class="project-section">
+      <img src="profile5.jpg" alt="Proyecto BAORI" class="project-image">
 
-    <!-- TEXTO -->
-    <div class="project-text">
-      <p>
+      <div class="project-text">
         BAORI es un proyecto de diseño centrado en la creación de un espacio de uso colectivo,
         concebido para fomentar la interacción social y el uso compartido dentro de un entorno
         flexible y contemporáneo.
-      </p>
-
-      <p style="margin-top:18px;">
-        El proyecto explora la relación entre el usuario y el espacio, combinando criterios
-        funcionales, estéticos y emocionales. A través de un proceso de investigación,
-        conceptualización y desarrollo técnico, BAORI propone una solución adaptable
-        a diferentes contextos de uso.
-      </p>
+      </div>
     </div>
 
-    <!-- GALERÍA -->
-    <div class="project-gallery">
-      <img src="profile20.jpg" alt="BAORI detalle 1">
-      <img src="profile21.jpg" alt="BAORI detalle 2">
+    <!-- SECCIÓN 2 -->
+    <div class="project-section">
+      <img src="profile20.jpg" alt="BAORI desarrollo" class="project-image">
+
+      <div class="project-text">
+        El proyecto parte de un análisis del comportamiento del usuario en espacios comunes,
+        explorando cómo el diseño puede influir en la forma en la que las personas se relacionan
+        con el entorno y entre ellas.
+      </div>
+    </div>
+
+    <!-- SECCIÓN 3 -->
+    <div class="project-section">
+      <img src="profile21.jpg" alt="BAORI resultado final" class="project-image">
+
+      <div class="project-text">
+        El resultado es una propuesta equilibrada entre funcionalidad, estética y experiencia
+        de usuario, con una solución adaptable a distintos contextos y necesidades de uso
+        colectivo.
+      </div>
     </div>
 
   </div>
