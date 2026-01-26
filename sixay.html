@@ -4,21 +4,68 @@
 <meta charset="UTF-8">
 <title>SERIE SIXAY · Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif}
-body{background:#fff;color:#333}
-header{position:fixed;top:0;width:100%;height:70px;background:#eaeceb}
-.header-inner{max-width:1200px;width:90%;height:100%;margin:auto;display:flex;align-items:center;justify-content:space-between}
-.back-btn{text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#555;display:flex;align-items:center}
-.back-btn .arrow{font-size:18px;margin-right:4px}
-.lang{display:flex;gap:6px}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #333;
+}
+
+/* ================= HEADER ================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #eaeceb;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.back-btn span {
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+.lang {
+  display: flex;
+  gap: 6px;
+}
+
 .lang-btn {
   background: transparent;
   border: 1px solid #d0d0d0;
   color: #777;
   font-size: 10px;
-  padding: 2px 12px; /* CAMBIADO AQUÍ */
+  padding: 2px 12px;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -29,50 +76,131 @@ header{position:fixed;top:0;width:100%;height:70px;background:#eaeceb}
   color: #fff;
   border-color: #c7c9c8;
 }
-main{padding-top:150px}
-.container{width:90%;max-width:960px;margin:auto}
-.project-title{font-size:30px;font-weight:400;margin-bottom:30px}
-.hero-image{width:100%;margin-bottom:30px}
-.project-text{font-size:14px;line-height:1.5;color:#555;margin-bottom:30px;text-align:justify}
-footer{text-align:center;font-size:11px;background:#eaeceb;padding:6px;margin-top:40px}
+
+/* ================= LAYOUT ================= */
+main {
+  padding-top: 140px;
+}
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
+}
+
+/* ================= TITULO ================= */
+.project-title {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= IMÁGENES ================= */
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 26px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 80px 0 24px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.project-image-large {
+  width: 110%;
+  margin-left: -5%;
+}
+
+/* ================= TEXTO ================= */
+.project-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 30px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 8px;
+  font-size: 11px;
+  color: #555;
+  background-color: #eaeceb;
+  margin-top: 180px;
+}
+
+/* ================= ANIMACIONES ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 </style>
 </head>
 
 <body>
+
 <header>
-<div class="header-inner">
-<a href="index.html#portfolio" class="back-btn" id="back-btn"><span class="arrow">←</span> Volver</a>
-<div class="lang">
-<button class="lang-btn active" onclick="setLang('es')">ES</button>
-<button class="lang-btn" onclick="setLang('en')">EN</button>
-</div>
-</div>
+  <div class="header-inner">
+    <a href="index.html#portfolio" class="back-btn"><span>←</span><span id="back-text">Volver</span></a>
+
+    <div class="lang">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
 </header>
 
 <main>
-<div class="container">
-<h1 class="project-title">SERIE SIXAY</h1>
-<img src="profile8.jpg" class="hero-image">
-<img src="mueble.jpg" class="hero-image">
-<p class="project-text" id="t1">Serie Sixay es un sistema de mobiliario modular desarrollado durante mi experiencia profesional.</p>
-<p class="project-text" id="t2">Combina optimización estructural con una estética sobria y contemporánea.</p>
-</div>
+  <div class="container">
+
+    <h1 class="project-title">SERIE SIXAY</h1>
+
+    <!-- Imagen principal -->
+    <img src="profile8.jpg" alt="Serie Sixay mobiliario" class="hero-image">
+
+    <p class="project-text" id="text-1">
+      La serie Sixay es un sistema de mobiliario concebido desde una lógica modular y funcional, orientado a responder a diferentes necesidades de almacenaje y exposición dentro de entornos contemporáneos. El proyecto parte de una geometría sobria y equilibrada, donde la proporción, la repetición y la claridad estructural definen su identidad formal.
+    </p>
+
+    <!-- Imagen 2 -->
+    <img src="mueble.jpg" alt="Detalle serie Sixay" class="project-image">
+
+    <p class="project-text" id="text-2">
+      A través de la combinación de distintos módulos, Sixay permite generar múltiples configuraciones adaptables a distintos contextos espaciales. La relación entre verticales y horizontales se ha trabajado para lograr un equilibrio entre ligereza visual y estabilidad estructural.
+    </p>
+
+    <!-- Imagen 3 plano -->
+    <img src="planoestanteria.jpg" alt="Plano técnico estantería Sixay" class="project-image project-image-large">
+
+    <p class="project-text" id="text-3">
+      El proyecto se apoya en un desarrollo técnico orientado a la viabilidad industrial, atendiendo a criterios de fabricación, ensamblaje y optimización de material. El plano técnico refleja la lógica constructiva del sistema y su coherencia productiva.
+    </p>
+
+  </div>
 </main>
 
-<footer id="footer">© 2026 · Borbala Major · Ingeniera en diseño industrial</footer>
+<footer id="footer-text">
+© 2026 · Borbala Major · Ingeniera en diseño industrial
+</footer>
 
 <script>
-function setLang(lang){
-const es={back:"Volver",t1:"Serie Sixay es un sistema de mobiliario modular desarrollado durante mi experiencia profesional.",t2:"Combina optimización estructural con una estética sobria y contemporánea.",footer:"© 2026 · Borbala Major · Ingeniera en diseño industrial"};
-const en={back:"Back",t1:"Sixay Series is a modular furniture system developed during my professional experience.",t2:"It combines structural optimization with a sober and contemporary aesthetic.",footer:"© 2026 · Borbala Major · Industrial Design Engineer"};
-const c=lang==="es"?es:en;
-document.getElementById("t1").innerText=c.t1;
-document.getElementById("t2").innerText=c.t2;
-document.getElementById("footer").innerText=c.footer;
-document.getElementById("back-btn").innerHTML=`<span class="arrow">←</span> ${c.back}`;
-document.querySelectorAll(".lang-btn").forEach(b=>b.classList.remove("active"));
-document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
-}
-</script>
-</body>
-</html>
+function setLang(lang) {
+  const es = {
+    back: "Volver",
+    t1: "La serie Sixay es un sistema de mobiliario concebido desde una lógica modular y funcional, orientado a resp
