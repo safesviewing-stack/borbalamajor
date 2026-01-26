@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>LUMORA · Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #333;
+}
+
+/* ================= HEADER ================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #eaeceb;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.back-btn:hover {
+  font-weight: 500;
+}
+
+/* ================= IDIOMAS ================= */
+.lang {
+  display: flex;
+  gap: 6px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1px solid #d0d0d0;
+  color: #777;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-btn.active {
+  background: #c7c9c8;
+  color: #fff;
+  border-color: #c7c9c8;
+}
+
+/* ================= LAYOUT ================= */
+main {
+  padding-top: 150px;
+}
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
+}
+
+/* ================= TITULO ================= */
+.project-title {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= IMÁGENES ================= */
+.hero-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 18px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 70px 0 18px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= TEXTO ================= */
+.project-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 6px;
+  font-size: 11px;
+  color: #555;
+  background-color: #eaeceb;
+  margin-top: 40px;
+}
+
+/* ================= ANIMACIONES ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html#portfolio" class="back-btn">← Volver</a>
+
+    <div class="lang">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <h1 class="project-title">LUMORA</h1>
+
+    <!-- Imagen principal -->
+    <img src="profile6.jpg" alt="LUMORA iluminación" class="hero-image">
+
+    <p class="project-text" id="text-1">
+      LUMORA es un proyecto de diseño de iluminación centrado en la creación de una lámpara funcional y estética,
+      donde la forma surge directamente de la lógica estructural y la optimización del material, combinando
+      diseño contemporáneo con viabilidad técnica para su fabricación.
+    </p>
+
+    <!-- Imagen 2 -->
+    <img src="profile22.jpg" alt="LUMORA detalle técnico" class="project-image">
+
+    <p class="project-text" id="text-2">
+      El desarrollo del producto se basó en procesos de prototipado e impresión 3D, permitiendo validar tanto
+      la geometría como el comportamiento lumínico y estructural, así como optimizar el consumo de material
+      y la eficiencia productiva.
+    </p>
+
+    <!-- Imagen 3 -->
+    <img src="profile23.jpg" alt="LUMORA prototipo" class="project-image">
+
+    <p class="project-text" id="text-3">
+      LUMORA se concibe como una pieza adaptable a distintos contextos, desde espacios domésticos hasta
+      entornos contract, manteniendo siempre un equilibrio entre estética, funcionalidad y sostenibilidad.
+    </p>
+
+  </div>
+</main>
+
+<footer>
+© 2026 · Borbala Major · Ingeniera en diseño industrial
+</footer>
+
+<script>
+function setLang(lang) {
+  const es = {
+    t1: "LUMORA es un proyecto de diseño de iluminación centrado en la creación de una lámpara funcional y estética, donde la forma surge directamente de la lógica estructural y la optimización del material, combinando diseño contemporáneo con viabilidad técnica para su fabricación.",
+    t2: "El desarrollo del producto se basó en procesos de prototipado e impresión 3D, permitiendo validar tanto la geometría como el comportamiento lumínico y estructural, así como optimizar el consumo de material y la eficiencia productiva.",
+    t3: "LUMORA se concibe como una pieza adaptable a distintos contextos, desde espacios domésticos hasta entornos contract, manteniendo siempre un equilibrio entre estética, funcionalidad y sostenibilidad."
+  };
+
+  const en = {
+    t1: "LUMORA is a lighting design project focused on creating a functional and aesthetic lamp, where form emerges directly from structural logic and material optimization, combining contemporary design with technical feasibility for manufacturing.",
+    t2: "The product development was based on prototyping and 3D printing processes, allowing validation of both geometry and light performance, as well as optimization of material consumption and production efficiency.",
+    t3: "LUMORA is conceived as a piece adaptable to different contexts, from domestic spaces to contract environments, always maintaining a balance between aesthetics, functionality and sustainability."
+  };
+
+  const c = lang === "es" ? es : en;
+
+  document.getElementById("text-1").innerText = c.t1;
+  document.getElementById("text-2").innerText = c.t2;
+  document.getElementById("text-3").innerText = c.t3;
+
+  document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+  document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
+}
+</script>
+
+</body>
+</html>
