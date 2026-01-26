@@ -833,7 +833,7 @@ body:has(#home.active) footer {
     transform: translateY(-80px);
   }
   100% {
-    opacity: 0.65;
+    opacity: 0.5;
     transform: translateY(var(--offset));
   }
 }
@@ -845,7 +845,7 @@ body:has(#home.active) footer {
     transform: translateY(80px);
   }
   100% {
-    opacity: 0.65;
+    opacity: 0.5;
     transform: translateY(var(--offset));
   }
 }
