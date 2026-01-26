@@ -9,6 +9,11 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
 body{background:#fff;color:#333;}
 header{position:fixed;top:0;width:100%;height:70px;background:#eaeceb;}
+.header-inner{max-width:1200px;width:90%;height:100%;margin:auto;display:flex;align-items:center;justify-content:space-between;}
+.back-btn{text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#555;}
+.lang{display:flex;gap:6px;}
+.lang-btn{border:1px solid #d0d0d0;background:transparent;font-size:10px;padding:4px 10px;border-radius:4px;}
+.lang-btn.active{background:#c7c9c8;color:#fff;}
 main{padding-top:150px;}
 .container{width:90%;max-width:960px;margin:auto;}
 .project-title{font-size:30px;margin-bottom:30px;}
@@ -18,14 +23,35 @@ footer{text-align:center;font-size:11px;background:#eaeceb;padding:6px;margin-to
 </style>
 </head>
 <body>
-<header><a href="index.html#portfolio">← Volver</a></header>
-<main><div class="container">
+<header>
+<div class="header-inner">
+<a href="index.html#portfolio" class="back-btn">← Volver</a>
+<div class="lang">
+<button class="lang-btn active" onclick="setLang('es')">ES</button>
+<button class="lang-btn" onclick="setLang('en')">EN</button>
+</div>
+</div>
+</header>
+<main>
+<div class="container">
 <h1 class="project-title">KATE CLUB</h1>
-<img src="kateclub1.jpg" class="hero-image">
-<p class="project-text">KATE CLUB es un proyecto de identidad visual y diseño gráfico desarrollado para una marca joven vinculada al ocio nocturno y la cultura urbana.</p>
-<p class="project-text">El diseño se basa en una estética contemporánea, tipografía expresiva y una paleta cromática potente.</p>
-<p class="project-text">El proyecto demuestra mi versatilidad entre diseño industrial y gráfico.</p>
-</div></main>
-<footer>© 2026 · Borbala Major · Ingeniera en diseño industrial</footer>
+<img src="kateclub.jpg" class="hero-image">
+<p id="t1" class="project-text">KATE CLUB es un proyecto de identidad visual y diseño gráfico.</p>
+<p id="t2" class="project-text">Desarrollado para una marca vinculada a la cultura urbana.</p>
+<p id="t3" class="project-text">Demuestra mi versatilidad como diseñadora.</p>
+</div>
+</main>
+<footer id="footer">© 2026 · Borbala Major · Ingeniera en diseño industrial</footer>
+<script>
+function setLang(l){
+const es={t1:"KATE CLUB es un proyecto de identidad visual y diseño gráfico.",t2:"Desarrollado para una marca vinculada a la cultura urbana.",t3:"Demuestra mi versatilidad como diseñadora.",f:"© 2026 · Borbala Major · Ingeniera en diseño industrial"};
+const en={t1:"KATE CLUB is a visual identity and graphic design project.",t2:"Developed for a brand linked to urban culture.",t3:"It demonstrates my versatility as a designer.",f:"© 2026 · Borbala Major · Industrial Design Engineer"};
+const c=l==="es"?es:en;
+["t1","t2","t3"].forEach(id=>document.getElementById(id).innerText=c[id]);
+document.getElementById("footer").innerText=c.f;
+document.querySelectorAll(".lang-btn").forEach(b=>b.classList.remove("active"));
+document.querySelector(`.lang-btn[onclick*="${l}"]`).classList.add("active");
+}
+</script>
 </body>
 </html>
