@@ -7,7 +7,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 /* ================= RESET ================= */
@@ -21,14 +21,14 @@
 body{
   background:#ffffff;
   color:#555;
-  display:flex;
-  flex-direction:column;
-  min-height:100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ================= HEADER ================= */
 header{
-  position:fixed;
+  position: fixed;
   top:0;
   width:100%;
   height:70px;
@@ -47,9 +47,9 @@ header{
 }
 
 .logo{
+  color:#555;
   font-weight:300;
   font-size:14px;
-  color:#555;
 }
 
 nav ul{
@@ -60,15 +60,15 @@ nav ul{
 }
 
 nav li{
+  color:#555;
   font-size:12px;
   letter-spacing:.12em;
   text-transform:uppercase;
-  color:#555;
   cursor:pointer;
   position:relative;
 }
 
-nav li.active{font-weight:500}
+nav li.active{font-weight:700;}
 
 nav li::after{
   content:"";
@@ -81,7 +81,7 @@ nav li::after{
   transition:.25s;
 }
 
-nav li:hover::after{width:100%}
+nav li:hover::after{width:100%;}
 
 /* ================= IDIOMAS LUMORA ================= */
 .lang{
@@ -89,7 +89,7 @@ nav li:hover::after{width:100%}
   gap:6px;
 }
 
-.lang-btn{
+.lang button{
   background:transparent;
   border:1px solid #d0d0d0;
   color:#777;
@@ -100,73 +100,38 @@ nav li:hover::after{width:100%}
   transition:all .3s ease;
 }
 
-.lang-btn.active{
+.lang button.active{
   background:#c7c9c8;
   color:#fff;
   border-color:#c7c9c8;
 }
 
 /* ================= LAYOUT ================= */
-main{
-  padding-top:70px;
-  flex-grow:1;
-}
-
+main{padding-top:70px;flex-grow:1;}
 section{display:none}
 section.active{display:block}
+.container{width:90%;max-width:960px;margin:auto;}
+.spaced{padding:90px 0;}
 
-.container{
-  width:90%;
-  max-width:960px;
-  margin:auto;
-}
-
-.spaced{padding:90px 0}
-
-/* ================= ANIMACIONES ================= */
-@keyframes fadeInSlideUp{
-  0%{opacity:0; transform:translateY(40px)}
-  100%{opacity:1; transform:translateY(0)}
-}
-
-h1, h2, p, li{
+/* ================= TYPO + ANIMACIONES ================= */
+h1,h2,p,li{
   opacity:0;
   transform:translateY(40px);
   animation:fadeInSlideUp 1s ease-out forwards;
 }
 
-/* ================= TYPO ================= */
-h1{
-  font-size:30px;
-  font-weight:400;
-  margin-bottom:28px;
-  color:#333;
-}
+h1{font-size:30px;font-weight:500;margin-bottom:28px;}
+h2{font-size:16px;margin-bottom:10px;}
+p,li{font-size:15px;line-height:1.6;}
 
-h2{
-  font-size:16px;
-  font-weight:400;
-  margin-bottom:10px;
-  color:#333;
-}
-
-p, li{
-  font-size:14px;
-  line-height:1.5;
-  color:#555;
+@keyframes fadeInSlideUp{
+  0%{opacity:0;transform:translateY(40px);}
+  100%{opacity:1;transform:translateY(0);}
 }
 
 /* ================= HERO ================= */
-.home{
-  background:url('portada.jpg') center/cover no-repeat;
-}
-
-.hero{
-  min-height:75vh;
-  display:flex;
-  align-items:center;
-}
-
+.home{background:url('portada.jpg') center/cover no-repeat;}
+.hero{min-height:75vh;display:flex;align-items:center;}
 .hero-box{
   background:rgba(0,0,0,.75);
   color:#fff;
@@ -176,50 +141,26 @@ p, li{
   transform:translateY(40px);
   animation:fadeInSlideUp 1s ease-out forwards;
 }
-
-.hero-box h1,
-.hero-box p{color:#fff}
-
-.hero-cta{
-  margin-top:24px;
-  display:flex;
-  gap:16px;
-}
-
+.hero-cta{margin-top:24px;display:flex;gap:16px;}
 .btn{
-  padding:10px 22px;
-  font-size:11px;
+  padding:12px 26px;
+  font-size:12px;
   text-transform:uppercase;
   letter-spacing:.08em;
   text-decoration:none;
   cursor:pointer;
   border-radius:4px;
 }
-
-.primary{background:#fff;color:#555}
-.secondary{border:1px solid #fff;color:#fff}
+.primary{background:#fff;color:#555;}
+.secondary{border:1px solid #fff;color:#fff;}
 
 /* ================= ABOUT ================= */
-.about-content{
-  display:flex;
-  gap:20px;
-  align-items:flex-start;
-}
-
-.about-image{
-  max-width:280px;
-  box-shadow:0 2px 8px rgba(0,0,0,.1);
-}
+.about-content{display:flex;gap:20px;align-items:flex-start;}
+.about-image{max-width:280px;box-shadow:0 2px 8px rgba(0,0,0,.1);}
 
 /* ================= CV ================= */
-.cv-block{
-  display:flex;
-  gap:24px;
-  margin-bottom:40px;
-}
-
-.cv-block img{width:160px}
-
+.cv-block{display:flex;gap:24px;margin-bottom:40px;}
+.cv-block img{width:160px;}
 .cv-download-btn{
   display:inline-block;
   margin-top:40px;
@@ -238,31 +179,23 @@ p, li{
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:32px;
 }
-
-.portfolio-item img{
-  width:100%;
-  display:block;
-}
-
-.portfolio-content span{
-  font-size:12px;
-  color:#666;
-}
+.portfolio-item img{width:100%;display:block;}
+.portfolio-content span{font-size:12px;color:#666;}
 
 /* ================= FOOTER ================= */
 footer{
   text-align:center;
-  padding:6px;
+  padding:8px;
   font-size:11px;
   color:#555;
-  background:#eaeceb;
-  margin-top:40px;
+  background-color:#eaeceb;
+  margin-top:50px;
 }
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:900px){
-  .cv-block{flex-direction:column}
-  .about-content{flex-direction:column}
+  .cv-block{flex-direction:column;}
+  .about-content{flex-direction:column;}
 }
 </style>
 </head>
@@ -282,8 +215,8 @@ footer{
       </ul>
     </nav>
     <div class="lang">
-      <button class="lang-btn" data-lang="es">ES</button>
-      <button class="lang-btn" data-lang="en">EN</button>
+      <button id="btn-es" class="active">ES</button>
+      <button id="btn-en">EN</button>
     </div>
   </div>
 </header>
@@ -293,11 +226,11 @@ footer{
 <section id="home" class="home active">
   <div class="container hero">
     <div class="hero-box">
-      <h1 id="hero-title"></h1>
-      <p id="hero-sub"></p>
+      <h1 id="hero-title">Ingeniería de diseño industrial aplicada al desarrollo de producto</h1>
+      <p id="hero-sub">Diseño técnico, fabricación y optimización de productos industriales.</p>
       <div class="hero-cta">
-        <a class="btn primary tab" data-tab="cv" id="hero-btn-cv"></a>
-        <a class="btn secondary tab" data-tab="contact" id="hero-btn-contact"></a>
+        <a class="btn primary tab" data-tab="cv">Ver CV</a>
+        <a class="btn secondary tab" data-tab="contact">Contactar</a>
       </div>
     </div>
   </div>
@@ -305,9 +238,11 @@ footer{
 
 <section id="about">
   <div class="container spaced">
-    <h1 id="about-title"></h1>
+    <h1 id="about-title">Sobre mí</h1>
     <div class="about-content">
-      <p id="about-text"></p>
+      <p id="about-text">
+        Soy Borbála, una joven de 23 años de Hungría, graduada de la Universidad Técnica de Budapest (BME) y actualmente en búsqueda de oportunidades profesionales en España...
+      </p>
       <img src="profile.jpg" class="about-image">
     </div>
   </div>
@@ -315,56 +250,56 @@ footer{
 
 <section id="cv">
   <div class="container spaced">
-    <h1 id="cv-title"></h1>
+    <h1 class="cv-main-title">Currículum</h1>
+    <h2 class="cv-section-title">Formación académica</h2>
 
-    <h2 id="cv-edu-title"></h2>
     <div class="cv-block">
       <img src="profile3.jpg">
       <div>
-        <h2 id="cv-edu1-title"></h2>
-        <p id="cv-edu1-text"></p>
+        <h2>Grado en Ingeniería de Diseño Industrial 2022–2026</h2>
+        <p>Graduada en Diseño Industrial por la Universidad Técnica de Budapest (BME)...</p>
       </div>
     </div>
 
     <div class="cv-block">
       <img src="profile2.jpg">
       <div>
-        <h2 id="cv-edu2-title"></h2>
-        <p id="cv-edu2-text"></p>
+        <h2>Grado en Ingeniería de Diseño Industrial (Erasmus)</h2>
+        <p>Formación cursada en la Universitat Politècnica de València...</p>
       </div>
     </div>
 
-    <h2 id="cv-exp-title"></h2>
+    <h2 class="cv-section-title">Experiencia en diseño</h2>
     <div class="cv-block">
       <img src="profile4.jpg">
       <div>
-        <h2 id="cv-exp1-title"></h2>
-        <p id="cv-exp1-text"></p>
+        <h2>Experiencia profesional en Sixay</h2>
+        <p>Diseño de mobiliario, desarrollo técnico y trabajo multidisciplinar...</p>
       </div>
     </div>
 
-    <a href="curriculum.pdf" class="cv-download-btn" id="cv-download"></a>
+    <a href="curriculum.pdf" class="cv-download-btn">Descargar CV</a>
   </div>
 </section>
 
 <section id="portfolio">
   <div class="container spaced">
-    <h1 id="portfolio-title"></h1>
+    <h1 id="portfolio-title">Portfolio</h1>
     <div class="portfolio-grid">
-      <a href="baori.html"><article class="portfolio-item"><img src="profile5.jpg"><div><h2>BAORI</h2><span id="p-baori"></span></div></article></a>
-      <a href="lumora.html"><article class="portfolio-item"><img src="profile6.jpg"><div><h2>LUMORA</h2><span id="p-lumora"></span></div></article></a>
-      <a href="eliptria.html"><article class="portfolio-item"><img src="profile7.jpg"><div><h2>ELIPTRIA</h2><span id="p-eliptria"></span></div></article></a>
-      <a href="sixay.html"><article class="portfolio-item"><img src="profile8.jpg"><div><h2>SERIE SIXAY</h2><span id="p-sixay"></span></div></article></a>
-      <a href="node.html"><article class="portfolio-item"><img src="profile9.jpg"><div><h2>NODE</h2><span id="p-node"></span></div></article></a>
-      <a href="syncro.html"><article class="portfolio-item"><img src="profile10.jpg"><div><h2>SYNCRO</h2><span id="p-syncro"></span></div></article></a>
-      <a href="kateclub.html"><article class="portfolio-item"><img src="profile11.jpg"><div><h2>KATE CLUB</h2><span id="p-kate"></span></div></article></a>
+      <a href="baori.html"><img src="profile5.jpg"></a>
+      <a href="lumora.html"><img src="profile6.jpg"></a>
+      <a href="eliptria.html"><img src="profile7.jpg"></a>
+      <a href="sixay.html"><img src="profile8.jpg"></a>
+      <a href="node.html"><img src="profile9.jpg"></a>
+      <a href="syncro.html"><img src="profile10.jpg"></a>
+      <a href="kateclub.html"><img src="profile11.jpg"></a>
     </div>
   </div>
 </section>
 
 <section id="contact">
   <div class="container spaced">
-    <h1 id="contact-title"></h1>
+    <h1 id="contact-title">Contacto</h1>
     <p>📧 majorbori@gmail.com</p>
     <p>📞 +36 30 820 3716</p>
   </div>
@@ -372,106 +307,46 @@ footer{
 
 </main>
 
-<footer id="footer"></footer>
+<footer id="footer">
+© 2026 · Borbala Major · Ingeniera en diseño industrial
+</footer>
 
 <script>
 const content = {
-  es: {
-    heroTitle: "Ingeniería de diseño industrial aplicada al desarrollo de producto",
-    heroSub: "Diseño técnico, fabricación y optimización de productos industriales.",
-    heroBtnCv: "Ver CV",
-    heroBtnContact: "Contactar",
-    aboutTitle: "Sobre mí",
-    aboutText: "Soy Borbála, una joven de 23 años de Hungría, graduada de la Universidad Técnica de Budapest (BME) y actualmente en búsqueda de oportunidades profesionales en España. Me apasiona combinar lo artístico y lo técnico, trabajo bien en equipo y pongo atención al detalle.",
-    cvTitle: "Currículum",
-    cvEduTitle: "Formación académica",
-    cvEdu1Title: "Grado en Ingeniería de Diseño Industrial 2022–2026",
-    cvEdu1Text: "Graduada en Diseño Industrial por la Universidad Técnica de Budapest (BME).",
-    cvEdu2Title: "Grado en Ingeniería de Diseño Industrial (Erasmus) 2025–2026",
-    cvEdu2Text: "Formación académica cursada en la Universitat Politècnica de València.",
-    cvExpTitle: "Experiencia en diseño",
-    cvExp1Title: "Experiencia profesional en Sixay",
-    cvExp1Text: "Diseño de mobiliario, desarrollo técnico y optimización de producto.",
-    cvDownload: "Descargar CV",
-    portfolioTitle: "Portfolio",
-    pBaori: "Espacio colectivo",
-    pLumora: "Iluminación",
-    pEliptria: "Grifería",
-    pSixay: "Mobiliario",
-    pNode: "Mobiliario",
-    pSyncro: "Smartwatch",
-    pKate: "Diseño gráfico",
-    contactTitle: "Contacto",
-    footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
+  es:{
+    heroTitle:"Ingeniería de diseño industrial aplicada al desarrollo de producto",
+    heroSub:"Diseño técnico, fabricación y optimización de productos industriales.",
+    aboutTitle:"Sobre mí",
+    aboutText:"Soy Borbála, una joven de 23 años de Hungría, graduada de la Universidad Técnica de Budapest (BME) y actualmente en búsqueda de oportunidades profesionales en España...",
+    cvMain:"Currículum",
+    contact:"Contacto",
+    footer:"© 2026 · Borbala Major · Ingeniera en diseño industrial"
   },
-  en: {
-    heroTitle: "Industrial design engineering applied to product development",
-    heroSub: "Technical design, manufacturing and optimization of industrial products.",
-    heroBtnCv: "View CV",
-    heroBtnContact: "Contact",
-    aboutTitle: "About me",
-    aboutText: "I'm Borbála, a 23-year-old from Hungary, graduated from BME and currently seeking professional opportunities in Spain. I enjoy combining art and technology and working in teams.",
-    cvTitle: "Curriculum Vitae",
-    cvEduTitle: "Academic background",
-    cvEdu1Title: "Bachelor’s Degree in Industrial Design 2022–2026",
-    cvEdu1Text: "Graduated from Budapest University of Technology and Economics.",
-    cvEdu2Title: "Bachelor’s Degree (Erasmus) 2025–2026",
-    cvEdu2Text: "Academic training completed at UPV.",
-    cvExpTitle: "Design experience",
-    cvExp1Title: "Professional experience at Sixay",
-    cvExp1Text: "Furniture design, technical development and product optimization.",
-    cvDownload: "Download CV",
-    portfolioTitle: "Portfolio",
-    pBaori: "Collective space",
-    pLumora: "Lighting",
-    pEliptria: "Faucets",
-    pSixay: "Furniture",
-    pNode: "Furniture",
-    pSyncro: "Smartwatch",
-    pKate: "Graphic design",
-    contactTitle: "Contact",
-    footer: "© 2026 · Borbala Major · Industrial Design Engineer"
+  en:{
+    heroTitle:"Industrial design engineering applied to product development",
+    heroSub:"Technical design, manufacturing and optimization of industrial products.",
+    aboutTitle:"About me",
+    aboutText:"I’m Borbála, a 23-year-old from Hungary, graduated from BME and currently seeking opportunities in Spain...",
+    cvMain:"Curriculum Vitae",
+    contact:"Contact",
+    footer:"© 2026 · Borbala Major · Industrial Design Engineer"
   }
 };
 
 function setLang(lang){
-  localStorage.setItem("lang", lang);
-  const c = content[lang];
-  document.getElementById("hero-title").innerText = c.heroTitle;
-  document.getElementById("hero-sub").innerText = c.heroSub;
-  document.getElementById("hero-btn-cv").innerText = c.heroBtnCv;
-  document.getElementById("hero-btn-contact").innerText = c.heroBtnContact;
-  document.getElementById("about-title").innerText = c.aboutTitle;
-  document.getElementById("about-text").innerText = c.aboutText;
-  document.getElementById("cv-title").innerText = c.cvTitle;
-  document.getElementById("cv-edu-title").innerText = c.cvEduTitle;
-  document.getElementById("cv-edu1-title").innerText = c.cvEdu1Title;
-  document.getElementById("cv-edu1-text").innerText = c.cvEdu1Text;
-  document.getElementById("cv-edu2-title").innerText = c.cvEdu2Title;
-  document.getElementById("cv-edu2-text").innerText = c.cvEdu2Text;
-  document.getElementById("cv-exp-title").innerText = c.cvExpTitle;
-  document.getElementById("cv-exp1-title").innerText = c.cvExp1Title;
-  document.getElementById("cv-exp1-text").innerText = c.cvExp1Text;
-  document.getElementById("cv-download").innerText = c.cvDownload;
-  document.getElementById("portfolio-title").innerText = c.portfolioTitle;
-  document.getElementById("p-baori").innerText = c.pBaori;
-  document.getElementById("p-lumora").innerText = c.pLumora;
-  document.getElementById("p-eliptria").innerText = c.pEliptria;
-  document.getElementById("p-sixay").innerText = c.pSixay;
-  document.getElementById("p-node").innerText = c.pNode;
-  document.getElementById("p-syncro").innerText = c.pSyncro;
-  document.getElementById("p-kate").innerText = c.pKate;
-  document.getElementById("contact-title").innerText = c.contactTitle;
-  document.getElementById("footer").innerText = c.footer;
-  document.querySelectorAll(".lang-btn").forEach(b=>b.classList.remove("active"));
-  document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add("active");
+  document.getElementById("hero-title").innerText=content[lang].heroTitle;
+  document.getElementById("hero-sub").innerText=content[lang].heroSub;
+  document.getElementById("about-title").innerText=content[lang].aboutTitle;
+  document.getElementById("about-text").innerText=content[lang].aboutText;
+  document.getElementById("contact-title").innerText=content[lang].contact;
+  document.getElementById("footer").innerText=content[lang].footer;
+  document.getElementById("btn-es").classList.toggle("active",lang==="es");
+  document.getElementById("btn-en").classList.toggle("active",lang==="en");
 }
 
-document.querySelectorAll(".lang-btn").forEach(btn=>{
-  btn.addEventListener("click",()=>setLang(btn.dataset.lang));
-});
-
-setLang(localStorage.getItem("lang")||"es");
+setLang("es");
+document.getElementById("btn-es").onclick=()=>setLang("es");
+document.getElementById("btn-en").onclick=()=>setLang("en");
 
 document.querySelectorAll(".tab").forEach(tab=>{
   tab.addEventListener("click",()=>{
