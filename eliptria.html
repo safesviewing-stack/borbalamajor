@@ -5,47 +5,54 @@
 <title>ELIPTRIA · Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
 body{background:#fff;color:#333;}
-header{position:fixed;top:0;width:100%;height:70px;background:#eaeceb;z-index:1000;}
-.header-inner{max-width:1200px;width:90%;height:100%;margin:auto;display:flex;align-items:center;justify-content:space-between;}
+header{position:fixed;top:0;width:100%;height:70px;background:#eaeceb;}
+.header-inner{max-width:1200px;width:90%;height:100%;margin:auto;display:flex;justify-content:space-between;align-items:center;}
 .back-btn{text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#555;}
 .lang{display:flex;gap:6px;}
 .lang-btn{border:1px solid #d0d0d0;background:transparent;font-size:10px;padding:4px 10px;border-radius:4px;cursor:pointer;}
-.lang-btn.active{background:#c7c9c8;color:#fff;border-color:#c7c9c8;}
+.lang-btn.active{background:#c7c9c8;color:#fff;}
 main{padding-top:150px;}
 .container{width:90%;max-width:960px;margin:auto;}
-.project-title{font-size:30px;margin-bottom:30px;}
+.project-title{font-size:30px;font-weight:400;margin-bottom:30px;}
 .hero-image{width:100%;height:auto;margin-bottom:30px;}
 .project-text{font-size:14px;line-height:1.6;color:#555;margin-bottom:24px;text-align:justify;}
 footer{text-align:center;font-size:11px;background:#eaeceb;padding:6px;margin-top:40px;}
 </style>
 </head>
+
 <body>
+
 <header>
-  <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn">← Volver</a>
-    <div class="lang">
-      <button class="lang-btn active" onclick="setLang('es')">ES</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
-    </div>
-  </div>
+<div class="header-inner">
+<a href="index.html#portfolio" class="back-btn">← Volver</a>
+<div class="lang">
+<button class="lang-btn active" onclick="setLang('es')">ES</button>
+<button class="lang-btn" onclick="setLang('en')">EN</button>
+</div>
+</div>
 </header>
+
 <main>
 <div class="container">
 <h1 class="project-title">ELIPTRIA</h1>
-<img src="eliptria.jpg" class="hero-image" alt="ELIPTRIA grifería">
+<img src="eliptria.jpg" class="hero-image">
+
 <p id="t1" class="project-text">ELIPTRIA es un proyecto de diseño de grifería que explora la relación entre geometría elíptica, ergonomía y control del flujo de agua.</p>
 <p id="t2" class="project-text">El diseño se desarrolló mediante procesos iterativos de boceto, modelado 3D y validación funcional.</p>
 <p id="t3" class="project-text">El resultado combina lenguaje formal contemporáneo y soluciones técnicas racionales.</p>
 </div>
 </main>
+
 <footer id="footer">© 2026 · Borbala Major · Ingeniera en diseño industrial</footer>
+
 <script>
 function setLang(l){
 const es={t1:"ELIPTRIA es un proyecto de diseño de grifería que explora la relación entre geometría elíptica, ergonomía y control del flujo de agua.",t2:"El diseño se desarrolló mediante procesos iterativos de boceto, modelado 3D y validación funcional.",t3:"El resultado combina lenguaje formal contemporáneo y soluciones técnicas racionales.",f:"© 2026 · Borbala Major · Ingeniera en diseño industrial"};
-const en={t1:"ELIPTRIA is a faucet design project exploring the relationship between elliptical geometry, ergonomics and water flow control.",t2:"The design was developed through iterative sketching, 3D modeling and functional validation processes.",t3:"The result combines contemporary formal language with rational technical solutions.",f:"© 2026 · Borbala Major · Industrial Design Engineer"};
+const en={t1:"ELIPTRIA is a faucet design project exploring elliptical geometry, ergonomics and water flow control.",t2:"The design was developed through iterative sketching, 3D modeling and functional validation.",t3:"The result combines contemporary form language with rational technical solutions.",f:"© 2026 · Borbala Major · Industrial Design Engineer"};
 const c=l==="es"?es:en;
 ["t1","t2","t3"].forEach(id=>document.getElementById(id).innerText=c[id]);
 document.getElementById("footer").innerText=c.f;
