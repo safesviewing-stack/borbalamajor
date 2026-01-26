@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
 /* ================= RESET ================= */
 * {
   margin: 0;
@@ -41,7 +42,6 @@ header {
   justify-content: space-between;
 }
 
-/* ================= BOTÓN VOLVER ================= */
 .back-btn {
   text-decoration: none;
   font-size: 12px;
@@ -50,16 +50,15 @@ header {
   color: #555;
   display: flex;
   align-items: center;
+  gap: 6px;
+}
+
+.back-btn span {
+  font-size: 18px;
 }
 
 .back-btn:hover {
   font-weight: 500;
-}
-
-.back-btn .arrow {
-  font-size: 18px;
-  margin-right: 4px;
-  vertical-align: middle;
 }
 
 /* ================= IDIOMAS ================= */
@@ -73,7 +72,7 @@ header {
   border: 1px solid #d0d0d0;
   color: #777;
   font-size: 10px;
-  padding: 2px 12px; /* CAMBIADO AQUÍ */
+  padding: 2px 12px;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -94,6 +93,7 @@ main {
   width: 90%;
   max-width: 960px;
   margin: auto;
+  margin-bottom: 80px;
 }
 
 /* ================= TITULO ================= */
@@ -107,20 +107,20 @@ main {
 /* ================= IMÁGENES ================= */
 .hero-image {
   width: 100%;
-  height: auto;
+  height: 360px;
   object-fit: contain;
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   animation: fadeUp 0.6s ease forwards;
 }
 
 /* ================= TEXTO ================= */
 .project-text {
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #555;
   text-align: justify;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -131,7 +131,7 @@ footer {
   font-size: 11px;
   color: #555;
   background-color: #eaeceb;
-  margin-top: 120px;
+  margin-top: 60px;
 }
 
 /* ================= ANIMACIONES ================= */
@@ -145,6 +145,7 @@ footer {
     transform: translateY(0);
   }
 }
+
 </style>
 </head>
 
@@ -154,7 +155,7 @@ footer {
 <header>
   <div class="header-inner">
     <a href="index.html#portfolio" class="back-btn" id="back-btn">
-      <span class="arrow">←</span> Volver
+      <span>←</span> <span id="back-text">Volver</span>
     </a>
 
     <div class="lang">
@@ -171,43 +172,45 @@ footer {
 
     <img src="lampara1.jpg" alt="Lámpara Lumora" class="hero-image">
 
-    <p class="project-text" id="text-1">
-      Lumora es una lámpara artesanal realizada en cerámica, concebida como una pieza de iluminación que combina tradición material y diseño contemporáneo. Cada unidad se produce de manera manual, lo que convierte cada lámpara en un objeto único y refuerza su carácter singular dentro de un contexto de producción controlada. Su diseño se inspira en la naranja de Valencia, reinterpretando sus volúmenes orgánicos, su textura y su carácter mediterráneo para trasladarlos a un objeto funcional y estético. El proyecto busca poner en valor la cerámica como material dentro del diseño industrial, integrando procesos artesanales con una visión actual del producto, orientada tanto al ámbito doméstico como a espacios contract, donde la luz no solo cumple una función técnica, sino también emocional y ambiental.
-    </p>
+    <p class="project-text" id="t1"></p>
 
+    <img src="lampara22.jpg" alt="Detalle lámpara Lumora" class="hero-image">
+
+    <p class="project-text" id="t2"></p>
 
   </div>
 </main>
 
-<footer id="footer">
-© 2026 · Borbala Major · Ingeniera en diseño industrial
-</footer>
+<footer id="footer"></footer>
 
 <script>
 function setLang(lang) {
   const es = {
     back: "Volver",
     t1: "Lumora es una lámpara artesanal realizada en cerámica, concebida como una pieza de iluminación que combina tradición material y diseño contemporáneo. Cada unidad se produce de manera manual, lo que convierte cada lámpara en un objeto único y refuerza su carácter singular dentro de un contexto de producción controlada. Su diseño se inspira en la naranja de Valencia, reinterpretando sus volúmenes orgánicos, su textura y su carácter mediterráneo para trasladarlos a un objeto funcional y estético. El proyecto busca poner en valor la cerámica como material dentro del diseño industrial, integrando procesos artesanales con una visión actual del producto, orientada tanto al ámbito doméstico como a espacios contract, donde la luz no solo cumple una función técnica, sino también emocional y ambiental.",
+    t2: "A través del estudio de la forma, el espesor del material y la difusión de la luz, se ha trabajado para lograr una iluminación cálida y envolvente que realce tanto el objeto como el espacio que lo rodea. Lumora pretende así convertirse en un elemento protagonista sin perder su vocación funcional.",
     footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
   };
 
   const en = {
     back: "Back",
     t1: "Lumora is a handcrafted ceramic lamp conceived as a lighting piece that combines material tradition with contemporary design. Each unit is produced manually, making every lamp a unique object and reinforcing its singular character within a controlled production context. Its design is inspired by the Valencia orange, reinterpreting its organic volumes, texture and Mediterranean character and translating them into a functional and aesthetic object. The project aims to highlight ceramics as a material within industrial design, integrating artisanal processes with a contemporary product vision, suitable for both domestic and contract spaces, where light not only fulfills a technical role but also an emotional and atmospheric one.",
+    t2: "Through the study of form, material thickness and light diffusion, the project seeks to achieve a warm and enveloping illumination that enhances both the object itself and the surrounding space. Lumora thus aims to become a protagonist element without losing its functional vocation.",
     footer: "© 2026 · Borbala Major · Industrial Design Engineer"
   };
 
   const c = lang === "es" ? es : en;
 
-  document.getElementById("text-1").innerText = c.t1;
-  document.getElementById("text-2").innerText = c.t2;
-  document.getElementById("text-3").innerText = c.t3;
+  document.getElementById("back-text").innerText = c.back;
+  document.getElementById("t1").innerText = c.t1;
+  document.getElementById("t2").innerText = c.t2;
   document.getElementById("footer").innerText = c.footer;
-  document.getElementById("back-btn").innerHTML = `<span class="arrow">←</span> ${c.back}`;
 
   document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
   document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
 }
+
+setLang("es");
 </script>
 
 </body>
