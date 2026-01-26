@@ -161,34 +161,42 @@ footer {
 
     <h1 class="project-title">NODE</h1>
 
-    <!-- Imagen 1 -->
+    <!-- Imagen 1: principal -->
+    <div class="image-block">
+      <img src="profile9.jpg" alt="NODE sistema modular" class="project-image">
+      <p class="project-text" id="text-1">
+        NODE es un sistema de mobiliario modular concebido para adaptarse a diferentes configuraciones espaciales y necesidades de uso, a partir de una misma lógica estructural y construct l.
+      </p>
+    </div>
+
+    <!-- Imagen 2: sofá -->
     <div class="image-block">
       <img src="sofa.jpg" alt="NODE sofá" class="project-image">
-      <p class="project-text" id="text-1">
-        NODE Sofa es una pieza de mobiliario concebida desde una lógica modular, que permite articular diferentes configuraciones a partir de un mismo sistema estructural, favoreciendo la adaptabilidad espacial y funcional.
+      <p class="project-text" id="text-2">
+        La versión sofá del sistema NODE traduce los principios modulares en una pieza de descanso confortable, manteniendo coherencia formal, estabilidad estructural y una clara vocación de uso doméstico y contract.
       </p>
     </div>
 
-    <!-- Imagen 2 -->
+    <!-- Imagen 3: taburete -->
     <div class="image-block">
       <img src="taburete.jpg" alt="NODE taburete" class="project-image">
-      <p class="project-text" id="text-2">
-        El taburete NODE traslada los mismos principios formales y constructivos del sistema al ámbito del asiento individual, manteniendo coherencia visual, estabilidad estructural y ergonomía.
+      <p class="project-text" id="text-3">
+        El taburete NODE aplica la misma lógica constructiva a un asiento individual, conservando la identidad del sistema y garantizando ergonomía, ligereza visual y robustez estructural.
       </p>
     </div>
 
-    <!-- Imagen 3 -->
+    <!-- Imagen 4: plano 2 -->
     <div class="image-block">
       <img src="plano2.jpg" alt="NODE plano técnico 1" class="project-image">
-      <p class="project-text" id="text-3">
+      <p class="project-text" id="text-4">
         El desarrollo técnico del proyecto se apoya en planos constructivos que definen con precisión las uniones, materiales y tolerancias necesarias para una producción industrial viable.
       </p>
     </div>
 
-    <!-- Imagen 4 -->
+    <!-- Imagen 5: plano 1 -->
     <div class="image-block">
       <img src="plano1.jpg" alt="NODE plano técnico 2" class="project-image">
-      <p class="project-text" id="text-4">
+      <p class="project-text" id="text-5">
         Estos planos reflejan la relación entre diseño formal y viabilidad productiva, mostrando cómo el sistema NODE se concibe desde una lógica clara de ensamblaje y fabricación.
       </p>
     </div>
@@ -204,19 +212,21 @@ footer {
 function setLang(lang) {
   const es = {
     back: "← Volver",
-    t1: "NODE Sofa es una pieza de mobiliario concebida desde una lógica modular, que permite articular diferentes configuraciones a partir de un mismo sistema estructural, favoreciendo la adaptabilidad espacial y funcional.",
-    t2: "El taburete NODE traslada los mismos principios formales y constructivos del sistema al ámbito del asiento individual, manteniendo coherencia visual, estabilidad estructural y ergonomía.",
-    t3: "El desarrollo técnico del proyecto se apoya en planos constructivos que definen con precisión las uniones, materiales y tolerancias necesarias para una producción industrial viable.",
-    t4: "Estos planos reflejan la relación entre diseño formal y viabilidad productiva, mostrando cómo el sistema NODE se concibe desde una lógica clara de ensamblaje y fabricación.",
+    t1: "NODE es un sistema de mobiliario modular concebido para adaptarse a diferentes configuraciones espaciales y necesidades de uso, a partir de una misma lógica estructural y constructiva.",
+    t2: "La versión sofá del sistema NODE traduce los principios modulares en una pieza de descanso confortable, manteniendo coherencia formal, estabilidad estructural y una clara vocación de uso doméstico y contract.",
+    t3: "El taburete NODE aplica la misma lógica constructiva a un asiento individual, conservando la identidad del sistema y garantizando ergonomía, ligereza visual y robustez estructural.",
+    t4: "El desarrollo técnico del proyecto se apoya en planos constructivos que definen con precisión las uniones, materiales y tolerancias necesarias para una producción industrial viable.",
+    t5: "Estos planos reflejan la relación entre diseño formal y viabilidad productiva, mostrando cómo el sistema NODE se concibe desde una lógica clara de ensamblaje y fabricación.",
     footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
   };
 
   const en = {
     back: "← Back",
-    t1: "NODE Sofa is a furniture piece conceived through a modular logic, allowing different configurations based on the same structural system, enhancing spatial and functional adaptability.",
-    t2: "The NODE stool translates the same formal and constructive principles into an individual seating element, maintaining visual coherence, structural stability and ergonomics.",
-    t3: "The technical development of the project relies on construction drawings that precisely define joints, materials and tolerances required for viable industrial production.",
-    t4: "These drawings reflect the relationship between formal design and productive feasibility, showing how the NODE system is conceived through a clear logic of assembly and manufacturing.",
+    t1: "NODE is a modular furniture system conceived to adapt to different spatial configurations and usage needs, based on a shared structural and constructive logic.",
+    t2: "The sofa version of the NODE system translates modular principles into a comfortable lounge piece, maintaining formal coherence, structural stability and a clear domestic and contract vocation.",
+    t3: "The NODE stool applies the same constructive logic to an individual seat, preserving the system’s identity while ensuring ergonomics, visual lightness and structural robustness.",
+    t4: "The technical development of the project relies on construction drawings that precisely define joints, materials and tolerances required for viable industrial production.",
+    t5: "These drawings reflect the relationship between formal design and productive feasibility, showing how the NODE system is conceived through a clear logic of assembly and manufacturing.",
     footer: "© 2026 · Borbala Major · Industrial Design Engineer"
   };
 
@@ -227,6 +237,7 @@ function setLang(lang) {
   document.getElementById("text-2").innerText = c.t2;
   document.getElementById("text-3").innerText = c.t3;
   document.getElementById("text-4").innerText = c.t4;
+  document.getElementById("text-5").innerText = c.t5;
   document.getElementById("footer-text").innerText = c.footer;
 
   document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
