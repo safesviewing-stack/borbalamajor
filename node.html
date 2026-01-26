@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
 /* ================= RESET ================= */
 * {
   margin: 0;
@@ -53,6 +54,10 @@ header {
   font-weight: 500;
 }
 
+.back-btn span {
+  font-size: 14px;
+}
+
 /* ================= IDIOMAS ================= */
 .lang {
   display: flex;
@@ -78,7 +83,7 @@ header {
 
 /* ================= LAYOUT ================= */
 main {
-  padding-top: 140px;
+  padding-top: 150px;
 }
 
 .container {
@@ -91,7 +96,7 @@ main {
 .project-title {
   font-size: 30px;
   font-weight: 400;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -100,12 +105,8 @@ main {
   width: 100%;
   height: auto;
   display: block;
-  margin-bottom: 18px;
+  margin: 60px 0 18px;
   animation: fadeUp 0.6s ease forwards;
-}
-
-.image-block {
-  margin-bottom: 70px;
 }
 
 /* ================= TEXTO ================= */
@@ -114,18 +115,18 @@ main {
   line-height: 1.5;
   color: #555;
   text-align: justify;
-  max-width: 780px;
+  margin-bottom: 40px;
   animation: fadeUp 0.6s ease forwards;
 }
 
 /* ================= FOOTER ================= */
 footer {
   text-align: center;
-  padding: 8px;
+  padding: 6px;
   font-size: 11px;
   color: #555;
   background-color: #eaeceb;
-  margin-top: 100px;
+  margin-top: 180px;
 }
 
 /* ================= ANIMACIONES ================= */
@@ -139,14 +140,16 @@ footer {
     transform: translateY(0);
   }
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn" id="back-text">← Volver</a>
+    <a href="index.html#portfolio" class="back-btn" id="back-btn"><span>←</span> Volver</a>
 
     <div class="lang">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
@@ -161,76 +164,60 @@ footer {
     <h1 class="project-title">NODE</h1>
 
     <!-- Imagen principal -->
-    <div class="image-block">
-      <img src="profile9.jpg" alt="NODE sistema modular" class="project-image">
-      <p class="project-text" id="text-1">
-        NODE es un sistema de mobiliario modular concebido para adaptarse a diferentes configuraciones espaciales y necesidades de uso, a partir de una misma lógica estructural y constructiva.
-      </p>
-    </div>
+    <img src="profile9.jpg" alt="NODE sistema modular" class="project-image">
+    <p class="project-text" id="text-1"></p>
 
-    <!-- Imagen taburete -->
-    <div class="image-block">
-      <img src="taburete.jpg" alt="NODE taburete" class="project-image">
-      <p class="project-text" id="text-2">
-        El taburete NODE aplica la misma lógica constructiva a un asiento individual, conservando la identidad del sistema y garantizando ergonomía, ligereza visual y robustez estructural.
-      </p>
-    </div>
+    <!-- Taburete -->
+    <img src="taburete.jpg" alt="NODE taburete" class="project-image">
+    <p class="project-text" id="text-2"></p>
 
     <!-- Plano técnico 1 -->
-    <div class="image-block">
-      <img src="plano2.jpg" alt="NODE plano técnico 1" class="project-image">
-      <p class="project-text" id="text-3">
-        El desarrollo técnico del proyecto se apoya en planos constructivos que definen con precisión las uniones, materiales y tolerancias necesarias para una producción industrial viable.
-      </p>
-    </div>
+    <img src="plano2.jpg" alt="NODE plano técnico" class="project-image">
+    <p class="project-text" id="text-3"></p>
 
     <!-- Plano técnico 2 -->
-    <div class="image-block">
-      <img src="plano1.jpg" alt="NODE plano técnico 2" class="project-image">
-      <p class="project-text" id="text-4">
-        Estos planos reflejan la relación entre diseño formal y viabilidad productiva, mostrando cómo el sistema NODE se concibe desde una lógica clara de ensamblaje y fabricación.
-      </p>
-    </div>
+    <img src="plano1.jpg" alt="NODE plano técnico" class="project-image">
+    <p class="project-text" id="text-4"></p>
 
   </div>
 </main>
 
-<footer id="footer-text">
-© 2026 · Borbala Major · Ingeniera en diseño industrial
-</footer>
+<footer id="footer"></footer>
 
 <script>
 function setLang(lang) {
   const es = {
     back: "← Volver",
-    t1: "NODE es un sistema de mobiliario modular concebido para adaptarse a diferentes configuraciones espaciales y necesidades de uso, a partir de una misma lógica estructural y constructiva.",
-    t2: "El taburete NODE aplica la misma lógica constructiva a un asiento individual, conservando la identidad del sistema y garantizando ergonomía, ligereza visual y robustez estructural.",
-    t3: "El desarrollo técnico del proyecto se apoya en planos constructivos que definen con precisión las uniones, materiales y tolerancias necesarias para una producción industrial viable.",
-    t4: "Estos planos reflejan la relación entre diseño formal y viabilidad productiva, mostrando cómo el sistema NODE se concibe desde una lógica clara de ensamblaje y fabricación.",
+    t1: "NODE es un sistema de mobiliario modular concebido a partir de una geometría triangular que permite generar múltiples configuraciones espaciales y funcionales. Mediante la agrupación de estas piezas básicas, el sistema es capaz de conformar volúmenes más complejos, como cubos u otras estructuras multifuncionales, adaptándose a diferentes usos y contextos, tanto en entornos domésticos como en espacios colectivos. El proyecto parte de una reflexión sobre cómo una forma elemental puede convertirse en el origen de un sistema abierto, flexible y escalable.",
+    t2: "La configuración funcional más simple del sistema es un taburete compuesto por dos módulos triangulares, que demuestra cómo una forma geométrica esencial puede transformarse en un objeto estable, ergonómico y visualmente ligero. A través del estudio de proporciones, alturas y apoyos, se ha buscado garantizar la comodidad de uso sin renunciar a la identidad formal del sistema, logrando una pieza que funciona tanto de manera individual como integrada en composiciones más complejas.",
+    t3: "La unión entre los módulos se realiza mediante una grapa metálica situada en ambos extremos y en ambas caras de las piezas, permitiendo una conexión firme y precisa entre los elementos. Este sistema de ensamblaje no solo asegura la estabilidad estructural del conjunto, sino que también facilita el montaje, desmontaje y reconfiguración del mobiliario, reforzando el carácter modular y evolutivo del proyecto. La solución constructiva se plantea como un elemento visible y honesto, integrado en el lenguaje formal del producto.",
+    t4: "El desarrollo técnico del proyecto se apoya en planos constructivos que definen con precisión las uniones, materiales y tolerancias necesarias para una producción industrial viable. Estos documentos reflejan la relación directa entre diseño formal, ingeniería y realidad productiva, mostrando cómo el sistema NODE se concibe desde una lógica clara de ensamblaje, fabricación y optimización de recursos, sin perder su vocación experimental y conceptual.",
     footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
   };
 
   const en = {
     back: "← Back",
-    t1: "NODE is a modular furniture system conceived to adapt to different spatial configurations and usage needs, based on a shared structural and constructive logic.",
-    t2: "The NODE stool applies the same constructive logic to an individual seat, preserving the system’s identity while ensuring ergonomics, visual lightness and structural robustness.",
-    t3: "The technical development of the project relies on construction drawings that precisely define joints, materials and tolerances required for viable industrial production.",
-    t4: "These drawings reflect the relationship between formal design and productive feasibility, showing how the NODE system is conceived through a clear logic of assembly and manufacturing.",
+    t1: "NODE is a modular furniture system conceived from a triangular geometry that allows the generation of multiple spatial and functional configurations. By grouping these basic units, the system is able to form more complex volumes, such as cubes or other multifunctional structures, adapting to different uses and contexts, both in domestic environments and collective spaces. The project originates from a reflection on how an elementary form can become the basis of an open, flexible and scalable system.",
+    t2: "The simplest functional configuration of the system is a stool composed of two triangular modules, demonstrating how an essential geometric form can be transformed into a stable, ergonomic and visually lightweight object. Through the study of proportions, heights and support points, the design ensures user comfort without renouncing the formal identity of the system, resulting in a piece that works both individually and as part of more complex compositions.",
+    t3: "The modules are joined by means of a metal clamp located at both ends and on both faces of the pieces, allowing for a firm and precise connection between elements. This assembly system not only guarantees structural stability, but also facilitates assembly, disassembly and reconfiguration of the furniture, reinforcing the modular and evolving character of the project. The constructive solution is conceived as a visible and honest element, integrated into the formal language of the product.",
+    t4: "The technical development of the project relies on construction drawings that precisely define joints, materials and tolerances required for viable industrial production. These documents reflect the direct relationship between formal design, engineering and productive reality, showing how the NODE system is conceived from a clear logic of assembly, manufacturing and resource optimization, without losing its experimental and conceptual vocation.",
     footer: "© 2026 · Borbala Major · Industrial Design Engineer"
   };
 
   const c = lang === "es" ? es : en;
 
-  document.getElementById("back-text").innerText = c.back;
   document.getElementById("text-1").innerText = c.t1;
   document.getElementById("text-2").innerText = c.t2;
   document.getElementById("text-3").innerText = c.t3;
   document.getElementById("text-4").innerText = c.t4;
-  document.getElementById("footer-text").innerText = c.footer;
+  document.getElementById("footer").innerText = c.footer;
+  document.getElementById("back-btn").innerText = c.back;
 
   document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
   document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
 }
+
+setLang("es");
 </script>
 
 </body>
