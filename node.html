@@ -50,15 +50,11 @@ header {
   color: #555;
 }
 
-.back-btn:hover {
-  font-weight: 500;
-}
-
 .back-btn span {
-  font-size: 14px;
+  font-size: 16px;
+  margin-right: 6px;
 }
 
-/* ================= IDIOMAS ================= */
 .lang {
   display: flex;
   gap: 6px;
@@ -97,48 +93,40 @@ main {
   font-size: 30px;
   font-weight: 400;
   margin-bottom: 30px;
-  animation: fadeUp 0.6s ease forwards;
 }
 
 /* ================= IMÁGENES ================= */
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 0 30px;
+}
+
 .project-image {
   width: 100%;
   height: auto;
   display: block;
-  margin: 60px 0 18px;
-  animation: fadeUp 0.6s ease forwards;
+  margin: 70px 0 18px;
 }
 
 /* ================= TEXTO ================= */
 .project-text {
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #555;
   text-align: justify;
   margin-bottom: 40px;
-  animation: fadeUp 0.6s ease forwards;
 }
 
 /* ================= FOOTER ================= */
 footer {
   text-align: center;
-  padding: 6px;
+  padding: 8px;
   font-size: 11px;
   color: #555;
   background-color: #eaeceb;
-  margin-top: 180px;
-}
-
-/* ================= ANIMACIONES ================= */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  margin-top: 80px;
 }
 
 </style>
@@ -149,7 +137,7 @@ footer {
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn" id="back-btn"><span>←</span> Volver</a>
+    <a href="index.html#portfolio" class="back-btn" id="back-btn"><span>←</span>Volver</a>
 
     <div class="lang">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
@@ -164,19 +152,23 @@ footer {
     <h1 class="project-title">NODE</h1>
 
     <!-- Imagen principal -->
-    <img src="profile9.jpg" alt="NODE sistema modular" class="project-image">
+    <img src="profile9.jpg" alt="NODE sistema modular" class="hero-image">
+
     <p class="project-text" id="text-1"></p>
 
-    <!-- Taburete -->
+    <!-- Imagen taburete -->
     <img src="taburete.jpg" alt="NODE taburete" class="project-image">
+
     <p class="project-text" id="text-2"></p>
 
     <!-- Plano técnico 1 -->
     <img src="plano2.jpg" alt="NODE plano técnico" class="project-image">
+
     <p class="project-text" id="text-3"></p>
 
     <!-- Plano técnico 2 -->
-    <img src="plano1.jpg" alt="NODE plano técnico" class="project-image">
+    <img src="plano1.jpg" alt="NODE plano constructivo" class="project-image">
+
     <p class="project-text" id="text-4"></p>
 
   </div>
@@ -187,7 +179,7 @@ footer {
 <script>
 function setLang(lang) {
   const es = {
-    back: "← Volver",
+    back: "Volver",
     t1: "NODE es un sistema de mobiliario modular concebido para adaptarse a distintas configuraciones espaciales a partir de una misma lógica estructural y constructiva. Su diseño parte de una geometría triangular que permite agrupar módulos para generar formas complejas como cubos u otras composiciones multifuncionales.",
     t2: "La configuración más básica y funcional del sistema es el taburete NODE, compuesto por dos módulos triangulares ensamblados. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y estabilidad estructural.",
     t3: "La unión entre módulos se resuelve mediante grapas metálicas situadas en ambos extremos y caras de cada pieza, permitiendo un ensamblaje preciso, reversible y adaptable a distintas configuraciones sin perder solidez.",
@@ -196,7 +188,7 @@ function setLang(lang) {
   };
 
   const en = {
-    back: "← Back",
+    back: "Back",
     t1: "NODE is a modular furniture system designed to adapt to different spatial configurations based on a single structural and constructive logic. Its design starts from a triangular geometry that allows modules to be grouped into more complex forms such as cubes and other multifunctional compositions.",
     t2: "The most basic and functional configuration of the system is the NODE stool, composed of two triangular modules assembled together. This solution preserves the system’s identity while ensuring ergonomics, visual lightness and structural stability.",
     t3: "The connection between modules is achieved through metal clips placed on both ends and faces of each piece, allowing for precise, reversible and adaptable assembly without compromising solidity.",
@@ -211,7 +203,7 @@ function setLang(lang) {
   document.getElementById("text-3").innerText = c.t3;
   document.getElementById("text-4").innerText = c.t4;
   document.getElementById("footer").innerText = c.footer;
-  document.getElementById("back-btn").innerText = c.back;
+  document.getElementById("back-btn").innerHTML = "<span>←</span>" + c.back;
 
   document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
   document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
