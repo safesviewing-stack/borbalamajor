@@ -5,27 +5,58 @@
 <title>SYNCRO · Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
 body{background:#fff;color:#333;}
-header{position:fixed;top:0;width:100%;height:70px;background:#eaeceb;}
+
+header{position:fixed;top:0;width:100%;height:70px;background:#eaeceb;z-index:1000;}
+.header-inner{max-width:1200px;width:90%;height:100%;margin:auto;display:flex;align-items:center;justify-content:space-between;}
+.back-btn{text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#555;}
+.back-btn:hover{font-weight:500;}
+
 main{padding-top:150px;}
 .container{width:90%;max-width:960px;margin:auto;}
-.project-title{font-size:30px;margin-bottom:30px;}
+.project-title{font-size:30px;font-weight:400;margin-bottom:30px;}
 .hero-image{width:100%;height:auto;margin-bottom:30px;}
 .project-text{font-size:14px;line-height:1.6;color:#555;margin-bottom:24px;text-align:justify;}
-footer{text-align:center;font-size:11px;background:#eaeceb;padding:6px;margin-top:40px;}
+
+footer{text-align:center;padding:6px;font-size:11px;color:#555;background:#eaeceb;margin-top:40px;}
 </style>
 </head>
+
 <body>
-<header><a href="index.html#portfolio">← Volver</a></header>
-<main><div class="container">
-<h1 class="project-title">SYNCRO</h1>
-<img src="syncro1.jpg" class="hero-image">
-<p class="project-text">SYNCRO es un concepto de smartwatch enfocado en la relación entre tecnología, ergonomía y experiencia de usuario.</p>
-<p class="project-text">El proyecto integra diseño industrial y UX, abordando tanto la interfaz como la forma física del producto.</p>
-<p class="project-text">Se priorizó la comodidad, la lectura clara de la información y la integración con el cuerpo humano.</p>
-</div></main>
-<footer>© 2026 · Borbala Major · Ingeniera en diseño industrial</footer>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html#portfolio" class="back-btn">← Volver</a>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <h1 class="project-title">SYNCRO</h1>
+    <img src="profile10.jpg" alt="SYNCRO smartwatch" class="hero-image">
+
+    <p class="project-text">
+      SYNCRO es un concepto de smartwatch enfocado en la relación entre tecnología, ergonomía y experiencia
+      de usuario.
+    </p>
+
+    <p class="project-text">
+      El proyecto integra diseño industrial y UX, abordando tanto la interfaz como la forma física del producto,
+      priorizando la comodidad y la legibilidad.
+    </p>
+
+    <p class="project-text">
+      Se trata de una propuesta que busca equilibrar innovación tecnológica y diseño centrado en el usuario.
+    </p>
+  </div>
+</main>
+
+<footer>
+© 2026 · Borbala Major · Ingeniera en diseño industrial
+</footer>
+
 </body>
 </html>
