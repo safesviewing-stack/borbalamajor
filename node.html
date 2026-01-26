@@ -6,36 +6,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
-body{background:#fff;color:#333;}
-header{position:fixed;top:0;width:100%;height:70px;background:#eaeceb;}
-.header-inner{max-width:1200px;width:90%;height:100%;margin:auto;display:flex;justify-content:space-between;align-items:center;}
-.back-btn{text-decoration:none;font-size:12px;color:#555;text-transform:uppercase;letter-spacing:.12em;}
-.lang{display:flex;gap:6px;}
-.lang-btn{
-  background: transparent;
-  border: 1px solid #d0d0d0;
-  color: #777;
-  font-size: 10px;
-  padding: 2px 12px;   /* 👈 más bajitos */
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.lang-btn.active{background:#c7c9c8;color:#fff;}
-main{padding-top:150px;}
-.container{width:90%;max-width:960px;margin:auto;}
-.project-title{font-size:30px;font-weight:400;margin-bottom:30px;}
-.hero-image{width:100%;height:auto;margin-bottom:30px;}
-.project-text{font-size:14px;line-height:1.6;color:#555;margin-bottom:24px;}
-footer{text-align:center;font-size:11px;background:#eaeceb;padding:6px;margin-top:40px;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif}
+body{background:#fff;color:#333}
+header{position:fixed;top:0;width:100%;height:70px;background:#eaeceb}
+.header-inner{max-width:1200px;width:90%;height:100%;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.back-btn{text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#555;display:flex;align-items:center}
+.back-btn .arrow{font-size:18px;margin-right:4px}
+.lang{display:flex;gap:6px}
+.lang-btn{border:1px solid #d0d0d0;font-size:10px;padding:2px 12px;border-radius:4px;background:transparent}
+.lang-btn.active{background:#c7c9c8;color:#fff}
+main{padding-top:150px}
+.container{width:90%;max-width:960px;margin:auto}
+.project-title{font-size:30px;font-weight:400;margin-bottom:30px}
+.hero-image{width:100%;margin-bottom:30px}
+.project-text{font-size:14px;line-height:1.5;color:#555;margin-bottom:30px;text-align:justify}
+footer{text-align:center;font-size:11px;background:#eaeceb;padding:6px;margin-top:40px}
 </style>
 </head>
 
 <body>
 <header>
 <div class="header-inner">
-<a href="index.html#portfolio" class="back-btn">← Volver</a>
+<a href="index.html#portfolio" class="back-btn" id="back-btn"><span class="arrow">←</span> Volver</a>
 <div class="lang">
 <button class="lang-btn active" onclick="setLang('es')">ES</button>
 <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -47,24 +39,24 @@ footer{text-align:center;font-size:11px;background:#eaeceb;padding:6px;margin-to
 <div class="container">
 <h1 class="project-title">NODE</h1>
 <img src="profile9.jpg" class="hero-image">
-
-<p id="t1" class="project-text">NODE es un sistema de mobiliario modular basado en la interconexión de piezas.</p>
-<p id="t2" class="project-text">Permite múltiples configuraciones adaptadas al usuario y al espacio.</p>
-<p id="t3" class="project-text">Combina simplicidad formal y versatilidad funcional.</p>
+<p class="project-text" id="t1">Node es una propuesta de mobiliario contemporáneo basada en estructuras ligeras.</p>
+<p class="project-text" id="t2">Busca equilibrio entre forma, función y proceso productivo.</p>
 </div>
 </main>
 
 <footer id="footer">© 2026 · Borbala Major · Ingeniera en diseño industrial</footer>
 
 <script>
-function setLang(l){
-const es={t1:"NODE es un sistema de mobiliario modular basado en la interconexión de piezas.",t2:"Permite múltiples configuraciones adaptadas al usuario y al espacio.",t3:"Combina simplicidad formal y versatilidad funcional.",f:"© 2026 · Borbala Major · Ingeniera en diseño industrial"};
-const en={t1:"NODE is a modular furniture system based on interconnected parts.",t2:"It allows multiple configurations adapted to user and space.",t3:"It combines formal simplicity and functional versatility.",f:"© 2026 · Borbala Major · Industrial Design Engineer"};
-const c=l==="es"?es:en;
-["t1","t2","t3"].forEach(id=>document.getElementById(id).innerText=c[id]);
-document.getElementById("footer").innerText=c.f;
+function setLang(lang){
+const es={back:"Volver",t1:"Node es una propuesta de mobiliario contemporáneo basada en estructuras ligeras.",t2:"Busca equilibrio entre forma, función y proceso productivo.",footer:"© 2026 · Borbala Major · Ingeniera en diseño industrial"};
+const en={back:"Back",t1:"Node is a contemporary furniture proposal based on lightweight structures.",t2:"It seeks balance between form, function and production process.",footer:"© 2026 · Borbala Major · Industrial Design Engineer"};
+const c=lang==="es"?es:en;
+document.getElementById("t1").innerText=c.t1;
+document.getElementById("t2").innerText=c.t2;
+document.getElementById("footer").innerText=c.footer;
+document.getElementById("back-btn").innerHTML=`<span class="arrow">←</span> ${c.back}`;
 document.querySelectorAll(".lang-btn").forEach(b=>b.classList.remove("active"));
-document.querySelector(`.lang-btn[onclick*="${l}"]`).classList.add("active");
+document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
 }
 </script>
 </body>
