@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -20,6 +21,7 @@ body {
   color: #333;
 }
 
+/* ================= HEADER ================= */
 header {
   position: fixed;
   top: 0;
@@ -51,6 +53,7 @@ header {
   font-weight: 500;
 }
 
+/* ================= IDIOMAS ================= */
 .lang {
   display: flex;
   gap: 6px;
@@ -61,7 +64,7 @@ header {
   border: 1px solid #d0d0d0;
   color: #777;
   font-size: 10px;
-  padding: 2px 12px;   /* 👈 más bajitos */
+  padding: 2px 12px;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -73,6 +76,7 @@ header {
   border-color: #c7c9c8;
 }
 
+/* ================= LAYOUT ================= */
 main {
   padding-top: 150px;
 }
@@ -83,6 +87,7 @@ main {
   margin: auto;
 }
 
+/* ================= TITULO ================= */
 .project-title {
   font-size: 30px;
   font-weight: 400;
@@ -90,23 +95,26 @@ main {
   animation: fadeUp 0.6s ease forwards;
 }
 
+/* ================= IMÁGENES ================= */
 .hero-image {
   width: 100%;
-  height: auto; /* 👈 ya no se corta */
+  height: auto;
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   animation: fadeUp 0.6s ease forwards;
 }
 
+/* ================= TEXTO ================= */
 .project-text {
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #555;
   text-align: justify;
   margin-bottom: 24px;
   animation: fadeUp 0.6s ease forwards;
 }
 
+/* ================= FOOTER ================= */
 footer {
   text-align: center;
   padding: 6px;
@@ -116,6 +124,7 @@ footer {
   margin-top: 40px;
 }
 
+/* ================= ANIMACIONES ================= */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -131,9 +140,11 @@ footer {
 
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn">← Volver</a>
+    <a href="index.html#portfolio" class="back-btn" id="back-btn">← Volver</a>
+
     <div class="lang">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
       <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -143,32 +154,21 @@ footer {
 
 <main>
   <div class="container">
+
     <h1 class="project-title">LUMORA</h1>
 
     <img src="lampara1.jpg" alt="LUMORA lámpara" class="hero-image">
 
     <p class="project-text" id="text-1">
-      LUMORA es un proyecto de diseño de iluminación centrado en la creación de una lámpara funcional y estética,
-      donde la forma surge directamente de la lógica estructural y de la optimización del material, combinando
-      diseño contemporáneo con viabilidad técnica para su fabricación.
+      LUMORA es un proyecto de iluminación centrado en la creación de una lámpara contemporánea que combina diseño técnico y sensibilidad estética, buscando un equilibrio entre funcionalidad, atmósfera y eficiencia energética.
     </p>
 
     <p class="project-text" id="text-2">
-      El desarrollo del producto parte de un análisis detallado del uso, la ergonomía visual y la relación entre
-      luz, objeto y espacio, buscando generar una pieza que no solo ilumine, sino que también dialogue con su
-      entorno y aporte identidad al espacio en el que se inserta.
+      El proyecto explora el uso de materiales ligeros y sistemas constructivos optimizados, permitiendo una producción eficiente sin renunciar a la calidad formal ni a la experiencia del usuario.
     </p>
 
     <p class="project-text" id="text-3">
-      A nivel técnico, el proyecto se apoya en procesos de prototipado e impresión 3D, lo que permitió validar
-      rápidamente geometrías, evaluar el comportamiento lumínico y optimizar el consumo de material, reforzando
-      así un enfoque sostenible y eficiente en términos productivos.
-    </p>
-
-    <p class="project-text" id="text-4">
-      LUMORA se concibe como una pieza adaptable tanto a entornos domésticos como contract, manteniendo siempre
-      un equilibrio entre estética, funcionalidad y racionalidad constructiva, valores que definen mi enfoque
-      como diseñadora industrial.
+      La lámpara se concibe como un objeto capaz de integrarse en distintos contextos domésticos y profesionales, adaptándose tanto a espacios residenciales como a entornos contract.
     </p>
 
   </div>
@@ -181,27 +181,27 @@ footer {
 <script>
 function setLang(lang) {
   const es = {
-    t1: "LUMORA es un proyecto de diseño de iluminación centrado en la creación de una lámpara funcional y estética, donde la forma surge directamente de la lógica estructural y de la optimización del material, combinando diseño contemporáneo con viabilidad técnica para su fabricación.",
-    t2: "El desarrollo del producto parte de un análisis detallado del uso, la ergonomía visual y la relación entre luz, objeto y espacio, buscando generar una pieza que no solo ilumine, sino que también dialogue con su entorno y aporte identidad al espacio en el que se inserta.",
-    t3: "A nivel técnico, el proyecto se apoya en procesos de prototipado e impresión 3D, lo que permitió validar rápidamente geometrías, evaluar el comportamiento lumínico y optimizar el consumo de material, reforzando así un enfoque sostenible y eficiente en términos productivos.",
-    t4: "LUMORA se concibe como una pieza adaptable tanto a entornos domésticos como contract, manteniendo siempre un equilibrio entre estética, funcionalidad y racionalidad constructiva, valores que definen mi enfoque como diseñadora industrial.",
+    back: "← Volver",
+    t1: "LUMORA es un proyecto de iluminación centrado en la creación de una lámpara contemporánea que combina diseño técnico y sensibilidad estética, buscando un equilibrio entre funcionalidad, atmósfera y eficiencia energética.",
+    t2: "El proyecto explora el uso de materiales ligeros y sistemas constructivos optimizados, permitiendo una producción eficiente sin renunciar a la calidad formal ni a la experiencia del usuario.",
+    t3: "La lámpara se concibe como un objeto capaz de integrarse en distintos contextos domésticos y profesionales, adaptándose tanto a espacios residenciales como a entornos contract.",
     footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
   };
 
   const en = {
-    t1: "LUMORA is a lighting design project focused on creating a functional and aesthetic lamp, where form emerges directly from structural logic and material optimization, combining contemporary design with technical feasibility for manufacturing.",
-    t2: "The product development starts from a detailed analysis of use, visual ergonomics and the relationship between light, object and space, aiming to create a piece that not only illuminates but also dialogues with its environment and adds identity to the space.",
-    t3: "On a technical level, the project relies on prototyping and 3D printing processes, which allowed quick validation of geometries, evaluation of lighting performance and optimization of material consumption, reinforcing a sustainable and efficient production approach.",
-    t4: "LUMORA is conceived as a piece adaptable to both domestic and contract environments, always maintaining a balance between aesthetics, functionality and constructive rationality, values that define my approach as an industrial designer.",
+    back: "← Back",
+    t1: "LUMORA is a lighting project focused on creating a contemporary lamp that combines technical design and aesthetic sensitivity, seeking a balance between functionality, atmosphere and energy efficiency.",
+    t2: "The project explores the use of lightweight materials and optimized construction systems, enabling efficient production without sacrificing formal quality or user experience.",
+    t3: "The lamp is conceived as an object capable of integrating into different domestic and professional contexts, adapting both to residential and contract environments.",
     footer: "© 2026 · Borbala Major · Industrial Design Engineer"
   };
 
   const c = lang === "es" ? es : en;
 
+  document.getElementById("back-btn").innerText = c.back;
   document.getElementById("text-1").innerText = c.t1;
   document.getElementById("text-2").innerText = c.t2;
   document.getElementById("text-3").innerText = c.t3;
-  document.getElementById("text-4").innerText = c.t4;
   document.getElementById("footer").innerText = c.footer;
 
   document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
