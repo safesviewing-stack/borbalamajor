@@ -9,7 +9,7 @@
 
 <style>
 
-/* ================= RESET ================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +22,7 @@ body {
   color: #333;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -68,7 +68,6 @@ header {
   padding: 2px 12px;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .lang-btn.active {
@@ -77,9 +76,9 @@ header {
   border-color: #c7c9c8;
 }
 
-/* ================= LAYOUT ================= */
+/* LAYOUT */
 main {
-  padding-top: 140px;
+  padding-top: 150px;
 }
 
 .container {
@@ -88,57 +87,59 @@ main {
   margin: auto;
 }
 
-/* ================= TITULO ================= */
+/* TITULO */
 .project-title {
   font-size: 30px;
   font-weight: 400;
-  margin-bottom: 40px;
-  animation: fadeUp 0.6s ease forwards;
-}
-
-/* ================= IMÁGENES ================= */
-.hero-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 26px;
-  animation: fadeUp 0.6s ease forwards;
-}
-
-.project-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 80px 0 24px;
-  animation: fadeUp 0.6s ease forwards;
-}
-
-.project-image-large {
-  width: 110%;
-  margin-left: -5%;
-}
-
-/* ================= TEXTO ================= */
-.project-text {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #555;
-  text-align: justify;
   margin-bottom: 30px;
   animation: fadeUp 0.6s ease forwards;
 }
 
-/* ================= FOOTER ================= */
+/* IMÁGENES */
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 70px 0 18px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* Segunda imagen más separada del texto superior */
+.project-image.second {
+  margin-top: 60px;
+}
+
+/* Tercera imagen ligeramente más arriba */
+.project-image.third {
+  margin-top: 10px;
+}
+
+/* TEXTO */
+.project-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* Texto bajo la tercera imagen más abajo */
+.project-text.third-text {
+  margin-top: 24px;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 8px;
+  padding: 6px;
   font-size: 11px;
   color: #555;
   background-color: #eaeceb;
   margin-top: 180px;
 }
 
-/* ================= ANIMACIONES ================= */
+/* ANIMACIONES */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -157,7 +158,7 @@ footer {
 
 <header>
   <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn"><span>←</span><span id="back-text">Volver</span></a>
+    <a href="index.html#portfolio" class="back-btn" id="backBtn"><span>←</span>Volver</a>
 
     <div class="lang">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
@@ -171,31 +172,31 @@ footer {
 
     <h1 class="project-title">SERIE SIXAY</h1>
 
-    <!-- Imagen principal -->
-    <img src="profile8.jpg" alt="Serie Sixay mobiliario" class="hero-image">
+    <!-- Imagen 1 -->
+    <img src="profile8.jpg" alt="Serie Sixay mobiliario" class="project-image">
 
     <p class="project-text" id="text-1">
-      La serie Sixay es un sistema de mobiliario concebido desde una lógica modular y funcional, orientado a responder a diferentes necesidades de almacenaje y exposición dentro de entornos contemporáneos. El proyecto parte de una geometría sobria y equilibrada, donde la proporción, la repetición y la claridad estructural definen su identidad formal.
+      Serie Sixay es un proyecto de diseño de mobiliario desarrollado en colaboración con la empresa Sixay, centrado en la creación de piezas funcionales y atemporales que combinan simplicidad formal, rigor técnico y viabilidad industrial.
     </p>
 
     <!-- Imagen 2 -->
-    <img src="mueble.jpg" alt="Detalle serie Sixay" class="project-image">
+    <img src="mueble.jpg" alt="Detalle mobiliario Sixay" class="project-image second">
 
     <p class="project-text" id="text-2">
-      A través de la combinación de distintos módulos, Sixay permite generar múltiples configuraciones adaptables a distintos contextos espaciales. La relación entre verticales y horizontales se ha trabajado para lograr un equilibrio entre ligereza visual y estabilidad estructural.
+      El proyecto se caracteriza por una cuidada selección de materiales, un estudio preciso de las uniones y una atención especial a los procesos de fabricación, buscando siempre un equilibrio entre estética y producción eficiente.
     </p>
 
-    <!-- Imagen 3 plano -->
-    <img src="planoestanteria.jpg" alt="Plano técnico estantería Sixay" class="project-image project-image-large">
+    <!-- Imagen 3 -->
+    <img src="planoestanteria.jpg" alt="Plano técnico estantería" class="project-image third">
 
-    <p class="project-text" id="text-3">
-      El proyecto se apoya en un desarrollo técnico orientado a la viabilidad industrial, atendiendo a criterios de fabricación, ensamblaje y optimización de material. El plano técnico refleja la lógica constructiva del sistema y su coherencia productiva.
+    <p class="project-text third-text" id="text-3">
+      A través del desarrollo técnico y los planos constructivos, la Serie Sixay demuestra la importancia del diseño industrial como disciplina que conecta creatividad, ingeniería y realidad productiva.
     </p>
 
   </div>
 </main>
 
-<footer id="footer-text">
+<footer id="footer">
 © 2026 · Borbala Major · Ingeniera en diseño industrial
 </footer>
 
@@ -203,4 +204,32 @@ footer {
 function setLang(lang) {
   const es = {
     back: "Volver",
-    t1: "La serie Sixay es un sistema de mobiliario concebido desde una lógica modular y funcional, orientado a resp
+    t1: "Serie Sixay es un proyecto de diseño de mobiliario desarrollado en colaboración con la empresa Sixay, centrado en la creación de piezas funcionales y atemporales que combinan simplicidad formal, rigor técnico y viabilidad industrial.",
+    t2: "El proyecto se caracteriza por una cuidada selección de materiales, un estudio preciso de las uniones y una atención especial a los procesos de fabricación, buscando siempre un equilibrio entre estética y producción eficiente.",
+    t3: "A través del desarrollo técnico y los planos constructivos, la Serie Sixay demuestra la importancia del diseño industrial como disciplina que conecta creatividad, ingeniería y realidad productiva.",
+    footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
+  };
+
+  const en = {
+    back: "Back",
+    t1: "Sixay Series is a furniture design project developed in collaboration with the company Sixay, focused on creating functional and timeless pieces that combine formal simplicity, technical rigor and industrial feasibility.",
+    t2: "The project is characterized by a careful selection of materials, a precise study of joints and special attention to manufacturing processes, always seeking a balance between aesthetics and efficient production.",
+    t3: "Through technical development and construction drawings, the Sixay Series demonstrates the importance of industrial design as a discipline connecting creativity, engineering and productive reality.",
+    footer: "© 2026 · Borbala Major · Industrial Design Engineer"
+  };
+
+  const c = lang === "es" ? es : en;
+
+  document.getElementById("backBtn").innerHTML = `<span>←</span>${c.back}`;
+  document.getElementById("text-1").innerText = c.t1;
+  document.getElementById("text-2").innerText = c.t2;
+  document.getElementById("text-3").innerText = c.t3;
+  document.getElementById("footer").innerText = c.footer;
+
+  document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+  document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
+}
+</script>
+
+</body>
+</html>
