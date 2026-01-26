@@ -53,10 +53,6 @@ header {
   gap: 6px;
 }
 
-.back-btn span {
-  font-size: 18px;
-}
-
 .back-btn:hover {
   font-weight: 500;
 }
@@ -116,11 +112,12 @@ main {
   width: 100%;
   height: auto;
   display: block;
-  margin: 90px 0 18px;
+  margin: 90px 0 30px; /* 👈 más separación con texto anterior y posterior */
   animation: fadeUp 0.6s ease forwards;
 }
 
-  .project-image-large {
+/* Imagen técnica ligeramente más grande */
+.project-image-large {
   width: 110%;
   margin-left: -5%;
 }
@@ -131,7 +128,7 @@ main {
   line-height: 1.6;
   color: #555;
   text-align: justify;
-  margin-bottom: 60px;
+  margin-bottom: 80px; /* 👈 más separación antes de la siguiente imagen o footer */
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -142,7 +139,7 @@ footer {
   font-size: 11px;
   color: #555;
   background-color: #eaeceb;
-  margin-top: 200px;
+  margin-top: 120px;
 }
 
 /* ================= ANIMACIONES ================= */
@@ -166,7 +163,7 @@ footer {
 <header>
   <div class="header-inner">
     <a href="index.html#portfolio" class="back-btn" id="back-btn">
-      <span>←</span> <span id="back-text">Volver</span>
+      ← <span id="back-text">Volver</span>
     </a>
 
     <div class="lang">
@@ -185,13 +182,15 @@ footer {
     <img src="eliptria.jpg" alt="Grifería Eliptria" class="hero-image">
 
     <p class="project-text" id="text-1">
-      Eliptria es un proyecto de diseño de grifería que explora la relación entre forma elíptica, ergonomía y eficiencia funcional. El diseño parte de una geometría limpia y fluida, buscando un equilibrio entre expresividad formal y simplicidad constructiva, con una clara vocación de integración en entornos domésticos contemporáneos.    </p>
+      Eliptria es un proyecto de diseño de grifería que explora la relación entre forma elíptica, ergonomía y eficiencia funcional. El diseño parte de una geometría limpia y fluida, buscando un equilibrio entre expresividad formal y simplicidad constructiva, con una clara vocación de integración en entornos domésticos contemporáneos.
+    </p>
 
     <!-- Imagen técnica -->
     <img src="planogrifo.jpg" alt="Plano técnico Eliptria" class="project-image project-image-large">
 
     <p class="project-text" id="text-2">
-      A través del desarrollo técnico y constructivo, se ha trabajado especialmente la transición entre cuerpo, maneta y salida de agua, optimizando el control del caudal y la comodidad de uso. El proyecto combina criterios estéticos con viabilidad industrial, proponiendo una grifería funcional, elegante y coherente con los procesos de fabricación actuales.    </p>
+      A través del desarrollo técnico y constructivo, se ha trabajado especialmente la transición entre cuerpo, maneta y salida de agua, optimizando el control del caudal y la comodidad de uso. El proyecto combina criterios estéticos con viabilidad industrial, proponiendo una grifería funcional, elegante y coherente con los procesos de fabricación actuales.
+    </p>
 
   </div>
 </main>
