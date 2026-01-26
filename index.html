@@ -87,22 +87,27 @@ nav li::after{
 nav li:hover::after {
   width: 100%; /* Efecto de subrayado al pasar el cursor */
 }
-
+  
+.lang {
+  display: flex;
+  gap: 6px;
+}
+  
 .lang button{
-  background:none;
-  border:1px solid #c7c9c8;
-  color:#c7c9c8;
-  font-size:11px;
-  padding:4px 10px;
-  margin-left:6px;
-  cursor:pointer;
-  border-radius:4px;
-  transition: background-color 0.3s;
+  background: transparent;
+  border: 1px solid #d0d0d0;
+  color: #777;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .lang button.active{
-  background:#c7c9c8;
-  color:#fff;
+  background: #c7c9c8;
+  color: #fff;
+  border-color: #c7c9c8;
 }
 /* ================= LAYOUT ================= */
 main{
