@@ -92,11 +92,6 @@ nav li:hover::after {
   transition: all 0.3s ease;
 }
 
-/* Hover sutil */
-.lang button:hover {
-  border-color: #999;
-  color: #333;
-}
 
 /* Idioma activo */
 .lang button.active {
