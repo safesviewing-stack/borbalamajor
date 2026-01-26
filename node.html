@@ -2,13 +2,13 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>NODE · Portfolio</title>
+<title>NODE · Proyecto de mobiliario modular</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="style.css">
+  
 <style>
-
 /* ================= RESET ================= */
 * {
   margin: 0;
@@ -20,6 +20,9 @@
 body {
   background: #ffffff;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ================= HEADER ================= */
@@ -28,31 +31,60 @@ header {
   top: 0;
   width: 100%;
   height: 70px;
-  background: #eaeceb;
-  z-index: 1000;
+  background: #eaeceb; /* Rosa suave */
+  z-index: 100;
 }
 
-.header-inner {
+.nav {
   max-width: 1200px;
   width: 90%;
   height: 100%;
   margin: auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
-.back-btn {
-  text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.logo {
   color: #555;
+  font-weight: 300;
+  font-size: 14px;
 }
 
-.back-btn span {
-  font-size: 16px;
-  margin-right: 6px;
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  list-style: none;
+  flex: 1;
+}
+
+nav li {
+  color: #555;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+
+nav li.active {
+  font-weight: 700;
+}
+
+nav li::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: .25s;
+}
+
+nav li:hover::after {
+  width: 100%; /* Efecto de subrayado al pasar el cursor */
 }
 
 .lang {
@@ -60,18 +92,18 @@ header {
   gap: 6px;
 }
 
-.lang-btn {
+.lang button {
   background: transparent;
   border: 1px solid #d0d0d0;
   color: #777;
   font-size: 10px;
-  padding: 2px 12px;
+  padding: 4px 10px;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.lang-btn.active {
+.lang button.active {
   background: #c7c9c8;
   color: #fff;
   border-color: #c7c9c8;
@@ -79,7 +111,8 @@ header {
 
 /* ================= LAYOUT ================= */
 main {
-  padding-top: 150px;
+  padding-top: 70px;
+  flex-grow: 1;
 }
 
 .container {
@@ -88,11 +121,34 @@ main {
   margin: auto;
 }
 
-/* ================= TITULO ================= */
-.project-title {
+.spaced {
+  padding: 90px 0;
+}
+
+/* ================= TYPO ================= */
+h1 {
   font-size: 30px;
-  font-weight: 400;
-  margin-bottom: 30px;
+  font-weight: 500;
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+
+h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+
+p, li {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInSlideUp 0.8s ease-out forwards;
 }
 
 /* ================= IMÁGENES ================= */
@@ -100,23 +156,26 @@ main {
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 0 30px;
+  margin: 0 0 60px; /* Más separación respecto al texto siguiente */
 }
 
 .project-image {
   width: 100%;
   height: auto;
   display: block;
-  margin: 70px 0 18px;
+  margin: 110px 0 24px; /* Aumenta la separación entre las imágenes */
 }
 
-/* ================= TEXTO ================= */
-.project-text {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #555;
-  text-align: justify;
-  margin-bottom: 40px;
+/* ================= ANIMACIONES ================= */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ================= FOOTER ================= */
@@ -126,7 +185,7 @@ footer {
   font-size: 11px;
   color: #555;
   background-color: #eaeceb;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 </style>
@@ -136,80 +195,97 @@ footer {
 
 <!-- HEADER -->
 <header>
-  <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn" id="back-btn"><span>←</span>Volver</a>
+  <div class="nav">
+    <div class="logo">MB · Borbala Major</div>
+
+    <nav>
+      <ul>
+        <li class="tab active" data-tab="home">Inicio</li>
+        <li class="tab" data-tab="about">Sobre mí</li>
+        <li class="tab" data-tab="cv">Currículum</li>
+        <li class="tab" data-tab="portfolio">Portfolio</li>
+        <li class="tab" data-tab="contact">Contacto</li>
+      </ul>
+    </nav>
 
     <div class="lang">
-      <button class="lang-btn active" onclick="setLang('es')">ES</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button id="btn-es" class="active">ES</button>
+      <button id="btn-en">EN</button>
     </div>
   </div>
 </header>
 
 <main>
-  <div class="container">
 
-    <h1 class="project-title">NODE</h1>
+<!-- NODE -->
+<section id="node">
+  <div class="container spaced">
 
-    <!-- Imagen principal -->
-    <img src="profile9.jpg" alt="NODE sistema modular" class="hero-image">
+    <h1>NODE</h1>
 
-    <p class="project-text" id="text-1"></p>
+    <!-- Primera imagen -->
+    <img src="profile9.jpg" alt="Mueble NODE" class="hero-image">
 
-    <!-- Imagen taburete -->
-    <img src="taburete.jpg" alt="NODE taburete" class="project-image">
+    <p>
+      NODE es un sistema de mobiliario modular diseñado para adaptarse a diferentes configuraciones espaciales y necesidades de uso, a partir de una lógica estructural común.
+    </p>
 
-    <p class="project-text" id="text-2"></p>
+    <!-- Segunda imagen -->
+    <img src="taburete.jpg" alt="Taburete NODE" class="project-image">
 
-    <!-- Plano técnico 1 -->
-    <img src="plano2.jpg" alt="NODE plano técnico" class="project-image">
+    <p>
+      El taburete NODE aplica la misma lógica constructiva a un asiento individual, manteniendo la identidad del sistema y garantizando ergonomía, ligereza visual y robustez estructural.
+    </p>
 
-    <p class="project-text" id="text-3"></p>
+    <!-- Tercera imagen -->
+    <img src="plano2.jpg" alt="Plano NODE" class="project-image">
 
-    <!-- Plano técnico 2 -->
-    <img src="plano1.jpg" alt="NODE plano constructivo" class="project-image">
+    <p>
+      El proyecto se apoya en planos constructivos que definen las uniones, materiales y tolerancias necesarias para una producción industrial viable, demostrando la relación entre diseño y viabilidad productiva.
+    </p>
 
-    <p class="project-text" id="text-4"></p>
+    <!-- Cuarta imagen -->
+    <img src="plano1.jpg" alt="Plano de detalles NODE" class="project-image">
+
+    <p>
+      NODE muestra cómo cada pieza se ensambla mediante una lógica clara y eficiente, con el uso de materiales sencillos y un diseño funcional que busca la máxima versatilidad.
+    </p>
 
   </div>
+</section>
+
 </main>
 
-<footer id="footer"></footer>
+<footer>
+  © 2026 · Borbala Major · Ingeniera en diseño industrial
+</footer>
 
 <script>
-function setLang(lang) {
-  const es = {
-    back: "Volver",
-    t1: "NODE es un sistema de mobiliario modular concebido para adaptarse a distintas configuraciones espaciales a partir de una misma lógica estructural y constructiva. Su diseño parte de una geometría triangular que permite agrupar módulos para generar formas complejas como cubos u otras composiciones multifuncionales.",
-    t2: "La configuración más básica y funcional del sistema es el taburete NODE, compuesto por dos módulos triangulares ensamblados. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y estabilidad estructural.",
-    t3: "La unión entre módulos se resuelve mediante grapas metálicas situadas en ambos extremos y caras de cada pieza, permitiendo un ensamblaje preciso, reversible y adaptable a distintas configuraciones sin perder solidez.",
-    t4: "El desarrollo técnico del proyecto se apoya en planos constructivos que definen uniones, materiales y tolerancias, reflejando la relación directa entre diseño formal y viabilidad productiva dentro de un contexto industrial real.",
-    footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
-  };
+/* ===============================
+   NAVEGACIÓN ENTRE SECCIONES
+   (SOLO NAV, NO IDIOMAS)
+================================ */
 
-  const en = {
-    back: "Back",
-    t1: "NODE is a modular furniture system designed to adapt to different spatial configurations based on a single structural and constructive logic. Its design starts from a triangular geometry that allows modules to be grouped into more complex forms such as cubes and other multifunctional compositions.",
-    t2: "The most basic and functional configuration of the system is the NODE stool, composed of two triangular modules assembled together. This solution preserves the system’s identity while ensuring ergonomics, visual lightness and structural stability.",
-    t3: "The connection between modules is achieved through metal clips placed on both ends and faces of each piece, allowing for precise, reversible and adaptable assembly without compromising solidity.",
-    t4: "The technical development of the project is supported by construction drawings that define joints, materials and tolerances, reflecting the direct relationship between formal design and productive feasibility in a real industrial context.",
-    footer: "© 2026 · Borbala Major · Industrial Design Engineer"
-  };
+document.querySelectorAll(".tab").forEach(tab => {
+  tab.addEventListener("click", () => {
 
-  const c = lang === "es" ? es : en;
+    // 1. Cambiar sección
+    document.querySelectorAll("section").forEach(section =>
+      section.classList.remove("active")
+    );
 
-  document.getElementById("text-1").innerText = c.t1;
-  document.getElementById("text-2").innerText = c.t2;
-  document.getElementById("text-3").innerText = c.t3;
-  document.getElementById("text-4").innerText = c.t4;
-  document.getElementById("footer").innerText = c.footer;
-  document.getElementById("back-btn").innerHTML = "<span>←</span>" + c.back;
+    const targetSection = document.getElementById(tab.dataset.tab);
+    targetSection.classList.add("active");
 
-  document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
-  document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
-}
-
-setLang("es");
+    // 2. Marcar activo solo en el menú
+    document.querySelectorAll("nav li").forEach(li =>
+      li.classList.remove("active")
+    );
+    if (tab.tagName === "LI") {
+      tab.classList.add("active");
+    }
+  });
+});
 </script>
 
 </body>
