@@ -78,20 +78,18 @@ nav li:hover::after {
 
 .lang {
   display: flex;
-  position: relative;
-  z-index: 10001 !important;
   gap: 6px;
 }
 
 .lang button {
   background: transparent;
-  border: 1px solid #c7c9c8;
+  border: 1px solid #d0d0d0;
   color: #777;
-  font-size: 11px;
-  padding: 5px 14px;
-  border-radius: 20px; /* pill */
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
 
 /* Hover sutil */
@@ -102,9 +100,9 @@ nav li:hover::after {
 
 /* Idioma activo */
 .lang button.active {
-  background: #333;      /* combina con el texto de la web */
-  border-color: #c7c9c8;
+  background: #c7c9c8;
   color: #fff;
+  border-color: #c7c9c8;
 }
 /* ================= LAYOUT ================= */
 main{
