@@ -860,11 +860,11 @@ document.getElementById("btn-es").onclick = () => setLang("es");
 document.getElementById("btn-en").onclick = () => setLang("en");
 
 /* ===============================
-   DETECTAR HASH (#portfolio, etc.)
-   AL CARGAR LA PÁGINA
+   ACTIVAR SECCIÓN SOLO SI VIENE
+   DESDE PROYECTOS (#portfolio)
 ================================ */
 
-document.addEventListener("DOMContentLoaded", () => {
+(function () {
   const hash = window.location.hash.replace("#", "");
 
   if (hash) {
@@ -882,9 +882,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const navItem = document.querySelector(`[data-tab="${hash}"]`);
       if (navItem) navItem.classList.add("active");
+
+      // LIMPIA EL HASH para que al refrescar vuelva a Home
+      history.replaceState(null, "", "index.html");
     }
   }
-});
+})();
+
 
   
 </script>
