@@ -40,7 +40,7 @@
       align-items: center;
     }
 
-    /* BOTÓN VOLVER – igual que resto de proyectos */
+    /* BOTÓN VOLVER */
     .back-btn {
       text-decoration: none;
       font-size: 12px;
@@ -57,15 +57,15 @@
 
     .back-btn span {
       font-size: 14px;
-      line-height: 1;
-      display: inline-block;
-      transform: translateY(-1px);
+      position: relative;
+      top: 1px;
     }
 
     .back-btn:hover {
       font-weight: 500;
     }
 
+    /* IDIOMAS */
     .lang {
       display: flex;
       gap: 6px;
@@ -99,14 +99,14 @@
       margin: auto;
     }
 
-    /* TITULO */
+    /* TÍTULO */
     .project-title {
       font-size: 30px;
       font-weight: 400;
       margin-bottom: 40px;
     }
 
-    /* SECCIONES */
+    /* CONTENIDO */
     .project-section {
       margin-bottom: 60px;
     }
@@ -144,6 +144,7 @@
       <a href="index.html#portfolio" class="back-btn" id="backBtn">
         <span>←</span>Volver
       </a>
+
       <div class="lang">
         <button class="lang-btn active" onclick="setLang('es')">ES</button>
         <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -180,7 +181,7 @@
         </p>
       </section>
 
-      <!-- Cartel 4 (SOLO IMAGEN, SIN TEXTO) -->
+      <!-- Cartel 4 (solo imagen) -->
       <section class="project-section">
         <img src="cartel2.jpg" alt="Cartel 2" class="hero-image">
       </section>
