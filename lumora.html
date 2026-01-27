@@ -32,14 +32,17 @@ header {
 
 .back-btn {
   text-decoration: none;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.back-btn span {
-  font-size: 18px;
+.back-btn span:first-child {
+  font-size: 16px;
 }
 
 .lang {
@@ -51,7 +54,7 @@ header {
   background: transparent;
   border: 1px solid #d0d0d0;
   color: #777;
-  font-size: 10px;
+  font-size: 9px;
   padding: 2px 12px;
   border-radius: 4px;
   cursor: pointer;
@@ -65,7 +68,7 @@ header {
 
 /* ================= LAYOUT ================= */
 main {
-  padding-top: 150px;
+  padding-top: 140px;
 }
 
 .container {
@@ -76,9 +79,9 @@ main {
 
 /* ================= TITULO ================= */
 .project-title {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 400;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -87,7 +90,7 @@ main {
   width: 100%;
   height: auto;
   display: block;
-  margin-bottom: 28px;
+  margin-bottom: 26px;
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -131,7 +134,10 @@ footer {
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn"><span>←</span> <span id="back-text">Volver</span></a>
+    <a href="index.html#portfolio" class="back-btn">
+      <span>←</span>
+      <span id="back-text">Volver</span>
+    </a>
 
     <div class="lang">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
@@ -145,8 +151,8 @@ footer {
 
     <h1 class="project-title" id="title">LUMORA</h1>
 
-    <!-- PRIMERA IMAGEN (antes era la segunda) -->
-    <img src="lampara22.jpg" alt="Lámpara Lumora" class="project-image">
+    <!-- IMAGEN PRINCIPAL -->
+    <img src="lampara1.jpg" alt="Lámpara Lumora" class="project-image">
 
     <!-- TEXTO 1 -->
     <p class="project-text" id="text-1">
@@ -155,7 +161,7 @@ footer {
 
     <!-- TEXTO 2 -->
     <p class="project-text" id="text-2">
-      A través del estudio de la forma, el espesor del material y la difusión de la luz, se ha trabajado para lograr una iluminación cálida y envolvente que realce tanto el objeto como el espacio que lo rodea. Lumora pretende así convertirse en un elemento protagonista sin perder su vocación funcional, integrando procesos artesanales con una visión actual del producto orientada tanto al ámbito doméstico como a espacios contract.
+      A través del estudio de la forma, el espesor del material y la difusión de la luz, se ha trabajado para lograr una iluminación cálida y envolvente que realce tanto el objeto como el espacio que lo rodea. Lumora pretende convertirse en un elemento protagonista sin perder su vocación funcional, integrando procesos artesanales con una visión actual del producto orientada tanto al ámbito doméstico como a espacios contract.
     </p>
 
   </div>
@@ -168,15 +174,13 @@ footer {
 <script>
 function setLang(lang) {
   const es = {
-    title: "LUMORA",
     t1: "Lumora es una lámpara artesanal realizada en cerámica, concebida como una pieza de iluminación que combina tradición material y diseño contemporáneo. Cada unidad se produce de manera manual, lo que convierte cada lámpara en un objeto único y refuerza su carácter singular dentro de un contexto de producción controlada. Su diseño se inspira en la naranja de Valencia, reinterpretando sus volúmenes orgánicos, su textura y su carácter mediterráneo para trasladarlos a un objeto funcional y estético.",
-    t2: "A través del estudio de la forma, el espesor del material y la difusión de la luz, se ha trabajado para lograr una iluminación cálida y envolvente que realce tanto el objeto como el espacio que lo rodea. Lumora pretende así convertirse en un elemento protagonista sin perder su vocación funcional, integrando procesos artesanales con una visión actual del producto orientada tanto al ámbito doméstico como a espacios contract.",
+    t2: "A través del estudio de la forma, el espesor del material y la difusión de la luz, se ha trabajado para lograr una iluminación cálida y envolvente que realce tanto el objeto como el espacio que lo rodea. Lumora pretende convertirse en un elemento protagonista sin perder su vocación funcional, integrando procesos artesanales con una visión actual del producto orientada tanto al ámbito doméstico como a espacios contract.",
     back: "Volver",
     footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
   };
 
   const en = {
-    title: "LUMORA",
     t1: "Lumora is a handcrafted ceramic lamp conceived as a lighting piece that combines material tradition with contemporary design. Each unit is produced manually, making every lamp unique and reinforcing its singular character within a controlled production context. Its design is inspired by the Valencia orange, reinterpreting its organic volumes, texture and Mediterranean character into a functional and aesthetic object.",
     t2: "Through the study of form, material thickness and light diffusion, a warm and enveloping lighting effect has been achieved, enhancing both the object and the surrounding space. Lumora aims to become a focal element without losing its functional vocation, integrating artisanal processes with a contemporary vision of product design for both domestic and contract environments.",
     back: "Back",
@@ -185,7 +189,6 @@ function setLang(lang) {
 
   const c = lang === "es" ? es : en;
 
-  document.getElementById("title").innerText = c.title;
   document.getElementById("text-1").innerText = c.t1;
   document.getElementById("text-2").innerText = c.t2;
   document.getElementById("back-text").innerText = c.back;
