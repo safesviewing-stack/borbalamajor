@@ -4,168 +4,30 @@
 <meta charset="UTF-8">
 <title>BAORI · Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
-/* ================= RESET ================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  background: #ffffff;
-  color: #333;
-}
-
-/* ================= HEADER ================= */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  background: #eaeceb;
-  z-index: 1000;
-}
-
-.header-inner {
-  max-width: 1200px;
-  width: 90%;
-  height: 100%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.back-btn {
-  text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #555;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.back-btn span:first-child {
-  font-size: 18px;
-}
-
-.back-btn:hover {
-  font-weight: 500;
-}
-
-/* ================= IDIOMAS ================= */
-.lang {
-  display: flex;
-  gap: 6px;
-}
-
-.lang-btn {
-  background: transparent;
-  border: 1px solid #d0d0d0;
-  color: #777;
-  font-size: 10px;
-  padding: 2px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.lang-btn.active {
-  background: #c7c9c8;
-  color: #fff;
-  border-color: #c7c9c8;
-}
-
-/* ================= LAYOUT ================= */
-main {
-  padding-top: 150px;
-}
-
-.container {
-  width: 90%;
-  max-width: 960px;
-  margin: auto;
-  margin-bottom: 80px;
-}
-
-/* ================= TITULO ================= */
-.project-title {
-  font-size: 30px;
-  font-weight: 400;
-  margin-bottom: 30px;
-  animation: fadeUp 0.6s ease forwards;
-}
-
-/* ================= IMÁGENES ================= */
-.hero-image-full {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin-bottom: 50px;
-  animation: fadeUp 0.6s ease forwards;
-}
-
-.hero-image {
-  width: 100%;
-  height: 480px;
-  object-fit: contain;
-  display: block;
-  margin-bottom: 50px;
-  animation: fadeUp 0.6s ease forwards;
-}
-
-/* ================= TEXTO ================= */
-.project-text {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #555;
-  text-align: justify;
-  margin-bottom: 60px;
-  animation: fadeUp 0.6s ease forwards;
-}
-
-/* ================= FOOTER ================= */
-footer {
-  text-align: center;
-  padding: 6px;
-  font-size: 11px;
-  color: #555;
-  background-color: #eaeceb;
-  margin-top: 180px;
-}
-
-/* ================= ANIMACIONES ================= */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif}
+body{background:#fff;color:#333}
+header{position:fixed;top:0;width:100%;height:70px;background:#eaeceb;z-index:1000}
+.header-inner{max-width:1200px;width:90%;height:100%;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.back-btn{text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#555}
+.lang{display:flex;gap:6px}
+.lang-btn{background:transparent;border:1px solid #d0d0d0;color:#777;font-size:10px;padding:2px 12px;border-radius:4px;cursor:pointer}
+.lang-btn.active{background:#c7c9c8;color:#fff;border-color:#c7c9c8}
+main{padding-top:140px}
+.container{width:90%;max-width:960px;margin:auto}
+.project-title{font-size:30px;font-weight:400;margin-bottom:30px}
+.hero-image{width:100%;margin-bottom:30px}
+.project-text{font-size:14px;line-height:1.5;color:#555;text-align:justify;margin-bottom:120px}
+footer{text-align:center;padding:6px;font-size:11px;background:#eaeceb;margin-top:120px}
 </style>
 </head>
 
 <body>
-
 <header>
   <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn">
-      <span>←</span><span id="back-text">Volver</span>
-    </a>
-
+    <a href="index.html#portfolio" class="back-btn">← Volver</a>
     <div class="lang">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
       <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -175,58 +37,24 @@ footer {
 
 <main>
   <div class="container">
-
     <h1 class="project-title">BAORI</h1>
-
-    <!-- Imagen principal -->
-    <img src="profile5.jpg" alt="BAORI espacio colectivo" class="hero-image-full">
-    <p class="project-text" id="t1"></p>
-
-    <!-- Imagen secundaria -->
-    <img src="profile20.jpg" alt="BAORI modularidad" class="hero-image">
-    <p class="project-text" id="t2"></p>
-
-    <!-- Imagen terciaria -->
-    <img src="profile21.jpg" alt="BAORI experiencia de uso" class="hero-image">
-    <p class="project-text" id="t3"></p>
-
+    <img src="profile5.jpg" class="hero-image">
+    <p class="project-text" id="text-main">
+      BAORI es un proyecto de diseño de espacio colectivo que fomenta el encuentro mediante una composición equilibrada de formas limpias y materiales honestos.
+    </p>
   </div>
 </main>
 
-<footer id="footer"></footer>
+<footer>© 2026 · Borbála Major · Diseño Industrial</footer>
 
 <script>
-function setLang(lang) {
-  const es = {
-    back: "Volver",
-    t1: "BAORI es un proyecto de diseño de espacio colectivo que promueve el encuentro y el uso compartido a través de una composición equilibrada de formas limpias y materiales honestos, con influencias del diseño español y nórdico. El proyecto fue ganador de un concurso para la empresa STADLER y se concibe como una propuesta que prioriza la funcionalidad sin renunciar a una identidad formal clara y reconocible.",
-    t2: "El espacio se plantea desde una lógica modular y adaptable, permitiendo múltiples configuraciones según el contexto, el espacio disponible y las necesidades de los usuarios. Esta flexibilidad favorece su implantación tanto en entornos urbanos como en espacios interiores de carácter público.",
-    t3: "Cada elemento del conjunto ha sido diseñado atendiendo a criterios de ergonomía, escala humana y confort, buscando generar una experiencia de uso intuitiva, accesible y coherente con los valores del diseño contemporáneo orientado a las personas.",
-    footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
-  };
-
-  const en = {
-    back: "Back",
-    t1: "BAORI is a collective space design project that promotes interaction and shared use through a balanced composition of clean forms and honest materials, influenced by Spanish and Nordic design. The project won a competition for the company STADLER and is conceived as a proposal that prioritizes functionality while maintaining a clear and recognizable formal identity.",
-    t2: "The space is conceived from a modular and adaptable logic, allowing multiple configurations depending on context, available space and user needs. This flexibility enables its implementation in both urban environments and public interior spaces.",
-    t3: "Each element of the system has been designed according to criteria of ergonomics, human scale and comfort, aiming to generate an intuitive and accessible user experience consistent with the values of contemporary human-centered design.",
-    footer: "© 2026 · Borbala Major · Industrial Design Engineer"
-  };
-
-  const c = lang === "es" ? es : en;
-
-  document.getElementById("back-text").innerText = c.back;
-  document.getElementById("t1").innerText = c.t1;
-  document.getElementById("t2").innerText = c.t2;
-  document.getElementById("t3").innerText = c.t3;
-  document.getElementById("footer").innerText = c.footer;
-
-  document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
-  document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
+function setLang(lang){
+const es="BAORI es un proyecto de diseño de espacio colectivo que fomenta el encuentro mediante una composición equilibrada de formas limpias y materiales honestos.";
+const en="BAORI is a collective space design project that encourages interaction through clean forms and honest materials.";
+document.getElementById("text-main").innerText=lang==="es"?es:en;
+document.querySelectorAll(".lang-btn").forEach(b=>b.classList.remove("active"));
+document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
 }
-
-setLang("es");
 </script>
-
 </body>
 </html>
