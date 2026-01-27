@@ -1,230 +1,231 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>KATE CLUB · Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>KATE CLUB · Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    /* RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-    body {
-      background: #ffffff;
-      color: #333;
-    }
+<style>
 
-    /* HEADER */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 70px;
-      background: #eaeceb;
-      z-index: 1000;
-    }
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
-    .header-inner {
-      max-width: 1200px;
-      width: 90%;
-      height: 100%;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+body {
+  background: #ffffff;
+  color: #333;
+}
 
-    /* BOTÓN VOLVER */
-    .back-btn {
-      text-decoration: none;
-      font-size: 12px;
-      color: #555;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 2px;
-      line-height: 1;
-      transition: 0.3s ease;
-    }
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #eaeceb;
+  z-index: 1000;
+}
 
-    .back-btn span {
-      font-size: 14px;
-      position: relative;
-      top: 1px;
-    }
+.header-inner {
+  max-width: 1200px;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    .back-btn:hover {
-      font-weight: 500;
-    }
+/* BOTÓN VOLVER — IGUAL QUE SIXAY */
+.back-btn {
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555;
+}
 
-    /* IDIOMAS */
-    .lang {
-      display: flex;
-      gap: 6px;
-    }
+.back-btn span {
+  font-size: 16px;
+  margin-right: 6px;
+}
 
-    .lang-btn {
-      background: transparent;
-      border: 1px solid #d0d0d0;
-      color: #777;
-      font-size: 10px;
-      padding: 2px 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+/* IDIOMAS */
+.lang {
+  display: flex;
+  gap: 6px;
+}
 
-    .lang-btn.active {
-      background: #c7c9c8;
-      color: #fff;
-      border-color: #c7c9c8;
-    }
+.lang-btn {
+  background: transparent;
+  border: 1px solid #d0d0d0;
+  color: #777;
+  font-size: 10px;
+  padding: 1.2px 10.8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-    /* LAYOUT */
-    main {
-      padding-top: 140px;
-    }
+.lang-btn.active {
+  background: #c7c9c8;
+  color: #fff;
+  border-color: #c7c9c8;
+}
 
-    .container {
-      width: 90%;
-      max-width: 960px;
-      margin: auto;
-    }
+/* LAYOUT */
+main {
+  padding-top: 150px;
+}
 
-    /* TÍTULO */
-    .project-title {
-      font-size: 30px;
-      font-weight: 400;
-      margin-bottom: 40px;
-    }
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
+}
 
-    /* CONTENIDO */
-    .project-section {
-      margin-bottom: 60px;
-    }
+/* TÍTULO */
+.project-title {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  animation: fadeUp 0.6s ease forwards;
+}
 
-    .hero-image {
-      width: 100%;
-      height: auto;
-      margin-bottom: 20px;
-    }
+/* IMÁGENES */
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 70px 0 18px;
+  animation: fadeUp 0.6s ease forwards;
+}
 
-    .project-text {
-      font-size: 14px;
-      line-height: 1.7;
-      color: #555;
-      text-align: justify;
-    }
+.project-image:first-of-type {
+  margin-top: 36px;
+}
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      font-size: 11px;
-      color: #555;
-      background: #eaeceb;
-      padding: 6px;
-      margin-top: 160px;
-    }
-  </style>
+/* TEXTO */
+.project-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 6px;
+  font-size: 11px;
+  color: #555;
+  background-color: #eaeceb;
+  margin-top: 180px;
+}
+
+/* ANIMACIÓN — EXACTA A SIXAY */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="header-inner">
-      <a href="index.html#portfolio" class="back-btn" id="backBtn">
-        <span>←</span>Volver
-      </a>
+<header>
+  <div class="header-inner">
+    <a href="index.html#portfolio" class="back-btn" id="backBtn">
+      <span>←</span>Volver
+    </a>
 
-      <div class="lang">
-        <button class="lang-btn active" onclick="setLang('es')">ES</button>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
-      </div>
+    <div class="lang">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- MAIN -->
-  <main>
-    <div class="container">
-      <h1 class="project-title">KATE CLUB</h1>
+<main>
+  <div class="container">
 
-      <!-- Cartel 1 -->
-      <section class="project-section">
-        <img src="cartel4.jpg" alt="Cartel 4" class="hero-image">
-        <p class="project-text" id="text-1">
-          El Kate Club es una comunidad de la Facultad de Ingeniería Mecánica de la universidad dedicada al periodismo estudiantil. Formo parte del grupo desde el inicio de mis estudios universitarios, participando tanto en la redacción de artículos como en el desarrollo de contenidos gráficos.
-        </p>
-      </section>
+    <h1 class="project-title">KATE CLUB</h1>
 
-      <!-- Cartel 2 -->
-      <section class="project-section">
-        <img src="cartel1.jpg" alt="Cartel 1" class="hero-image">
-        <p class="project-text" id="text-2">
-          Mi principal responsabilidad gráfica fue el diseño de las portadas previas a la publicación de cada edición, de las cuales presento aquí algunos ejemplos.
-        </p>
-      </section>
+    <!-- Imagen 1 -->
+    <img src="cartel4.jpg" alt="Cartel Kate Club" class="project-image">
 
-      <!-- Cartel 3 -->
-      <section class="project-section">
-        <img src="cartel3.jpg" alt="Cartel 3" class="hero-image">
-        <p class="project-text" id="text-3">
-          Cada portada fue diseñada teniendo en cuenta tanto el contenido editorial como la época del año, con la intención de captar la atención de los lectores y reflejar el enfoque y la energía del Kate Club.
-        </p>
-      </section>
+    <p class="project-text" id="text-1">
+      El Kate Club es una comunidad de la Facultad de Ingeniería Mecánica de la universidad dedicada al periodismo estudiantil. Formo parte del grupo desde el inicio de mis estudios universitarios, participando tanto en la redacción de artículos como en el desarrollo de contenidos gráficos.
+    </p>
 
-      <!-- Cartel 4 (solo imagen) -->
-      <section class="project-section">
-        <img src="cartel2.jpg" alt="Cartel 2" class="hero-image">
-      </section>
+    <!-- Imagen 2 -->
+    <img src="cartel1.jpg" alt="Cartel Kate Club" class="project-image">
 
-    </div>
-  </main>
+    <p class="project-text" id="text-2">
+      Mi principal responsabilidad gráfica fue el diseño de las portadas previas a la publicación de cada edición, de las cuales presento aquí algunos ejemplos.
+    </p>
 
-  <!-- FOOTER -->
-  <footer id="footer">
-    © 2026 · Borbála Major · Ingeniera en diseño industrial
-  </footer>
+    <!-- Imagen 3 -->
+    <img src="cartel3.jpg" alt="Cartel Kate Club" class="project-image">
 
-  <!-- SCRIPT -->
-  <script>
-    function setLang(l) {
-      const es = {
-        t1: "El Kate Club es una comunidad de la Facultad de Ingeniería Mecánica de la universidad dedicada al periodismo estudiantil. Formo parte del grupo desde el inicio de mis estudios universitarios, participando tanto en la redacción de artículos como en el desarrollo de contenidos gráficos.",
-        t2: "Mi principal responsabilidad gráfica fue el diseño de las portadas previas a la publicación de cada edición, de las cuales presento aquí algunos ejemplos.",
-        t3: "Cada portada fue diseñada teniendo en cuenta tanto el contenido editorial como la época del año, con la intención de captar la atención de los lectores y reflejar el enfoque y la energía del Kate Club.",
-        f: "© 2026 · Borbála Major · Ingeniera en diseño industrial",
-        back: "Volver"
-      };
+    <p class="project-text" id="text-3">
+      Cada portada fue diseñada teniendo en cuenta tanto el contenido editorial como la época del año, con la intención de captar la atención de los lectores y reflejar el enfoque y la energía del Kate Club.
+    </p>
 
-      const en = {
-        t1: "The Kate Club is a community of the Faculty of Mechanical Engineering dedicated to student journalism. I have been part of the group since the beginning of my university studies, contributing both to article writing and graphic content development.",
-        t2: "My main graphic responsibility was designing the covers prior to the publication of each edition, of which I present some examples here.",
-        t3: "Each cover was designed considering both the editorial content and the time of year, with the intention of capturing the readers' attention and reflecting the focus and energy of the Kate Club.",
-        f: "© 2026 · Borbála Major · Industrial Design Engineer",
-        back: "Back"
-      };
+    <!-- Imagen 4 (solo imagen) -->
+    <img src="cartel2.jpg" alt="Cartel Kate Club" class="project-image">
 
-      const c = l === "es" ? es : en;
+  </div>
+</main>
 
-      document.getElementById("text-1").innerText = c.t1;
-      document.getElementById("text-2").innerText = c.t2;
-      document.getElementById("text-3").innerText = c.t3;
-      document.getElementById("footer").innerText = c.f;
-      document.getElementById("backBtn").innerHTML = `<span>←</span>${c.back}`;
+<footer id="footer">
+© 2026 · Borbála Major · Ingeniera en diseño industrial
+</footer>
 
-      document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
-      document.querySelector(`.lang-btn[onclick*="${l}"]`).classList.add("active");
-    }
-  </script>
+<script>
+function setLang(lang) {
+  const es = {
+    back: "Volver",
+    t1: "El Kate Club es una comunidad de la Facultad de Ingeniería Mecánica de la universidad dedicada al periodismo estudiantil. Formo parte del grupo desde el inicio de mis estudios universitarios, participando tanto en la redacción de artículos como en el desarrollo de contenidos gráficos.",
+    t2: "Mi principal responsabilidad gráfica fue el diseño de las portadas previas a la publicación de cada edición, de las cuales presento aquí algunos ejemplos.",
+    t3: "Cada portada fue diseñada teniendo en cuenta tanto el contenido editorial como la época del año, con la intención de captar la atención de los lectores y reflejar el enfoque y la energía del Kate Club.",
+    footer: "© 2026 · Borbála Major · Ingeniera en diseño industrial"
+  };
+
+  const en = {
+    back: "Back",
+    t1: "The Kate Club is a community of the Faculty of Mechanical Engineering dedicated to student journalism. I have been part of the group since the beginning of my university studies, contributing to both article writing and graphic content development.",
+    t2: "My main graphic responsibility was designing the covers prior to the publication of each edition, of which I present some examples here.",
+    t3: "Each cover was designed considering both the editorial content and the time of year, with the intention of capturing the readers' attention and reflecting the focus and energy of the Kate Club.",
+    footer: "© 2026 · Borbála Major · Industrial Design Engineer"
+  };
+
+  const c = lang === "es" ? es : en;
+
+  document.getElementById("backBtn").innerHTML = `<span>←</span>${c.back}`;
+  document.getElementById("text-1").innerText = c.t1;
+  document.getElementById("text-2").innerText = c.t2;
+  document.getElementById("text-3").innerText = c.t3;
+  document.getElementById("footer").innerText = c.footer;
+
+  document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+  document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
+}
+</script>
 
 </body>
 </html>
