@@ -54,6 +54,7 @@ header {
   font-weight: 500;
 }
 
+/* ================= IDIOMAS ================= */
 .lang {
   display: flex;
   gap: 6px;
@@ -91,7 +92,7 @@ main {
 .project-title {
   font-size: 30px;
   font-weight: 400;
-  margin-bottom: 28px;
+  margin-bottom: 40px;
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -99,8 +100,9 @@ main {
 .hero-image {
   width: 100%;
   height: auto;
+  object-fit: cover;
   display: block;
-  margin: 0 0 25px; /* más cerca del texto */
+  margin-bottom: 22px;
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -108,7 +110,7 @@ main {
   width: 100%;
   height: auto;
   display: block;
-  margin: 110px 0 35px; /* compacto */
+  margin: 110px 0 20px; /* 🔧 texto más cerca */
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -118,7 +120,7 @@ main {
   line-height: 1.5;
   color: #555;
   text-align: justify;
-  margin-bottom: 65px; /* compacto */
+  margin-bottom: 65px;
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -129,7 +131,7 @@ footer {
   font-size: 11px;
   color: #555;
   background-color: #eaeceb;
-  margin-top: 180px;
+  margin-top: 80px;
 }
 
 /* ================= ANIMACIONES ================= */
@@ -151,7 +153,7 @@ footer {
 
 <header>
   <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn" id="back">← Volver</a>
+    <a href="index.html#portfolio" class="back-btn">← Volver</a>
 
     <div class="lang">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
@@ -169,65 +171,65 @@ footer {
     <img src="profile9.jpg" alt="NODE sistema modular" class="hero-image">
 
     <p class="project-text" id="text-1">
-      NODE es un sistema de mobiliario modular concebido para adaptarse a distintas configuraciones espaciales a partir de una misma lógica estructural y constructiva. Su diseño parte de una geometría triangular que permite agrupar módulos para generar volúmenes complejos como cubos u otras composiciones multifuncionales.
+      NODE es un sistema de mobiliario modular concebido a partir de una geometría triangular que permite agrupar sus piezas para generar configuraciones tridimensionales como cubos u otras formas multifuncionales. Esta lógica formal dota al sistema de una gran versatilidad espacial y funcional.
     </p>
 
     <!-- Imagen 2 -->
-    <img src="taburete.jpg" alt="Taburete NODE" class="project-image">
+    <img src="taburete.jpg" alt="NODE taburete" class="project-image">
 
     <p class="project-text" id="text-2">
-      La configuración más básica y funcional del sistema es el taburete NODE, compuesto por dos módulos triangulares ensamblados. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y estabilidad estructural dentro de un objeto compacto y versátil.
+      La configuración funcional más básica del sistema es un taburete, compuesto por la unión de dos módulos triangulares. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y una estructura sólida pese a su aparente simplicidad.
     </p>
 
     <!-- Imagen 3 -->
-    <img src="plano2.jpg" alt="Plano técnico NODE" class="project-image">
+    <img src="plano1.jpg" alt="NODE plano técnico 1" class="project-image">
 
     <p class="project-text" id="text-3">
-      La unión entre módulos se resuelve mediante una grapa metálica situada en ambos extremos y caras de cada pieza, permitiendo un ensamblaje preciso, reversible y adaptable a distintas configuraciones sin comprometer la solidez del conjunto.
+      El ensamblaje entre piezas se realiza mediante grapas metálicas situadas en ambos extremos y caras de cada módulo, permitiendo una conexión precisa, resistente y fácilmente replicable en contextos de producción industrial.
     </p>
 
     <!-- Imagen 4 -->
-    <img src="plano1.jpg" alt="Detalle constructivo NODE" class="project-image">
+    <img src="plano2.jpg" alt="NODE plano técnico 2" class="project-image">
 
     <p class="project-text" id="text-4">
-      El desarrollo técnico del proyecto se apoya en planos constructivos que definen uniones, materiales y tolerancias, reflejando la relación directa entre diseño formal y viabilidad productiva dentro de un contexto industrial real.
+      El desarrollo técnico del proyecto se apoya en planos constructivos que definen con precisión las uniones, materiales y tolerancias necesarias, reflejando la relación directa entre diseño formal y viabilidad productiva.
     </p>
 
   </div>
 </main>
 
-<footer id="footer">
+<footer id="footer-text">
 © 2026 · Borbala Major · Ingeniera en diseño industrial
 </footer>
 
 <script>
 function setLang(lang) {
   const es = {
+    t1: "NODE es un sistema de mobiliario modular concebido a partir de una geometría triangular que permite agrupar sus piezas para generar configuraciones tridimensionales como cubos u otras formas multifuncionales. Esta lógica formal dota al sistema de una gran versatilidad espacial y funcional.",
+    t2: "La configuración funcional más básica del sistema es un taburete, compuesto por la unión de dos módulos triangulares. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y una estructura sólida pese a su aparente simplicidad.",
+    t3: "El ensamblaje entre piezas se realiza mediante grapas metálicas situadas en ambos extremos y caras de cada módulo, permitiendo una conexión precisa, resistente y fácilmente replicable en contextos de producción industrial.",
+    t4: "El desarrollo técnico del proyecto se apoya en planos constructivos que definen con precisión las uniones, materiales y tolerancias necesarias, reflejando la relación directa entre diseño formal y viabilidad productiva.",
     back: "← Volver",
-    t1: "NODE es un sistema de mobiliario modular concebido para adaptarse a distintas configuraciones espaciales a partir de una misma lógica estructural y constructiva. Su diseño parte de una geometría triangular que permite agrupar módulos para generar volúmenes complejos como cubos u otras composiciones multifuncionales.",
-    t2: "La configuración más básica y funcional del sistema es el taburete NODE, compuesto por dos módulos triangulares ensamblados. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y estabilidad estructural dentro de un objeto compacto y versátil.",
-    t3: "La unión entre módulos se resuelve mediante una grapa metálica situada en ambos extremos y caras de cada pieza, permitiendo un ensamblaje preciso, reversible y adaptable a distintas configuraciones sin comprometer la solidez del conjunto.",
-    t4: "El desarrollo técnico del proyecto se apoya en planos constructivos que definen uniones, materiales y tolerancias, reflejando la relación directa entre diseño formal y viabilidad productiva dentro de un contexto industrial real.",
     footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
   };
 
   const en = {
+    t1: "NODE is a modular furniture system based on a triangular geometry that allows its pieces to be grouped to generate three-dimensional configurations such as cubes and other multifunctional forms. This formal logic gives the system great spatial and functional versatility.",
+    t2: "The most basic functional configuration of the system is a stool, composed of the union of two triangular modules. This solution preserves the system’s identity while ensuring ergonomics, visual lightness and solid structural behavior.",
+    t3: "The assembly between pieces is achieved through metal clamps located at both ends and faces of each module, allowing for a precise, resistant and easily replicable connection in industrial production contexts.",
+    t4: "The technical development of the project relies on construction drawings that precisely define joints, materials and tolerances, reflecting the direct relationship between formal design and production viability.",
     back: "← Back",
-    t1: "NODE is a modular furniture system designed to adapt to different spatial configurations based on a single structural and constructive logic. Its design starts from a triangular geometry that allows modules to be grouped into complex volumes such as cubes and other multifunctional compositions.",
-    t2: "The most basic and functional configuration of the system is the NODE stool, composed of two assembled triangular modules. This solution preserves the system’s identity while ensuring ergonomics, visual lightness and structural stability within a compact and versatile object.",
-    t3: "The connection between modules is achieved through a metal clip placed on both ends and faces of each piece, allowing precise, reversible and adaptable assembly without compromising the solidity of the whole.",
-    t4: "The technical development of the project is supported by construction drawings that define joints, materials and tolerances, reflecting the direct relationship between formal design and productive feasibility in a real industrial context.",
     footer: "© 2026 · Borbala Major · Industrial Design Engineer"
   };
 
   const c = lang === "es" ? es : en;
 
-  document.getElementById("back").innerText = c.back;
   document.getElementById("text-1").innerText = c.t1;
   document.getElementById("text-2").innerText = c.t2;
   document.getElementById("text-3").innerText = c.t3;
   document.getElementById("text-4").innerText = c.t4;
-  document.getElementById("footer").innerText = c.footer;
+  document.querySelector(".back-btn").innerText = c.back;
+  document.getElementById("footer-text").innerText = c.footer;
 
   document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
   document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
