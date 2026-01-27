@@ -36,10 +36,24 @@ header {
   align-items:center;
 }
 
+/* Definir la animación de entrada desde arriba */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px); /* Empuja el logo desde arriba */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Logo en su posición final */
+  }
+}
+
 .logo{
   color:#555;
   font-weight:60;
   font-size: 15px;
+  animation: slideDown 0.8s ease-out forwards; /* Animación con duración de 0.8 segundos */
+
 }
 
 nav ul{
