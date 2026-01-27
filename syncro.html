@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
 /* ================= RESET ================= */
 * {
   margin: 0;
@@ -44,19 +43,17 @@ header {
 
 .back-btn {
   text-decoration: none;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #555;
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
-.back-btn span:first-child {
-  font-size: 16px;
+.back-btn:hover {
+  font-weight: 500;
 }
 
+/* ================= IDIOMAS ================= */
 .lang {
   display: flex;
   gap: 6px;
@@ -66,10 +63,11 @@ header {
   background: transparent;
   border: 1px solid #d0d0d0;
   color: #777;
-  font-size: 9px;
+  font-size: 10px;
   padding: 2px 12px;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .lang-btn.active {
@@ -80,7 +78,7 @@ header {
 
 /* ================= LAYOUT ================= */
 main {
-  padding-top: 140px;
+  padding-top: 150px;
 }
 
 .container {
@@ -91,18 +89,19 @@ main {
 
 /* ================= TITULO ================= */
 .project-title {
-  font-size: 28px;
-  font-weight: 400;
-  margin-bottom: 50px;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 30px;
   animation: fadeUp 0.6s ease forwards;
 }
 
 /* ================= IMÁGENES ================= */
-.project-image {
+.hero-image {
   width: 100%;
   height: auto;
+  object-fit: contain;
   display: block;
-  margin-bottom: 26px;
+  margin-bottom: 25px;
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -112,7 +111,7 @@ main {
   line-height: 1.5;
   color: #555;
   text-align: justify;
-  margin-bottom: 40px;
+  margin-bottom: 120px;
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -123,7 +122,7 @@ footer {
   font-size: 11px;
   color: #555;
   background-color: #eaeceb;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 /* ================= ANIMACIONES ================= */
@@ -137,7 +136,6 @@ footer {
     transform: translateY(0);
   }
 }
-
 </style>
 </head>
 
@@ -146,10 +144,7 @@ footer {
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn">
-      <span>←</span>
-      <span id="back-text">Volver</span>
-    </a>
+    <a href="index.html#portfolio" class="back-btn">← Volver</a>
 
     <div class="lang">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
@@ -163,48 +158,32 @@ footer {
 
     <h1 class="project-title">SYNCRO</h1>
 
-    <!-- IMAGEN PRINCIPAL -->
-    <img src="profile10.jpg" alt="Reloj Syncro" class="project-image">
+    <!-- Imagen principal -->
+    <img src="profile10.jpg" alt="Reloj Syncro" class="hero-image">
 
-    <!-- TEXTO 1 -->
-    <p class="project-text" id="text-1">
-      Syncro es un proyecto de diseño de producto que desarrolla el concepto de un reloj deportivo concebido para rendir en contextos de actividad física sin renunciar a una estética cuidada apta para el uso cotidiano. El objetivo principal fue crear un objeto versátil capaz de acompañar al usuario tanto en entornos deportivos como en situaciones urbanas, evitando una apariencia excesivamente técnica o agresiva.
-    </p>
-
-    <!-- TEXTO 2 -->
-    <p class="project-text" id="text-2">
-      El diseño se orienta a un público de ambos sexos, apostando por una geometría equilibrada, proporciones contenidas y una lectura visual limpia que permita su integración en estilos diversos. Syncro busca así un punto de encuentro entre funcionalidad, confort y expresión formal, proponiendo un reloj que no desentona en el día a día y mantiene su identidad deportiva de forma sutil y elegante.
-    </p>
+    <!-- Texto único -->
+    <p class="project-text" id="text-main">
+       Syncro es un proyecto de diseño centrado en el desarrollo formal de un reloj deportivo para su uso tanto en actividad física como en el día a día. El trabajo se enfocó en definir una geometría limpia, equilibrada y apta para ambos sexos, evitando una apariencia excesivamente técnica. El resultado es un reloj versátil que mantiene su identidad deportiva sin desentonar en contextos urbanos y cotidianos.    </p>
 
   </div>
 </main>
 
-<footer id="footer-text">
-© 2026 · Borbala Major · Ingeniera en diseño industrial
+<footer>
+© 2026 · Borbála Major · Diseño Industrial
 </footer>
 
 <script>
 function setLang(lang) {
   const es = {
-    t1: "Syncro es un proyecto de diseño de producto que desarrolla el concepto de un reloj deportivo concebido para rendir en contextos de actividad física sin renunciar a una estética cuidada apta para el uso cotidiano. El objetivo principal fue crear un objeto versátil capaz de acompañar al usuario tanto en entornos deportivos como en situaciones urbanas, evitando una apariencia excesivamente técnica o agresiva.",
-    t2: "El diseño se orienta a un público de ambos sexos, apostando por una geometría equilibrada, proporciones contenidas y una lectura visual limpia que permita su integración en estilos diversos. Syncro busca así un punto de encuentro entre funcionalidad, confort y expresión formal, proponiendo un reloj que no desentona en el día a día y mantiene su identidad deportiva de forma sutil y elegante.",
-    back: "Volver",
-    footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
+    main: "Syncro es un proyecto de diseño centrado en el desarrollo formal de un reloj deportivo para su uso tanto en actividad física como en el día a día. El trabajo se enfocó en definir una geometría limpia, equilibrada y apta para ambos sexos, evitando una apariencia excesivamente técnica. El resultado es un reloj versátil que mantiene su identidad deportiva sin desentonar en contextos urbanos y cotidianos."
   };
 
   const en = {
-    t1: "Syncro is a product design project that develops the concept of a sports watch conceived to perform in physical activity contexts without renouncing a refined aesthetic suitable for everyday use. The main goal was to create a versatile object capable of accompanying the user both in sports environments and urban situations, avoiding an overly technical or aggressive appearance.",
-    t2: "The design targets users of all genders, relying on balanced geometry, controlled proportions and a clean visual language that allows integration into diverse styles. Syncro thus seeks a meeting point between functionality, comfort and formal expression, proposing a watch that fits naturally into daily life while subtly maintaining its sporty identity.",
-    back: "Back",
-    footer: "© 2026 · Borbala Major · Industrial Design Engineer"
+    main: "Syncro is a design project focused on the formal development of a sports watch for both physical activity and everyday use. The work aimed to define a clean, balanced geometry suitable for all genders, avoiding an overly technical appearance. The result is a versatile watch that maintains its sporty identity without standing out in urban and daily contexts."
   };
 
   const c = lang === "es" ? es : en;
-
-  document.getElementById("text-1").innerText = c.t1;
-  document.getElementById("text-2").innerText = c.t2;
-  document.getElementById("back-text").innerText = c.back;
-  document.getElementById("footer-text").innerText = c.footer;
+  document.getElementById("text-main").innerText = c.main;
 
   document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
   document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
