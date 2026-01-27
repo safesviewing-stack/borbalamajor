@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* ================= RESET ================= */
+    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -20,7 +20,7 @@
       color: #333;
     }
 
-    /* ================= HEADER ================= */
+    /* HEADER */
     header {
       position: fixed;
       top: 0;
@@ -50,10 +50,7 @@
       align-items: center;
       gap: 6px;
       margin-top: 2px;
-    }
-
-    .back-btn span {
-      font-size: 16px;
+      transition: 0.3s ease;
     }
 
     .back-btn:hover {
@@ -70,7 +67,7 @@
       border: 1px solid #d0d0d0;
       color: #777;
       font-size: 10px;
-      padding: 1.2px 10.8px;
+      padding: 2px 10px;
       border-radius: 4px;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -82,9 +79,9 @@
       border-color: #c7c9c8;
     }
 
-    /* ================= LAYOUT ================= */
+    /* LAYOUT */
     main {
-      padding-top: 150px;
+      padding-top: 140px;
     }
 
     .container {
@@ -93,58 +90,39 @@
       margin: auto;
     }
 
-    /* ================= ANIMACIONES ================= */
-    @keyframes fadeInSlideUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* ================= TITULO ================= */
+    /* TITULO */
     .project-title {
       font-size: 30px;
       font-weight: 400;
-      margin-bottom: 30px;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInSlideUp 0.8s ease-out forwards;
+      margin-bottom: 40px;
     }
 
-    /* ================= IMÁGENES ================= */
+    /* SECCIONES */
+    .project-section {
+      margin-bottom: 60px;
+    }
+
     .hero-image {
       width: 100%;
       height: auto;
-      margin-bottom: 30px;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInSlideUp 0.8s ease-out forwards;
+      margin-bottom: 20px;
     }
 
-    /* ================= TEXTO ================= */
     .project-text {
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.7;
       color: #555;
       text-align: justify;
-      margin-bottom: 24px;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInSlideUp 0.8s ease-out forwards;
     }
 
-    /* ================= FOOTER ================= */
+    /* FOOTER */
     footer {
       text-align: center;
       font-size: 11px;
       color: #555;
       background: #eaeceb;
       padding: 6px;
-      margin-top: 180px;
+      margin-top: 160px;
     }
   </style>
 </head>
@@ -162,31 +140,39 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <main>
     <div class="container">
       <h1 class="project-title">KATE CLUB</h1>
 
-      <!-- Imagen y Descripción 1 -->
+      <!-- Cartel 1 -->
       <section class="project-section">
         <img src="cartel4.jpg" alt="Cartel 4" class="hero-image">
         <p class="project-text" id="text-1">
-          El Kate Club es una comunidad de la Facultad de Ingeniería Mecánica de la universidad dedicada al periodismo estudiantil. Formo parte del grupo desde el inicio de mis estudios universitarios, participando tanto en la redacción de artículos como en el desarrollo de contenidos gráficos. Mi principal responsabilidad gráfica fue el diseño de las portadas previas a la publicación de cada edición, de las cuales presento aquí algunos ejemplos.
+          El Kate Club es una comunidad de la Facultad de Ingeniería Mecánica de la universidad dedicada al periodismo estudiantil. Formo parte del grupo desde el inicio de mis estudios universitarios, participando tanto en la redacción de artículos como en el desarrollo de contenidos gráficos.
         </p>
       </section>
 
-      <!-- Imagen y Descripción 2 -->
+      <!-- Cartel 2 -->
       <section class="project-section">
         <img src="cartel1.jpg" alt="Cartel 1" class="hero-image">
         <p class="project-text" id="text-2">
-          Las distintas ediciones se desarrollaron en diferentes momentos del año —edición de bienvenida para los estudiantes de primer año, edición de primavera y edición de verano— y en cada una de ellas busqué transmitir una identidad visual y una atmósfera acordes a su temática y espíritu.
+          Mi principal responsabilidad gráfica fue el diseño de las portadas previas a la publicación de cada edición, de las cuales presento aquí algunos ejemplos.
         </p>
       </section>
 
-      <!-- Imagen y Descripción 3 -->
+      <!-- Cartel 3 -->
+      <section class="project-section">
+        <img src="cartel3.jpg" alt="Cartel 3" class="hero-image">
+        <p class="project-text" id="text-3">
+          En este cartel exploré una composición más experimental, jugando con jerarquías visuales y contraste para reforzar el mensaje principal de la edición y aportar dinamismo al conjunto gráfico.
+        </p>
+      </section>
+
+      <!-- Cartel 4 -->
       <section class="project-section">
         <img src="cartel2.jpg" alt="Cartel 2" class="hero-image">
-        <p class="project-text" id="text-3">
+        <p class="project-text" id="text-4">
           Cada portada fue diseñada teniendo en cuenta tanto el contenido editorial como la época del año, con la intención de captar la atención de los lectores y reflejar el enfoque y la energía del Kate Club.
         </p>
       </section>
@@ -199,28 +185,36 @@
     © 2026 · Borbála Major · Ingeniera en diseño industrial
   </footer>
 
+  <!-- SCRIPT -->
   <script>
     function setLang(l) {
       const es = {
-        t1: "El Kate Club es una comunidad de la Facultad de Ingeniería Mecánica de la universidad dedicada al periodismo estudiantil. Formo parte del grupo desde el inicio de mis estudios universitarios, participando tanto en la redacción de artículos como en el desarrollo de contenidos gráficos. Mi principal responsabilidad gráfica fue el diseño de las portadas previas a la publicación de cada edición, de las cuales presento aquí algunos ejemplos.",
-        t2: "Las distintas ediciones se desarrollaron en diferentes momentos del año —edición de bienvenida para los estudiantes de primer año, edición de primavera y edición de verano— y en cada una de ellas busqué transmitir una identidad visual y una atmósfera acordes a su temática y espíritu.",
-        t3: "Cada portada fue diseñada teniendo en cuenta tanto el contenido editorial como la época del año, con la intención de captar la atención de los lectores y reflejar el enfoque y la energía del Kate Club.",
-        f: "© 2026 · Borbála Major · Ingeniera en diseño industrial"
+        t1: "El Kate Club es una comunidad de la Facultad de Ingeniería Mecánica de la universidad dedicada al periodismo estudiantil. Formo parte del grupo desde el inicio de mis estudios universitarios, participando tanto en la redacción de artículos como en el desarrollo de contenidos gráficos.",
+        t2: "Mi principal responsabilidad gráfica fue el diseño de las portadas previas a la publicación de cada edición, de las cuales presento aquí algunos ejemplos.",
+        t3: "En este cartel exploré una composición más experimental, jugando con jerarquías visuales y contraste para reforzar el mensaje principal de la edición y aportar dinamismo al conjunto gráfico.",
+        t4: "Cada portada fue diseñada teniendo en cuenta tanto el contenido editorial como la época del año, con la intención de captar la atención de los lectores y reflejar el enfoque y la energía del Kate Club.",
+        f: "© 2026 · Borbála Major · Ingeniera en diseño industrial",
+        back: "Volver"
       };
 
       const en = {
-        t1: "The Kate Club is a community of the Faculty of Mechanical Engineering at the university dedicated to student journalism. I have been part of the group since the beginning of my university studies, contributing to both article writing and the development of graphic content. My main graphic responsibility was designing the covers prior to the publication of each edition, of which I present here some examples.",
-        t2: "The different editions were developed at different times of the year — welcome edition for first-year students, spring edition, and summer edition — and in each of them, I sought to convey a visual identity and atmosphere that matched their theme and spirit.",
-        t3: "Each cover was designed considering both the editorial content and the time of year, with the intention of capturing the readers' attention and reflecting the focus and energy of the Kate Club.",
-        f: "© 2026 · Borbála Major · Industrial Design Engineer"
+        t1: "The Kate Club is a community of the Faculty of Mechanical Engineering dedicated to student journalism. I have been part of the group since the beginning of my university studies, contributing both to article writing and graphic content development.",
+        t2: "My main graphic responsibility was designing the covers prior to the publication of each edition, of which I present some examples here.",
+        t3: "In this poster I explored a more experimental composition, playing with visual hierarchies and contrast to reinforce the main message of the edition and bring dynamism to the graphic set.",
+        t4: "Each cover was designed considering both the editorial content and the time of year, with the intention of capturing the readers' attention and reflecting the focus and energy of the Kate Club.",
+        f: "© 2026 · Borbála Major · Industrial Design Engineer",
+        back: "Back"
       };
 
       const c = l === "es" ? es : en;
+
       document.getElementById("text-1").innerText = c.t1;
       document.getElementById("text-2").innerText = c.t2;
       document.getElementById("text-3").innerText = c.t3;
+      document.getElementById("text-4").innerText = c.t4;
       document.getElementById("footer").innerText = c.f;
-      document.getElementById("backBtn").innerHTML = `<span>←</span>${l === "es" ? "Volver" : "Back"}`;
+      document.getElementById("backBtn").innerHTML = `<span>←</span>${c.back}`;
+
       document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
       document.querySelector(`.lang-btn[onclick*="${l}"]`).classList.add("active");
     }
