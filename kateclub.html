@@ -93,11 +93,26 @@
       margin: auto;
     }
 
+    /* ================= ANIMACIONES ================= */
+    @keyframes fadeInSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     /* ================= TITULO ================= */
     .project-title {
       font-size: 30px;
       font-weight: 400;
       margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInSlideUp 0.8s ease-out forwards;
     }
 
     /* ================= IMÁGENES ================= */
@@ -105,6 +120,9 @@
       width: 100%;
       height: auto;
       margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInSlideUp 0.8s ease-out forwards;
     }
 
     /* ================= TEXTO ================= */
@@ -114,6 +132,9 @@
       color: #555;
       text-align: justify;
       margin-bottom: 24px;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInSlideUp 0.8s ease-out forwards;
     }
 
     /* ================= FOOTER ================= */
@@ -150,7 +171,7 @@
       <section class="project-section">
         <img src="cartel4.jpg" alt="Cartel 4" class="hero-image">
         <p class="project-text" id="text-1">
-          El Kate Club es una comunidad de la Facultad de Ingeniería Mecánica de la universidad dedicada al periodismo estudiantil. Formo parte del grupo desde el inicio de mis estudios universitarios, participando tanto en la redacción de artículos como en el desarrollo de contenidos gráficos. Mi principal responsabilidad gráfica fue el diseño de las portadas previas a la publicación de cada edición, de las cuales presento aquí algunos ejemplos.        
+          El Kate Club es una comunidad de la Facultad de Ingeniería Mecánica de la universidad dedicada al periodismo estudiantil. Formo parte del grupo desde el inicio de mis estudios universitarios, participando tanto en la redacción de artículos como en el desarrollo de contenidos gráficos. Mi principal responsabilidad gráfica fue el diseño de las portadas previas a la publicación de cada edición, de las cuales presento aquí algunos ejemplos.
         </p>
       </section>
 
@@ -158,7 +179,7 @@
       <section class="project-section">
         <img src="cartel1.jpg" alt="Cartel 1" class="hero-image">
         <p class="project-text" id="text-2">
-          Las distintas ediciones se desarrollaron en diferentes momentos del año —edición de bienvenida para los estudiantes de primer año, edición de primavera y edición de verano— y en cada una de ellas busqué transmitir una identidad visual y una atmósfera acordes a su temática y espíritu.        
+          Las distintas ediciones se desarrollaron en diferentes momentos del año —edición de bienvenida para los estudiantes de primer año, edición de primavera y edición de verano— y en cada una de ellas busqué transmitir una identidad visual y una atmósfera acordes a su temática y espíritu.
         </p>
       </section>
 
@@ -166,7 +187,7 @@
       <section class="project-section">
         <img src="cartel2.jpg" alt="Cartel 2" class="hero-image">
         <p class="project-text" id="text-3">
-          Cada portada fue diseñada teniendo en cuenta tanto el contenido editorial como la época del año, con la intención de captar la atención de los lectores y reflejar el enfoque y la energía del Kate Club.        
+          Cada portada fue diseñada teniendo en cuenta tanto el contenido editorial como la época del año, con la intención de captar la atención de los lectores y reflejar el enfoque y la energía del Kate Club.
         </p>
       </section>
 
