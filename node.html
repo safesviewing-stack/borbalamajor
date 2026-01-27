@@ -1,169 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>NODE · Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>NODE · Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    body {
+      background: #ffffff;
+      color: #333;
+    }
 
-<style>
-/* ================= RESET ================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+    /* ================= HEADER ================= */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      background: #eaeceb;
+      z-index: 1000;
+    }
 
-body {
-  background: #ffffff;
-  color: #333;
-}
+    .header-inner {
+      max-width: 1200px;
+      width: 90%;
+      height: 100%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-/* ================= HEADER ================= */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  background: #eaeceb;
-  z-index: 1000;
-}
+    .back-btn {
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #555;
+    }
 
-.header-inner {
-  max-width: 1200px;
-  width: 90%;
-  height: 100%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    .back-btn span {
+      font-size: 16px;
+      margin-right: 6px; /* Ajuste para espacio entre la flecha y la palabra */
+    }
 
-.back-btn {
-  text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #555;
-}
+    /* ================= IDIOMAS ================= */
+    .lang {
+      display: flex;
+      gap: 6px;
+    }
 
-.back-btn span {
-  font-size: 16px;
-  margin-right: 6px;
-}
+    .lang-btn {
+      background: transparent;
+      border: 1px solid #d0d0d0;
+      color: #777;
+      font-size: 10px;
+      padding: 1.2px 10.8px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-/* ================= IDIOMAS ================= */
-.lang {
-  display: flex;
-  gap: 6px;
-}
+    .lang-btn.active {
+      background: #c7c9c8;
+      color: #fff;
+      border-color: #c7c9c8;
+    }
 
-.lang-btn {
-  background: transparent;
-  border: 1px solid #d0d0d0;
-  color: #777;
-  font-size: 10px;
-  padding: 1.2px 10.8px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+    /* ================= LAYOUT ================= */
+    main {
+      padding-top: 140px;
+    }
 
-.lang-btn.active {
-  background: #c7c9c8;
-  color: #fff;
-  border-color: #c7c9c8;
-}
+    .container {
+      width: 90%;
+      max-width: 960px;
+      margin: auto;
+    }
 
-/* ================= LAYOUT ================= */
-main {
-  padding-top: 150px;
-}
+    /* ================= TITULO ================= */
+    .project-title {
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 50px;
+      animation: fadeUp 0.6s ease forwards;
+    }
 
-.container {
-  width: 90%;
-  max-width: 960px;
-  margin: auto;
-}
+    /* ================= IMÁGENES ================= */
+    .project-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 26px;
+      animation: fadeUp 0.6s ease forwards;
+    }
 
-/* ================= TITULO ================= */
-.project-title {
-  font-size: 30px;
-  font-weight: 400;
-  margin-bottom: 30px;
-  animation: fadeUp 0.6s ease forwards;
-}
+    /* ================= TEXTO ================= */
+    .project-text {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555;
+      text-align: justify;
+      margin-bottom: 40px;
+      animation: fadeUp 0.6s ease forwards;
+    }
 
-/* ================= IMÁGENES ================= */
-.hero-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  margin-bottom: 22px;
-  animation: fadeUp 0.6s ease forwards;
-}
+    /* ================= FOOTER ================= */
+    footer {
+      text-align: center;
+      padding: 6px;
+      font-size: 11px;
+      color: #555;
+      background-color: #eaeceb;
+      margin-top: 180px;
+    }
 
-.project-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 110px 0 20px; /* 🔧 texto más cerca */
-  animation: fadeUp 0.6s ease forwards;
-}
-
-.move-right {
-  width: 105%;
-  margin-left: 2%;
-}
-
-.large-image {
-  width: 105%;
-  margin-left: -4%;
-}
-
-/* ================= TEXTO ================= */
-.project-text {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #555;
-  text-align: justify;
-  margin-bottom: 65px;
-  animation: fadeUp 0.6s ease forwards;
-}
-
-/* ================= FOOTER ================= */
-footer {
-  text-align: center;
-  padding: 6px;
-  font-size: 11px;
-  color: #555;
-  background-color: #eaeceb;
-  margin-top: 180px;
-}
-
-/* ================= ANIMACIONES ================= */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-</style>
+    /* ================= ANIMACIONES ================= */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn" id="backBtn"><span>←</span>Volver</a>
+    <a href="index.html#portfolio" class="back-btn" id="backBtn">
+      <span>←</span> Volver
+    </a>
 
     <div class="lang">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
@@ -175,28 +154,54 @@ footer {
 <main>
   <div class="container">
 
-    <h1 class="project-title">NODE</h1>
+    <h1 class="project-title" id="title">NODE</h1>
 
-    <!-- Imagen principal -->
-    <img src="profile9.jpg" alt="NODE sistema modular" class="hero-image">
+    <img src="profile9.jpg" alt="NODE sistema modular" class="project-image">
 
     <p class="project-text" id="text-1">
       NODE es un sistema de mobiliario modular basado en una geometría triangular que permite combinar sus piezas para crear configuraciones tridimensionales, como cubos u otras formas multifuncionales. Esta estructura formal proporciona al sistema una gran versatilidad tanto en términos de espacio como de funcionalidad. Este proyecto fue mi proyecto final de grado, y se centró en el desarrollo de un sistema modular adaptable a diferentes entornos y necesidades. La flexibilidad del diseño permite su aplicación en diversos contextos, optimizando el uso del espacio sin comprometer la funcionalidad ni la estética.
     </p>
 
-    <!-- Imagen 2 -->
     <img src="taburete.jpg" alt="NODE taburete" class="project-image">
 
     <p class="project-text" id="text-2">
       La configuración funcional más básica del sistema es un taburete, compuesto por la unión de dos módulos triangulares. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y una estructura sólida pese a su aparente simplicidad.
     </p>
 
-    <!-- Imagen 3 -->
-    <img src="plano1.jpg" alt="NODE plano técnico 1" class="project-image">
+  </div>
+</main>
 
-    <p class="project-text" id="text-3">
-      El ensamblaje entre piezas se realiza mediante grapas metálicas situadas en ambos extremos y caras de cada módulo, permitiendo una conexión precisa, resistente y fácilmente replicable en contextos de producción industrial.
-    </p>
+<footer id="footer-text">
+  © 2026 · Borbala Major · Ingeniera en diseño industrial
+</footer>
 
-    <!-- Imagen 4 -->
-    <img src="plano2.jpg" alt="NODE plano técnico
+<script>
+function setLang(lang) {
+  const es = {
+    t1: "NODE es un sistema de mobiliario modular basado en una geometría triangular que permite combinar sus piezas para crear configuraciones tridimensionales, como cubos u otras formas multifuncionales. Esta estructura formal proporciona al sistema una gran versatilidad tanto en términos de espacio como de funcionalidad. Este proyecto fue mi proyecto final de grado, y se centró en el desarrollo de un sistema modular adaptable a diferentes entornos y necesidades. La flexibilidad del diseño permite su aplicación en diversos contextos, optimizando el uso del espacio sin comprometer la funcionalidad ni la estética.",
+    t2: "La configuración funcional más básica del sistema es un taburete, compuesto por la unión de dos módulos triangulares. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y una estructura sólida pese a su aparente simplicidad.",
+    back: "Volver",
+    footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
+  };
+
+  const en = {
+    t1: "NODE is a modular furniture system based on a triangular geometry that allows its pieces to be combined to create three-dimensional configurations, such as cubes or other multifunctional shapes. This formal structure provides the system with great versatility in both spatial and functional terms. This project was my final degree project, focusing on the development of a modular system adaptable to different environments and needs. The design's flexibility allows its application in various contexts, optimizing space usage without compromising functionality or aesthetics.",
+    t2: "The most basic functional configuration of the system is a stool, composed of the union of two triangular modules. This solution preserves the system’s identity while ensuring ergonomics, visual lightness and solid structural behavior.",
+    back: "Back",
+    footer: "© 2026 · Borbala Major · Industrial Design Engineer"
+  };
+
+  const c = lang === "es" ? es : en;
+
+  document.getElementById("text-1").innerText = c.t1;
+  document.getElementById("text-2").innerText = c.t2;
+  document.getElementById("backBtn").innerHTML = `<span>←</span>${c.back}`;
+  document.getElementById("footer-text").innerText = c.footer;
+
+  document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+  document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
+}
+</script>
+
+</body>
+</html>
