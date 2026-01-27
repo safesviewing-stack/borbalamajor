@@ -4,24 +4,72 @@
 <meta charset="UTF-8">
 <title>SYNCRO · Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif}
-body{background:#fff;color:#333}
-header{position:fixed;top:0;width:100%;height:70px;background:#eaeceb}
-.header-inner{max-width:1200px;width:90%;height:100%;margin:auto;display:flex;align-items:center;justify-content:space-between}
-.back-btn{text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#555;display:flex;align-items:center}
-.back-btn .arrow{font-size:18px;margin-right:4px}
-.lang{display:flex;gap:6px}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #333;
+}
+
+/* ================= HEADER ================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #eaeceb;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-btn span:first-child {
+  font-size: 16px;
+}
+
+.lang {
+  display: flex;
+  gap: 6px;
+}
+
 .lang-btn {
   background: transparent;
   border: 1px solid #d0d0d0;
   color: #777;
-  font-size: 10px;
-  padding: 2px 12px; /* CAMBIADO AQUÍ */
+  font-size: 9px;
+  padding: 2px 12px;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .lang-btn.active {
@@ -29,49 +77,139 @@ header{position:fixed;top:0;width:100%;height:70px;background:#eaeceb}
   color: #fff;
   border-color: #c7c9c8;
 }
-main{padding-top:150px}
-.container{width:90%;max-width:960px;margin:auto}
-.project-title{font-size:30px;font-weight:400;margin-bottom:30px}
-.hero-image{width:100%;margin-bottom:30px}
-.project-text{font-size:14px;line-height:1.5;color:#555;margin-bottom:30px;text-align:justify}
-footer{text-align:center;font-size:11px;background:#eaeceb;padding:6px;margin-top:40px}
+
+/* ================= LAYOUT ================= */
+main {
+  padding-top: 140px;
+}
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
+}
+
+/* ================= TITULO ================= */
+.project-title {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 50px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= IMÁGENES ================= */
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 26px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= TEXTO ================= */
+.project-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 6px;
+  font-size: 11px;
+  color: #555;
+  background-color: #eaeceb;
+  margin-top: 60px;
+}
+
+/* ================= ANIMACIONES ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 </style>
 </head>
 
 <body>
+
+<!-- HEADER -->
 <header>
-<div class="header-inner">
-<a href="index.html#portfolio" class="back-btn" id="back-btn"><span class="arrow">←</span> Volver</a>
-<div class="lang">
-<button class="lang-btn active" onclick="setLang('es')">ES</button>
-<button class="lang-btn" onclick="setLang('en')">EN</button>
-</div>
-</div>
+  <div class="header-inner">
+    <a href="index.html#portfolio" class="back-btn">
+      <span>←</span>
+      <span id="back-text">Volver</span>
+    </a>
+
+    <div class="lang">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
 </header>
 
 <main>
-<div class="container">
-<h1 class="project-title">SYNCRO</h1>
-<img src="profile10.jpg" class="hero-image">
-<p class="project-text" id="t1">Syncro es un smartwatch enfocado en una experiencia de usuario intuitiva.</p>
-<p class="project-text" id="t2">Combina diseño minimalista con tecnología wearable.</p>
-</div>
+  <div class="container">
+
+    <h1 class="project-title">SYNCRO</h1>
+
+    <!-- IMAGEN PRINCIPAL -->
+    <img src="profile10.jpg" alt="Reloj Syncro" class="project-image">
+
+    <!-- TEXTO 1 -->
+    <p class="project-text" id="text-1">
+      Syncro es un proyecto de diseño de producto que desarrolla el concepto de un reloj deportivo concebido para rendir en contextos de actividad física sin renunciar a una estética cuidada apta para el uso cotidiano. El objetivo principal fue crear un objeto versátil capaz de acompañar al usuario tanto en entornos deportivos como en situaciones urbanas, evitando una apariencia excesivamente técnica o agresiva.
+    </p>
+
+    <!-- TEXTO 2 -->
+    <p class="project-text" id="text-2">
+      El diseño se orienta a un público de ambos sexos, apostando por una geometría equilibrada, proporciones contenidas y una lectura visual limpia que permita su integración en estilos diversos. Syncro busca así un punto de encuentro entre funcionalidad, confort y expresión formal, proponiendo un reloj que no desentona en el día a día y mantiene su identidad deportiva de forma sutil y elegante.
+    </p>
+
+  </div>
 </main>
 
-<footer id="footer">© 2026 · Borbala Major · Ingeniera en diseño industrial</footer>
+<footer id="footer-text">
+© 2026 · Borbala Major · Ingeniera en diseño industrial
+</footer>
 
 <script>
-function setLang(lang){
-const es={back:"Volver",t1:"Syncro es un smartwatch enfocado en una experiencia de usuario intuitiva.",t2:"Combina diseño minimalista con tecnología wearable.",footer:"© 2026 · Borbala Major · Ingeniera en diseño industrial"};
-const en={back:"Back",t1:"Syncro is a smartwatch focused on an intuitive user experience.",t2:"It combines minimalist design with wearable technology.",footer:"© 2026 · Borbala Major · Industrial Design Engineer"};
-const c=lang==="es"?es:en;
-document.getElementById("t1").innerText=c.t1;
-document.getElementById("t2").innerText=c.t2;
-document.getElementById("footer").innerText=c.footer;
-document.getElementById("back-btn").innerHTML=`<span class="arrow">←</span> ${c.back}`;
-document.querySelectorAll(".lang-btn").forEach(b=>b.classList.remove("active"));
-document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
+function setLang(lang) {
+  const es = {
+    t1: "Syncro es un proyecto de diseño de producto que desarrolla el concepto de un reloj deportivo concebido para rendir en contextos de actividad física sin renunciar a una estética cuidada apta para el uso cotidiano. El objetivo principal fue crear un objeto versátil capaz de acompañar al usuario tanto en entornos deportivos como en situaciones urbanas, evitando una apariencia excesivamente técnica o agresiva.",
+    t2: "El diseño se orienta a un público de ambos sexos, apostando por una geometría equilibrada, proporciones contenidas y una lectura visual limpia que permita su integración en estilos diversos. Syncro busca así un punto de encuentro entre funcionalidad, confort y expresión formal, proponiendo un reloj que no desentona en el día a día y mantiene su identidad deportiva de forma sutil y elegante.",
+    back: "Volver",
+    footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
+  };
+
+  const en = {
+    t1: "Syncro is a product design project that develops the concept of a sports watch conceived to perform in physical activity contexts without renouncing a refined aesthetic suitable for everyday use. The main goal was to create a versatile object capable of accompanying the user both in sports environments and urban situations, avoiding an overly technical or aggressive appearance.",
+    t2: "The design targets users of all genders, relying on balanced geometry, controlled proportions and a clean visual language that allows integration into diverse styles. Syncro thus seeks a meeting point between functionality, comfort and formal expression, proposing a watch that fits naturally into daily life while subtly maintaining its sporty identity.",
+    back: "Back",
+    footer: "© 2026 · Borbala Major · Industrial Design Engineer"
+  };
+
+  const c = lang === "es" ? es : en;
+
+  document.getElementById("text-1").innerText = c.t1;
+  document.getElementById("text-2").innerText = c.t2;
+  document.getElementById("back-text").innerText = c.back;
+  document.getElementById("footer-text").innerText = c.footer;
+
+  document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+  document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
 }
 </script>
+
 </body>
 </html>
