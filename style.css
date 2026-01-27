@@ -52,7 +52,7 @@ header {
   color:#555;
   font-weight:60;
   font-size: 15px;
-  animation: slideDown 0.8s ease-out forwards; /* Animación con duración de 0.8 segundos */
+  animation: slideDown 0.4s ease-out forwards; /* Animación con duración de 0.8 segundos */
 
 }
 
