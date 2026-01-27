@@ -1,3 +1,4 @@
+.home
 /* ================= RESET ================= */
 *{
   margin:0;
@@ -715,6 +716,7 @@ li {
 
 /* Imágenes de fondo */
 .home-bg img {
+  opacity: 0.7; /* Cambia de 0 a 0.5 para que las imágenes sean menos transparentes */
   width: 95%;
   height: 80%;
   object-fit: cover;
