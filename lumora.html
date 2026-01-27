@@ -31,19 +31,18 @@ header {
 
 .back-btn {
   text-decoration: none;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #555;
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
-.back-btn span:first-child {
+.back-btn span {
   font-size: 16px;
+  margin-right: 6px;
 }
 
+/* ================= IDIOMAS ================= */
 .lang {
   display: flex;
   gap: 6px;
@@ -53,10 +52,11 @@ header {
   background: transparent;
   border: 1px solid #d0d0d0;
   color: #777;
-  font-size: 9px;
+  font-size: 10px;
   padding: 2px 12px;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .lang-btn.active {
