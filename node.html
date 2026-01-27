@@ -91,7 +91,7 @@ main {
 .project-title {
   font-size: 30px;
   font-weight: 400;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -100,7 +100,7 @@ main {
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 0 50px; /* 👈 REDUCIDO */
+  margin: 0 0 25px; /* más cerca del texto */
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -108,7 +108,7 @@ main {
   width: 100%;
   height: auto;
   display: block;
-  margin: 140px 0 60px;
+  margin: 110px 0 35px; /* compacto */
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -118,7 +118,7 @@ main {
   line-height: 1.5;
   color: #555;
   text-align: justify;
-  margin-bottom: 80px;
+  margin-bottom: 65px; /* compacto */
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -165,25 +165,29 @@ footer {
 
     <h1 class="project-title">NODE</h1>
 
+    <!-- Imagen principal -->
     <img src="profile9.jpg" alt="NODE sistema modular" class="hero-image">
 
     <p class="project-text" id="text-1">
-      NODE es un sistema de mobiliario modular concebido para adaptarse a distintas configuraciones espaciales a partir de una misma lógica estructural y constructiva. Su diseño parte de una geometría triangular que permite agrupar módulos para generar formas complejas como cubos u otras composiciones multifuncionales.
+      NODE es un sistema de mobiliario modular concebido para adaptarse a distintas configuraciones espaciales a partir de una misma lógica estructural y constructiva. Su diseño parte de una geometría triangular que permite agrupar módulos para generar volúmenes complejos como cubos u otras composiciones multifuncionales.
     </p>
 
+    <!-- Imagen 2 -->
     <img src="taburete.jpg" alt="Taburete NODE" class="project-image">
 
     <p class="project-text" id="text-2">
-      La configuración más básica y funcional del sistema es el taburete NODE, compuesto por dos módulos triangulares ensamblados. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y estabilidad estructural.
+      La configuración más básica y funcional del sistema es el taburete NODE, compuesto por dos módulos triangulares ensamblados. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y estabilidad estructural dentro de un objeto compacto y versátil.
     </p>
 
-    <img src="plano2.jpg" alt="Plano constructivo NODE" class="project-image">
+    <!-- Imagen 3 -->
+    <img src="plano2.jpg" alt="Plano técnico NODE" class="project-image">
 
     <p class="project-text" id="text-3">
-      La unión entre módulos se resuelve mediante grapas metálicas situadas en ambos extremos y caras de cada pieza, permitiendo un ensamblaje preciso, reversible y adaptable a distintas configuraciones sin perder solidez.
+      La unión entre módulos se resuelve mediante una grapa metálica situada en ambos extremos y caras de cada pieza, permitiendo un ensamblaje preciso, reversible y adaptable a distintas configuraciones sin comprometer la solidez del conjunto.
     </p>
 
-    <img src="plano1.jpg" alt="Detalle técnico NODE" class="project-image">
+    <!-- Imagen 4 -->
+    <img src="plano1.jpg" alt="Detalle constructivo NODE" class="project-image">
 
     <p class="project-text" id="text-4">
       El desarrollo técnico del proyecto se apoya en planos constructivos que definen uniones, materiales y tolerancias, reflejando la relación directa entre diseño formal y viabilidad productiva dentro de un contexto industrial real.
@@ -200,18 +204,18 @@ footer {
 function setLang(lang) {
   const es = {
     back: "← Volver",
-    t1: "NODE es un sistema de mobiliario modular concebido para adaptarse a distintas configuraciones espaciales a partir de una misma lógica estructural y constructiva. Su diseño parte de una geometría triangular que permite agrupar módulos para generar formas complejas como cubos u otras composiciones multifuncionales.",
-    t2: "La configuración más básica y funcional del sistema es el taburete NODE, compuesto por dos módulos triangulares ensamblados. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y estabilidad estructural.",
-    t3: "La unión entre módulos se resuelve mediante grapas metálicas situadas en ambos extremos y caras de cada pieza, permitiendo un ensamblaje preciso, reversible y adaptable a distintas configuraciones sin perder solidez.",
+    t1: "NODE es un sistema de mobiliario modular concebido para adaptarse a distintas configuraciones espaciales a partir de una misma lógica estructural y constructiva. Su diseño parte de una geometría triangular que permite agrupar módulos para generar volúmenes complejos como cubos u otras composiciones multifuncionales.",
+    t2: "La configuración más básica y funcional del sistema es el taburete NODE, compuesto por dos módulos triangulares ensamblados. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y estabilidad estructural dentro de un objeto compacto y versátil.",
+    t3: "La unión entre módulos se resuelve mediante una grapa metálica situada en ambos extremos y caras de cada pieza, permitiendo un ensamblaje preciso, reversible y adaptable a distintas configuraciones sin comprometer la solidez del conjunto.",
     t4: "El desarrollo técnico del proyecto se apoya en planos constructivos que definen uniones, materiales y tolerancias, reflejando la relación directa entre diseño formal y viabilidad productiva dentro de un contexto industrial real.",
     footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
   };
 
   const en = {
     back: "← Back",
-    t1: "NODE is a modular furniture system designed to adapt to different spatial configurations based on a single structural and constructive logic. Its design starts from a triangular geometry that allows modules to be grouped into complex forms such as cubes and other multifunctional compositions.",
-    t2: "The most basic and functional configuration of the system is the NODE stool, composed of two triangular modules assembled together. This solution preserves the system’s identity while ensuring ergonomics, visual lightness and structural stability.",
-    t3: "The connection between modules is achieved through metal clips placed on both ends and faces of each piece, allowing precise, reversible and adaptable assembly without compromising solidity.",
+    t1: "NODE is a modular furniture system designed to adapt to different spatial configurations based on a single structural and constructive logic. Its design starts from a triangular geometry that allows modules to be grouped into complex volumes such as cubes and other multifunctional compositions.",
+    t2: "The most basic and functional configuration of the system is the NODE stool, composed of two assembled triangular modules. This solution preserves the system’s identity while ensuring ergonomics, visual lightness and structural stability within a compact and versatile object.",
+    t3: "The connection between modules is achieved through a metal clip placed on both ends and faces of each piece, allowing precise, reversible and adaptable assembly without compromising the solidity of the whole.",
     t4: "The technical development of the project is supported by construction drawings that define joints, materials and tolerances, reflecting the direct relationship between formal design and productive feasibility in a real industrial context.",
     footer: "© 2026 · Borbala Major · Industrial Design Engineer"
   };
