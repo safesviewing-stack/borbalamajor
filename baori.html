@@ -22,7 +22,7 @@ body {
   color: #333;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -48,17 +48,11 @@ header {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #555;
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
-.back-btn span:first-child {
-  font-size: 18px;
-}
-
-.back-btn:hover {
-  font-weight: 500;
+.back-btn span {
+  font-size: 16px;
+  margin-right: 6px;
 }
 
 /* ================= IDIOMAS ================= */
@@ -162,7 +156,7 @@ footer {
 
 <header>
   <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn">
+    <a href="index.html#portfolio" class="back-btn" id="backBtn"><span>←</span>Volver</a>
       <span>←</span><span id="back-text">Volver</span>
     </a>
 
