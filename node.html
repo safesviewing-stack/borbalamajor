@@ -48,10 +48,14 @@ header {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px; /* Ajuste para alinear "Volver" con la flecha */
 }
 
-.back-btn:hover {
-  font-weight: 500;
+.back-btn span {
+  font-size: 16px;
 }
 
 /* ================= IDIOMAS ================= */
@@ -92,7 +96,7 @@ main {
 .project-title {
   font-size: 30px;
   font-weight: 400;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   animation: fadeUp 0.6s ease forwards;
 }
 
@@ -113,11 +117,13 @@ main {
   margin: 110px 0 20px; /* 🔧 texto más cerca */
   animation: fadeUp 0.6s ease forwards;
 }
+
 .move-right {
   width: 105%;
   margin-left: 2%;
 }
-  .large-image {
+
+.large-image {
   width: 105%;
   margin-left: -4%;
 }
@@ -161,7 +167,7 @@ footer {
 
 <header>
   <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn">← Volver</a>
+    <a href="index.html#portfolio" class="back-btn" id="backBtn"><span>←</span>Volver</a>
 
     <div class="lang">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
@@ -236,7 +242,7 @@ function setLang(lang) {
   document.getElementById("text-2").innerText = c.t2;
   document.getElementById("text-3").innerText = c.t3;
   document.getElementById("text-4").innerText = c.t4;
-  document.querySelector(".back-btn").innerText = c.back;
+  document.getElementById("backBtn").innerHTML = `<span>←</span>${c.back}`;
   document.getElementById("footer-text").innerText = c.footer;
 
   document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
