@@ -38,7 +38,7 @@ header {
 
 .logo{
   color:#555;
-  font-weight:100;
+  font-weight:60;
   font-size: 15px;
 }
 
@@ -157,10 +157,12 @@ p, li{
   color:#fff;
   padding:40px;
   max-width:840px;
-  margin-left: 200px;  /* Ajusta para mover el cuadro hacia la derecha */
+  margin-left: 220px;  /* Ajusta para mover el cuadro hacia la derecha */
   opacity:0;
   transform:translateY(40px);
   animation: fadeInSlideUp 0.8s ease-out forwards;
+  border-radius: 5px;  /* Añadir este valor para redondear las esquinas */
+
 }
 
 .hero-cta{
