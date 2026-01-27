@@ -156,7 +156,7 @@ p, li{
   background:rgba(0,0,0,.82);
   color:#fff;
   padding:40px;
-  max-width:800px;
+  max-width:840px;
   margin-left: 200px;  /* Ajusta para mover el cuadro hacia la derecha */
   opacity:0;
   transform:translateY(40px);
