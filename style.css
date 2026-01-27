@@ -161,7 +161,7 @@ p, li{
   opacity:0;
   transform:translateY(40px);
   animation: fadeInSlideUp 0.8s ease-out forwards;
-  border-radius: 5px;  /* Añadir este valor para redondear las esquinas */
+  border-radius: 8px;  /* Añadir este valor para redondear las esquinas */
 
 }
 
