@@ -48,11 +48,6 @@
       color: #555;
     }
 
-    .back-btn span {
-      font-size: 16px;
-      margin-right: 6px;
-    }
-
     .back-btn:hover {
       font-weight: 500;
     }
@@ -167,7 +162,8 @@
 
     <!-- Texto único -->
     <p class="project-text" id="text-main">
-       Syncro es un proyecto de diseño centrado en el desarrollo formal de un reloj deportivo para su uso tanto en actividad física como en el día a día. El trabajo se enfocó en definir una geometría limpia, equilibrada y apta para ambos sexos, evitando una apariencia excesivamente técnica. El resultado es un reloj versátil que mantiene su identidad deportiva sin desentonar en contextos urbanos y cotidianos.    </p>
+       Syncro es un proyecto de diseño centrado en el desarrollo formal de un reloj deportivo para su uso tanto en actividad física como en el día a día. El trabajo se enfocó en definir una geometría limpia, equilibrada y apta para ambos sexos, evitando una apariencia excesivamente técnica. El resultado es un reloj versátil que mantiene su identidad deportiva sin desentonar en contextos urbanos y cotidianos.    
+    </p>
 
   </div>
 </main>
@@ -179,18 +175,20 @@
 <script>
 function setLang(lang) {
   const es = {
-    back: "Volver",
+    back: "Volver",  // Traducción al español
     main: "Syncro es un proyecto de diseño centrado en el desarrollo formal de un reloj deportivo para su uso tanto en actividad física como en el día a día. El trabajo se enfocó en definir una geometría limpia, equilibrada y apta para ambos sexos, evitando una apariencia excesivamente técnica. El resultado es un reloj versátil que mantiene su identidad deportiva sin desentonar en contextos urbanos y cotidianos.",
     footer: "© 2026 · Borbála Major · Ingeniera en diseño industrial"
   };
 
   const en = {
-    back: "Back",
+    back: "Back",  // Traducción al inglés
     main: "Syncro is a design project focused on the formal development of a sports watch for both physical activity and everyday use. The work aimed to define a clean, balanced geometry suitable for all genders, avoiding an overly technical appearance. The result is a versatile watch that maintains its sporty identity without standing out in urban and daily contexts.",
     footer: "© 2026 · Borbála Major · Industrial Design Engineer"
   };
 
   const c = lang === "es" ? es : en;
+
+  document.getElementById("backBtn").innerHTML = `<span>←</span>${c.back}`;  // Traducir el botón Volver
   document.getElementById("text-main").innerText = c.main;
   document.getElementById("footer-text").innerText = c.footer;
 
