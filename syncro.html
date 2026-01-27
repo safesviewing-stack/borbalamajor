@@ -47,10 +47,14 @@ header {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px; /* Ajuste para alinear "Volver" con la flecha */
 }
 
-.back-btn:hover {
-  font-weight: 500;
+.back-btn span {
+  font-size: 16px;
 }
 
 /* ================= IDIOMAS ================= */
@@ -136,6 +140,7 @@ footer {
     transform: translateY(0);
   }
 }
+
 </style>
 </head>
 
@@ -144,7 +149,7 @@ footer {
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn">← Volver</a>
+    <a href="index.html#portfolio" class="back-btn" id="backBtn"><span>←</span>Volver</a>
 
     <div class="lang">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
@@ -163,7 +168,8 @@ footer {
 
     <!-- Texto único -->
     <p class="project-text" id="text-main">
-       Syncro es un proyecto de diseño centrado en el desarrollo formal de un reloj deportivo para su uso tanto en actividad física como en el día a día. El trabajo se enfocó en definir una geometría limpia, equilibrada y apta para ambos sexos, evitando una apariencia excesivamente técnica. El resultado es un reloj versátil que mantiene su identidad deportiva sin desentonar en contextos urbanos y cotidianos.    </p>
+      Syncro es un proyecto de diseño centrado en el desarrollo formal de un reloj deportivo para su uso tanto en actividad física como en el día a día. El trabajo se enfocó en definir una geometría limpia, equilibrada y apta para ambos sexos, evitando una apariencia excesivamente técnica. El resultado es un reloj versátil que mantiene su identidad deportiva sin desentonar en contextos urbanos y cotidianos.
+    </p>
 
   </div>
 </main>
@@ -187,6 +193,8 @@ function setLang(lang) {
 
   document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
   document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
+
+  document.getElementById("backBtn").innerHTML = `<span>←</span>${lang === "es" ? "Volver" : "Back"}`;
 }
 </script>
 
