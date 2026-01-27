@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 
 <style>
 
@@ -134,10 +133,7 @@ footer {
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="index.html#portfolio" class="back-btn">
-      <span>←</span>
-      <span id="back-text">Volver</span>
-    </a>
+    <a href="index.html#portfolio" class="back-btn" id="backBtn"><span>←</span>Volver</a>
 
     <div class="lang">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
@@ -191,7 +187,7 @@ function setLang(lang) {
 
   document.getElementById("text-1").innerText = c.t1;
   document.getElementById("text-2").innerText = c.t2;
-  document.getElementById("back-text").innerText = c.back;
+  document.getElementById("backBtn").innerHTML = `<span>←</span>${c.back}`;
   document.getElementById("footer-text").innerText = c.footer;
 
   document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
