@@ -2,17 +2,67 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>KATE CLUB · Portfolio</title>
+<title>SYNCRO · Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
-body { background: #fff; color: #333; }
-header { position: fixed; top: 0; width: 100%; height: 70px; background: #eaeceb; }
-.header-inner { max-width: 1200px; width: 90%; height: 100%; margin: auto; display: flex; justify-content: space-between; align-items: center; }
-.back-btn { text-decoration: none; font-size: 12px; color: #555; text-transform: uppercase; letter-spacing: .12em; display: flex; align-items: center; gap: 6px; margin-top: 2px; }
-.back-btn span { font-size: 16px; }
-.lang { display: flex; gap: 6px; }
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #333;
+}
+
+/* ================= HEADER ================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #eaeceb;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px; /* Ajuste para alinear "Volver" con la flecha */
+}
+
+.back-btn span {
+  font-size: 16px;
+}
+
+/* ================= IDIOMAS ================= */
+.lang {
+  display: flex;
+  gap: 6px;
+}
+
 .lang-btn {
   background: transparent;
   border: 1px solid #d0d0d0;
@@ -23,21 +73,84 @@ header { position: fixed; top: 0; width: 100%; height: 70px; background: #eaeceb
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.lang-btn.active { background: #c7c9c8; color: #fff; border-color: #c7c9c8; }
-main { padding-top: 150px; }
-.container { width: 90%; max-width: 960px; margin: auto; }
-.project-title { font-size: 30px; font-weight: 400; margin-bottom: 30px; }
-.hero-image { width: 100%; height: auto; margin-bottom: 30px; }
-.project-text { font-size: 14px; line-height: 1.6; color: #555; text-align: justify; margin-bottom: 24px; }
-footer { text-align: center; font-size: 11px; color: #555; background: #eaeceb; padding: 6px; margin-top: 40px; }
+
+.lang-btn.active {
+  background: #c7c9c8;
+  color: #fff;
+  border-color: #c7c9c8;
+}
+
+/* ================= LAYOUT ================= */
+main {
+  padding-top: 150px;
+}
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
+}
+
+/* ================= TITULO ================= */
+.project-title {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= IMÁGENES ================= */
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 25px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= TEXTO ================= */
+.project-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 120px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 6px;
+  font-size: 11px;
+  color: #555;
+  background-color: #eaeceb;
+  margin-top: 180px;
+}
+
+/* ================= ANIMACIONES ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="header-inner">
     <a href="index.html#portfolio" class="back-btn" id="backBtn"><span>←</span>Volver</a>
+
     <div class="lang">
       <button class="lang-btn active" onclick="setLang('es')">ES</button>
       <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -47,36 +160,41 @@ footer { text-align: center; font-size: 11px; color: #555; background: #eaeceb; 
 
 <main>
   <div class="container">
-    <h1 class="project-title">KATE CLUB</h1>
-    <img src="kateclub.jpg" class="hero-image">
-    <p id="t1" class="project-text">KATE CLUB es un proyecto de identidad visual y diseño gráfico.</p>
-    <p id="t2" class="project-text">Desarrollado para una marca vinculada a la cultura urbana.</p>
-    <p id="t3" class="project-text">Refleja mi versatilidad como diseñadora.</p>
+
+    <h1 class="project-title">SYNCRO</h1>
+
+    <!-- Imagen principal -->
+    <img src="profile10.jpg" alt="Reloj Syncro" class="hero-image">
+
+    <!-- Texto único -->
+    <p class="project-text" id="text-main">
+      Syncro es un proyecto de diseño centrado en el desarrollo formal de un reloj deportivo para su uso tanto en actividad física como en el día a día. El trabajo se enfocó en definir una geometría limpia, equilibrada y apta para ambos sexos, evitando una apariencia excesivamente técnica. El resultado es un reloj versátil que mantiene su identidad deportiva sin desentonar en contextos urbanos y cotidianos.
+    </p>
+
   </div>
 </main>
 
-<footer id="footer">© 2026 · Borbala Major · Ingeniera en diseño industrial</footer>
+<footer>
+© 2026 · Borbála Major · Diseño Industrial
+</footer>
 
 <script>
-function setLang(l){
+function setLang(lang) {
   const es = {
-    t1: "KATE CLUB es un proyecto de identidad visual y diseño gráfico.",
-    t2: "Desarrollado para una marca vinculada a la cultura urbana.",
-    t3: "Refleja mi versatilidad como diseñadora.",
-    f: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
+    main: "Syncro es un proyecto de diseño centrado en el desarrollo formal de un reloj deportivo para su uso tanto en actividad física como en el día a día. El trabajo se enfocó en definir una geometría limpia, equilibrada y apta para ambos sexos, evitando una apariencia excesivamente técnica. El resultado es un reloj versátil que mantiene su identidad deportiva sin desentonar en contextos urbanos y cotidianos."
   };
+
   const en = {
-    t1: "KATE CLUB is a visual identity and graphic design project.",
-    t2: "Developed for a brand linked to urban culture.",
-    t3: "It reflects my versatility as a designer.",
-    f: "© 2026 · Borbala Major · Industrial Design Engineer"
+    main: "Syncro is a design project focused on the formal development of a sports watch for both physical activity and everyday use. The work aimed to define a clean, balanced geometry suitable for all genders, avoiding an overly technical appearance. The result is a versatile watch that maintains its sporty identity without standing out in urban and daily contexts."
   };
-  const c = l === "es" ? es : en;
-  ["t1", "t2", "t3"].forEach(id => document.getElementById(id).innerText = c[id]);
-  document.getElementById("footer").innerText = c.f;
-  document.getElementById("backBtn").innerHTML = `<span>←</span>${l === "es" ? "Volver" : "Back"}`;
+
+  const c = lang === "es" ? es : en;
+  document.getElementById("text-main").innerText = c.main;
+
   document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
-  document.querySelector(`.lang-btn[onclick*="${l}"]`).classList.add("active");
+  document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
+
+  document.getElementById("backBtn").innerHTML = `<span>←</span>${lang === "es" ? "Volver" : "Back"}`;
 }
 </script>
 
