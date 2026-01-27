@@ -787,6 +787,36 @@ const content = {
   }
 };
 
+  /* ===============================
+   ACTIVAR SECCIÓN SOLO SI VIENE
+   DESDE PROYECTOS (#portfolio)
+================================ */
+
+(function () {
+  const hash = window.location.hash.replace("#", "");
+
+  if (hash) {
+    document.querySelectorAll("section").forEach(sec =>
+      sec.classList.remove("active")
+    );
+
+    const target = document.getElementById(hash);
+    if (target) {
+      target.classList.add("active");
+
+      document.querySelectorAll("nav li").forEach(li =>
+        li.classList.remove("active")
+      );
+
+      const navItem = document.querySelector(`[data-tab="${hash}"]`);
+      if (navItem) navItem.classList.add("active");
+
+      // LIMPIA EL HASH para que al refrescar vuelva a Home
+      history.replaceState(null, "", "index.html");
+    }
+  }
+})();
+
 
 /* ===============================
    FUNCIÓN DE CAMBIO DE IDIOMA
