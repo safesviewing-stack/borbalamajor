@@ -40,17 +40,26 @@
       align-items: center;
     }
 
+    /* BOTÓN VOLVER – igual que resto de proyectos */
     .back-btn {
       text-decoration: none;
       font-size: 12px;
       color: #555;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 6px;
       margin-top: 2px;
+      line-height: 1;
       transition: 0.3s ease;
+    }
+
+    .back-btn span {
+      font-size: 14px;
+      line-height: 1;
+      display: inline-block;
+      transform: translateY(-1px);
     }
 
     .back-btn:hover {
@@ -132,7 +141,9 @@
   <!-- HEADER -->
   <header>
     <div class="header-inner">
-      <a href="index.html#portfolio" class="back-btn" id="backBtn"><span>←</span>Volver</a>
+      <a href="index.html#portfolio" class="back-btn" id="backBtn">
+        <span>←</span>Volver
+      </a>
       <div class="lang">
         <button class="lang-btn active" onclick="setLang('es')">ES</button>
         <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -169,11 +180,9 @@
         </p>
       </section>
 
-      <!-- Cartel 4 -->
+      <!-- Cartel 4 (SOLO IMAGEN, SIN TEXTO) -->
       <section class="project-section">
         <img src="cartel2.jpg" alt="Cartel 2" class="hero-image">
-        <p class="project-text" id="text-4">
-        </p>
       </section>
 
     </div>
@@ -208,7 +217,6 @@
       document.getElementById("text-1").innerText = c.t1;
       document.getElementById("text-2").innerText = c.t2;
       document.getElementById("text-3").innerText = c.t3;
-      document.getElementById("text-4").innerText = c.t4;
       document.getElementById("footer").innerText = c.f;
       document.getElementById("backBtn").innerHTML = `<span>←</span>${c.back}`;
 
