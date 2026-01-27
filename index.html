@@ -858,4 +858,33 @@ setLang("es");
 
 document.getElementById("btn-es").onclick = () => setLang("es");
 document.getElementById("btn-en").onclick = () => setLang("en");
+
+/* ===============================
+   DETECTAR HASH (#portfolio, etc.)
+   AL CARGAR LA PÁGINA
+================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hash = window.location.hash.replace("#", "");
+
+  if (hash) {
+    document.querySelectorAll("section").forEach(sec =>
+      sec.classList.remove("active")
+    );
+
+    const target = document.getElementById(hash);
+    if (target) {
+      target.classList.add("active");
+
+      document.querySelectorAll("nav li").forEach(li =>
+        li.classList.remove("active")
+      );
+
+      const navItem = document.querySelector(`[data-tab="${hash}"]`);
+      if (navItem) navItem.classList.add("active");
+    }
+  }
+});
+
+  
 </script>
