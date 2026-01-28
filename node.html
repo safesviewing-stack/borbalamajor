@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <title>NODE · Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -18,7 +20,7 @@
       color: #333;
     }
 
-    /* ================= HEADER ================= */
+    /* HEADER */
     header {
       position: fixed;
       top: 0;
@@ -48,10 +50,10 @@
 
     .back-btn span {
       font-size: 16px;
-      margin-right: 6px; /* Ajuste para espacio entre la flecha y la palabra */
+      margin-right: 6px;
     }
 
-    /* ================= IDIOMAS ================= */
+    /* IDIOMAS */
     .lang {
       display: flex;
       gap: 6px;
@@ -74,7 +76,7 @@
       border-color: #c7c9c8;
     }
 
-    /* ================= LAYOUT ================= */
+    /* LAYOUT */
     main {
       padding-top: 140px;
     }
@@ -85,7 +87,7 @@
       margin: auto;
     }
 
-    /* ================= TITULO ================= */
+    /* TITULO */
     .project-title {
       font-size: 28px;
       font-weight: 400;
@@ -93,7 +95,7 @@
       animation: fadeUp 0.6s ease forwards;
     }
 
-    /* ================= IMÁGENES ================= */
+    /* IMÁGENES */
     .project-image {
       width: 100%;
       height: auto;
@@ -102,17 +104,17 @@
       animation: fadeUp 0.6s ease forwards;
     }
 
-    /* ================= TEXTO ================= */
+    /* TEXTO */
     .project-text {
       font-size: 14px;
       line-height: 1.5;
       color: #555;
       text-align: justify;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       animation: fadeUp 0.6s ease forwards;
     }
 
-    /* ================= FOOTER ================= */
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 6px;
@@ -122,7 +124,6 @@
       margin-top: 180px;
     }
 
-    /* ================= ANIMACIONES ================= */
     @keyframes fadeUp {
       from {
         opacity: 0;
@@ -141,7 +142,7 @@
 <header>
   <div class="header-inner">
     <a href="index.html#portfolio" class="back-btn" id="backBtn">
-      <span>←</span> Volver
+      <span>←</span>Volver
     </a>
 
     <div class="lang">
@@ -154,39 +155,49 @@
 <main>
   <div class="container">
 
-    <h1 class="project-title" id="title">NODE</h1>
+    <h1 class="project-title">NODE</h1>
 
+    <!-- Imagen principal -->
     <img src="profile9.jpg" alt="NODE sistema modular" class="project-image">
 
-    <p class="project-text" id="text-1">
-      NODE es un sistema de mobiliario modular basado en una geometría triangular que permite combinar sus piezas para crear configuraciones tridimensionales, como cubos u otras formas multifuncionales. Esta estructura formal proporciona al sistema una gran versatilidad tanto en términos de espacio como de funcionalidad. Este proyecto fue mi proyecto final de grado, y se centró en el desarrollo de un sistema modular adaptable a diferentes entornos y necesidades. La flexibilidad del diseño permite su aplicación en diversos contextos, optimizando el uso del espacio sin comprometer la funcionalidad ni la estética.
-    </p>
+    <p class="project-text" id="text-1"></p>
 
+    <!-- Taburete -->
     <img src="taburete.jpg" alt="NODE taburete" class="project-image">
 
-    <p class="project-text" id="text-2">
-      La configuración funcional más básica del sistema es un taburete, compuesto por la unión de dos módulos triangulares. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y una estructura sólida pese a su aparente simplicidad.
-    </p>
+    <p class="project-text" id="text-2"></p>
+
+    <!-- Plano 1 -->
+    <img src="plano1.jpg" alt="NODE plano técnico 1" class="project-image">
+
+    <p class="project-text" id="text-3"></p>
+
+    <!-- Plano 2 -->
+    <img src="plano2.jpg" alt="NODE plano técnico 2" class="project-image">
+
+    <p class="project-text" id="text-4"></p>
 
   </div>
 </main>
 
-<footer id="footer-text">
-  © 2026 · Borbala Major · Ingeniera en diseño industrial
-</footer>
+<footer id="footer-text"></footer>
 
 <script>
 function setLang(lang) {
   const es = {
-    t1: "NODE es un sistema de mobiliario modular basado en una geometría triangular que permite combinar sus piezas para crear configuraciones tridimensionales, como cubos u otras formas multifuncionales. Esta estructura formal proporciona al sistema una gran versatilidad tanto en términos de espacio como de funcionalidad. Este proyecto fue mi proyecto final de grado, y se centró en el desarrollo de un sistema modular adaptable a diferentes entornos y necesidades. La flexibilidad del diseño permite su aplicación en diversos contextos, optimizando el uso del espacio sin comprometer la funcionalidad ni la estética.",
-    t2: "La configuración funcional más básica del sistema es un taburete, compuesto por la unión de dos módulos triangulares. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y una estructura sólida pese a su aparente simplicidad.",
+    t1: "NODE es un sistema de mobiliario modular basado en una geometría triangular que permite combinar sus piezas para generar configuraciones tridimensionales. Este proyecto fue desarrollado como proyecto final de grado, con un enfoque en la versatilidad espacial y funcional.",
+    t2: "La configuración funcional más básica del sistema es un taburete compuesto por la unión de dos módulos triangulares, manteniendo estabilidad, ergonomía y coherencia formal.",
+    t3: "Los planos técnicos definen con precisión la geometría de cada módulo, así como sus proporciones y relaciones dimensionales, asegurando coherencia entre diseño y fabricación.",
+    t4: "El desarrollo constructivo contempla sistemas de unión y tolerancias que permiten la repetición del módulo y su adaptación a procesos productivos reales.",
     back: "Volver",
     footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
   };
 
   const en = {
-    t1: "NODE is a modular furniture system based on a triangular geometry that allows its pieces to be combined to create three-dimensional configurations, such as cubes or other multifunctional shapes. This formal structure provides the system with great versatility in both spatial and functional terms. This project was my final degree project, focusing on the development of a modular system adaptable to different environments and needs. The design's flexibility allows its application in various contexts, optimizing space usage without compromising functionality or aesthetics.",
-    t2: "The most basic functional configuration of the system is a stool, composed of the union of two triangular modules. This solution preserves the system’s identity while ensuring ergonomics, visual lightness and solid structural behavior.",
+    t1: "NODE is a modular furniture system based on a triangular geometry that allows its elements to be combined into three-dimensional configurations. This project was developed as a final degree project, focusing on spatial and functional versatility.",
+    t2: "The most basic functional configuration is a stool formed by two triangular modules, maintaining stability, ergonomics and formal coherence.",
+    t3: "The technical drawings precisely define the geometry of each module, its proportions and dimensional relationships, ensuring consistency between design and manufacturing.",
+    t4: "The constructive development considers joint systems and tolerances that allow modular repetition and adaptation to real production processes.",
     back: "Back",
     footer: "© 2026 · Borbala Major · Industrial Design Engineer"
   };
@@ -195,12 +206,16 @@ function setLang(lang) {
 
   document.getElementById("text-1").innerText = c.t1;
   document.getElementById("text-2").innerText = c.t2;
+  document.getElementById("text-3").innerText = c.t3;
+  document.getElementById("text-4").innerText = c.t4;
   document.getElementById("backBtn").innerHTML = `<span>←</span>${c.back}`;
   document.getElementById("footer-text").innerText = c.footer;
 
   document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
   document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
 }
+
+setLang("es");
 </script>
 
 </body>
