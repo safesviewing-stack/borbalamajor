@@ -1,3 +1,4 @@
+.home
 /* ================= RESET ================= */
 *{
   margin:0;
@@ -35,10 +36,24 @@ header {
   align-items:center;
 }
 
+/* Definir la animación de entrada desde arriba */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px); /* Empuja el logo desde arriba */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Logo en su posición final */
+  }
+}
+
 .logo{
   color:#555;
-  font-weight:300;
-  font-size: 14px;
+  font-weight:60;
+  font-size: 15px;
+  animation: slideDown 0.55s ease-out forwards; /* Animación con duración de 0.8 segundos */
+
 }
 
 nav ul{
@@ -78,33 +93,26 @@ nav li:hover::after {
 
 .lang {
   display: flex;
-  position: relative;
-  z-index: 10001 !important;
   gap: 6px;
 }
 
 .lang button {
   background: transparent;
-  border: 1px solid #c7c9c8;
+  border: 1px solid #d0d0d0;
   color: #777;
-  font-size: 11px;
-  padding: 5px 14px;
-  border-radius: 20px; /* pill */
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
 
-/* Hover sutil */
-.lang button:hover {
-  border-color: #999;
-  color: #333;
-}
 
 /* Idioma activo */
 .lang button.active {
-  background: #333;      /* combina con el texto de la web */
-  border-color: #c7c9c8;
+  background: #c7c9c8;
   color: #fff;
+  border-color: #c7c9c8;
 }
 /* ================= LAYOUT ================= */
 main{
@@ -125,7 +133,7 @@ main{
 
 /* ================= TYPO ================= */
 h1{
-  font-size:30px;
+  font-size:29px;
   font-weight:500;
   margin-bottom:28px;
   opacity: 0;
@@ -159,13 +167,16 @@ p, li{
 }
 
 .hero-box{
-  background:rgba(0,0,0,.75);
+  background:rgba(0,0,0,.88);
   color:#fff;
   padding:40px;
-  max-width:560px;
+  max-width:900px;
+  margin-left: 240px;  /* Ajusta para mover el cuadro hacia la derecha */
   opacity:0;
   transform:translateY(40px);
   animation: fadeInSlideUp 0.8s ease-out forwards;
+  border-radius: 6px;  /* Añadir este valor para redondear las esquinas */
+
 }
 
 .hero-cta{
@@ -705,14 +716,7 @@ li {
 }
 
 /* Overlay opcional */
-.home::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 2;
-  pointer-events: none; /* 👈 IMPORTANTE */
-}
+
 
 /* Contenedor del fondo */
 .home-bg {
@@ -729,6 +733,7 @@ li {
 
 /* Imágenes de fondo */
 .home-bg img {
+  opacity: 0.7; /* Cambia de 0 a 0.5 para que las imágenes sean menos transparentes */
   width: 95%;
   height: 80%;
   object-fit: cover;
@@ -847,7 +852,7 @@ body:has(#home.active) footer {
     transform: translateY(-80px);
   }
   100% {
-    opacity: 0.3;
+    opacity: 0.5;
     transform: translateY(var(--offset));
   }
 }
@@ -859,7 +864,7 @@ body:has(#home.active) footer {
     transform: translateY(80px);
   }
   100% {
-    opacity: 0.3;
+    opacity: 0.5;
     transform: translateY(var(--offset));
   }
 }

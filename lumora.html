@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>LUMORA · Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #333;
+}
+
+/* ================= HEADER ================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #eaeceb;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.back-btn span {
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+/* ================= IDIOMAS ================= */
+.lang {
+  display: flex;
+  gap: 6px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1px solid #d0d0d0;
+  color: #777;
+  font-size: 10px;
+  padding: 1.2px 10.8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-btn.active {
+  background: #c7c9c8;
+  color: #fff;
+  border-color: #c7c9c8;
+}
+
+/* ================= LAYOUT ================= */
+main {
+  padding-top: 140px;
+}
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
+}
+
+/* ================= TITULO ================= */
+.project-title {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 50px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= IMÁGENES ================= */
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 26px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= TEXTO ================= */
+.project-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 6px;
+  font-size: 11px;
+  color: #555;
+  background-color: #eaeceb;
+  margin-top: 180px;
+}
+
+/* ================= ANIMACIONES ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html#portfolio" class="back-btn" id="backBtn"><span>←</span>Volver</a>
+
+    <div class="lang">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <h1 class="project-title" id="title">LUMORA</h1>
+
+    <!-- IMAGEN PRINCIPAL -->
+    <img src="lampara1.jpg" alt="Lámpara Lumora" class="project-image">
+
+    <!-- TEXTO 1 -->
+    <p class="project-text" id="text-1">
+      Lumora es una lámpara artesanal realizada en cerámica, concebida como una pieza de iluminación que combina tradición material y diseño contemporáneo. Cada unidad se produce de manera manual, lo que convierte cada lámpara en un objeto único y refuerza su carácter singular dentro de un contexto de producción controlada. Su diseño se inspira en la naranja de Valencia, reinterpretando sus volúmenes orgánicos, su textura y su carácter mediterráneo para trasladarlos a un objeto funcional y estético.
+    </p>
+
+    <!-- TEXTO 2 -->
+    <p class="project-text" id="text-2">
+      A través del estudio de la forma, el espesor del material y la difusión de la luz, se ha trabajado para lograr una iluminación cálida y envolvente que realce tanto el objeto como el espacio que lo rodea. Lumora pretende convertirse en un elemento protagonista sin perder su vocación funcional, integrando procesos artesanales con una visión actual del producto orientada tanto al ámbito doméstico como a espacios contract.
+    </p>
+
+  </div>
+</main>
+
+<footer id="footer-text">
+© 2026 · Borbala Major · Ingeniera en diseño industrial
+</footer>
+
+<script>
+function setLang(lang) {
+  const es = {
+    t1: "Lumora es una lámpara artesanal realizada en cerámica, concebida como una pieza de iluminación que combina tradición material y diseño contemporáneo. Cada unidad se produce de manera manual, lo que convierte cada lámpara en un objeto único y refuerza su carácter singular dentro de un contexto de producción controlada. Su diseño se inspira en la naranja de Valencia, reinterpretando sus volúmenes orgánicos, su textura y su carácter mediterráneo para trasladarlos a un objeto funcional y estético.",
+    t2: "A través del estudio de la forma, el espesor del material y la difusión de la luz, se ha trabajado para lograr una iluminación cálida y envolvente que realce tanto el objeto como el espacio que lo rodea. Lumora pretende convertirse en un elemento protagonista sin perder su vocación funcional, integrando procesos artesanales con una visión actual del producto orientada tanto al ámbito doméstico como a espacios contract.",
+    back: "Volver",
+    footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
+  };
+
+  const en = {
+    t1: "Lumora is a handcrafted ceramic lamp conceived as a lighting piece that combines material tradition with contemporary design. Each unit is produced manually, making every lamp unique and reinforcing its singular character within a controlled production context. Its design is inspired by the Valencia orange, reinterpreting its organic volumes, texture and Mediterranean character into a functional and aesthetic object.",
+    t2: "Through the study of form, material thickness and light diffusion, a warm and enveloping lighting effect has been achieved, enhancing both the object and the surrounding space. Lumora aims to become a focal element without losing its functional vocation, integrating artisanal processes with a contemporary vision of product design for both domestic and contract environments.",
+    back: "Back",
+    footer: "© 2026 · Borbala Major · Industrial Design Engineer"
+  };
+
+  const c = lang === "es" ? es : en;
+
+  document.getElementById("text-1").innerText = c.t1;
+  document.getElementById("text-2").innerText = c.t2;
+  document.getElementById("backBtn").innerHTML = `<span>←</span>${c.back}`;
+  document.getElementById("footer-text").innerText = c.footer;
+
+  document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+  document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
+}
+</script>
+
+</body>
+</html>

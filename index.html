@@ -42,15 +42,29 @@ header{
   width:90%;
   height:100%;
   margin:auto;
-  display:grid;
-  grid-template-columns:auto 1fr auto;
+  display:flex;
+  justify-content:space-between;
   align-items:center;
+}
+
+  /* Definir la animación de entrada desde arriba */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px); /* Empuja el logo desde arriba */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Logo en su posición final */
+  }
 }
 
 .logo{
   color:#555;
-  font-weight:300;
-  font-size: 14px;
+  font-weight:60;
+  font-size: 15px;
+  animation: slideDown 0.55s ease-out forwards; /* Animación con duración de 0.8 segundos */
+
 }
 
 nav ul{
@@ -58,6 +72,7 @@ nav ul{
   justify-content:center;
   gap:36px;
   list-style:none;
+  flex:1;
 }
 
 nav li{
@@ -87,22 +102,29 @@ nav li::after{
 nav li:hover::after {
   width: 100%; /* Efecto de subrayado al pasar el cursor */
 }
-
+  
+.lang {
+  display: flex;
+  gap: 6px;
+}
+  
 .lang button{
-  background:none;
-  border:1px solid #c7c9c8;
-  color:#c7c9c8;
-  font-size:11px;
-  padding:4px 10px;
-  margin-left:6px;
-  cursor:pointer;
-  border-radius:4px;
-  transition: background-color 0.3s;
+  background: transparent;
+  border: 1px solid #d0d0d0;
+  color: #777;
+  font-size: 9px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  line-height:1;
+
 }
 
 .lang button.active{
-  background:#c7c9c8;
-  color:#fff;
+  background: #c7c9c8;
+  color: #fff;
+  border-color: #c7c9c8;
 }
 /* ================= LAYOUT ================= */
 main{
@@ -125,7 +147,7 @@ section.active{display:block}
 
 /* ================= TYPO ================= */
 h1{
-  font-size:30px;
+  font-size:29px;
   font-weight:500;
   margin-bottom:28px;
   opacity: 0;
@@ -154,6 +176,14 @@ p, li{
   background:url('portada.jpg') center/cover no-repeat;
 }
 
+  .home-bg {
+  background: #ffffff;
+}
+  
+#home {
+  background-color: #ffffff;
+}
+
 .hero{
   min-height:75vh;
   display:flex;
@@ -161,13 +191,16 @@ p, li{
 }
 
 .hero-box{
-  background:rgba(0,0,0,.75);
+  background:rgba(0,0,0,.88);
   color:#fff;
   padding:40px;
-  max-width:560px;
+  max-width:900px;
+  margin-left: 240px;  /* Ajusta para mover el cuadro hacia la derecha */
   opacity:0;
   transform:translateY(40px);
   animation: fadeInSlideUp 1s ease-out forwards;
+  border-radius: 6px;  /* Añadir este valor para redondear las esquinas */
+
 }
 
 .hero-cta{
@@ -427,8 +460,8 @@ footer{
   <!-- HERO -->
   <div class="container hero">
     <div class="hero-box">
-      <h1 id="hero-title">Ingeniería de diseño industrial aplicada al desarrollo de producto</h1>
-      <p id="hero-sub">Diseño técnico, fabricación y optimización de productos industriales.</p>
+      <h1 id="hero-title">Portafolio de Diseño Industrial | Borbála Major</h1>
+      <p id="hero-sub">Imagina, diseña y transforma ideas en productos con propósito y estilo.</p>
 
       <div class="hero-cta">
         <a class="btn primary tab" data-tab="cv">Ver CV</a>
@@ -480,9 +513,9 @@ footer{
         <img src="profile2.jpg" alt="Formación académica 2">
       </div>
       <div class="cv-block-text">
-        <h2>Grado en Ingenieria de Diseño Industrial y desarrollo de productos (Erasmus) 2025-2026</h2>
+        <h2>Grado en Ingenieria de Diseño Industrial y desarrollo de productos (Erasmus) 2025</h2>
         <p>
-          Formación académica en Diseño Industrial cursada durante un año en la Universitat Politècnica de València (UPV), 
+          Formación académica en Diseño Industrial cursada durante medio año en la Universitat Politècnica de València (UPV), 
           mediante un programa Erasmus en la Universidad de Tecnología y Economía de Budapest (BME)
         </p>
       </div>
@@ -500,9 +533,9 @@ footer{
         <img src="profile4.jpg" alt="Experiencia en diseño">
       </div>
       <div class="cv-block-text">
-        <h2>Experiencia profesional en empresa Sixay 2025-2026</h2>
+        <h2>Experiencia profesional en empresa Sixay 2025</h2>
         <p>
-          Experiencia profesional de un año en la empresa Sixay, enfocada al diseño de mobiliario, con participación activa en el desarrollo de productos, 
+          Experiencia profesional de medio año en la empresa Sixay, enfocada al diseño de mobiliario, con participación activa en el desarrollo de productos, 
           diseño técnico, optimización de componentes y trabajo colaborativo multidisciplinar.
         </p>
       </div>
@@ -524,7 +557,7 @@ footer{
 
     <div class="portfolio-grid">
 
-  <a href="https://tulink.com/baori" class="portfolio-link" target="_blank">
+  <a href="baori.html" class="portfolio-link">
   <article class="portfolio-item">
     <img src="profile5.jpg" alt="Diseño de mobiliario">
     <div class="portfolio-content">
@@ -534,7 +567,7 @@ footer{
   </article>
 </a>
 
-  <a href="https://tulink.com/lumora" class="portfolio-link" target="_blank">
+  <a href="lumora.html" class="portfolio-link">
   <article class="portfolio-item">
     <img src="profile6.jpg" alt="Prototipado e impresión 3D">
     <div class="portfolio-content">
@@ -545,7 +578,7 @@ footer{
 </a>
 
       
-  <a href="https://tulink.com/eliptria" class="portfolio-link" target="_blank">
+  <a href="eliptria.html" class="portfolio-link">
   <article class="portfolio-item">
     <img src="profile7.jpg" alt="Optimización de producto">
     <div class="portfolio-content">
@@ -557,7 +590,7 @@ footer{
 
       
 
-  <a href="https://tulink.com/sixay" class="portfolio-link" target="_blank">
+  <a href="sixay.html" class="portfolio-link">
   <article class="portfolio-item">
     <img src="profile8.jpg" alt="Nombre del proyecto">
     <div class="portfolio-content">
@@ -568,7 +601,7 @@ footer{
 </a>
 
       
-  <a href="https://tulink.com/node" class="portfolio-link" target="_blank">
+  <a href="node.html" class="portfolio-link">
   <article class="portfolio-item">
     <img src="profile9.jpg" alt="Proyecto 9">
     <div class="portfolio-content">
@@ -579,7 +612,7 @@ footer{
 </a>
 
       
-  <a href="https://tulink.com/syncro" class="portfolio-link" target="_blank">
+  <a href="syncro.html" class="portfolio-link">
   <article class="portfolio-item">
     <img src="profile10.jpg" alt="Proyecto 10">
     <div class="portfolio-content">
@@ -589,7 +622,7 @@ footer{
   </article>
 </a>
 
-  <a href="https://tulink.com/kateclub" class="portfolio-link" target="_blank">
+  <a href="kateclub.html" class="portfolio-link">
   <article class="portfolio-item">
     <img src="profile11.jpg" alt="Proyecto 11">
     <div class="portfolio-content">
@@ -653,7 +686,7 @@ document.querySelectorAll(".tab").forEach(tab => {
             block: "center"
           });
         }
-      }, 700); // pequeño delay para que el CV aparezca primero
+
     }
 
   });
@@ -674,8 +707,8 @@ const content = {
     navContact: "Contacto",
 
     /* HERO */
-    heroTitle: "Ingeniería de diseño industrial aplicada al desarrollo de producto",
-    heroSub: "Diseño técnico, fabricación y optimización de productos industriales.",
+    heroTitle: "Portafolio de Diseño Industrial | Borbála Major",
+    heroSub: "Imagina, diseña y transforma ideas en productos con propósito y estilo.",
     heroBtnCv: "Ver CV",
     heroBtnContact: "Contactar",
 
@@ -691,13 +724,13 @@ const content = {
     cvEdu1Text:
       "Graduada en Diseño Industrial por la Universidad de Tecnología y Economía de Budapest (BME), con una formación interdisciplinar en diseño de producto, procesos de fabricación y desarrollo técnico.",
     cvEdu2Title:
-      "Grado en Ingeniería de Diseño Industrial y desarrollo de productos (Erasmus) 2025–2026",
+      "Grado en Ingeniería de Diseño Industrial y desarrollo de productos (Erasmus) 2025",
     cvEdu2Text:
-      "Formación académica en Diseño Industrial cursada durante un año en la Universitat Politècnica de València (UPV), mediante un programa Erasmus en la Universidad de Tecnología y Economía de Budapest (BME).",
+      "Formación académica en Diseño Industrial cursada durante medio año en la Universitat Politècnica de València (UPV), mediante un programa Erasmus en la Universidad de Tecnología y Economía de Budapest (BME).",
     cvExperienceTitle: "Experiencia en diseño",
-    cvExpTitle: "Experiencia profesional en empresa Sixay 2025–2026",
+    cvExpTitle: "Experiencia profesional en empresa Sixay 2025",
     cvExpText:
-      "Experiencia profesional de un año en la empresa Sixay, enfocada al diseño de mobiliario, con participación activa en el desarrollo de productos, diseño técnico, optimización de componentes y trabajo colaborativo multidisciplinar.",
+      "Experiencia profesional de medio año en la empresa Sixay, enfocada al diseño de mobiliario, con participación activa en el desarrollo de productos, diseño técnico, optimización de componentes y trabajo colaborativo multidisciplinar.",
     cvDownload: "Descargar CV",
 
     /* PORTFOLIO */
@@ -726,8 +759,8 @@ const content = {
     navContact: "Contact",
 
     /* HERO */
-    heroTitle: "Industrial design engineering applied to product development",
-    heroSub: "Technical design, manufacturing and optimization of industrial products.",
+    heroTitle: "Industrial Design Portfolio | Borbála Major",
+    heroSub: "Imagine, design, and transform ideas into purposeful and stylish products.",
     heroBtnCv: "View CV",
     heroBtnContact: "Contact",
 
@@ -744,13 +777,13 @@ const content = {
     cvEdu1Text:
       "Graduated in Industrial Design from the Budapest University of Technology and Economics (BME), with interdisciplinary training in product design, manufacturing processes, and technical development.",
     cvEdu2Title:
-      "Bachelor’s Degree in Industrial Design Engineering and Product Development (Erasmus) 2025–2026",
+      "Bachelor’s Degree in Industrial Design Engineering and Product Development (Erasmus) 2025",
     cvEdu2Text:
-      "Academic training in Industrial Design completed during one year at the Universitat Politècnica de València (UPV) through an Erasmus exchange program with the Budapest University of Technology and Economics (BME).",
+      "Academic training in Industrial Design completed for half a year at the Universitat Politècnica de València (UPV) through an Erasmus exchange program with the Budapest University of Technology and Economics (BME).",
     cvExperienceTitle: "Design experience",
-    cvExpTitle: "Professional experience at Sixay company 2025–2026",
+    cvExpTitle: "Professional experience at Sixay company 2025",
     cvExpText:
-      "One year of professional experience at Sixay, focused on furniture design, with active participation in product development, technical design, component optimization, and multidisciplinary collaborative work.",
+      "Six months of professional experience at Sixay, focused on furniture design, with active participation in product development, technical design, component optimization, and multidisciplinary collaborative work.",
     cvDownload: "Download CV",
 
     /* PORTFOLIO */
@@ -770,6 +803,36 @@ const content = {
     footer: "© 2026 · Borbala Major · Industrial Design Engineer"
   }
 };
+
+  /* ===============================
+   ACTIVAR SECCIÓN SOLO SI VIENE
+   DESDE PROYECTOS (#portfolio)
+================================ */
+
+(function () {
+  const hash = window.location.hash.replace("#", "");
+
+  if (hash) {
+    document.querySelectorAll("section").forEach(sec =>
+      sec.classList.remove("active")
+    );
+
+    const target = document.getElementById(hash);
+    if (target) {
+      target.classList.add("active");
+
+      document.querySelectorAll("nav li").forEach(li =>
+        li.classList.remove("active")
+      );
+
+      const navItem = document.querySelector(`[data-tab="${hash}"]`);
+      if (navItem) navItem.classList.add("active");
+
+      // LIMPIA EL HASH para que al refrescar vuelva a Home
+      history.replaceState(null, "", "index.html");
+    }
+  }
+})();
 
 
 /* ===============================

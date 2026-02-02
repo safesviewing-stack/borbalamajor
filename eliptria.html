@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>ELIPTRIA · Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #333;
+}
+
+/* ================= HEADER ================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #ffffff;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px; /* Ajusta ligeramente el texto "Volver" */
+}
+
+.back-btn span {
+  font-size: 16px;
+}
+
+/* ================= IDIOMAS ================= */
+.lang {
+  display: flex;
+  gap: 6px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1px solid #d0d0d0;
+  color: #777;
+  font-size: 10px;
+  padding: 1.2px 10.8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-btn.active {
+  background: #c7c9c8;
+  color: #fff;
+  border-color: #c7c9c8;
+}
+
+/* ================= LAYOUT ================= */
+main {
+  padding-top: 150px;
+}
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
+}
+
+/* ================= TITULO ================= */
+.project-title {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= IMÁGENES ================= */
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 90px 0 30px; /* 👈 más separación con texto anterior y posterior */
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.project-image-shift {
+  transform: translateX(-8%);
+}
+
+/* Imagen técnica ligeramente más grande */
+.project-image-large {
+  width: 120%;
+  margin-left: -5%;
+}
+
+/* ================= TEXTO ================= */
+.project-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+  margin-bottom: 60px; /* 👈 más separación antes de la siguiente imagen o footer */
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 11px;
+  color: #555;
+  background-color: #eaeceb;
+  margin-top: 180px;
+}
+
+/* ================= ANIMACIONES ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html#portfolio" class="back-btn" id="backBtn"><span>←</span>Volver</a>
+
+    <div class="lang">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <h1 class="project-title">ELIPTRIA</h1>
+
+    <!-- Imagen principal -->
+    <img src="eliptria.jpg" alt="Grifería Eliptria" class="hero-image">
+
+    <p class="project-text" id="text-1">
+      Eliptria es un proyecto de diseño de grifería que explora la relación entre forma elíptica, ergonomía y eficiencia funcional. El diseño parte de una geometría limpia y fluida, buscando un equilibrio entre expresividad formal y simplicidad constructiva, con una clara vocación de integración en entornos domésticos contemporáneos.
+    </p>
+
+    <!-- Imagen técnica -->
+    <img src="planogrifo.jpg" alt="Plano técnico Eliptria" class="project-image project-image-shift">
+
+    <p class="project-text" id="text-2">
+      A través del desarrollo técnico y constructivo, se ha trabajado especialmente la transición entre cuerpo, maneta y salida de agua, optimizando el control del caudal y la comodidad de uso. El proyecto combina criterios estéticos con viabilidad industrial, proponiendo una grifería funcional, elegante y coherente con los procesos de fabricación actuales.
+    </p>
+
+  </div>
+</main>
+
+<footer id="footer-text">
+© 2026 · Borbala Major · Ingeniera en diseño industrial
+</footer>
+
+<script>
+function setLang(lang) {
+  const es = {
+    back: "Volver",
+    t1: "Eliptria es un proyecto de diseño de grifería que explora la relación entre forma elíptica, ergonomía y eficiencia funcional. El diseño parte de una geometría limpia y fluida, buscando un equilibrio entre expresividad formal y simplicidad constructiva, con una clara vocación de integración en entornos domésticos contemporáneos.",
+    t2: "A través del desarrollo técnico y constructivo, se ha trabajado especialmente la transición entre cuerpo, maneta y salida de agua, optimizando el control del caudal y la comodidad de uso. El proyecto combina criterios estéticos con viabilidad industrial, proponiendo una grifería funcional, elegante y coherente con los procesos de fabricación actuales.",
+    footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
+  };
+
+  const en = {
+    back: "Back",
+    t1: "Eliptria is a faucet design project that explores the relationship between elliptical form, ergonomics and functional efficiency. The design is based on clean and fluid geometry, seeking a balance between formal expressiveness and constructive simplicity, with a clear intention to integrate into contemporary domestic environments.",
+    t2: "Through technical and constructive development, special attention has been given to the transition between the body, handle and water outlet, optimizing flow control and user comfort. The project combines aesthetic criteria with industrial feasibility, proposing a functional and elegant faucet aligned with current manufacturing processes.",
+    footer: "© 2026 · Borbala Major · Industrial Design Engineer"
+  };
+
+  const c = lang === "es" ? es : en;
+
+  document.getElementById("text-1").innerText = c.t1;
+  document.getElementById("text-2").innerText = c.t2;
+  document.getElementById("backBtn").innerHTML = `<span>←</span>${c.back}`;
+  document.getElementById("footer-text").innerText = c.footer;
+
+  document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+  document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
+}
+</script>
+
+</body>
+</html>

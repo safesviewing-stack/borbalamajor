@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>NODE · Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      background: #eaeceb;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      width: 90%;
+      height: 100%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .back-btn {
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    .back-btn span {
+      font-size: 16px;
+      margin-right: 6px;
+    }
+
+    /* IDIOMAS */
+    .lang {
+      display: flex;
+      gap: 6px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: 1px solid #d0d0d0;
+      color: #777;
+      font-size: 10px;
+      padding: 1.2px 10.8px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .lang-btn.active {
+      background: #c7c9c8;
+      color: #fff;
+      border-color: #c7c9c8;
+    }
+
+    /* LAYOUT */
+    main {
+      padding-top: 140px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    /* TITULO */
+    .project-title {
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 50px;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    /* IMÁGENES */
+    .project-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 26px;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    /* TEXTO */
+    .project-text {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555;
+      text-align: justify;
+      margin-bottom: 50px;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 6px;
+      font-size: 11px;
+      color: #555;
+      background-color: #eaeceb;
+      margin-top: 180px;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html#portfolio" class="back-btn" id="backBtn">
+      <span>←</span>Volver
+    </a>
+
+    <div class="lang">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <h1 class="project-title">NODE</h1>
+
+    <!-- Imagen principal -->
+    <img src="profile9.jpg" alt="NODE sistema modular" class="project-image">
+
+    <p class="project-text" id="text-1"></p>
+
+    <!-- Taburete -->
+    <img src="taburete.jpg" alt="NODE taburete" class="project-image">
+
+    <p class="project-text" id="text-2"></p>
+
+    <!-- Plano 1 -->
+    <img src="plano1.jpg" alt="NODE plano técnico 1" class="project-image">
+
+    <p class="project-text" id="text-3"></p>
+
+    <!-- Plano 2 -->
+    <img src="plano2.jpg" alt="NODE plano técnico 2" class="project-image">
+
+    <p class="project-text" id="text-4"></p>
+
+  </div>
+</main>
+
+<footer id="footer-text"></footer>
+
+<script>
+function setLang(lang) {
+  const es = {
+    t1: "NODE es un sistema de mobiliario modular basado en una geometría triangular que permite combinar sus piezas para generar configuraciones tridimensionales. Este proyecto fue desarrollado como proyecto final de grado, con un enfoque en la versatilidad espacial y funcional.",
+    t2: "La configuración funcional más básica del sistema es un taburete compuesto por la unión de dos módulos triangulares, manteniendo estabilidad, ergonomía y coherencia formal.",
+    t3: "Los planos técnicos definen con precisión la geometría de cada módulo, así como sus proporciones y relaciones dimensionales, asegurando coherencia entre diseño y fabricación.",
+    t4: "El desarrollo constructivo contempla sistemas de unión y tolerancias que permiten la repetición del módulo y su adaptación a procesos productivos reales.",
+    back: "Volver",
+    footer: "© 2026 · Borbala Major · Ingeniera en diseño industrial"
+  };
+
+  const en = {
+    t1: "NODE is a modular furniture system based on a triangular geometry that allows its elements to be combined into three-dimensional configurations. This project was developed as a final degree project, focusing on spatial and functional versatility.",
+    t2: "The most basic functional configuration is a stool formed by two triangular modules, maintaining stability, ergonomics and formal coherence.",
+    t3: "The technical drawings precisely define the geometry of each module, its proportions and dimensional relationships, ensuring consistency between design and manufacturing.",
+    t4: "The constructive development considers joint systems and tolerances that allow modular repetition and adaptation to real production processes.",
+    back: "Back",
+    footer: "© 2026 · Borbala Major · Industrial Design Engineer"
+  };
+
+  const c = lang === "es" ? es : en;
+
+  document.getElementById("text-1").innerText = c.t1;
+  document.getElementById("text-2").innerText = c.t2;
+  document.getElementById("text-3").innerText = c.t3;
+  document.getElementById("text-4").innerText = c.t4;
+  document.getElementById("backBtn").innerHTML = `<span>←</span>${c.back}`;
+  document.getElementById("footer-text").innerText = c.footer;
+
+  document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+  document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add("active");
+}
+
+setLang("es");
+</script>
+
+</body>
+</html>
