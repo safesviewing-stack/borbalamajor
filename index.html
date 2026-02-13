@@ -464,7 +464,7 @@ footer{
       <p id="hero-sub">Imagina, diseña y transforma ideas en productos con propósito y estilo.</p>
 
       <div class="hero-cta">
-        <a class="btn primary tab" data-tab="cv">Ver CV</a>
+        <a class="btn primary tab" data-tab="cv">Ver CV detallado</a>
         <a class="btn secondary tab" data-tab="contact">Contactar</a>
       </div>
     </div>
@@ -543,7 +543,7 @@ footer{
 
       <div class="cv-download-wrapper">
         <a href="curriculum.pdf" class="cv-download-btn" target="_blank">
-  Descargar CV
+  Descargar CV detallado
 </a>
 
     
@@ -676,7 +676,7 @@ document.querySelectorAll(".tab").forEach(tab => {
       tab.classList.add("active");
     }
 
-    // 3. ANIMACIÓN SOLO PARA "VER CV"
+    // 3. ANIMACIÓN SOLO PARA "VER CV DETALLADO"
     if (tab.dataset.tab === "cv" && tab.classList.contains("primary")) {
       setTimeout(() => {
         const downloadBtn = document.querySelector(".cv-download-btn");
@@ -709,7 +709,7 @@ const content = {
     /* HERO */
     heroTitle: "Portafolio de Diseño Industrial | Borbála Major",
     heroSub: "Imagina, diseña y transforma ideas en productos con propósito y estilo.",
-    heroBtnCv: "Ver CV",
+    heroBtnCv: "Ver CV detallado",
     heroBtnContact: "Contactar",
 
     /* ABOUT */
@@ -731,7 +731,7 @@ const content = {
     cvExpTitle: "Experiencia profesional en empresa Sixay 2025",
     cvExpText:
       "Experiencia profesional de medio año en la empresa Sixay, enfocada al diseño de mobiliario, con participación activa en el desarrollo de productos, diseño técnico, optimización de componentes y trabajo colaborativo multidisciplinar.",
-    cvDownload: "Descargar CV",
+    cvDownload: "Descargar CV detallado",
 
     /* PORTFOLIO */
     portfolioTitle: "Portfolio",
