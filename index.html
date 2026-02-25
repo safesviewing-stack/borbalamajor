@@ -915,4 +915,20 @@ setLang("es");
 
 document.getElementById("btn-es").onclick = () => setLang("es");
 document.getElementById("btn-en").onclick = () => setLang("en");
+
+
+  // FORZAR HOME AL CARGAR LA PÁGINA
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("section").forEach(section =>
+    section.classList.remove("active")
+  );
+
+  document.getElementById("home").classList.add("active");
+
+  document.querySelectorAll("nav li").forEach(li =>
+    li.classList.remove("active")
+  );
+
+  document.querySelector('[data-tab="home"]').classList.add("active");
+});
 </script>
