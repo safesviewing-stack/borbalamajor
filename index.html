@@ -3,447 +3,392 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Diseño Contemporáneo</title>
-    <!-- Uso estricto de la fuente INTER para un acabado UI/Modernista limpio -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <title>M/STUDIO | Massive Minimalist Portfolio</title>
+    
+    <!-- Pesos estructurales (Inter): Desde normal hasta el "black" 800 para alto contraste -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
     
     <style>
-        /* ================= VARIABLES ================= */
+        /* ================= VARIABLES ARQUITECTÓNICAS (DARK) ================= */
         :root {
-            --bg-color: #FAFAFA; /* Un blanco técnico purísimo y amable */
-            --text-main: #1C1C1C;
-            --text-light: #7E7E7E;
-            --border-color: #E2E2E2;
-
-            /* Tonos pastel ultra suaves para proyectos/interacciones */
-            --rose: #F2EBEA;
-            --sage: #E8EDE9;
-            --beige: #F1EBE6;
-            --lavender: #EDEDF5;
-            --lightblue: #E5EFF2;
+            --bg-color: #030303;       /* Negro ultra profundo  */
+            --text-main: #FFFFFF;      /* Blanco Puro (Absoluto)*/
+            --text-light: #6A6A6A;     /* Gris industrial       */
+            --border-color: #1F1F1F;   /* Divisiones de sección precisas */
             
             --font-main: 'Inter', sans-serif;
             
-            /* Generosos espaciados modernos */
-            --space-xs: 20px;
-            --space-s: 40px;
-            --space-m: 80px;
-            --space-l: 140px;
-            --space-xl: 200px;
+            /* Sistema de ritmo vertical y horizontal milimétrico */
+            --space-m: 100px;
+            --space-l: 160px;
+            --space-xl: 220px;
         }
 
-        /* ================= BASE ================= */
+        /* ================= RESET Y BASE ================= */
+        ::selection { background-color: var(--text-main); color: var(--bg-color); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+        
         body { 
             background-color: var(--bg-color); 
             color: var(--text-main); 
             font-family: var(--font-main); 
-            font-weight: 300;
-            line-height: 1.5; 
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
             overflow-x: hidden; 
         }
         
-        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
-        a:hover { opacity: 0.6; }
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
         ul { list-style: none; }
 
-        .container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+        /* Estructura Maestra */
+        .container { max-width: 90vw; margin: 0 auto; }
+        section { padding: var(--space-m) 0; position: relative; border-bottom: 1px solid var(--border-color);}
+
+        /* ================= TIPOGRAFÍA GIGANTE / BRUTAL ================= */
+        h1, h2, h3, h4 { text-transform: uppercase; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; }
         
-        /* Uso radical del espacio blanco entre bloques */
-        section { padding: var(--space-xl) 0; }
+        /* Insignia / Índice identificador estilo[ 01 / WORKS ] */
+        .section-index {
+            font-size: 0.85rem; font-weight: 600; color: var(--text-light);
+            text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 40px; display: block;
+        }
 
-        /* Tipografía Moderna: tracking negativo en los títulos (letter-spacing: -0.03em) */
-        h1, h2, h3, h4, h5 { font-weight: 400; letter-spacing: -0.04em; line-height: 1.1; }
-        h1 { font-size: clamp(3rem, 6vw, 5.5rem); margin-bottom: var(--space-s); }
-        h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: var(--space-l); }
-        h3 { font-size: 1.4rem; font-weight: 500; }
-        p { color: var(--text-light); font-size: 1.1rem; line-height: 1.7; }
+        .massive-text { font-size: clamp(3.5rem, 11vw, 12rem); }
+        h2 { font-size: clamp(3rem, 7vw, 6.5rem); margin-bottom: var(--space-s); }
+        h3 { font-size: clamp(1.5rem, 4vw, 3rem); margin-bottom: 5px; }
+        
+        p { color: var(--text-light); font-size: clamp(1.1rem, 1.8vw, 1.3rem); line-height: 1.6; font-weight: 400;}
 
-        /* ================= HEADER (NAVBAR) ================= */
+        /* ================= NAVBAR (STICKY LINEAR) ================= */
         header { 
             position: fixed; top: 0; width: 100%; z-index: 100;
-            padding: var(--space-s) 0; background: rgba(250,250,250,0.85); backdrop-filter: blur(12px); 
+            background: rgba(3, 3, 3, 0.9); border-bottom: 1px solid var(--border-color); backdrop-filter: blur(10px);
+            padding: 20px 0;
         }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; max-width: 1300px; margin: 0 auto; padding: 0 5%; }
-        .logo { font-size: 1.2rem; font-weight: 500; letter-spacing: -0.02em; }
-        nav ul { display: flex; gap: var(--space-s); font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1rem; font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; }
+        
+        nav ul { display: flex; gap: 40px; }
+        nav ul li a { 
+            font-size: 0.8rem; font-weight: 600; text-transform: uppercase; 
+            letter-spacing: 0.05em; color: var(--text-light); transition: color 0.3s;
+        }
+        nav ul li a:hover { color: var(--text-main); }
 
-        /* ================= MICROINTERACCIONES ================= */
+        /* ================= ANIMACIÓN (SCROLL MOTOR) ================= */
         .reveal-up {
-            opacity: 0; transform: translateY(50px);
-            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0; transform: translateY(80px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
         .reveal-up.is-visible { opacity: 1; transform: translateY(0); }
 
-        /* ================= HERO (INICIO) ================= */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0; }
-        .hero-text { max-width: 850px; }
-        .hero p.subtitle { font-size: 1.4rem; font-weight: 300; max-width: 600px; margin-bottom: var(--space-m); color: var(--text-main); }
-        .hero-line { height: 1px; width: 0%; background: var(--text-main); animation: drawLine 2s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.5s; }
-        @keyframes drawLine { to { width: 100%; } }
-
-        /* ================= PORTFOLIO (GRID ASIMÉTRICO 7 PROYECTOS) ================= */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: var(--space-l) var(--space-xs);
+        /* ================= 00. HERO (INTRO) ================= */
+        .hero { 
+            min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+            padding-top: var(--space-l); /* Espacio superior para header */
         }
+        .hero p.main-desc { max-width: 650px; margin-top: 30px; border-left: 2px solid var(--text-main); padding-left: 20px; }
+
+        /* ================= 01. PORTFOLIO ================= */
+        .portfolio-list { margin-top: 50px; }
         
-        .project-item { display: flex; flex-direction: column; gap: 20px; cursor: pointer; group; }
+        .project-item {
+            display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; cursor: pointer;
+            padding: 50px 0; border-top: 1px solid var(--border-color); transition: background-color 0.4s;
+        }
+
+        .project-meta { display: flex; flex-direction: column; justify-content: center; padding-right: 5%; }
+        .p-category { font-size: 0.9rem; text-transform: uppercase; color: var(--text-light); font-weight: 500; margin-top: 15px;}
+        
         .project-img {
-            width: 100%; position: relative; overflow: hidden;
-            aspect-ratio: 4/5;
-        }
-        .project-img .bg-color { 
-            position: absolute; width: 100%; height: 100%; top:0; left:0; 
-            transition: transform 0.6s cubic-bezier(0.2, 1, 0.2, 1);
+            width: 100%; height: 50vh; background: #1A1A1A; overflow: hidden; position: relative;
+            filter: grayscale(100%); transition: filter 0.5s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
-        /* Simulación imágenes vacías en tonos sutiles */
-        .p1 .bg-color { background-color: var(--sage); }
-        .p2 .bg-color { background-color: var(--rose); aspect-ratio: 1/1; }
-        .p3 .bg-color { background-color: var(--beige); aspect-ratio: 16/9; }
-        .p4 .bg-color { background-color: var(--lavender); aspect-ratio: 4/5; }
-        .p5 .bg-color { background-color: var(--lightblue); }
-        .p6 .bg-color { background-color: var(--text-main); }
-        .p7 .bg-color { background-color: var(--border-color); }
-
-        /* Zoom interior muy delicado en imagen al hacer hover */
-        .project-item:hover .bg-color { transform: scale(1.05); }
-
-        .project-info h3 { transition: color 0.3s ease; margin-bottom: 5px; }
-        .project-info span { font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; font-weight: 500; letter-spacing: 0.05em; }
-
-        /* Distribución visual de los 7 proyectos para máxima modernidad */
-        .p1 { grid-column: 1 / 7; }
-        .p2 { grid-column: 8 / 13; margin-top: 20%;} /* Desalineado hacia abajo */
-        .p3 { grid-column: 2 / 12; } /* Proyecto ancho enorme horizontal */
-        .p4 { grid-column: 1 / 5; }
-        .p5 { grid-column: 6 / 12; margin-top: 15%;}
-        .p6 { grid-column: 2 / 8; }
-        .p7 { grid-column: 9 / 13; margin-top: -10%; } /* Juega con el ritmo */
-
-        /* ================= ACERCA DE MÍ ================= */
-        .about-grid { display: grid; grid-template-columns: 5fr 7fr; gap: var(--space-m); align-items: start; border-top: 1px solid var(--border-color); padding-top: var(--space-m);}
-        .about-text h2 { margin-bottom: var(--space-s); }
-        .about-text p { font-size: 1.3rem; margin-bottom: 30px; }
-        .bio-image { width: 100%; aspect-ratio: 3/4; background: var(--rose); object-fit: cover;}
-
-        /* ================= HABILIDADES (SKILLS) ================= */
-        .skills-section {
-            background-color: var(--text-main);
-            color: var(--bg-color);
+        .project-img::after {
+            content: ''; position: absolute; inset: 0; background: var(--text-main);
+            mix-blend-mode: overlay; opacity: 0; transition: opacity 0.5s;
         }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-s);
-            border-top: 1px solid rgba(255,255,255,0.2);
-            padding-top: var(--space-m);
-        }
-        .skills-grid h4 { color: rgba(255,255,255,0.6); margin-bottom: var(--space-xs); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;}
-        .skill-list li { margin-bottom: 12px; font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;}
 
-        /* ================= CURRÍCULUM ESTRUCTURADO ================= */
-        .cv-list { display: flex; flex-direction: column; width: 100%; }
+        /* Hover de Arquitectura: La imagen toma vida / Fondo del div se oscurece sutilmente */
+        .project-item:hover { background-color: #080808; padding-left: 2%; } /* Deslizamiento tabular on hover */
+        .project-item:hover .project-img { filter: grayscale(0%); transform: scale(0.98); }
+        .project-item:hover .project-img::after { opacity: 0.2; }
+
+        /* placeholders visuales tonales */
+        .p1 .project-img { background: #0E0E0E; }
+        .p2 .project-img { background: #161616; }
+        .p3 .project-img { background: #111111; }
+        .p4 .project-img { background: #0F0F0F; }
+
+        /* ================= 02. CURRÍCULUM (CV) ================= */
+        #cv h2 { margin-bottom: 80px;}
         
-        /* Sistema de "tablas / filas" para un CV muy prolijo */
+        .cv-list { display: flex; flex-direction: column; width: 100%; border-top: 1px solid var(--border-color);}
+        
         .cv-row {
-            display: grid;
-            grid-template-columns: 1fr 2.5fr 3.5fr; /* 3 Columnas */
-            padding: var(--space-s) 0;
-            border-top: 1px solid var(--border-color);
-            transition: background 0.4s ease;
+            display: grid; grid-template-columns: 0.8fr 2.5fr 3.5fr; 
+            padding: 60px 20px; align-items: start;
+            border-bottom: 1px solid var(--border-color); transition: all 0.3s ease;
         }
-        .cv-row:hover { background-color: var(--rose); } /* Efecto cálido femenino sobre fila */
+        /* Color inverso en CV para dar peso dramático on hover */
+        .cv-row:hover { background-color: var(--text-main); color: var(--bg-color); cursor: default; }
+        .cv-row:hover * { color: var(--bg-color); }
         
-        .cv-row-header { padding: 0 20px; }
-        .cv-row-header span { display: block; font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; margin-bottom: 5px; font-weight: 500;}
-        .cv-row-header h4 { font-size: 1.2rem; font-weight: 500; color: var(--text-main); }
-        .cv-company { font-size: 1.1rem; color: var(--text-main); }
-        .cv-desc { font-size: 1rem; }
+        .cv-date span { font-size: 1.1rem; font-weight: 500; display: block; }
+        .cv-company h4 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 10px;}
+        .cv-company span { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); }
+        .cv-desc { max-width: 550px; font-size: 1.15rem; line-height: 1.5; }
 
-        .section-header { margin-bottom: var(--space-m); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); font-weight: 600;}
-
-        /* Botones / Enlaces CTA */
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center;
-            margin-top: var(--space-m);
-            padding: 16px 32px;
-            background-color: var(--text-main);
-            color: var(--bg-color);
-            font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500;
-            border-radius: 4px; /* Un radio bajo se siente más serio y digital */
-            transition: all 0.3s;
-            cursor: pointer;
+        /* CTA descargar CV estructurado a la derecha */
+        .cv-cta { margin-top: 80px; text-align: right; }
+        .btn-ghost {
+            font-size: 1.1rem; text-transform: uppercase; font-weight: 800; border: 1px solid var(--text-main);
+            padding: 20px 40px; color: var(--text-main); display: inline-block; transition: all 0.3s;
         }
-        .btn:hover { background-color: var(--text-light); opacity: 1; }
+        .btn-ghost:hover { background-color: var(--text-main); color: var(--bg-color); }
 
-        /* ================= FOOTER / CONTACTO ================= */
-        .footer-cta { display: flex; flex-direction: column; align-items: center; text-align: center; border-top: 1px solid var(--border-color); padding-top: var(--space-l); }
-        .footer-cta h2 { margin-bottom: var(--space-s); }
-        .massive-link {
-            font-size: clamp(3rem, 7vw, 6rem);
-            font-weight: 400; letter-spacing: -0.05em;
-            color: var(--text-main);
-            border-bottom: 2px solid var(--text-main);
-            line-height: 1; margin-bottom: var(--space-xl);
-            padding-bottom: 10px;
+        /* ================= 03. HABILIDADES ================= */
+        /* Estructuradas como celdas grandes monolíticas (Blocks) */
+        .skills-grid { 
+            display: grid; grid-template-columns: repeat(3, 1fr); 
+            gap: 1px; background: var(--border-color); /* Celdas cortadas a la vista usando 1px background-gap*/
+            border: 1px solid var(--border-color);
+            margin-top: 60px;
         }
-        .massive-link:hover { color: #8F9D9B; border-color: #8F9D9B; opacity: 1; } /* Un hover en tono salvia visual */
+
+        .skill-column { background-color: var(--bg-color); padding: 50px 30px; transition: background 0.4s;}
+        .skill-column:hover { background-color: #090909;}
         
-        footer { font-size: 0.85rem; color: var(--text-light); text-align: left; padding: 20px 0; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between;}
+        .skill-column h4 { color: var(--text-light); font-size: 1.2rem; margin-bottom: 40px;}
+        .skill-column ul { display: flex; flex-direction: column; gap: 20px; }
+        .skill-column li { font-size: clamp(1.4rem, 2vw, 1.8rem); font-weight: 600; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;}
+        .skill-column li:hover { padding-left: 10px; border-color: var(--text-main); } /* Micro anim listado */
+        .skill-column li {transition: padding 0.3s, border-color 0.3s;}
 
-        /* ================= MEDIA QUERIES (RESPONSIVO) ================= */
-        @media (max-width: 900px) {
-            .portfolio-grid { grid-template-columns: 1fr; gap: var(--space-s); }
-            .project-item[class*="p"] { grid-column: 1 / -1; margin-top: 0; }
-            .about-grid { grid-template-columns: 1fr; }
+        /* ================= 04. CONTACTO ================= */
+        /* Link absoluto llenando casi el 100% viewport horizontal */
+        .contact-cta { text-align: center; padding: 100px 0; display:flex; flex-direction: column; align-items:center; }
+        
+        .giant-link {
+            font-size: clamp(4rem, 11vw, 14rem); font-weight: 800; text-transform: uppercase; letter-spacing: -0.05em; line-height: 0.85; 
+            margin-top: 20px; position: relative; text-align: center; overflow: hidden; 
+        }
+        
+        /* Línea masiva de tracking hover de email */
+        .giant-link::after {
+            content: ''; position: absolute; left: 0; bottom: 8%; width: 0%; height: 0.6vw;
+            background: var(--text-main); transition: width 0.6s cubic-bezier(0.2, 1, 0.2, 1);
+        }
+        .giant-link:hover::after { width: 100%; }
+
+        /* Footer Inferior ultra plano adherido al limite*/
+        footer { 
+            display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color);
+            padding: 30px 0; margin-top: auto; color: var(--text-light); font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em;
+        }
+
+        /* ================= RESPONSIVO (TELÉFONOS & TABLETAS) ================= */
+        @media (max-width: 980px) {
+            .project-item { grid-template-columns: 1fr; gap: 20px; padding: 40px 0;}
+            .cv-row { grid-template-columns: 1fr; gap: 10px; padding: 30px 0; }
+            .cv-date span { color: var(--text-light); margin-bottom: 10px;}
             .skills-grid { grid-template-columns: 1fr; }
-            .cv-row { grid-template-columns: 1fr; gap: 15px; padding: 25px 0;}
+            .hero p.main-desc { padding-left: 0; border-left: none; }
             nav ul { display: none; }
+            .section-index { margin-bottom: 20px;}
         }
     </style>
 </head>
 <body>
 
-    <!-- NAV -->
+    <!-- MENÚ ALTO NAVBAR FIJA MILIMÉTRICA -->
     <header>
-        <div class="nav-content">
-            <div class="logo">M/STUDIO</div>
+        <div class="nav-content container">
+            <a href="#home" class="logo">Marta // UI</a>
             <nav>
                 <ul>
-                    <li><a href="#work">Proyectos</a></li>
-                    <li><a href="#about">Acerca</a></li>
-                    <li><a href="#cv">Experiencia</a></li>
-                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#portfolio">01. Portfolio</a></li>
+                    <li><a href="#cv">02. CV</a></li>
+                    <li><a href="#habilidades">03. Habilidades</a></li>
+                    <li><a href="#contacto">04. Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- HERO INTRO -->
-    <section class="hero container reveal-up" id="home">
-        <div class="hero-text">
-            <h1>Creatividad ordenada. Diseño para marcas atemporales.</h1>
-            <p class="subtitle">Especializada en identidades mínimas, producto digital y dirección de arte. Feminidad con una profunda atención a la cuadrícula y el detalle conceptual.</p>
-        </div>
-        <div class="hero-line"></div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="work" class="container">
-        <h2 class="reveal-up">Obras Selectas <span style="color:var(--text-light);"> (7)</span></h2>
-        
-        <div class="portfolio-grid">
-            <!-- P1 -->
-            <a href="#" class="project-item p1 reveal-up">
-                <div class="project-img"><div class="bg-color"></div></div>
-                <div class="project-info">
-                    <h3>Identidad Ética</h3>
-                    <span>Branding Visual — 2025</span>
-                </div>
-            </a>
-            
-            <!-- P2 -->
-            <a href="#" class="project-item p2 reveal-up">
-                <div class="project-img"><div class="bg-color"></div></div>
-                <div class="project-info">
-                    <h3>Skincare Co.</h3>
-                    <span>Dirección de Arte & Pack</span>
-                </div>
-            </a>
-
-            <!-- P3 -->
-            <a href="#" class="project-item p3 reveal-up">
-                <div class="project-img"><div class="bg-color"></div></div>
-                <div class="project-info">
-                    <h3>Arquitectura y Silencio</h3>
-                    <span>Diseño Editorial</span>
-                </div>
-            </a>
-
-            <!-- P4 -->
-            <a href="#" class="project-item p4 reveal-up">
-                <div class="project-img"><div class="bg-color"></div></div>
-                <div class="project-info">
-                    <h3>Loom Web</h3>
-                    <span>UI / UX & Interacción</span>
-                </div>
-            </a>
-
-            <!-- P5 -->
-            <a href="#" class="project-item p5 reveal-up">
-                <div class="project-img"><div class="bg-color"></div></div>
-                <div class="project-info">
-                    <h3>Wellness App</h3>
-                    <span>Product Design (App móvil)</span>
-                </div>
-            </a>
-
-            <!-- P6 -->
-            <a href="#" class="project-item p6 reveal-up">
-                <div class="project-img"><div class="bg-color"></div></div>
-                <div class="project-info">
-                    <h3>Exposición Niza</h3>
-                    <span>Tipografía e Identidad de exhibición</span>
-                </div>
-            </a>
-
-            <!-- P7 -->
-            <a href="#" class="project-item p7 reveal-up">
-                <div class="project-img"><div class="bg-color"></div></div>
-                <div class="project-info">
-                    <h3>Auras Místicas</h3>
-                    <span>Modelado 3D e Ilustración Digital</span>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- ACERCA DE MI -->
-    <section id="about" class="container">
-        <div class="about-grid reveal-up">
-            <div class="bio-image">
-                <!-- <img src="..." alt="Fotografía"> -->
-            </div>
-            <div class="about-text">
-                <h2>Diseñar quitando ruido.</h2>
-                <p>Hola, soy Marta, diseñadora afincada entre la pantalla de figma y los papeles finos texturizados. Entiendo el diseño contemporáneo como la capacidad matemática de crear emociones estructuradas.</p>
-                <p>Uso el blanco no como vacío, sino como la principal forma del mensaje, equilibrándolo de manera delicada con tonalidades lavanda, cálidos algodones o grises carbón.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN HABILIDADES (CONTRASTE VISUAL NEGRO/CLARO) -->
-    <section id="skills" class="skills-section">
+    <!-- INTRO TITANICO SIN ADORNOS -->
+    <section class="hero" id="home" style="border-bottom:none;">
         <div class="container reveal-up">
-            <h2>Habilidades Técnicas.</h2>
-            <div class="skills-grid">
-                <div>
-                    <h4>Herramientas Base</h4>
-                    <ul class="skill-list">
-                        <li>Figma Advanced</li>
-                        <li>Adobe Creative Cloud</li>
-                        <li>Notion & Gestión Agil</li>
-                        <li>Spline / C4D básico</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Capacidades Creativas</h4>
-                    <ul class="skill-list">
-                        <li>Sistemas de Diseño (UI/UX)</li>
-                        <li>Prototipado en Alta Fidelidad</li>
-                        <li>Maquetación Editorial Avanzada</li>
-                        <li>Branding Conceptual</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Lenguaje y Gestión</h4>
-                    <ul class="skill-list">
-                        <li>Castellano, Inglés & Francés</li>
-                        <li>Desarrollo Concepto Cliente</li>
-                        <li>Bases de desarrollo (HTML/CSS)</li>
-                    </ul>
-                </div>
-            </div>
+            <h1 class="massive-text">
+                DISEÑO<br> SISTEMÁTICO.
+            </h1>
+            <p class="main-desc">Especializada en layouts agresivos de alta retención de usuarios. Ordenando el caos digital en identidades mínimas, producto interactivo masivo (SaaS) y dirección de arte cruda.</p>
         </div>
     </section>
 
-    <!-- CURRÍCULUM ACADÉMICO / PROFESIONAL -->
-    <section id="cv" class="container reveal-up">
-        <h2>Recorrido.</h2>
-        
-        <!-- UNIVERSIDADES -->
-        <div class="section-header">01 — Formación Académica</div>
-        <div class="cv-list">
+    <!-- [ 01 ] PORTFOLIO - ORDEN TABULAR 2 COLUMNAS (IMG / META) -->
+    <section id="portfolio">
+        <div class="container">
+            <span class="section-index reveal-up">[ 01 / Selected Works ]</span>
+            <h2 class="reveal-up">Obras Creadas.</h2>
             
-            <div class="cv-row">
-                <div class="cv-row-header">
-                    <span>2021 — 2022</span>
-                    <h4>Máster Universitario</h4>
-                </div>
-                <div class="cv-company">Escuela ELISAVA — Barcelona</div>
-                <div class="cv-desc"><p>Máster de especialización profesional en Diseño Digital y Experiencia de Usuario (UI/UX). Prototipado, investigación y lógica interaccional.</p></div>
-            </div>
+            <div class="portfolio-list">
+                
+                <a class="project-item p1 reveal-up" href="#">
+                    <div class="project-img"></div>
+                    <div class="project-meta">
+                        <h3>Identidad Estática</h3>
+                        <span class="p-category">Dirección Global / BRANDING[2024]</span>
+                        <p style="margin-top: 20px; font-size:1rem;">Redefinición total de arquitectura de marca mediante blancos crudos y composiciones masivas. Sistemas unificados internacionales.</p>
+                    </div>
+                </a>
+                
+                <a class="project-item p2 reveal-up" href="#">
+                    <div class="project-img"></div>
+                    <div class="project-meta">
+                        <h3>Corp Skincare.</h3>
+                        <span class="p-category">eCOMMERCE DIGITAL PLATFORM [2024]</span>
+                        <p style="margin-top: 20px; font-size:1rem;">Maquetación sin interfaz agresiva para una casa escandinava. Enfoque hiper-minimalista hacia el rendimiento de ventas (CR).</p>
+                    </div>
+                </a>
 
-            <div class="cv-row">
-                <div class="cv-row-header">
-                    <span>2017 — 2021</span>
-                    <h4>Grado de Diseño</h4>
-                </div>
-                <div class="cv-company">Universidad Complutense (UCM)</div>
-                <div class="cv-desc"><p>Graduada en Diseño Gráfico integral. Construcción de marcas, desarrollo tipográfico y gráfica audiovisual publicitaria. </p></div>
-            </div>
+                <a class="project-item p3 reveal-up" href="#">
+                    <div class="project-img"></div>
+                    <div class="project-meta">
+                        <h3>Estudio Silencio</h3>
+                        <span class="p-category">WEBGL / INTERACTIVE STUDIO[2023]</span>
+                        <p style="margin-top: 20px; font-size:1rem;">Espacio portafolio virtual enfocado a agencias de moda de élite en base a grids brutalistas con WebGL e interpolación Gsap.</p>
+                    </div>
+                </a>
 
+                <a class="project-item p4 reveal-up" href="#">
+                    <div class="project-img"></div>
+                    <div class="project-meta">
+                        <h3>Logistics AI Grid</h3>
+                        <span class="p-category">PRODUCT APP DASHBOARD (UX/UI) [2022]</span>
+                        <p style="margin-top: 20px; font-size:1rem;">Interfaz gráfica (Dashboard B2B) y lógica de escalamiento de variables UI masivas, diseñada en auto-layout paramétrico 100% estructurado en Figma.</p>
+                    </div>
+                </a>
+                
+            </div>
         </div>
-
-        <div style="height: var(--space-s);"></div>
-
-        <!-- EXPERIENCIA LABORAL E INTERNSHIPS -->
-        <div class="section-header">02 — Experiencia Laboral</div>
-        <div class="cv-list">
-
-            <div class="cv-row">
-                <div class="cv-row-header">
-                    <span>2023 — Presente</span>
-                    <h4>Diseñadora Senior</h4>
-                </div>
-                <div class="cv-company">Agencia Moderna, Madrid</div>
-                <div class="cv-desc"><p>Gestión directa y liderazgo creativo visual sobre los portales B2C de marcas tecnológicas y de lujos orgánicos a escala europea.</p></div>
-            </div>
-
-            <div class="cv-row">
-                <div class="cv-row-header">
-                    <span>2021 — 2023</span>
-                    <h4>Diseñadora Gráfica UI</h4>
-                </div>
-                <div class="cv-company">Estudio Blanco, Bcn</div>
-                <div class="cv-desc"><p>Desarrollos completos de e-commerce e interfaces para tiendas cosméticas e iniciativas éticas locales con plataformas en shopify y figma.</p></div>
-            </div>
-
-            <div class="cv-row" style="border-bottom: 1px solid var(--border-color);">
-                <div class="cv-row-header">
-                    <span>2020 — 2021</span>
-                    <h4>Prácticas (Visual)</h4>
-                </div>
-                <div class="cv-company">Firma de Mobiliario Nórdico</div>
-                <div class="cv-desc"><p>Participación activa durante mis prácticas de estudiante conceptualizando campañas promocionales e imagen física gráfica en una marca moderna de muebles interiores.</p></div>
-            </div>
-
-        </div>
-
-        <!-- Boton de PDF Minimalista Moderno -->
-        <a href="CV-Diseno.pdf" target="_blank" class="btn">Visualizar PDF Descargable &nbsp; ↓</a>
     </section>
 
-    <!-- FOOTER CTA -->
-    <section id="contact" class="container reveal-up" style="padding-bottom: 5vmax;">
-        <div class="footer-cta">
-            <h2>¿Pensando en un proyecto nuevo?</h2>
-            <a href="mailto:info@mstudio.com" class="massive-link">info@mstudio.com</a>
+    <!--[ 02 ] EXPERIENCIA (CV) EN BASE DE TABLA RIGIDA TIPO PROGRAMACIÓN-->
+    <section id="cv">
+        <div class="container reveal-up">
+            <span class="section-index">[ 02 / Track Record ]</span>
+            <h2>Currículum.</h2>
+            
+            <div class="cv-list">
+                <div class="cv-row">
+                    <div class="cv-date"><span>2023 — Actual</span></div>
+                    <div class="cv-company">
+                        <h4>Agencia Matriz</h4>
+                        <span>Product Design Leader — Madrid, ES</span>
+                    </div>
+                    <div class="cv-desc"><p>Directora general a nivel interfaz gráfica con despliegue B2C/B2B y auditoría del stack completo. Manejo jerárquico del área conceptual hacia cliente de grandes agencias bancarias.</p></div>
+                </div>
+
+                <div class="cv-row">
+                    <div class="cv-date"><span>2021 — 2023</span></div>
+                    <div class="cv-company">
+                        <h4>Muro Estudio</h4>
+                        <span>Visual / UX Designer — Barcelona, ES</span>
+                    </div>
+                    <div class="cv-desc"><p>Responsable absoluta de maquetas de E-commerce top ventas operando el FrontEnd técnico UX con desarrolladores (Aumento CR). Diseño Web y Modelado.</p></div>
+                </div>
+
+                <div class="cv-row">
+                    <div class="cv-date"><span>2019 — 2021</span></div>
+                    <div class="cv-company">
+                        <h4>Máster Interactivo</h4>
+                        <span>ESCUELA ELISAVA — Formación Oficial</span>
+                    </div>
+                    <div class="cv-desc"><p>Programa de master universitario altamente competitivo especializado en sistemas, microinteracciones y comportamiento de lógica algorítmica y su correlación en pantalla y branding contemporáneo.</p></div>
+                </div>
+            </div>
+
+            <div class="cv-cta reveal-up">
+                <a href="#" class="btn-ghost">Desplegar Currículum Técnico (.PDF) &rarr;</a>
+            </div>
         </div>
-        <footer>
-            <div>© 2026. Madrid. España.</div>
-            <div>Basado en simplicidad e iteración gráfica.</div>
-        </footer>
     </section>
 
-    <!-- SCRIPT JS PARA EL MOTOR DE APARICIÓN -->
+    <!-- [ 03 ] HABILIDADES EN MONOLITOS DIVIDIDOS CON GRID IMPLACABLE -->
+    <section id="habilidades">
+        <div class="container reveal-up">
+            <span class="section-index">[ 03 / Stack Tecnico ]</span>
+            <h2>Capacidades.</h2>
+            
+            <div class="skills-grid">
+                
+                <div class="skill-column">
+                    <h4>Módulos Core — Figma</h4>
+                    <ul>
+                        <li>Variables / Tokens</li>
+                        <li>Prototipos Avanzados</li>
+                        <li>Gestor Librería / Ágil</li>
+                        <li>Design Systems UI</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-column">
+                    <h4>Artesano — Audiovisual</h4>
+                    <ul>
+                        <li>Adobe Creative Cloud</li>
+                        <li>Cinematic & Layouting</li>
+                        <li>Concept de Marca / IP</li>
+                        <li>Reducción y Orden</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-column">
+                    <h4>Despliegue — Tecnico</h4>
+                    <ul>
+                        <li>Lenguaje Frontend / HTML</li>
+                        <li>Estilo Lógico / GSAP (css)</li>
+                        <li>Auditoria de Velocidad (UX)</li>
+                        <li>Control Git y Control.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- [ 04 ] CONTACTO (MEGA FOOTER SIN CONTORNO Y GIGANTE) -->
+    <section id="contacto" style="border-bottom:none;">
+        <div class="container reveal-up">
+            <div class="contact-cta">
+                <span class="section-index">[ 04 / Send an Index File ]</span>
+                <a href="mailto:hola@mstudio.es" class="giant-link">HOLA@MSTUDIO</a>
+            </div>
+            
+            <footer>
+                <div>M/UI DESIGN ® MADRID 2026. ALL RIGHTS INTELLECTUALLY RESERVED.</div>
+                <div>SCROLL STATE SECURED / LOCAL SERVER.</div>
+            </footer>
+        </div>
+    </section>
+
+    <!-- JS PARA MOTORES SIMPLES DE "FADE-IN ARCHITECTURAL" CUBIC -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const reveals = document.querySelectorAll('.reveal-up');
             
-            // Función para dar aparicion a medida que el objeto corta el viewport visual
             const revealOptions = { root: null, rootMargin: "0px", threshold: 0.1 };
             
             const revealCallback = (entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
+                        // Optionalmente dejamos que observe siempre si deseas efecto repetición 
+                        // pero dejaremos de observar una vez salte el effect (brutal minimal):
+                        observer.unobserve(entry.target); 
                     }
                 });
             };
