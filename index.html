@@ -861,8 +861,14 @@ function setLang(lang) {
 
   // CV
   document.querySelector(".cv-main-title").innerText = c.cvMainTitle;
-  document.querySelectorAll(".cv-section-title")[0].innerText = c.cvEducationTitle;
-  document.querySelectorAll(".cv-section-title")[1].innerText = c.cvExperienceTitle;
+  const cvSectionTitles = document.querySelectorAll(".cv-section-title");
+
+if (cvSectionTitles[0]) {
+  cvSectionTitles[0].innerText = c.cvEducationTitle;
+}
+if (cvSectionTitles[1]) {
+  cvSectionTitles[1].innerText = c.cvExperienceTitle;
+}
 
   const cvTitles = document.querySelectorAll(".cv-block-text h2");
   const cvTexts = document.querySelectorAll(".cv-block-text p");
