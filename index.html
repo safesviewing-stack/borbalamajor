@@ -3,417 +3,433 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M/STUDIO | Fine Architectural Portfolio</title>
+    <title>MASSIVE WORLDS | UI SPACE</title>
     
-    <!-- Uso de pesos desde ultralight (200) para ese toque "fino/editorial", hasta el 600 para jerarquías -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;800&display=swap" rel="stylesheet">
     
     <style>
-        /* ================= VARIABLES (EDITORIAL PASTEL / FINE ART) ================= */
+        /* ================= TOKENS DEL SISTEMA 'MASSIVE WORLD' ================= */
         :root {
-            --bg-color: #FDFDFB;       /* Blanco lino / roto ultracálido */
-            --bg-solid: #FFFFFF;       /* Blanco puro para contrastes al hacer hover */
-            --text-main: #2C2B2A;      /* Off-black muy cálido, casi marrón carbón */
-            --text-light: #8E8B88;     /* Gris empolvado para notas, fechas y descripciones */
-            --border-color: #E6E4E0;   /* Líneas divisorias finísimas arena/piedra */
+            /* Colores Base Súper-Espaciales (Contraste Máximo) */
+            --void-dark: #080808;      /* Deep Space Black */
+            --monolith: #121212;       /* Grado Arquitectónico (Bloques) */
+            --core-white: #E6E3DB;     /* Piedra Blanca Cálida Sólida */
+            --accent-dust: #A8A6A0;    /* Tipografía Gris Desaturada Sutil */
+            --grid-line: rgba(230, 227, 219, 0.15); /* Rejilla matemática */
             
-            /* Tonos Pastel Empolvados para Micro-interacciones (Framer Style) */
-            --pastel-rose: #F6EFEF;
-            --pastel-sage: #EDF1EE;
-            --pastel-sand: #F4EFEB;
-            --pastel-blue: #EFF3F5;
-
-            --font-main: 'Inter', sans-serif;
+            --macro-text: clamp(6rem, 20vw, 30rem);
+            --sub-macro: clamp(4rem, 10vw, 15rem);
             
-            /* Ritmo matemático constante entre bloques */
-            --space-m: 100px;
-            --space-l: 160px;
-            --space-xl: 220px;
+            --ease-brutal: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ================= RESET Y BASE ================= */
-        ::selection { background-color: var(--text-main); color: var(--bg-color); }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        /* ================= NÚCLEO INMERSIVO ================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none !important; } /* Adiós cursor por defecto */
+        ::selection { background: var(--core-white); color: var(--void-dark); }
         
-        body { 
-            background-color: var(--bg-color); 
-            color: var(--text-main); 
-            font-family: var(--font-main); 
-            font-weight: 300;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden; 
+        body, html {
+            background-color: var(--void-dark);
+            color: var(--core-white);
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            overflow-x: hidden;
+            scroll-behavior: auto; /* Sin CSS smooth scroll por choques pegajosos (sticky layers) */
         }
         
-        a { text-decoration: none; color: inherit; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        a { color: inherit; text-decoration: none; }
         ul { list-style: none; }
 
-        .container { max-width: 90vw; margin: 0 auto; }
-        section { padding: var(--space-m) 0; position: relative; border-bottom: 1px solid var(--border-color);}
-
-        /* ================= TIPOGRAFÍA GIGANTE / FINA ================= */
-        h1, h2, h3, h4 { text-transform: uppercase; font-weight: 300; letter-spacing: -0.05em; line-height: 0.9; }
-        
-        /* Indices arquitectónicos / Brutalistas estilo [ 01 / WORKS ] */
-        .section-index {
-            font-size: 0.75rem; font-weight: 600; color: var(--text-light);
-            text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 40px; display: block;
+        /* ================= MICRO TIPOGRAFÍA / DATA LABELS ================= */
+        .micro-data {
+            font-size: 0.65rem; text-transform: uppercase; font-weight: 500;
+            letter-spacing: 0.25em; color: var(--accent-dust); font-family: 'Inter', monospace;
         }
 
-        /* Títulos ultra escalados */
-        .massive-text { font-size: clamp(4rem, 11vw, 13rem); font-weight: 200; letter-spacing: -0.06em; color: var(--text-main);}
-        h2 { font-size: clamp(3rem, 7vw, 6rem); margin-bottom: var(--space-s); }
-        h3 { font-size: clamp(1.8rem, 4vw, 3.5rem); margin-bottom: 10px; font-weight: 300;}
-        
-        p { color: var(--text-light); font-size: clamp(1.1rem, 1.8vw, 1.3rem); line-height: 1.6; font-weight: 300;}
-
-        /* ================= NAVBAR (GLASSMORPHISM PASTEL) ================= */
-        header { 
-            position: fixed; top: 0; width: 100%; z-index: 100;
-            background: rgba(253, 253, 251, 0.85); border-bottom: 1px solid var(--border-color); backdrop-filter: blur(12px);
-            padding: 25px 0;
-            transition: all 0.4s ease;
-        }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
-        
-        nav ul { display: flex; gap: 40px; }
-        nav ul li a { 
-            font-size: 0.75rem; font-weight: 500; text-transform: uppercase; 
-            letter-spacing: 0.1em; color: var(--text-light);
-        }
-        nav ul li a:hover { color: var(--text-main); }
-
-        /* ================= MOTOR DE ANIMACIÓN TIPO FRAMER ================= */
-        .reveal-up {
-            opacity: 0; transform: translateY(60px);
-            /* La famosa curva de bézier de aceleración fina usada por diseñadores top */
-            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
-        .reveal-up.is-visible { opacity: 1; transform: translateY(0); }
-
-        /* ================= 00. HERO (INTRO FINO) ================= */
-        .hero { 
-            min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
-        }
-        .hero p.main-desc { max-width: 600px; margin-top: 40px; border-left: 1px solid var(--text-light); padding-left: 30px; }
-
-        /* ================= 01. PORTFOLIO ================= */
-        .portfolio-list { margin-top: 50px; }
-        
-        .project-item {
-            display: grid; grid-template-columns: 1.2fr 1.5fr; gap: 60px; cursor: pointer;
-            padding: 60px 2%; border-top: 1px solid var(--border-color); 
-            transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), padding 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .project-meta { display: flex; flex-direction: column; justify-content: center; padding-right: 5%; }
-        .p-category { font-size: 0.8rem; text-transform: uppercase; color: var(--text-light); font-weight: 600; margin-top: 20px; letter-spacing: 0.05em;}
-        
-        /* Contenedores que simulan bloques de lienzo vacíos */
-        .project-img {
-            width: 100%; height: 50vh; overflow: hidden; position: relative;
-            transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.6s ease;
-        }
-
-        /* Diferentes pasteles finos en base a clases simulando imagenes */
-        .p1 .project-img { background: var(--pastel-sand); }
-        .p2 .project-img { background: var(--pastel-rose); }
-        .p3 .project-img { background: var(--pastel-sage); }
-        .p4 .project-img { background: var(--pastel-blue); }
-
-        /* HOVER DE LA MÁXIMA SUAVIDAD ESTILO FRAMER COMPONENTS */
-        .project-item:hover { background-color: var(--bg-solid); padding-left: 4%; } 
-        .project-item:hover .project-img { transform: scale(0.97); border-radius: 4px; } 
-
-        /* ================= 02. CURRÍCULUM ================= */
-        #cv h2 { margin-bottom: 80px;}
-        .cv-list { display: flex; flex-direction: column; width: 100%; border-top: 1px solid var(--border-color);}
-        
-        .cv-row {
-            display: grid; grid-template-columns: 0.8fr 2.5fr 3.5fr; 
-            padding: 50px 3%; align-items: start;
-            border-bottom: 1px solid var(--border-color); 
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        /* ================= CUSTOM GRAVITY CURSOR ================= */
+        #follower {
+            position: fixed; top: 0; left: 0; width: 40px; height: 40px; border-radius: 50%;
+            background-color: var(--core-white); pointer-events: none; z-index: 9999;
+            transform: translate(-50%, -50%); mix-blend-mode: difference;
+            transition: width 0.4s var(--ease-brutal), height 0.4s var(--ease-brutal);
+            display: flex; justify-content: center; align-items: center; text-align: center;
         }
         
-        /* Respuesta interactiva ultra suave y deslizada con tono rosa té */
-        .cv-row:hover { background-color: var(--pastel-rose); padding-left: 5%; cursor: crosshair;}
+        /* Ojos dentro del cursor en interactuables (Magia UI inmersiva) */
+        #follower span { opacity: 0; font-size: 8px; font-weight: 800; text-transform: uppercase; color: var(--void-dark); transition: opacity 0.3s; letter-spacing: 1px;}
+        body:active #follower { width: 30px; height: 30px; }
+
+        /* Hover Magnets Custom - La pelota colapsa inversamente en links masivos */
+        .cursor-magnet:hover ~ #follower, /* CSS Grid trigger, normalmente activado con JS debajo*/
+        a:hover, .trigger:hover { cursor: none; }
+
+        /* ================= ESTRUCTURAS OVERLAY & NAVBAR ================= */
+        .viewport-layer {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none; padding: 30px 4vw; z-index: 1000;
+            display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,0.05);
+        }
+        .hud-nav { display: flex; justify-content: space-between; align-items: flex-start; pointer-events: auto;}
+        .hud-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
         
-        .cv-date span { font-size: 1rem; font-weight: 400; display: block; color: var(--text-light);}
-        .cv-company h4 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 12px; font-weight: 300;}
-        .cv-company span { font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-main); }
-        .cv-desc { max-width: 500px; font-size: 1.1rem; line-height: 1.7; font-weight: 300;}
-
-        /* CTA Elegante de Curriculumn pdf */
-        .cv-cta { margin-top: 80px; text-align: right; }
-        .btn-ghost {
-            font-size: 0.8rem; text-transform: uppercase; font-weight: 500; letter-spacing: 0.1em;
-            border: 1px solid var(--text-light); padding: 18px 45px; border-radius: 100px; /* Estilo pill */
-            color: var(--text-main); display: inline-block; 
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        .logo { font-size: 1.2rem; font-weight: 200; letter-spacing: -0.04em;}
+        .nav-list li { margin-bottom: 5px; text-align: right; overflow: hidden;}
+        .nav-list a { 
+            position: relative; font-size: 0.8rem; font-weight: 500; text-transform: uppercase; 
+            letter-spacing: 0.05em; display: inline-block; transition: transform 0.3s var(--ease-brutal);
         }
-        .btn-ghost:hover { background-color: var(--text-main); color: var(--bg-solid); border-color: var(--text-main);}
+        .nav-list a:hover { transform: translateX(-10px); } /* Sliding HUD effect */
 
-        /* ================= 03. HABILIDADES (MICROINTERACCIONES) ================= */
-        .skills-grid { 
-            display: grid; grid-template-columns: repeat(3, 1fr); 
-            gap: 1px; background: var(--border-color); 
-            border: 1px solid var(--border-color); margin-top: 60px;
+        /* ================= MASSIVE WORLD SCROLL (LAS SECCIONES) ================= */
+        /* Eliminamos las franjas divisorias. Todo es enorme o ocupa 100vh o nada. */
+        
+        .giant-hero {
+            height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center;
+            position: relative; overflow: hidden; padding: 0 4vw; background: var(--void-dark); z-index: 1;
         }
 
-        .skill-column { 
-            background-color: var(--bg-solid); padding: 60px 40px; 
-            transition: background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        .macro-header {
+            font-size: var(--macro-text); font-weight: 200; line-height: 0.8; letter-spacing: -0.06em;
+            text-transform: uppercase; margin-left: -1vw; position: relative; mix-blend-mode: screen; white-space: nowrap;
+        }
+
+        .bold-slice { font-weight: 800; font-size: var(--macro-text); position: relative; z-index: 2; margin-top: -3vh; color: var(--monolith); -webkit-text-stroke: 1px var(--core-white); }
+        .hero-desc { width: clamp(300px, 35vw, 600px); margin-left: auto; font-size: 1.4rem; font-weight: 300; line-height: 1.6; color: var(--accent-dust); mix-blend-mode: exclusion; position: relative; z-index: 10;}
+
+        /* ================= SECTION STICKY PANELS (PORTFOLIO PARALLAX) ================= */
+        .worlds-container { position: relative; } /* El portafolio masivo. Son pantallas aplastándose */
+        
+        .world-panel {
+            position: sticky; top: 0; width: 100vw; height: 100vh; 
+            display: flex; align-items: center; justify-content: space-between;
+            overflow: hidden; z-index: 5;
+            background: var(--void-dark);
+            border-top: 1px solid var(--grid-line); padding: 0 4vw;
+        }
+
+        /* Alternancia Cruda y Salvaje entre blanco o monolito dark para impacto masivo en scroll*/
+        .panel-bg-1 { background-color: var(--void-dark); }
+        .panel-bg-2 { background-color: #E6E3DB; color: var(--void-dark); border-radius: 2vw 2vw 0 0;}
+        .panel-bg-3 { background-color: var(--monolith); border-radius: 4vw 4vw 0 0;}
+
+        /* Típicas masas cruzadas entre Imagen + Gigantismo y Título Sideral */
+        .world-giant-index {
+            position: absolute; top: -5%; left: 2%; font-size: 55vw; line-height: 1; font-weight: 800; 
+            color: rgba(255,255,255,0.02); pointer-events: none; z-index: 0; letter-spacing: -0.1em;
+        }
+
+        .panel-content-left {
+            position: relative; z-index: 2; display: flex; flex-direction: column;
         }
         
-        /* Paleta escondida detrás de cada monolito al posar el cursor */
-        .skill-column:nth-child(1):hover { background-color: var(--pastel-sand); }
-        .skill-column:nth-child(2):hover { background-color: var(--pastel-sage); }
-        .skill-column:nth-child(3):hover { background-color: var(--pastel-blue); }
-        
-        .skill-column h4 { color: var(--text-light); font-size: 1rem; margin-bottom: 40px; font-weight: 400; letter-spacing: 0.05em;}
-        .skill-column ul { display: flex; flex-direction: column; gap: 0; }
-        .skill-column li { 
-            font-size: clamp(1.2rem, 1.8vw, 1.6rem); font-weight: 300; 
-            border-bottom: 1px solid var(--border-color); padding: 20px 0; 
-            transition: all 0.4s ease;
-        }
-        .skill-column li:hover { padding-left: 15px; border-color: var(--text-main); color: var(--text-main);} 
-
-        /* ================= 04. CONTACTO Y FOOTER ================= */
-        .contact-cta { text-align: center; padding: 120px 0 60px; display:flex; flex-direction: column; align-items:center; }
-        
-        /* H1 Gigante de Correo */
-        .giant-link {
-            font-size: clamp(3rem, 10vw, 12rem); font-weight: 200; text-transform: uppercase; 
-            letter-spacing: -0.06em; line-height: 0.8; margin-top: 40px; position: relative; 
-            text-align: center; color: var(--text-main); padding-bottom: 1vw; display: inline-block;
+        .massive-work-title {
+            font-size: var(--sub-macro); font-weight: 200; text-transform: uppercase; 
+            line-height: 0.85; letter-spacing: -0.05em; transition: transform 0.6s var(--ease-brutal);
+            transform-origin: left; display: block;
         }
         
-        /* Efecto Hilo / Trazo Mágico en Link gigante */
-        .giant-link::after {
-            content: ''; position: absolute; left: 0; bottom: 0; width: 0%; height: 2px;
-            background: var(--text-main); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .giant-link:hover::after { width: 100%; }
-        .giant-link:hover { opacity: 0.7;}
-
-        footer { 
-            display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color);
-            padding: 30px 0; margin-top: auto; color: var(--text-light); font-size: 0.7rem; 
-            font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em;
+        .panel-content-right {
+            position: relative; z-index: 1; width: 35%; aspect-ratio: 4/5; 
+            overflow: hidden; mix-blend-mode: luminosity; /* Afecta color crudo con las placas abajo */
+            filter: grayscale(100%); transition: all 1s var(--ease-brutal); background: #333;
         }
 
-        /* ================= RESPONSIVO (TELÉFONOS & TABLETS) ================= */
-        @media (max-width: 980px) {
-            .project-item { grid-template-columns: 1fr; gap: 30px; padding: 40px 0;}
-            .project-item:hover { padding-left: 0; }
-            .cv-row { grid-template-columns: 1fr; gap: 15px; padding: 40px 0; }
-            .cv-row:hover { padding-left: 2%; }
-            .cv-date span { color: var(--text-light); margin-bottom: 10px;}
-            .skills-grid { grid-template-columns: 1fr; border-top: 1px solid var(--border-color);}
-            .hero p.main-desc { padding-left: 0; border-left: none; }
-            nav ul { display: none; }
-            footer { flex-direction: column; gap: 10px; text-align: center; }
+        .world-panel:hover .panel-content-right { filter: grayscale(0%); transform: scale(0.97); }
+        .world-panel:hover .massive-work-title { transform: scale(1.03); opacity: 0.5;}
+
+        /* Inversión cromática cuando el mundo es Panel #2 (Blanco hueso en Portafolio) */
+        .panel-bg-2 .massive-work-title, .panel-bg-2 .world-giant-index { color: var(--void-dark); mix-blend-mode: normal;}
+        .panel-bg-2 .world-giant-index { color: rgba(0,0,0,0.05); }
+
+        /* ================= TICKER SKILLS INFINITO MARQUEE ================= */
+        .marquee-wrapper {
+            position: relative; width: 100vw; height: 100vh; overflow: hidden; background: var(--void-dark);
+            display: flex; flex-direction: column; justify-content: center; z-index: 10; padding: 20vh 0;
+            border-top: 1px solid var(--grid-line); border-bottom: 1px solid var(--grid-line);
         }
+
+        .marquee-line {
+            display: flex; width: max-content; 
+            animation: scrollMassive 25s linear infinite; margin-bottom: -5vh; /* Traslape espacial bestia */
+        }
+        .marquee-line.reverse { animation-direction: reverse; }
+        
+        .marquee-text {
+            font-size: var(--sub-macro); font-weight: 800; text-transform: uppercase; white-space: nowrap; 
+            -webkit-text-stroke: 1px rgba(255,255,255,0.2); color: transparent; padding: 0 4vw; line-height: 1; letter-spacing: -0.04em;
+            transition: all 0.5s ease;
+        }
+
+        .marquee-text:hover { color: var(--core-white); -webkit-text-stroke: 1px transparent;} /* Brutal resalte inmersivo interactuando */
+
+        @keyframes scrollMassive {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* ================= ARCHIVO CV "LA AUTOPISTA SPLIT SCREEN" ================= */
+        /* Partida mitad inmovible enorme, la mitad del tiempo haciendo scroll de vida en bloque masivos */
+        .cv-mega-split {
+            display: flex; background: var(--void-dark); position: relative; z-index: 5;
+        }
+
+        /* 40% izquierda atada en fixed sticky sticky behavior natural html. */
+        .cv-mega-sticky-left {
+            width: 45vw; position: sticky; top: 0; height: 100vh; display: flex;
+            align-items: center; padding: 0 4vw; border-right: 1px solid var(--grid-line); overflow: hidden;
+        }
+
+        .cv-list-scrollable-right { width: 55vw; } /* Scroll Libre sin sticky height total nativo de html contenido */
+
+        .mega-cv-item {
+            display: flex; flex-direction: column; gap: 30px; padding: 15vh 6vw; 
+            border-bottom: 1px solid var(--grid-line); position: relative; cursor: crosshair; transition: padding 0.8s var(--ease-brutal);
+        }
+        
+        /* Interaccion: expande los espaciados en cv violentamente */
+        .mega-cv-item:hover { background-color: rgba(255,255,255,0.03); padding-left: 9vw;}
+        .cv-year { font-size: 8vw; font-weight: 200; line-height: 0.8; letter-spacing: -0.08em; color: var(--accent-dust); mix-blend-mode: overlay; pointer-events: none;}
+        .mega-cv-item:hover .cv-year { color: var(--core-white); mix-blend-mode: normal; font-weight: 800;}
+        
+        /* Textos finos pero con contraste agresivo de caja negra inmersiva en listado expericia  */
+        .mega-cv-content h4 { font-size: clamp(2rem, 3.5vw, 4.5rem); text-transform: uppercase; font-weight: 300; letter-spacing: -0.04em; margin-bottom: 2vh;}
+        .mega-cv-content p { font-size: 1.25rem; line-height: 1.6; font-weight: 300; color: var(--accent-dust); max-width: 450px;}
+
+        /* ================= INFERNO MEGA FOOTER REVEAL CATASTROFE================= */
+        /* Truco awwwards: z-index detras y margin bot de cuerpo lo levanta deslumbrantemente sobre ultimo layout*/
+        .void-footer {
+            height: 100vh; width: 100vw; position: fixed; bottom: 0; z-index: -1; 
+            background: #E6E3DB; /* Final Gigante de Tinta invertido Blanco Súbito */
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--void-dark);
+        }
+        
+        .body-spacer { margin-bottom: 100vh; background-color: var(--void-dark); position: relative; z-index: 2; overflow:hidden;} /* el empuje hacia el final para que funcione */
+        
+        .huge-trigger-link {
+            font-size: var(--macro-text); font-weight: 800; text-transform: uppercase;
+            letter-spacing: -0.08em; color: var(--void-dark); display: inline-block; position: relative; transition: color 0.6s var(--ease-brutal); z-index: 20;
+        }
+
+        /* Rayos destructores horizontales por linea on hover correo en la terminal inmersiva  */
+        .huge-trigger-link::after { content: ''; position: absolute; height: 1vw; top: 40%; background:var(--void-dark); width:0%; left:0; transition: width 0.8s var(--ease-brutal); mix-blend-mode: difference;}
+        .huge-trigger-link:hover::after { width: 100%; height:150%; top:-10%; }
+        
+        .huge-trigger-link:hover { color: #fff;}
+
+        /* ================= MICRO INTERACTIVE ENGINE  (APARECIDAS VERTICALES DE LÓGICA ESPACIO) ================= */
+        .reveal-m { opacity: 0; transform: translateY(200px); transition: all 1.8s var(--ease-brutal); will-change: transform; }
+        .reveal-m.is-visible { opacity: 1; transform: translateY(0); }
+
+        /* REJILLAS Y RESPONSIVE  CRUDA ADAPTACION TELEFONO*/
+        @media (max-width: 900px) {
+            #follower { display: none; } * { cursor: auto !important; }
+            .cv-mega-split { flex-direction: column;}
+            .cv-mega-sticky-left { width: 100%; height: 30vh; position: relative; border-bottom: 1px solid var(--grid-line);}
+            .cv-list-scrollable-right { width: 100%; }
+            .world-panel { flex-direction: column; padding: 20vh 4vw; justify-content: start; position: relative; min-height:100vh;}
+            .panel-content-right { width: 100%; height: 50vw; margin-top: 4vh;}
+            .macro-header, .bold-slice { font-size: clamp(4.5rem, 15vw, 6rem); letter-spacing:-0.05em; line-height: 0.9;}
+            .marquee-wrapper { padding: 10vh 0;}
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- MENÚ ALTO -->
-    <header id="main-header">
-        <div class="nav-content container">
-            <a href="#home" class="logo">Marta // Editor</a>
-            <nav>
-                <ul>
-                    <li><a href="#portfolio">01. Obras</a></li>
-                    <li><a href="#cv">02. Registro</a></li>
-                    <li><a href="#habilidades">03. Stack</a></li>
-                    <li><a href="#contacto">04. Info</a></li>
-                </ul>
-            </nav>
+    <!-- INTERACTIVIDAD RATÓN CURSOR CUBRIRÁ Y ENGULLIRÁ ESTO CUSANDO ESTE PUNTO ROBUSTO / BLEND = difference / -->
+    <div id="follower"><span>UI</span></div>
+
+    <!-- NAVEGACIÓN CAPA INMERSIVA ESTABLE. Toca los extremos en un 100% de alto y ancho pegajosa-->
+    <div class="viewport-layer">
+        <div class="hud-nav">
+            <span class="logo">M / WORLDS // EXP</span>
+            <ul class="nav-list">
+                <li><a href="#worlds" class="trigger">Worlds [W-X]</a></li>
+                <li><a href="#matrix" class="trigger">System[C.V]</a></li>
+                <li><a href="#contacto" class="trigger">Comm _/L</a></li>
+            </ul>
         </div>
-    </header>
+        <div class="hud-bottom micro-data">
+            <span>[ SCROLL STATUS: ENGAGED ]</span>
+            <span>LAT/LONG INTERACTION ONLY</span>
+        </div>
+    </div>
 
-    <main>
-        <!-- INTRODUCCIÓN EDITORIAL LIGERA (WEIGHT:200) -->
-        <section class="hero" id="home" style="border-bottom:none;">
-            <div class="container reveal-up">
-                <h1 class="massive-text">
-                    BELLEZA<br> ORDENADA.
-                </h1>
-                <p class="main-desc">Especializada en layouts meticulosos, amplios respiros en el lienzo y un absoluto cuidado tipográfico. Doy forma al espacio vacío equilibrando sistemas escalables de alta tecnología con aire, papel digital e interfaces orgánicas.</p>
-            </div>
+    <!-- EL MARCO CONTENEDOR TOTAL DE TU EXPERIENCIA WEB REAL. Todo pasa encima. -->
+    <main class="body-spacer">
+        
+        <!--[ 00. ESCALA 100% VISIBLE TITULO ROMPIENDO BOUNDS. FUERA MÁRGENES AMABLES] -->
+        <section class="giant-hero trigger">
+            <h1 class="macro-header reveal-m">BEAUTIFUL<br> SPATIAL <br><span class="bold-slice" style="display:block"> SYSTEMS</span></h1>
+            
+            <p class="hero-desc reveal-m" style="margin-top:5vh; text-indent: 10%;">
+                Deconstrucción de la web típica hacia campos masivos interrelacionados mediante interfaces limpias y el peso bruto gravitacional en mi desarrollo editorial visual en formato App B2C extrema.
+            </p>
         </section>
 
-        <!-- [ 01 ] PORTFOLIO FÍSICA PASTEL -->
-        <section id="portfolio">
-            <div class="container">
-                <span class="section-index reveal-up">[ 01 / Curation Index ]</span>
-                <h2 class="reveal-up">Archivo Visual.</h2>
+
+        <!--[ 01. PANAL WORLD INTERACTION // OVERLAPPING STICKY VIEWS DE TIPO DE PÁGINAS MASSIVAS  ]-->
+        <!-- Las cards ocupan al deslizar encima un mundo devora visualmente otro construyendo "La arquitectura World Layout " de AWWWWWARDS mas salvaje y premiada . -->
+        <section id="worlds" class="worlds-container">
+
+            <div class="world-panel panel-bg-1 trigger">
+                <span class="world-giant-index">01</span>
+                <div class="panel-content-left reveal-m">
+                    <span class="micro-data">PROSPECT — A/ B</span>
+                    <a href="#" class="massive-work-title" style="margin-top:20px;">MATERIA<br>CRUDA®</a>
+                </div>
+                <div class="panel-content-right reveal-m">
+                    <!-- BACKGROUND MAGIA RECARGO. Insertos Visuales Criptográficos Oscuros Minimales  -->
+                    <div style="width:100%; height:100%; background:#090909; display: flex; align-items: center; justify-content:center; border: 1px solid rgba(255,255,255,0.03);">[ REVEAL BLEND IMAGE ]</div>
+                </div>
+            </div>
+
+            <div class="world-panel panel-bg-2 trigger">
+                <span class="world-giant-index">02</span>
+                <div class="panel-content-left reveal-m">
+                    <span class="micro-data" style="color: rgba(0,0,0,0.6);">SYSTEM DASH / PLATFORM</span>
+                    <a href="#" class="massive-work-title" style="margin-top:20px;">HUD<br>SKIN-BOTANY.</a>
+                </div>
+                <div class="panel-content-right reveal-m">
+                    <div style="width:100%; height:100%; background:#d2cec3;"></div> <!-- Tonal hueso para Botanica App System B2B de skin pastel frio gigante. -->
+                </div>
+            </div>
+
+            <div class="world-panel panel-bg-3 trigger">
+                <span class="world-giant-index">03</span>
+                <div class="panel-content-left reveal-m">
+                    <span class="micro-data" style="color:var(--accent-dust);">ARCH INTER / MONO</span>
+                    <a href="#" class="massive-work-title" style="margin-top:20px;">LA VÍA<br>CUBIC <br>SPACE</a>
+                </div>
+                <div class="panel-content-right reveal-m" style="background:#020202;">
+                    <div style="width:100%; height:100%; background:#191919;"></div> <!-- Simulacro cubo webGL massive world architect.-->
+                </div>
+            </div>
+
+        </section>
+
+
+        <!--[ 02. MARQUEES EXTREMOS "WALL OF SKILLS OVERFLOW X." Animados CSS ] -->
+        <!-- Te devora por un ancho exageradamento de un ticker infame cortando los layers pegajosos del top  -->
+        <section class="marquee-wrapper trigger">
+            <span class="micro-data" style="position:absolute; top:3vh; right:4vw; color:#333; z-index:30;"> / DEPLOYMENT TECHNO - V/5 / </span>
+            
+            <div class="marquee-line">
+                <span class="marquee-text">FIGMA ADVANCED ++ WEBGRIDS // EDITORIAL TYPO ++ OVERLAY MACRO // </span>
+                <span class="marquee-text">FIGMA ADVANCED ++ WEBGRIDS // EDITORIAL TYPO ++ OVERLAY MACRO // </span>
+            </div>
+
+            <!-- Inverso Overlap  (Masividad Caleidoscopica de datos puristas tech a color hueco stroke) -->
+            <div class="marquee-line reverse" style="margin-top:-6vh;">
+                <span class="marquee-text">BLENDING MODE & MASK UI _ FRONTEND FLUID // SYSTEM TOKENS // </span>
+                <span class="marquee-text">BLENDING MODE & MASK UI _ FRONTEND FLUID // SYSTEM TOKENS // </span>
+            </div>
+
+        </section>
+
+
+        <!--[ 03. MATRIX DE CRONOLOGÍA (LA ESTRUCTURA FINA PASTEL SPLITEADA PERO MASSIVA Y SEPARADA DE FONDO)]-->
+        <!-- Un left container enorme sin irse. El scroll viaja por las decadas de experienia laboral con fechas monstruosas aplastadas en alpha transparencies .-->
+        <section id="matrix" class="cv-mega-split">
+            
+            <div class="cv-mega-sticky-left trigger">
+                <h2 class="macro-header" style="font-size: 8vw;">LOG <br> RECORDS.</h2>
+            </div>
+            
+            <div class="cv-list-scrollable-right">
                 
-                <div class="portfolio-list">
-                    <a class="project-item p1 reveal-up" href="#!">
-                        <div class="project-img"></div>
-                        <div class="project-meta">
-                            <h3>Materia Orgánica</h3>
-                            <span class="p-category">Dirección Global / BRANDING [ 24 ]</span>
-                            <p style="margin-top: 20px;">Redefinición total de arquitectura visual mediante tonos algodón y finísimos balances gráficos. Identidades tangibles y silenciosas.</p>
-                        </div>
-                    </a>
-                    
-                    <a class="project-item p2 reveal-up" href="#!">
-                        <div class="project-img"></div>
-                        <div class="project-meta">
-                            <h3>Botánica Cph.</h3>
-                            <span class="p-category">eCOMMERCE / DIGITAL RETAIL [ 24 ]</span>
-                            <p style="margin-top: 20px;">Plataforma D2C para cuidado del rostro; navegación flotante basada en aire positivo, tonos té e interfaz purificada de ruido comercial.</p>
-                        </div>
-                    </a>
+                <!-- HOVERS AGRESIVOS AL MOVER CON LAS VARIABLES GRAFICAS TENSION ELASTICAS (var easings brutal bezier css puretas )-->
+                <a href="#!" class="mega-cv-item trigger reveal-m">
+                    <span class="cv-year">23 - ON</span>
+                    <div class="mega-cv-content">
+                        <h4>La MegaCorp Espacial</h4>
+                        <span class="micro-data" style="display:block; margin-bottom: 2vh; color:#fff;">UX LEADERSHIP · SYSTEMS ENGI</span>
+                        <p>Anotación técnica directiva desde central principal asumiendo una directiva estética a prueba de vacíos y una manipulación integral UI por macro layouts estancos directivos en sedes ES .</p>
+                    </div>
+                </a>
 
-                    <a class="project-item p3 reveal-up" href="#!">
-                        <div class="project-img"></div>
-                        <div class="project-meta">
-                            <h3>La Forma Racional</h3>
-                            <span class="p-category">EDITORIAL LAYOUT & GSAP [ 23 ]</span>
-                            <p style="margin-top: 20px;">El vacío interpretado a través de transiciones hiper-lentas. Creación e-book integral estructurado bajo métrica tipográfica clásica.</p>
-                        </div>
-                    </a>
+                <a href="#!" class="mega-cv-item trigger reveal-m">
+                    <span class="cv-year">21 - 23</span>
+                    <div class="mega-cv-content">
+                        <h4>Lento // UI Dev Team.</h4>
+                        <span class="micro-data" style="display:block; margin-bottom: 2vh;">VISUAL PROD DIGITAL C-RANK EXPERT </span>
+                        <p>Diseño sin concesión, asumiendo prototipado B2B digital Front e implantando componentes puros variables matemáticos directos del code a Canvas reactjs purificado bajo minimalistas guías Figma</p>
+                    </div>
+                </a>
 
-                    <a class="project-item p4 reveal-up" href="#!">
-                        <div class="project-img"></div>
-                        <div class="project-meta">
-                            <h3>Velludo Sistemas</h3>
-                            <span class="p-category">SYSTEM APP B2B (UX/UI) [ 22 ]</span>
-                            <p style="margin-top: 20px;">Un Dashboard convertido en objeto agradable de manejar con jerarquías suavizadas a través de un design system sin sombras en Figma.</p>
-                        </div>
-                    </a>
-                </div>
+                <a href="#!" class="mega-cv-item trigger reveal-m">
+                    <span class="cv-year">19 - 21</span>
+                    <div class="mega-cv-content">
+                        <h4>MA: Diseño ELISAVA</h4>
+                        <span class="micro-data" style="display:block; margin-bottom: 2vh;">MAGISTER SPECIALIZED UNIVERSO DE RECURSOS UXXU DIGITAL SYSTEM INTERACTIVITY ART LAB VISUALS </span>
+                        <p>Trato doctoral masivo integral web app interactivo web.</p>
+                    </div>
+                </a>
+            
             </div>
         </section>
 
-        <!--[ 02 ] CV TABULAR REACTIVO TIPO LÍQUIDO -->
-        <section id="cv">
-            <div class="container reveal-up">
-                <span class="section-index">[ 02 / Professional Timeline ]</span>
-                <h2>Desempeño.</h2>
-                
-                <div class="cv-list">
-                    <div class="cv-row reveal-up">
-                        <div class="cv-date"><span>2023 — ACTUALIDAD</span></div>
-                        <div class="cv-company">
-                            <h4>La Compañía Matriz.</h4>
-                            <span>PRODUCT DESIGN DIRECTOR</span>
-                        </div>
-                        <div class="cv-desc"><p>Operando bajo el liderazgo integral creativo en las principales sedes corporativas de BCN-Madrid enfocando la dirección a sistemas estables y agradables de observar.</p></div>
-                    </div>
-
-                    <div class="cv-row reveal-up">
-                        <div class="cv-date"><span>2021 — 2023</span></div>
-                        <div class="cv-company">
-                            <h4>Cálida Studio BCN</h4>
-                            <span>CREATIVE DIGITAL LEAD</span>
-                        </div>
-                        <div class="cv-desc"><p>Confección milimétrica al píxel sobre experiencias puras y webapps responsivas apoyadas visualmente en tipografías exclusivas europeas.</p></div>
-                    </div>
-
-                    <div class="cv-row reveal-up">
-                        <div class="cv-date"><span>2019 — 2021</span></div>
-                        <div class="cv-company">
-                            <h4>M.A Graphic System</h4>
-                            <span>ESCUELA ELISAVA BCN</span>
-                        </div>
-                        <div class="cv-desc"><p>Morfología experimental e investigación orientada al human computer interface design en entornos puramente contemplativos o curatoriales.</p></div>
-                    </div>
-                </div>
-
-                <div class="cv-cta reveal-up">
-                    <a href="#" class="btn-ghost">Lectura Documental Integral PDF &rarr;</a>
-                </div>
-            </div>
-        </section>
-
-        <!--[ 03 ] HABILIDADES COMO CUBOS REACTIVOS DE COLOR AL PASO -->
-        <section id="habilidades">
-            <div class="container reveal-up">
-                <span class="section-index">[ 03 / Capability Stack ]</span>
-                <h2>Disciplina.</h2>
-                
-                <div class="skills-grid reveal-up">
-                    
-                    <div class="skill-column">
-                        <h4>Sistema [ Estructural ]</h4>
-                        <ul>
-                            <li>Variables Táctiles</li>
-                            <li>Escala y Prototipos</li>
-                            <li>Cuaderno y Concepto</li>
-                            <li>Cromatismo Espacial</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-column">
-                        <h4>Superficie [ Estética ]</h4>
-                        <ul>
-                            <li>Tipografía Clásica (OTF)</li>
-                            <li>Ilustración Empolvada</li>
-                            <li>Balance de Espacios Ligeros</li>
-                            <li>Retícula Abierta</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-column">
-                        <h4>Trasfondo [ Base Lógica ]</h4>
-                        <ul>
-                            <li>Bilingüe e Interpretación</li>
-                            <li>Handoff Suave (Front-End)</li>
-                            <li>Micro-Motion Specs (JS)</li>
-                            <li>Dirección Discreta</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!--[ 04 ] ENLACE MASIVO FINAL DE CONEXIÓN Y PIE CIENTÍFICO-->
-        <section id="contacto" style="border-bottom:none;">
-            <div class="container reveal-up">
-                <div class="contact-cta">
-                    <span class="section-index">[ 04 / Communication Line ]</span>
-                    <a href="mailto:fine@mstudio.com" class="giant-link">CONVERSEMOS</a>
-                </div>
-                
-                <footer>
-                    <div>M / STUDIO EDITORIAL VISIONS ® — TODOS LOS DERECHOS PERTINENTES LOCALIZADOS 2026.</div>
-                    <div>RENDERED IN CALM MINDFULNESS ENVIRONMENT.</div>
-                </footer>
-            </div>
-        </section>
     </main>
 
-    <!-- JS PARA EL REVEAL Y FLOTACIÓN INTERACTIVA LENTA -->
+    <!--[ FOOTER MASIVO POR DETRAS "HOLE TRIGGER REVEAL." LA CAIDA DE TELEVISOR OFF STATE . EL CULMINA SOTD DESIGN ESTÉTICOS] -->
+    <!-- Mientras todo sube, en lo negro que baja de golpe por final margin en html sale esto blanquísimo incadescente en Z index trasero inmovible :-->
+    <footer id="contacto" class="void-footer">
+        
+        <span class="micro-data" style="margin-bottom: 4vh;">CONNECTION HUB / DIRECT LINE ACCESS _ </span>
+        <a href="mailto:massivelux@world.exp" class="huge-trigger-link trigger">ENTER COMM </a>
+
+        <div style="position:absolute; bottom:30px; left:4vw; right:4vw; display:flex; justify-content:space-between;" class="micro-data">
+            <span style="color:#666;">2026 MATRIX EXP. AROCK MASSIVITY OVERWRITE UX TWEAKS ++</span>
+            <span style="color:#333;">GLOBAL DATA / RUN SERVER V. 5_ / A M D   W OR  R R D . </span>
+        </div>
+        
+    </footer>
+
+    <!-- LA RESPUESTA INTERACTIVA  LÓGICO FISICA DEL NAVEGADOR DOM EVENT INTERACTION ENGINE "SIN APLICACIONES , ES PURISMO 0 DE JQUERY / 100 ECMA -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const reveals = document.querySelectorAll('.reveal-up');
-            
-            // Mantiene el Threshold visualizando al menos un 15% del contenedor 
-            // Esto asegura que entra dentro del flujo de tu scroll
-            const revealOptions = { root: null, rootMargin: "0px", threshold: 0.15 };
-            
-            const revealCallback = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        // Cortar observación garantiza rendimiento estilo app real. Solo se revelan una vez por render
-                        observer.unobserve(entry.target); 
+
+            //[ MAGNITUD 00. REVELACION VERTICAL INYECTADA FISICA GSAP-LESS EN NAVEGADORES ESTABLE (El Intersection en esteroides paramétricos )]
+            const reveals = document.querySelectorAll('.reveal-m');
+            const observerParams = { root: null, rootMargin: "-10%", threshold: 0.10 };
+            const rObserver = new IntersectionObserver((es, ob) => {
+                es.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('is-visible');
+                        ob.unobserve(e.target);
                     }
                 });
-            };
+            }, observerParams);
+            reveals.forEach(x => rObserver.observe(x));
 
-            const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
-            reveals.forEach(el => revealObserver.observe(el));
+            //[ MAGNITUD 01 . INTERACTIVITY (MAGNETIC BALL FLUID DE RATÓN CUSON ESTADO FISICO E IDENTIFICADOR OVERLAY DE CÍRCULOS] )
+            // Si el terminal en movil / tap tablet anula . (Es inmercion para monitores macro scale ui UX desktop. )
+            
+            const cursor = document.getElementById("follower");
+            const spanUI = cursor.querySelector('span');
+            let isMoving = false;
+            
+            document.addEventListener('mousemove', e => {
+                if(!isMoving) requestAnimationFrame(()=>{ 
+                   cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+                   isMoving = false; 
+                });
+                isMoving = true;
+            });
+
+            // Reaccion destructiva (Cuando pones un trigger. Cede enorme abarcandolo y cambia contenido como puntero digital.)
+            document.querySelectorAll('.trigger').forEach(node => {
+                node.addEventListener('mouseenter', () => {
+                    cursor.style.width = '140px'; 
+                    cursor.style.height = '140px'; 
+                    spanUI.style.opacity = '1';
+                });
+                node.addEventListener('mouseleave', () => {
+                    cursor.style.width = '40px';  
+                    cursor.style.height = '40px'; 
+                    spanUI.style.opacity = '0';
+                });
+            });
+
         });
     </script>
 </body>
