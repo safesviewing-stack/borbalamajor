@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M/STUDIO | Massive Minimalist Portfolio</title>
+    <title>M/STUDIO | Editorial Dark Minimal</title>
     
-    <!-- Pesos estructurales (Inter): Desde normal hasta el "black" 800 para alto contraste -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <!-- Mezcla magistral: Inter (Estructura minimalista) + Cormorant Garamond (Curvas y elegancia Serif) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* ================= VARIABLES ARQUITECTÓNICAS (DARK) ================= */
+        /* ================= VARIABLES (ALTA COSTURA / DARK FEMININE) ================= */
         :root {
-            --bg-color: #030303;       /* Negro ultra profundo  */
-            --text-main: #FFFFFF;      /* Blanco Puro (Absoluto)*/
-            --text-light: #6A6A6A;     /* Gris industrial       */
-            --border-color: #1F1F1F;   /* Divisiones de sección precisas */
+            --bg-color: #171515;       /* Negro/Marrón profundísimo, menos técnico, más cálido */
+            --text-main: #F7F3EF;      /* Blanco Perla suave (Hueso) */
+            --text-light: #A59B98;     /* Gris pardo (Taupe) cálido */
+            --border-color: rgba(247, 243, 239, 0.12); /* Divisiones como hilos de seda, más suaves */
             
+            /* Tonos "blush" o empolvados ultra sutiles para interacciones y placeholders */
+            --accent-warm: #CFA9A1;    /* Un Rosa Empolvado/Arcilla */
+            --accent-hover-bg: #EAE3DE;/* Arena muy clarito para las inversiones de contraste */
+
             --font-main: 'Inter', sans-serif;
+            --font-serif: 'Cormorant Garamond', serif; /* La clave femenina en títulos */
             
-            /* Sistema de ritmo vertical y horizontal milimétrico */
             --space-m: 100px;
             --space-l: 160px;
             --space-xl: 220px;
         }
 
-        /* ================= RESET Y BASE ================= */
-        ::selection { background-color: var(--text-main); color: var(--bg-color); }
+        /* ================= BASE ================= */
+        ::selection { background-color: var(--accent-warm); color: var(--bg-color); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         
@@ -33,361 +37,370 @@
             background-color: var(--bg-color); 
             color: var(--text-main); 
             font-family: var(--font-main); 
-            font-weight: 400;
+            font-weight: 300;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden; 
         }
         
-        a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
+        a { text-decoration: none; color: inherit; transition: opacity 0.4s ease, color 0.4s ease; }
         ul { list-style: none; }
 
-        /* Estructura Maestra */
-        .container { max-width: 90vw; margin: 0 auto; }
+        /* Estructura del layout (Massive Grid) */
+        .container { max-width: 88vw; margin: 0 auto; }
         section { padding: var(--space-m) 0; position: relative; border-bottom: 1px solid var(--border-color);}
 
-        /* ================= TIPOGRAFÍA GIGANTE / BRUTAL ================= */
-        h1, h2, h3, h4 { text-transform: uppercase; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; }
+        /* ================= TYPOGRAPHY & CHIC DETAILS ================= */
+        /* Pesos bajados para elegancia, no "Brutalismo bruto" sino "Fuerza grácil" */
+        h1, h2, h3, h4 { text-transform: uppercase; font-weight: 500; letter-spacing: -0.03em; line-height: 0.95; }
         
-        /* Insignia / Índice identificador estilo[ 01 / WORKS ] */
-        .section-index {
-            font-size: 0.85rem; font-weight: 600; color: var(--text-light);
-            text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 40px; display: block;
+        /* Uso del font femenino y cursivo entremedios para contrastar la rigidez de Arocksworld */
+        .serif-italic {
+            font-family: var(--font-serif);
+            font-style: italic;
+            text-transform: lowercase;
+            font-weight: 400;
+            color: var(--accent-warm); /* Da ese aura blush femenino al título */
+            font-size: 1.15em; 
+            margin-left: -0.05em; 
+            letter-spacing: 0;
         }
 
-        .massive-text { font-size: clamp(3.5rem, 11vw, 12rem); }
-        h2 { font-size: clamp(3rem, 7vw, 6.5rem); margin-bottom: var(--space-s); }
-        h3 { font-size: clamp(1.5rem, 4vw, 3rem); margin-bottom: 5px; }
-        
-        p { color: var(--text-light); font-size: clamp(1.1rem, 1.8vw, 1.3rem); line-height: 1.6; font-weight: 400;}
+        /* Índice / Taxonomía superior sutil */
+        .section-index {
+            font-size: 0.75rem; font-weight: 500; color: var(--text-light);
+            text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 40px; display: block;
+        }
 
-        /* ================= NAVBAR (STICKY LINEAR) ================= */
+        .massive-text { font-size: clamp(3rem, 9.5vw, 11rem); }
+        h2 { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: var(--space-s); }
+        h3 { font-size: clamp(1.4rem, 3.5vw, 2.5rem); margin-bottom: 10px; font-weight: 400; }
+        
+        p { color: var(--text-light); font-size: clamp(1rem, 1.5vw, 1.15rem); line-height: 1.6; font-weight: 300;}
+
+        /* ================= HEADER NAVBAR ================= */
         header { 
             position: fixed; top: 0; width: 100%; z-index: 100;
-            background: rgba(3, 3, 3, 0.9); border-bottom: 1px solid var(--border-color); backdrop-filter: blur(10px);
-            padding: 20px 0;
+            background: rgba(23, 21, 21, 0.85); border-bottom: 1px solid var(--border-color); backdrop-filter: blur(15px);
+            padding: 25px 0;
         }
         .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1rem; font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; }
+        /* Logo romántico y serio a la vez */
+        .logo { font-size: 1.1rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; font-family: var(--font-serif);}
+        .logo i { color: var(--accent-warm); }
         
-        nav ul { display: flex; gap: 40px; }
+        nav ul { display: flex; gap: 50px; }
         nav ul li a { 
-            font-size: 0.8rem; font-weight: 600; text-transform: uppercase; 
-            letter-spacing: 0.05em; color: var(--text-light); transition: color 0.3s;
+            font-size: 0.75rem; font-weight: 500; text-transform: uppercase; 
+            letter-spacing: 0.1em; color: var(--text-light); transition: color 0.4s;
         }
-        nav ul li a:hover { color: var(--text-main); }
+        nav ul li a:hover { color: var(--accent-warm); }
 
-        /* ================= ANIMACIÓN (SCROLL MOTOR) ================= */
+        /* ================= MICROINTERACTION (Suave Seda) ================= */
         .reveal-up {
-            opacity: 0; transform: translateY(80px);
-            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0; transform: translateY(60px);
+            transition: opacity 1.2s cubic-bezier(0.25, 1, 0.25, 1), transform 1.2s cubic-bezier(0.25, 1, 0.25, 1);
             will-change: opacity, transform;
         }
         .reveal-up.is-visible { opacity: 1; transform: translateY(0); }
 
-        /* ================= 00. HERO (INTRO) ================= */
+        /* ================= 00. HERO INTRO ================= */
         .hero { 
             min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
-            padding-top: var(--space-l); /* Espacio superior para header */
+            padding-top: var(--space-l);
         }
-        .hero p.main-desc { max-width: 650px; margin-top: 30px; border-left: 2px solid var(--text-main); padding-left: 20px; }
+        /* Contraste brutal / romántico: Diseño (fuerte) -> estructural (débil curvo) */
+        .hero-title-box { position: relative;}
+        .hero p.main-desc { max-width: 500px; margin-top: 50px; font-size: 1.15rem; line-height: 1.7; padding-left: 20px; border-left: 1px solid var(--accent-warm);}
 
         /* ================= 01. PORTFOLIO ================= */
         .portfolio-list { margin-top: 50px; }
         
         .project-item {
-            display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; cursor: pointer;
-            padding: 50px 0; border-top: 1px solid var(--border-color); transition: background-color 0.4s;
+            display: grid; grid-template-columns: 1.2fr 1.5fr; gap: 60px; cursor: pointer;
+            padding: 60px 0; border-top: 1px solid var(--border-color); transition: padding-left 0.6s cubic-bezier(0.25, 1, 0.25, 1);
         }
 
-        .project-meta { display: flex; flex-direction: column; justify-content: center; padding-right: 5%; }
-        .p-category { font-size: 0.9rem; text-transform: uppercase; color: var(--text-light); font-weight: 500; margin-top: 15px;}
+        .project-meta { display: flex; flex-direction: column; justify-content: center; }
+        .p-category { font-size: 0.8rem; text-transform: uppercase; color: var(--accent-warm); font-weight: 500; letter-spacing: 0.1em; margin-bottom: 10px; font-family: var(--font-main);}
         
+        /* Imágenes de portfolio apasteladas ultra-elegantes */
         .project-img {
-            width: 100%; height: 50vh; background: #1A1A1A; overflow: hidden; position: relative;
-            filter: grayscale(100%); transition: filter 0.5s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 100%; aspect-ratio: 4/3; background: #23201F; overflow: hidden; position: relative;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.25, 1), filter 0.8s;
+            filter: grayscale(40%) sepia(10%); 
         }
         
-        .project-img::after {
-            content: ''; position: absolute; inset: 0; background: var(--text-main);
-            mix-blend-mode: overlay; opacity: 0; transition: opacity 0.5s;
-        }
+        /* En vez de que todo el fondo se vuelva negro fuerte, desplazamos suavemente e iluminamos imagen */
+        .project-item:hover { padding-left: 2%; } 
+        .project-item:hover .project-img { filter: grayscale(0%) sepia(0%); transform: scale(0.97); }
+        .project-item:hover h3 { color: var(--accent-warm); }
 
-        /* Hover de Arquitectura: La imagen toma vida / Fondo del div se oscurece sutilmente */
-        .project-item:hover { background-color: #080808; padding-left: 2%; } /* Deslizamiento tabular on hover */
-        .project-item:hover .project-img { filter: grayscale(0%); transform: scale(0.98); }
-        .project-item:hover .project-img::after { opacity: 0.2; }
-
-        /* placeholders visuales tonales */
-        .p1 .project-img { background: #0E0E0E; }
-        .p2 .project-img { background: #161616; }
-        .p3 .project-img { background: #111111; }
-        .p4 .project-img { background: #0F0F0F; }
+        /* Placeholders de paleta cosmética / lujo oscuro */
+        .p1 .project-img { background: #322524; } /* Granate ceniza oscuro */
+        .p2 .project-img { background: #242825; } /* Verde musgo negro */
+        .p3 .project-img { background: #302C29; } /* Arena oscurecida */
+        .p4 .project-img { background: #222023; } /* Lavanda muy quemada oscuro */
 
         /* ================= 02. CURRÍCULUM (CV) ================= */
-        #cv h2 { margin-bottom: 80px;}
-        
+        #cv h2 { margin-bottom: 70px;}
         .cv-list { display: flex; flex-direction: column; width: 100%; border-top: 1px solid var(--border-color);}
         
         .cv-row {
-            display: grid; grid-template-columns: 0.8fr 2.5fr 3.5fr; 
-            padding: 60px 20px; align-items: start;
-            border-bottom: 1px solid var(--border-color); transition: all 0.3s ease;
+            display: grid; grid-template-columns: 0.8fr 2.5fr 3fr; 
+            padding: 50px 20px; align-items: start;
+            border-bottom: 1px solid var(--border-color); transition: all 0.5s cubic-bezier(0.25, 1, 0.25, 1);
         }
-        /* Color inverso en CV para dar peso dramático on hover */
-        .cv-row:hover { background-color: var(--text-main); color: var(--bg-color); cursor: default; }
-        .cv-row:hover * { color: var(--bg-color); }
         
-        .cv-date span { font-size: 1.1rem; font-weight: 500; display: block; }
-        .cv-company h4 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 10px;}
-        .cv-company span { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); }
-        .cv-desc { max-width: 550px; font-size: 1.15rem; line-height: 1.5; }
+        /* Hover de Inversión Estilo Editorial (En vez de un Blanco agresivo y chillón, es un Beige Papel precioso) */
+        .cv-row:hover { background-color: var(--accent-hover-bg); color: var(--bg-color); cursor: pointer; padding-left: 40px;}
+        .cv-row:hover * { color: var(--bg-color) !important; border-color: var(--bg-color); }
+        .cv-row:hover .serif-italic { color: #8F5B51 !important; } /* Destello Terracota on hover */
+        
+        .cv-date { font-family: var(--font-serif); font-size: 1.3rem; font-style: italic;}
+        .cv-company h4 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 10px; letter-spacing: -0.01em;}
+        .cv-company span { font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-warm); display: block;}
+        .cv-desc { font-size: 1.1rem; line-height: 1.5; color: var(--text-light);}
 
-        /* CTA descargar CV estructurado a la derecha */
+        /* CTA Botón Fino de Descarga */
         .cv-cta { margin-top: 80px; text-align: right; }
         .btn-ghost {
-            font-size: 1.1rem; text-transform: uppercase; font-weight: 800; border: 1px solid var(--text-main);
-            padding: 20px 40px; color: var(--text-main); display: inline-block; transition: all 0.3s;
+            font-size: 0.85rem; text-transform: uppercase; font-weight: 500; letter-spacing: 0.1em;
+            border: 1px solid var(--text-light); border-radius: 50px;
+            padding: 18px 40px; color: var(--text-main); display: inline-block; transition: all 0.4s;
         }
-        .btn-ghost:hover { background-color: var(--text-main); color: var(--bg-color); }
+        .btn-ghost:hover { border-color: var(--accent-warm); background: var(--accent-warm); color: var(--bg-color); }
 
-        /* ================= 03. HABILIDADES ================= */
-        /* Estructuradas como celdas grandes monolíticas (Blocks) */
-        .skills-grid { 
-            display: grid; grid-template-columns: repeat(3, 1fr); 
-            gap: 1px; background: var(--border-color); /* Celdas cortadas a la vista usando 1px background-gap*/
-            border: 1px solid var(--border-color);
-            margin-top: 60px;
+        /* ================= 03. HABILIDADES (SKILLS) ================= */
+        .skills-wrapper { display: grid; grid-template-columns: 4fr 7fr; gap: 80px; padding-top: 30px;}
+        .skills-list-block { width: 100%; border-top: 1px solid var(--border-color); }
+        
+        .skill-item {
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid var(--border-color); padding: 30px 0;
+            transition: border-color 0.4s; cursor: default;
         }
-
-        .skill-column { background-color: var(--bg-color); padding: 50px 30px; transition: background 0.4s;}
-        .skill-column:hover { background-color: #090909;}
         
-        .skill-column h4 { color: var(--text-light); font-size: 1.2rem; margin-bottom: 40px;}
-        .skill-column ul { display: flex; flex-direction: column; gap: 20px; }
-        .skill-column li { font-size: clamp(1.4rem, 2vw, 1.8rem); font-weight: 600; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;}
-        .skill-column li:hover { padding-left: 10px; border-color: var(--text-main); } /* Micro anim listado */
-        .skill-column li {transition: padding 0.3s, border-color 0.3s;}
-
-        /* ================= 04. CONTACTO ================= */
-        /* Link absoluto llenando casi el 100% viewport horizontal */
-        .contact-cta { text-align: center; padding: 100px 0; display:flex; flex-direction: column; align-items:center; }
+        .skill-item h4 { font-size: clamp(1.5rem, 2vw, 2.2rem); text-transform: capitalize; letter-spacing: 0; font-family: var(--font-serif); font-style: italic; }
+        .skill-item span { font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; font-family: var(--font-main);}
+        .skill-item:hover h4 { color: var(--accent-warm); }
+        .skill-item:hover { border-bottom-color: var(--accent-warm); }
         
+        .skill-img-holder { width: 100%; aspect-ratio: 3/4; background: #1B1818; }
+
+        /* ================= 04. CONTACTO Y FOOTER ================= */
+        .contact-cta { text-align: center; padding: 120px 0; display:flex; flex-direction: column; align-items:center; }
+        
+        /* Combinación Brutal & Poética de la enorme tipografía Arocksworld */
         .giant-link {
-            font-size: clamp(4rem, 11vw, 14rem); font-weight: 800; text-transform: uppercase; letter-spacing: -0.05em; line-height: 0.85; 
-            margin-top: 20px; position: relative; text-align: center; overflow: hidden; 
+            font-size: clamp(4rem, 11vw, 13rem); font-weight: 400; text-transform: uppercase; letter-spacing: -0.05em; line-height: 0.85; 
+            margin-top: 20px; position: relative; text-align: center;
         }
         
-        /* Línea masiva de tracking hover de email */
+        /* El subrayado femenino y tenue */
         .giant-link::after {
-            content: ''; position: absolute; left: 0; bottom: 8%; width: 0%; height: 0.6vw;
-            background: var(--text-main); transition: width 0.6s cubic-bezier(0.2, 1, 0.2, 1);
+            content: ''; position: absolute; left: 0; bottom: 10%; width: 0%; height: 2px;
+            background: var(--accent-warm); transition: width 0.7s cubic-bezier(0.25, 1, 0.25, 1);
         }
+        .giant-link:hover { color: var(--text-main); }
+        .giant-link:hover .serif-italic { color: var(--text-main); }
         .giant-link:hover::after { width: 100%; }
 
-        /* Footer Inferior ultra plano adherido al limite*/
         footer { 
             display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color);
-            padding: 30px 0; margin-top: auto; color: var(--text-light); font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 30px 0; color: var(--text-light); font-size: 0.75rem; font-weight: 400; letter-spacing: 0.05em;
         }
 
-        /* ================= RESPONSIVO (TELÉFONOS & TABLETAS) ================= */
+        /* ================= RESPONSIVE ================= */
         @media (max-width: 980px) {
-            .project-item { grid-template-columns: 1fr; gap: 20px; padding: 40px 0;}
-            .cv-row { grid-template-columns: 1fr; gap: 10px; padding: 30px 0; }
-            .cv-date span { color: var(--text-light); margin-bottom: 10px;}
-            .skills-grid { grid-template-columns: 1fr; }
-            .hero p.main-desc { padding-left: 0; border-left: none; }
+            .project-item { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; transition: none;}
+            .cv-row { grid-template-columns: 1fr; gap: 15px; padding: 30px 0; transition: none; }
+            .cv-row:hover { background-color: transparent; color: inherit; padding-left:0; cursor: default; }
+            .cv-row:hover * { color: inherit !important; border-color: var(--border-color); }
+            .cv-row:hover .serif-italic { color: inherit !important; } 
+            
+            .skills-wrapper { grid-template-columns: 1fr; gap: 40px;}
+            .skill-img-holder { display: none; }
             nav ul { display: none; }
-            .section-index { margin-bottom: 20px;}
+            .hero p.main-desc { padding-left: 0; border-left: none;}
+            .giant-link { font-size: clamp(3rem, 12vw, 4.5rem);}
         }
     </style>
 </head>
 <body>
 
-    <!-- MENÚ ALTO NAVBAR FIJA MILIMÉTRICA -->
+    <!-- MENÚ / HEADER FLOTANTE ELEGANTE -->
     <header>
         <div class="nav-content container">
-            <a href="#home" class="logo">Marta // UI</a>
+            <a href="#home" class="logo">M/<i>studio</i></a>
             <nav>
                 <ul>
-                    <li><a href="#portfolio">01. Portfolio</a></li>
-                    <li><a href="#cv">02. CV</a></li>
-                    <li><a href="#habilidades">03. Habilidades</a></li>
-                    <li><a href="#contacto">04. Contacto</a></li>
+                    <li><a href="#portfolio">01 / Trabajos</a></li>
+                    <li><a href="#cv">02 / Trayectoria</a></li>
+                    <li><a href="#habilidades">03 / Capacidad</a></li>
+                    <li><a href="#contacto">04 / Charlemos</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- INTRO TITANICO SIN ADORNOS -->
+    <!-- INTRODUCCIÓN MAJESTUOSA Y MASIVA -->
     <section class="hero" id="home" style="border-bottom:none;">
         <div class="container reveal-up">
-            <h1 class="massive-text">
-                DISEÑO<br> SISTEMÁTICO.
-            </h1>
-            <p class="main-desc">Especializada en layouts agresivos de alta retención de usuarios. Ordenando el caos digital en identidades mínimas, producto interactivo masivo (SaaS) y dirección de arte cruda.</p>
+            <div class="hero-title-box">
+                <!-- Se mezcla fuente estructural gigante y serif cursivo fino -->
+                <h1 class="massive-text">
+                    DISEÑO<br> 
+                    <span class="serif-italic" style="margin-left: 5vw;">sistemático.</span>
+                </h1>
+            </div>
+            <p class="main-desc">Liderando plataformas web operativas mediante la mínima expresión del caos y estéticas delicadas. Producto de experiencia madura con profunda dirección de arte para un nivel sensorial único.</p>
         </div>
     </section>
 
-    <!-- [ 01 ] PORTFOLIO - ORDEN TABULAR 2 COLUMNAS (IMG / META) -->
+    <!--[ 01 ] PORTFOLIO CON TONALIDADES DULCES -->
     <section id="portfolio">
         <div class="container">
-            <span class="section-index reveal-up">[ 01 / Selected Works ]</span>
+            <span class="section-index reveal-up">[ 01 / Proyectos Editados ]</span>
             <h2 class="reveal-up">Obras Creadas.</h2>
             
             <div class="portfolio-list">
-                
+                <!-- Estructura muy seria para dar la relevancia "Awwards" pero con espacios amplios-->
                 <a class="project-item p1 reveal-up" href="#">
                     <div class="project-img"></div>
                     <div class="project-meta">
-                        <h3>Identidad Estática</h3>
-                        <span class="p-category">Dirección Global / BRANDING[2024]</span>
-                        <p style="margin-top: 20px; font-size:1rem;">Redefinición total de arquitectura de marca mediante blancos crudos y composiciones masivas. Sistemas unificados internacionales.</p>
+                        <span class="p-category">Dirección Global / BRANDING [2024]</span>
+                        <h3>Aura Botanical</h3>
+                        <p>Sutileza redefinida y envasado digital. Dirección masiva y conceptual hacia las sombras que dan luz al minimalismo europeo moderno de cosmética botánica.</p>
                     </div>
                 </a>
                 
                 <a class="project-item p2 reveal-up" href="#">
                     <div class="project-img"></div>
                     <div class="project-meta">
-                        <h3>Corp Skincare.</h3>
-                        <span class="p-category">eCOMMERCE DIGITAL PLATFORM [2024]</span>
-                        <p style="margin-top: 20px; font-size:1rem;">Maquetación sin interfaz agresiva para una casa escandinava. Enfoque hiper-minimalista hacia el rendimiento de ventas (CR).</p>
+                        <span class="p-category">ECOMMERCE INTERFACE [2023]</span>
+                        <h3>Studio Casa</h3>
+                        <p>Un hogar nórdico digital plasmado sobre lienzo web. Rendimiento e interfaz construida sobre silencios tipográficos con enfoque directo y puro de interacción del producto hacia conversión en masa.</p>
                     </div>
                 </a>
 
                 <a class="project-item p3 reveal-up" href="#">
                     <div class="project-img"></div>
                     <div class="project-meta">
-                        <h3>Estudio Silencio</h3>
-                        <span class="p-category">WEBGL / INTERACTIVE STUDIO[2023]</span>
-                        <p style="margin-top: 20px; font-size:1rem;">Espacio portafolio virtual enfocado a agencias de moda de élite en base a grids brutalistas con WebGL e interpolación Gsap.</p>
+                        <span class="p-category">WEBGL / INTERACCIÓN [2023]</span>
+                        <h3>Espacios Vistos</h3>
+                        <p>Interpolación Web y maquetación algorítmica paramétrica. Desglosando una muestra y exhibición artística de museo sobre componentes WebGl extremadamente dinámicos para firmas de élite y su público visual.</p>
                     </div>
                 </a>
-
-                <a class="project-item p4 reveal-up" href="#">
-                    <div class="project-img"></div>
-                    <div class="project-meta">
-                        <h3>Logistics AI Grid</h3>
-                        <span class="p-category">PRODUCT APP DASHBOARD (UX/UI) [2022]</span>
-                        <p style="margin-top: 20px; font-size:1rem;">Interfaz gráfica (Dashboard B2B) y lógica de escalamiento de variables UI masivas, diseñada en auto-layout paramétrico 100% estructurado en Figma.</p>
-                    </div>
-                </a>
-                
             </div>
         </div>
     </section>
 
-    <!--[ 02 ] EXPERIENCIA (CV) EN BASE DE TABLA RIGIDA TIPO PROGRAMACIÓN-->
+    <!--[ 02 ] CV: CONVERSIÓN POÉTICA EN LA TABLA AL HACER HOVER -->
     <section id="cv">
         <div class="container reveal-up">
-            <span class="section-index">[ 02 / Track Record ]</span>
+            <span class="section-index">[ 02 / Experiencia Acumulada ]</span>
             <h2>Currículum.</h2>
             
             <div class="cv-list">
+                <!-- CV: Al tocar se invertirá con un aura pálida arena bellisima en lugar de agredir al ojo -->
                 <div class="cv-row">
-                    <div class="cv-date"><span>2023 — Actual</span></div>
+                    <div class="cv-date">Actualidad</div>
                     <div class="cv-company">
-                        <h4>Agencia Matriz</h4>
-                        <span>Product Design Leader — Madrid, ES</span>
+                        <h4>Estudio Base</h4>
+                        <span>Product / Design Lead — Madrid</span>
                     </div>
-                    <div class="cv-desc"><p>Directora general a nivel interfaz gráfica con despliegue B2C/B2B y auditoría del stack completo. Manejo jerárquico del área conceptual hacia cliente de grandes agencias bancarias.</p></div>
+                    <div class="cv-desc"><p>Directora UX orquestando un abanico íntegro entre UI systems rígidos e investigación profunda hacia <span class="serif-italic">e-commerce global</span> de un grupo perfumista suizo.</p></div>
                 </div>
 
                 <div class="cv-row">
-                    <div class="cv-date"><span>2021 — 2023</span></div>
+                    <div class="cv-date">2021 — 2023</div>
                     <div class="cv-company">
-                        <h4>Muro Estudio</h4>
-                        <span>Visual / UX Designer — Barcelona, ES</span>
+                        <h4>Studio Noir.</h4>
+                        <span>Especialista Visual UI / Frontend UX</span>
                     </div>
-                    <div class="cv-desc"><p>Responsable absoluta de maquetas de E-commerce top ventas operando el FrontEnd técnico UX con desarrolladores (Aumento CR). Diseño Web y Modelado.</p></div>
+                    <div class="cv-desc"><p>Fascinante trayectoria digital. Construcción íntegra en iteraciones sin tregua del comportamiento conversor de sitios comerciales B2B y sus paneles. Gestión HTML básica para maquetar lógicas sin límites con desarrolladores Frontends del taller central y bases en París, Fr.</p></div>
                 </div>
 
                 <div class="cv-row">
-                    <div class="cv-date"><span>2019 — 2021</span></div>
+                    <div class="cv-date">2019 — 2021</div>
                     <div class="cv-company">
-                        <h4>Máster Interactivo</h4>
-                        <span>ESCUELA ELISAVA — Formación Oficial</span>
+                        <h4>M/Digital Interactivo</h4>
+                        <span>ESCUELA SUPERIOR DE DISEÑO MÁSTER UCM</span>
                     </div>
-                    <div class="cv-desc"><p>Programa de master universitario altamente competitivo especializado en sistemas, microinteracciones y comportamiento de lógica algorítmica y su correlación en pantalla y branding contemporáneo.</p></div>
+                    <div class="cv-desc"><p>Prototipado a latencia mínima del marco universitario UX en la lógica, las ciencias visuales del cliente post moderno. Elaboraciones metódicas en comportamientos abstractos e identidades tangibles en el arte editorial post pandemia del grado impartido en diseño generalista inicial en el que baso mis raícez minimalistas visuales.</p></div>
                 </div>
             </div>
 
             <div class="cv-cta reveal-up">
-                <a href="#" class="btn-ghost">Desplegar Currículum Técnico (.PDF) &rarr;</a>
+                <!-- Un pastilla con bordes ovales, la tendencia moderna digital -->
+                <a href="#" class="btn-ghost">Revisar Hoja Formativa <i>(PDF)</i> &rarr;</a>
             </div>
         </div>
     </section>
 
-    <!-- [ 03 ] HABILIDADES EN MONOLITOS DIVIDIDOS CON GRID IMPLACABLE -->
+    <!-- [ 03 ] HABILIDADES COMO CARTA DE MENÚ DE GALA -->
     <section id="habilidades">
         <div class="container reveal-up">
-            <span class="section-index">[ 03 / Stack Tecnico ]</span>
-            <h2>Capacidades.</h2>
+            <span class="section-index">[ 03 / Conjunto Técnico ]</span>
+            <h2>Artesanía.</h2>
             
-            <div class="skills-grid">
-                
-                <div class="skill-column">
-                    <h4>Módulos Core — Figma</h4>
-                    <ul>
-                        <li>Variables / Tokens</li>
-                        <li>Prototipos Avanzados</li>
-                        <li>Gestor Librería / Ágil</li>
-                        <li>Design Systems UI</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-column">
-                    <h4>Artesano — Audiovisual</h4>
-                    <ul>
-                        <li>Adobe Creative Cloud</li>
-                        <li>Cinematic & Layouting</li>
-                        <li>Concept de Marca / IP</li>
-                        <li>Reducción y Orden</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-column">
-                    <h4>Despliegue — Tecnico</h4>
-                    <ul>
-                        <li>Lenguaje Frontend / HTML</li>
-                        <li>Estilo Lógico / GSAP (css)</li>
-                        <li>Auditoria de Velocidad (UX)</li>
-                        <li>Control Git y Control.</li>
-                    </ul>
-                </div>
+            <!-- Abandonamos la tabla dura cuadrada para una rejilla tipo revista (Texto contra un recuadro sombrío gigante) -->
+            <div class="skills-wrapper">
+                <div class="skill-img-holder"></div>
+                <div class="skills-list-block">
+                    
+                    <div class="skill-item">
+                        <h4>UI Systems Architect</h4>
+                        <span>Core (Figma / Web)</span>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <h4>Concepto Interactivo</h4>
+                        <span>Interacción Lógica, HTML/Css básico</span>
+                    </div>
 
+                    <div class="skill-item">
+                        <h4>Identidad & Letras</h4>
+                        <span>Composición Typography Avanzada Editorial C4D Ilustrativa Audiovisual Art Dir</span>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <h4>Rigor Organizativo</h4>
+                        <span>Sprint Agile (Ing / Es / Fr) Gestión Líder. Tiempos Reduccionismos Absolutismos Agregación conceptual, y Gestión Operacional B2C general del espectro macro micro interacional final de un usuario</span>
+                    </div>
+
+                </div>
             </div>
+            
         </div>
     </section>
 
-    <!-- [ 04 ] CONTACTO (MEGA FOOTER SIN CONTORNO Y GIGANTE) -->
+    <!-- [ 04 ] MEGA PIE DE CONTACTO ROMÁNTICO PERO GIGANTESCO -->
     <section id="contacto" style="border-bottom:none;">
         <div class="container reveal-up">
             <div class="contact-cta">
-                <span class="section-index">[ 04 / Send an Index File ]</span>
-                <a href="mailto:hola@mstudio.es" class="giant-link">HOLA@MSTUDIO</a>
+                <span class="section-index">[ 04 / Oportunidad Mutua ]</span>
+                <a href="mailto:hablemos@mstudio.com" class="giant-link">HABLEMOS <span class="serif-italic">contigo.</span></a>
             </div>
             
             <footer>
-                <div>M/UI DESIGN ® MADRID 2026. ALL RIGHTS INTELLECTUALLY RESERVED.</div>
-                <div>SCROLL STATE SECURED / LOCAL SERVER.</div>
+                <div>MARTA DISEÑO M/STUDIO ® 2026. ESPAÑA, TRABAJO GLOBAL Y EN REMOTO PARA AMANTES DEL REFINAMIENTO. TODOS LOS DERECHOS QUEDAN LEGALMENTE Y ESTILÍSTICAMENTE RESERVADOS. CREADO, CODIFICADO PARA PANTALLA EXIGENTE Y ALTO DETALLE EN ESCALADOS RESOLUCIONADOS DIGITALES. PROUDLY DEVELOPED AS INTELLECTUAL ARTEFACT. LOCAL ESTADO DEL ARTE CONECTIVIDADES</div>
             </footer>
         </div>
     </section>
 
-    <!-- JS PARA MOTORES SIMPLES DE "FADE-IN ARCHITECTURAL" CUBIC -->
+    <!-- MOTORES JAVASCRIPT ANIMACIONAL (Suaves) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const reveals = document.querySelectorAll('.reveal-up');
             
-            const revealOptions = { root: null, rootMargin: "0px", threshold: 0.1 };
+            // Usando thresholds amables
+            const revealOptions = { root: null, rootMargin: "0px", threshold: 0.15 };
             
             const revealCallback = (entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        // Optionalmente dejamos que observe siempre si deseas efecto repetición 
-                        // pero dejaremos de observar una vez salte el effect (brutal minimal):
                         observer.unobserve(entry.target); 
                     }
                 });
