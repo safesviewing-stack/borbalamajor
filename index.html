@@ -132,8 +132,12 @@ main{
   flex-grow: 1;
 }
 
-section{display:none}
-section.active{display:block}
+section {
+  display: block;
+}
+section:not(.active) {
+  display: none;
+}
 
 .container{
   width:90%;
