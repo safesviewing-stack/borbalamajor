@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M/STUDIO | Editorial Dark Minimal</title>
+    <title>M/STUDIO | Fine Architectural Portfolio</title>
     
-    <!-- Mezcla magistral: Inter (Estructura minimalista) + Cormorant Garamond (Curvas y elegancia Serif) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Uso de pesos desde ultralight (200) para ese toque "fino/editorial", hasta el 600 para jerarquías técnicas -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* ================= VARIABLES (ALTA COSTURA / DARK FEMININE) ================= */
+        /* ================= VARIABLES (EDITORIAL PASTEL / FINE ART) ================= */
         :root {
-            --bg-color: #171515;       /* Negro/Marrón profundísimo, menos técnico, más cálido */
-            --text-main: #F7F3EF;      /* Blanco Perla suave (Hueso) */
-            --text-light: #A59B98;     /* Gris pardo (Taupe) cálido */
-            --border-color: rgba(247, 243, 239, 0.12); /* Divisiones como hilos de seda, más suaves */
+            --bg-color: #FDFDFB;       /* Blanco lino / roto ultracálido */
+            --bg-solid: #FFFFFF;       /* Blanco puro para contrastes finos */
+            --text-main: #2C2B2A;      /* Off-black muy cálido, casi marrón carbón */
+            --text-light: #8E8B88;     /* Gris empolvado para metadata */
+            --border-color: #E6E4E0;   /* Líneas finísimas arena/piedra */
             
-            /* Tonos "blush" o empolvados ultra sutiles para interacciones y placeholders */
-            --accent-warm: #CFA9A1;    /* Un Rosa Empolvado/Arcilla */
-            --accent-hover-bg: #EAE3DE;/* Arena muy clarito para las inversiones de contraste */
+            /* Tonos Pastel Empolvados para Micro-interacciones */
+            --pastel-rose: #F6EFEF;
+            --pastel-sage: #EDF1EE;
+            --pastel-sand: #F4EFEB;
+            --pastel-blue: #EFF3F5;
 
             --font-main: 'Inter', sans-serif;
-            --font-serif: 'Cormorant Garamond', serif; /* La clave femenina en títulos */
             
+            /* Ritmo matemático constante */
             --space-m: 100px;
             --space-l: 160px;
             --space-xl: 220px;
         }
 
-        /* ================= BASE ================= */
-        ::selection { background-color: var(--accent-warm); color: var(--bg-color); }
+        /* ================= RESET ================= */
+        ::selection { background-color: var(--text-main); color: var(--bg-color); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         
@@ -37,364 +40,354 @@
             background-color: var(--bg-color); 
             color: var(--text-main); 
             font-family: var(--font-main); 
-            font-weight: 300;
+            font-weight: 400;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden; 
         }
         
-        a { text-decoration: none; color: inherit; transition: opacity 0.4s ease, color 0.4s ease; }
+        a { text-decoration: none; color: inherit; transition: all 0.4s ease; }
         ul { list-style: none; }
 
-        /* Estructura del layout (Massive Grid) */
-        .container { max-width: 88vw; margin: 0 auto; }
+        .container { max-width: 90vw; margin: 0 auto; }
         section { padding: var(--space-m) 0; position: relative; border-bottom: 1px solid var(--border-color);}
 
-        /* ================= TYPOGRAPHY & CHIC DETAILS ================= */
-        /* Pesos bajados para elegancia, no "Brutalismo bruto" sino "Fuerza grácil" */
-        h1, h2, h3, h4 { text-transform: uppercase; font-weight: 500; letter-spacing: -0.03em; line-height: 0.95; }
+        /* ================= TIPOGRAFÍA GIGANTE / FINA ================= */
+        /* Para dar el "Toque fino", cambiamos el 'bold' agresivo por un peso light gigantesco */
+        h1, h2, h3, h4 { text-transform: uppercase; font-weight: 300; letter-spacing: -0.05em; line-height: 0.9; }
         
-        /* Uso del font femenino y cursivo entremedios para contrastar la rigidez de Arocksworld */
-        .serif-italic {
-            font-family: var(--font-serif);
-            font-style: italic;
-            text-transform: lowercase;
-            font-weight: 400;
-            color: var(--accent-warm); /* Da ese aura blush femenino al título */
-            font-size: 1.15em; 
-            margin-left: -0.05em; 
-            letter-spacing: 0;
-        }
-
-        /* Índice / Taxonomía superior sutil */
         .section-index {
-            font-size: 0.75rem; font-weight: 500; color: var(--text-light);
-            text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 40px; display: block;
+            font-size: 0.75rem; font-weight: 600; color: var(--text-light);
+            text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 40px; display: block;
         }
 
-        .massive-text { font-size: clamp(3rem, 9.5vw, 11rem); }
-        h2 { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: var(--space-s); }
-        h3 { font-size: clamp(1.4rem, 3.5vw, 2.5rem); margin-bottom: 10px; font-weight: 400; }
+        .massive-text { font-size: clamp(4rem, 11vw, 13rem); font-weight: 200; letter-spacing: -0.06em; color: var(--text-main);}
+        h2 { font-size: clamp(3rem, 7vw, 6rem); margin-bottom: var(--space-s); }
+        h3 { font-size: clamp(1.8rem, 4vw, 3.5rem); margin-bottom: 10px; font-weight: 300;}
         
-        p { color: var(--text-light); font-size: clamp(1rem, 1.5vw, 1.15rem); line-height: 1.6; font-weight: 300;}
+        p { color: var(--text-light); font-size: clamp(1.1rem, 1.8vw, 1.3rem); line-height: 1.6; font-weight: 300;}
 
-        /* ================= HEADER NAVBAR ================= */
+        /* ================= NAVBAR (VIDRIO PASTEL) ================= */
         header { 
             position: fixed; top: 0; width: 100%; z-index: 100;
-            background: rgba(23, 21, 21, 0.85); border-bottom: 1px solid var(--border-color); backdrop-filter: blur(15px);
+            background: rgba(253, 253, 251, 0.85); border-bottom: 1px solid var(--border-color); backdrop-filter: blur(12px);
             padding: 25px 0;
         }
         .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        /* Logo romántico y serio a la vez */
-        .logo { font-size: 1.1rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; font-family: var(--font-serif);}
-        .logo i { color: var(--accent-warm); }
+        .logo { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
         
-        nav ul { display: flex; gap: 50px; }
+        nav ul { display: flex; gap: 40px; }
         nav ul li a { 
             font-size: 0.75rem; font-weight: 500; text-transform: uppercase; 
-            letter-spacing: 0.1em; color: var(--text-light); transition: color 0.4s;
+            letter-spacing: 0.1em; color: var(--text-light);
         }
-        nav ul li a:hover { color: var(--accent-warm); }
+        nav ul li a:hover { color: var(--text-main); }
 
-        /* ================= MICROINTERACTION (Suave Seda) ================= */
+        /* ================= ANIMACIÓN GSAP-LIKE ================= */
         .reveal-up {
             opacity: 0; transform: translateY(60px);
-            transition: opacity 1.2s cubic-bezier(0.25, 1, 0.25, 1), transform 1.2s cubic-bezier(0.25, 1, 0.25, 1);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
         .reveal-up.is-visible { opacity: 1; transform: translateY(0); }
 
-        /* ================= 00. HERO INTRO ================= */
+        /* ================= 00. HERO (INTRO FINO) ================= */
         .hero { 
             min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
-            padding-top: var(--space-l);
         }
-        /* Contraste brutal / romántico: Diseño (fuerte) -> estructural (débil curvo) */
-        .hero-title-box { position: relative;}
-        .hero p.main-desc { max-width: 500px; margin-top: 50px; font-size: 1.15rem; line-height: 1.7; padding-left: 20px; border-left: 1px solid var(--accent-warm);}
+        .hero p.main-desc { max-width: 600px; margin-top: 40px; border-left: 1px solid var(--text-light); padding-left: 30px; }
 
         /* ================= 01. PORTFOLIO ================= */
         .portfolio-list { margin-top: 50px; }
         
         .project-item {
             display: grid; grid-template-columns: 1.2fr 1.5fr; gap: 60px; cursor: pointer;
-            padding: 60px 0; border-top: 1px solid var(--border-color); transition: padding-left 0.6s cubic-bezier(0.25, 1, 0.25, 1);
+            padding: 60px 2%; border-top: 1px solid var(--border-color); transition: background-color 0.6s ease;
         }
 
-        .project-meta { display: flex; flex-direction: column; justify-content: center; }
-        .p-category { font-size: 0.8rem; text-transform: uppercase; color: var(--accent-warm); font-weight: 500; letter-spacing: 0.1em; margin-bottom: 10px; font-family: var(--font-main);}
+        .project-meta { display: flex; flex-direction: column; justify-content: center; padding-right: 5%; }
+        .p-category { font-size: 0.8rem; text-transform: uppercase; color: var(--text-light); font-weight: 600; margin-top: 20px; letter-spacing: 0.05em;}
         
-        /* Imágenes de portfolio apasteladas ultra-elegantes */
+        /* Imágenes que actúan como "Telas/Lienzos" pasteles en lugar de negro crudo */
         .project-img {
-            width: 100%; aspect-ratio: 4/3; background: #23201F; overflow: hidden; position: relative;
-            transition: transform 0.8s cubic-bezier(0.25, 1, 0.25, 1), filter 0.8s;
-            filter: grayscale(40%) sepia(10%); 
+            width: 100%; height: 50vh; overflow: hidden; position: relative;
+            transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.6s ease;
         }
-        
-        /* En vez de que todo el fondo se vuelva negro fuerte, desplazamos suavemente e iluminamos imagen */
-        .project-item:hover { padding-left: 2%; } 
-        .project-item:hover .project-img { filter: grayscale(0%) sepia(0%); transform: scale(0.97); }
-        .project-item:hover h3 { color: var(--accent-warm); }
 
-        /* Placeholders de paleta cosmética / lujo oscuro */
-        .p1 .project-img { background: #322524; } /* Granate ceniza oscuro */
-        .p2 .project-img { background: #242825; } /* Verde musgo negro */
-        .p3 .project-img { background: #302C29; } /* Arena oscurecida */
-        .p4 .project-img { background: #222023; } /* Lavanda muy quemada oscuro */
+        /* Tonalidades de diseño en placeholders de los proyectos */
+        .p1 .project-img { background: var(--pastel-sand); }
+        .p2 .project-img { background: var(--pastel-rose); }
+        .p3 .project-img { background: var(--pastel-sage); }
+        .p4 .project-img { background: var(--pastel-blue); }
 
-        /* ================= 02. CURRÍCULUM (CV) ================= */
-        #cv h2 { margin-bottom: 70px;}
+        /* HOVER DE LUZ Y SUAVIDAD: No oscuro y rudo, sino iluminado e íntimo */
+        .project-item:hover { background-color: var(--bg-solid); padding-left: 4%; } 
+        .project-item:hover .project-img { transform: scale(0.97); border-radius: 4px; } /* Una delicada deformación física */
+
+        /* ================= 02. CURRÍCULUM (CV FINO) ================= */
+        #cv h2 { margin-bottom: 80px;}
         .cv-list { display: flex; flex-direction: column; width: 100%; border-top: 1px solid var(--border-color);}
         
         .cv-row {
-            display: grid; grid-template-columns: 0.8fr 2.5fr 3fr; 
-            padding: 50px 20px; align-items: start;
-            border-bottom: 1px solid var(--border-color); transition: all 0.5s cubic-bezier(0.25, 1, 0.25, 1);
+            display: grid; grid-template-columns: 0.8fr 2.5fr 3.5fr; 
+            padding: 50px 3%; align-items: start;
+            border-bottom: 1px solid var(--border-color); transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
-        /* Hover de Inversión Estilo Editorial (En vez de un Blanco agresivo y chillón, es un Beige Papel precioso) */
-        .cv-row:hover { background-color: var(--accent-hover-bg); color: var(--bg-color); cursor: pointer; padding-left: 40px;}
-        .cv-row:hover * { color: var(--bg-color) !important; border-color: var(--bg-color); }
-        .cv-row:hover .serif-italic { color: #8F5B51 !important; } /* Destello Terracota on hover */
+        /* HOVER EXQUISITO: Las filas no se vuelven blanco nuclear con negro. Cambian a un rubor rose. */
+        .cv-row:hover { background-color: var(--pastel-rose); padding-left: 5%; cursor: crosshair;}
         
-        .cv-date { font-family: var(--font-serif); font-size: 1.3rem; font-style: italic;}
-        .cv-company h4 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 10px; letter-spacing: -0.01em;}
-        .cv-company span { font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-warm); display: block;}
-        .cv-desc { font-size: 1.1rem; line-height: 1.5; color: var(--text-light);}
+        .cv-date span { font-size: 1rem; font-weight: 400; display: block; color: var(--text-light);}
+        .cv-company h4 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 12px; font-weight: 300;}
+        .cv-company span { font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-main); }
+        .cv-desc { max-width: 500px; font-size: 1.1rem; line-height: 1.7; font-weight: 300;}
 
-        /* CTA Botón Fino de Descarga */
         .cv-cta { margin-top: 80px; text-align: right; }
         .btn-ghost {
-            font-size: 0.85rem; text-transform: uppercase; font-weight: 500; letter-spacing: 0.1em;
-            border: 1px solid var(--text-light); border-radius: 50px;
-            padding: 18px 40px; color: var(--text-main); display: inline-block; transition: all 0.4s;
+            font-size: 0.8rem; text-transform: uppercase; font-weight: 500; letter-spacing: 0.1em;
+            border: 1px solid var(--text-light); padding: 18px 45px; border-radius: 100px; /* Pillow redondeado chic */
+            color: var(--text-main); display: inline-block; transition: all 0.4s;
         }
-        .btn-ghost:hover { border-color: var(--accent-warm); background: var(--accent-warm); color: var(--bg-color); }
+        .btn-ghost:hover { background-color: var(--text-main); color: var(--bg-solid); border-color: var(--text-main);}
 
-        /* ================= 03. HABILIDADES (SKILLS) ================= */
-        .skills-wrapper { display: grid; grid-template-columns: 4fr 7fr; gap: 80px; padding-top: 30px;}
-        .skills-list-block { width: 100%; border-top: 1px solid var(--border-color); }
-        
-        .skill-item {
-            display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid var(--border-color); padding: 30px 0;
-            transition: border-color 0.4s; cursor: default;
+        /* ================= 03. HABILIDADES (FILTRAN PASTEL ON HOVER) ================= */
+        .skills-grid { 
+            display: grid; grid-template-columns: repeat(3, 1fr); 
+            gap: 1px; background: var(--border-color); /* Grid afilada delimitadora 1px */
+            border: 1px solid var(--border-color); margin-top: 60px;
         }
-        
-        .skill-item h4 { font-size: clamp(1.5rem, 2vw, 2.2rem); text-transform: capitalize; letter-spacing: 0; font-family: var(--font-serif); font-style: italic; }
-        .skill-item span { font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; font-family: var(--font-main);}
-        .skill-item:hover h4 { color: var(--accent-warm); }
-        .skill-item:hover { border-bottom-color: var(--accent-warm); }
-        
-        .skill-img-holder { width: 100%; aspect-ratio: 3/4; background: #1B1818; }
 
-        /* ================= 04. CONTACTO Y FOOTER ================= */
-        .contact-cta { text-align: center; padding: 120px 0; display:flex; flex-direction: column; align-items:center; }
+        .skill-column { background-color: var(--bg-solid); padding: 60px 40px; transition: background 0.6s ease;}
         
-        /* Combinación Brutal & Poética de la enorme tipografía Arocksworld */
+        /* Cada monolitio de habilidad desvela una paleta fina en base AWWWARDS interaction */
+        .skill-column:nth-child(1):hover { background-color: var(--pastel-sand); }
+        .skill-column:nth-child(2):hover { background-color: var(--pastel-sage); }
+        .skill-column:nth-child(3):hover { background-color: var(--pastel-blue); }
+        
+        .skill-column h4 { color: var(--text-light); font-size: 1rem; margin-bottom: 40px; font-weight: 400; letter-spacing: 0.05em;}
+        .skill-column ul { display: flex; flex-direction: column; gap: 0; }
+        .skill-column li { 
+            font-size: clamp(1.2rem, 1.8vw, 1.6rem); font-weight: 300; 
+            border-bottom: 1px solid var(--border-color); padding: 20px 0; transition: all 0.4s;
+        }
+        .skill-column li:hover { padding-left: 15px; border-color: var(--text-main); color: var(--text-main);} 
+
+        /* ================= 04. CONTACTO / EMAIL MASSIVE LIGHT ================= */
+        .contact-cta { text-align: center; padding: 120px 0 60px; display:flex; flex-direction: column; align-items:center; }
+        
         .giant-link {
-            font-size: clamp(4rem, 11vw, 13rem); font-weight: 400; text-transform: uppercase; letter-spacing: -0.05em; line-height: 0.85; 
-            margin-top: 20px; position: relative; text-align: center;
+            font-size: clamp(3rem, 10vw, 12rem); font-weight: 200; text-transform: uppercase; 
+            letter-spacing: -0.06em; line-height: 0.8; margin-top: 40px; position: relative; text-align: center; color: var(--text-main);
         }
         
-        /* El subrayado femenino y tenue */
+        /* El Subrayado dinámico fino como hilo */
         .giant-link::after {
-            content: ''; position: absolute; left: 0; bottom: 10%; width: 0%; height: 2px;
-            background: var(--accent-warm); transition: width 0.7s cubic-bezier(0.25, 1, 0.25, 1);
+            content: ''; position: absolute; left: 0; bottom: 5%; width: 0%; height: 2px;
+            background: var(--text-main); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .giant-link:hover { color: var(--text-main); }
-        .giant-link:hover .serif-italic { color: var(--text-main); }
         .giant-link:hover::after { width: 100%; }
+        .giant-link:hover { opacity: 0.7;}
 
+        /* Footer ligero inferior */
         footer { 
             display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color);
-            padding: 30px 0; color: var(--text-light); font-size: 0.75rem; font-weight: 400; letter-spacing: 0.05em;
+            padding: 30px 0; margin-top: auto; color: var(--text-light); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em;
         }
 
-        /* ================= RESPONSIVE ================= */
+        /* ================= MEDIA QUERIES RESPONSIVE ================= */
         @media (max-width: 980px) {
-            .project-item { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; transition: none;}
-            .cv-row { grid-template-columns: 1fr; gap: 15px; padding: 30px 0; transition: none; }
-            .cv-row:hover { background-color: transparent; color: inherit; padding-left:0; cursor: default; }
-            .cv-row:hover * { color: inherit !important; border-color: var(--border-color); }
-            .cv-row:hover .serif-italic { color: inherit !important; } 
-            
-            .skills-wrapper { grid-template-columns: 1fr; gap: 40px;}
-            .skill-img-holder { display: none; }
+            .project-item { grid-template-columns: 1fr; gap: 30px; padding: 40px 0;}
+            .project-item:hover { padding-left: 0;}
+            .cv-row { grid-template-columns: 1fr; gap: 15px; padding: 30px 0; }
+            .cv-row:hover { padding-left: 2%; }
+            .cv-date span { color: var(--text-light); margin-bottom: 10px;}
+            .skills-grid { grid-template-columns: 1fr; border-top: 1px solid var(--border-color);}
+            .hero p.main-desc { padding-left: 0; border-left: none; }
             nav ul { display: none; }
-            .hero p.main-desc { padding-left: 0; border-left: none;}
-            .giant-link { font-size: clamp(3rem, 12vw, 4.5rem);}
         }
     </style>
 </head>
 <body>
 
-    <!-- MENÚ / HEADER FLOTANTE ELEGANTE -->
+    <!-- NAVBAR TÁCTICA -->
     <header>
         <div class="nav-content container">
-            <a href="#home" class="logo">M/<i>studio</i></a>
+            <a href="#home" class="logo">Marta // Editor</a>
             <nav>
                 <ul>
-                    <li><a href="#portfolio">01 / Trabajos</a></li>
-                    <li><a href="#cv">02 / Trayectoria</a></li>
-                    <li><a href="#habilidades">03 / Capacidad</a></li>
-                    <li><a href="#contacto">04 / Charlemos</a></li>
+                    <li><a href="#portfolio">01. Obras</a></li>
+                    <li><a href="#cv">02. Registro</a></li>
+                    <li><a href="#habilidades">03. Stack</a></li>
+                    <li><a href="#contacto">04. Info</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- INTRODUCCIÓN MAJESTUOSA Y MASIVA -->
+    <!-- INTRODUCCIÓN EDITORIAL LIGERA (WEIGHT:200) -->
     <section class="hero" id="home" style="border-bottom:none;">
         <div class="container reveal-up">
-            <div class="hero-title-box">
-                <!-- Se mezcla fuente estructural gigante y serif cursivo fino -->
-                <h1 class="massive-text">
-                    DISEÑO<br> 
-                    <span class="serif-italic" style="margin-left: 5vw;">sistemático.</span>
-                </h1>
-            </div>
-            <p class="main-desc">Liderando plataformas web operativas mediante la mínima expresión del caos y estéticas delicadas. Producto de experiencia madura con profunda dirección de arte para un nivel sensorial único.</p>
+            <!-- La font-weight a 200 le da el carácter High-End Art Direction -->
+            <h1 class="massive-text">
+                BELLEZA<br> ORDENADA.
+            </h1>
+            <p class="main-desc">Especializada en layouts meticulosos, amplios respiros en el lienzo y un absoluto cuidado tipográfico. Doy forma al espacio vacío equilibrando sistemas escalables de alta tecnología con aire, papel digital e interfaces orgánicas.</p>
         </div>
     </section>
 
-    <!--[ 01 ] PORTFOLIO CON TONALIDADES DULCES -->
+    <!-- [ 01 ] PORTFOLIO EN FONDOS PASTELES DINÁMICOS -->
     <section id="portfolio">
         <div class="container">
-            <span class="section-index reveal-up">[ 01 / Proyectos Editados ]</span>
-            <h2 class="reveal-up">Obras Creadas.</h2>
+            <span class="section-index reveal-up">[ 01 / Curation Index ]</span>
+            <h2 class="reveal-up">Archivo Visual.</h2>
             
             <div class="portfolio-list">
-                <!-- Estructura muy seria para dar la relevancia "Awwards" pero con espacios amplios-->
+                <!-- Cuando hagas hover a este `.project-item`, notará el paso suave de luz del background  -->
                 <a class="project-item p1 reveal-up" href="#">
                     <div class="project-img"></div>
                     <div class="project-meta">
-                        <span class="p-category">Dirección Global / BRANDING [2024]</span>
-                        <h3>Aura Botanical</h3>
-                        <p>Sutileza redefinida y envasado digital. Dirección masiva y conceptual hacia las sombras que dan luz al minimalismo europeo moderno de cosmética botánica.</p>
+                        <h3>Materia Orgánica</h3>
+                        <span class="p-category">Dirección Global / BRANDING[ 24 ]</span>
+                        <p style="margin-top: 20px;">Redefinición total de arquitectura visual mediante tonos algodón y finísimos balances gráficos. Identidades tangibles y silenciosas.</p>
                     </div>
                 </a>
                 
                 <a class="project-item p2 reveal-up" href="#">
                     <div class="project-img"></div>
                     <div class="project-meta">
-                        <span class="p-category">ECOMMERCE INTERFACE [2023]</span>
-                        <h3>Studio Casa</h3>
-                        <p>Un hogar nórdico digital plasmado sobre lienzo web. Rendimiento e interfaz construida sobre silencios tipográficos con enfoque directo y puro de interacción del producto hacia conversión en masa.</p>
+                        <h3>Botánica Cph.</h3>
+                        <span class="p-category">eCOMMERCE / PACKAGING DIGITAL[ 24 ]</span>
+                        <p style="margin-top: 20px;">Plataforma D2C para cuidado del rostro; navegación flotante basada en aire positivo, tonos té e interfaz purificada y carente de ruido comercial.</p>
                     </div>
                 </a>
 
                 <a class="project-item p3 reveal-up" href="#">
                     <div class="project-img"></div>
                     <div class="project-meta">
-                        <span class="p-category">WEBGL / INTERACCIÓN [2023]</span>
-                        <h3>Espacios Vistos</h3>
-                        <p>Interpolación Web y maquetación algorítmica paramétrica. Desglosando una muestra y exhibición artística de museo sobre componentes WebGl extremadamente dinámicos para firmas de élite y su público visual.</p>
+                        <h3>La Forma Racional</h3>
+                        <span class="p-category">EDITORIAL LAYOUT & GSAP WEB [ 23 ]</span>
+                        <p style="margin-top: 20px;">El vacío interpretado a través de transiciones hiper-lentas. Creación e-book integral estructurado bajo métrica tipográfica tradicional adaptada.</p>
                     </div>
                 </a>
+
+                <a class="project-item p4 reveal-up" href="#">
+                    <div class="project-img"></div>
+                    <div class="project-meta">
+                        <h3>Velludo Sistemas</h3>
+                        <span class="p-category">SYSTEM APP B2B (UX/UI)[ 22 ]</span>
+                        <p style="margin-top: 20px;">Un Dashboard convertido en objeto agradable de manejar con jerarquías suavizadas a través de un design system sin sombras duras en Figma UI.</p>
+                    </div>
+                </a>
+                
             </div>
         </div>
     </section>
 
-    <!--[ 02 ] CV: CONVERSIÓN POÉTICA EN LA TABLA AL HACER HOVER -->
+    <!--[ 02 ] CV TABULAR CON RESPUESTA COLOR ROSA CÁLIDA Y SUAVIDAD EN BORDERS -->
     <section id="cv">
         <div class="container reveal-up">
-            <span class="section-index">[ 02 / Experiencia Acumulada ]</span>
-            <h2>Currículum.</h2>
+            <span class="section-index">[ 02 / Professional Timeline ]</span>
+            <h2>Desempeño.</h2>
             
             <div class="cv-list">
-                <!-- CV: Al tocar se invertirá con un aura pálida arena bellisima en lugar de agredir al ojo -->
+                
                 <div class="cv-row">
-                    <div class="cv-date">Actualidad</div>
+                    <div class="cv-date"><span>2023 — ACTUALIDAD</span></div>
                     <div class="cv-company">
-                        <h4>Estudio Base</h4>
-                        <span>Product / Design Lead — Madrid</span>
+                        <h4>La Compañía Matriz.</h4>
+                        <span>PRODUCT DESIGN DIRECTOR</span>
                     </div>
-                    <div class="cv-desc"><p>Directora UX orquestando un abanico íntegro entre UI systems rígidos e investigación profunda hacia <span class="serif-italic">e-commerce global</span> de un grupo perfumista suizo.</p></div>
+                    <div class="cv-desc"><p>Operando bajo el liderazgo integral creativo en las principales sedes corporativas de BCN-Madrid enfocando la dirección a sistemas sostenibles.</p></div>
                 </div>
 
                 <div class="cv-row">
-                    <div class="cv-date">2021 — 2023</div>
+                    <div class="cv-date"><span>2021 — 2023</span></div>
                     <div class="cv-company">
-                        <h4>Studio Noir.</h4>
-                        <span>Especialista Visual UI / Frontend UX</span>
+                        <h4>Cálida Studio BCN</h4>
+                        <span>CREATIVE DIGITAL LEAD</span>
                     </div>
-                    <div class="cv-desc"><p>Fascinante trayectoria digital. Construcción íntegra en iteraciones sin tregua del comportamiento conversor de sitios comerciales B2B y sus paneles. Gestión HTML básica para maquetar lógicas sin límites con desarrolladores Frontends del taller central y bases en París, Fr.</p></div>
+                    <div class="cv-desc"><p>Confección milimétrica al píxel sobre experiencias puras y webapps responsivas apoyadas visualmente en tipografías exclusivas internacionales.</p></div>
                 </div>
 
                 <div class="cv-row">
-                    <div class="cv-date">2019 — 2021</div>
+                    <div class="cv-date"><span>2019 — 2021</span></div>
                     <div class="cv-company">
-                        <h4>M/Digital Interactivo</h4>
-                        <span>ESCUELA SUPERIOR DE DISEÑO MÁSTER UCM</span>
+                        <h4>M.A Graphic System</h4>
+                        <span>ESCUELA ELISAVA SUPERIOR</span>
                     </div>
-                    <div class="cv-desc"><p>Prototipado a latencia mínima del marco universitario UX en la lógica, las ciencias visuales del cliente post moderno. Elaboraciones metódicas en comportamientos abstractos e identidades tangibles en el arte editorial post pandemia del grado impartido en diseño generalista inicial en el que baso mis raícez minimalistas visuales.</p></div>
+                    <div class="cv-desc"><p>Morfología experimental e investigación doctoral orientada al human computer interface design en entornos puramente contemplativos o artísticos.</p></div>
                 </div>
             </div>
 
+            <!-- Boton Ghost Finamente Bordeado -->
             <div class="cv-cta reveal-up">
-                <!-- Un pastilla con bordes ovales, la tendencia moderna digital -->
-                <a href="#" class="btn-ghost">Revisar Hoja Formativa <i>(PDF)</i> &rarr;</a>
+                <a href="#" class="btn-ghost">Lectura Pdf Integral Documental &rarr;</a>
             </div>
         </div>
     </section>
 
-    <!-- [ 03 ] HABILIDADES COMO CARTA DE MENÚ DE GALA -->
+    <!--[ 03 ] HABILIDADES COMO TRES COLUMNAS MUDABLES / CADA UNO ADQUIERE UN COLOR DIFERENTE -->
     <section id="habilidades">
         <div class="container reveal-up">
-            <span class="section-index">[ 03 / Conjunto Técnico ]</span>
-            <h2>Artesanía.</h2>
+            <span class="section-index">[ 03 / Capability Stack ]</span>
+            <h2>Disciplina.</h2>
             
-            <!-- Abandonamos la tabla dura cuadrada para una rejilla tipo revista (Texto contra un recuadro sombrío gigante) -->
-            <div class="skills-wrapper">
-                <div class="skill-img-holder"></div>
-                <div class="skills-list-block">
-                    
-                    <div class="skill-item">
-                        <h4>UI Systems Architect</h4>
-                        <span>Core (Figma / Web)</span>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <h4>Concepto Interactivo</h4>
-                        <span>Interacción Lógica, HTML/Css básico</span>
-                    </div>
-
-                    <div class="skill-item">
-                        <h4>Identidad & Letras</h4>
-                        <span>Composición Typography Avanzada Editorial C4D Ilustrativa Audiovisual Art Dir</span>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <h4>Rigor Organizativo</h4>
-                        <span>Sprint Agile (Ing / Es / Fr) Gestión Líder. Tiempos Reduccionismos Absolutismos Agregación conceptual, y Gestión Operacional B2C general del espectro macro micro interacional final de un usuario</span>
-                    </div>
-
+            <div class="skills-grid">
+                
+                <!-- On hover revela tonos arenas, moca y verde hoja. -->
+                <div class="skill-column">
+                    <h4>Sistema [ Estructural ]</h4>
+                    <ul>
+                        <li>Variables Táctiles</li>
+                        <li>Escala y Prototipos</li>
+                        <li>Cuaderno y Notion Agile</li>
+                        <li>Cromatismo UX</li>
+                    </ul>
                 </div>
+                
+                <div class="skill-column">
+                    <h4>Superficie [ Estética ]</h4>
+                    <ul>
+                        <li>Tipografía Clásica (OTF)</li>
+                        <li>Ilustración Fina Muted</li>
+                        <li>Tratamiento de Luz y Piel</li>
+                        <li>Limpieza Documental</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-column">
+                    <h4>Trasfondo [ Base Técnica ]</h4>
+                    <ul>
+                        <li>Soporte Inglés (Bilingual)</li>
+                        <li>Comunicación Inter Front-End</li>
+                        <li>Arquitectura React.Js Limit</li>
+                        <li>Sencillez Algorítmica</li>
+                    </ul>
+                </div>
+
             </div>
-            
         </div>
     </section>
 
-    <!-- [ 04 ] MEGA PIE DE CONTACTO ROMÁNTICO PERO GIGANTESCO -->
+    <!-- [ 04 ] CORDENADAS Y COMUNICACIONES -->
     <section id="contacto" style="border-bottom:none;">
         <div class="container reveal-up">
             <div class="contact-cta">
-                <span class="section-index">[ 04 / Oportunidad Mutua ]</span>
-                <a href="mailto:hablemos@mstudio.com" class="giant-link">HABLEMOS <span class="serif-italic">contigo.</span></a>
+                <span class="section-index">[ 04 / Communication Line ]</span>
+                <a href="mailto:fine@mstudio.com" class="giant-link">CONVERSEMOS</a>
             </div>
             
             <footer>
-                <div>MARTA DISEÑO M/STUDIO ® 2026. ESPAÑA, TRABAJO GLOBAL Y EN REMOTO PARA AMANTES DEL REFINAMIENTO. TODOS LOS DERECHOS QUEDAN LEGALMENTE Y ESTILÍSTICAMENTE RESERVADOS. CREADO, CODIFICADO PARA PANTALLA EXIGENTE Y ALTO DETALLE EN ESCALADOS RESOLUCIONADOS DIGITALES. PROUDLY DEVELOPED AS INTELLECTUAL ARTEFACT. LOCAL ESTADO DEL ARTE CONECTIVIDADES</div>
+                <div>M / STUDIO EDITORIAL VISIONS ® — TODOS LOS DERECHOS PERTINENTES LOCALIZADOS 2026.</div>
+                <div>RENDERED IN CALM MINDFULNESS ENVIRONMENT.</div>
             </footer>
         </div>
     </section>
 
-    <!-- MOTORES JAVASCRIPT ANIMACIONAL (Suaves) -->
+    <!-- LÓGICA OBSERVADOR LENTA Y POÉTICA (A 1.2S DE FLOTACIÓN SUAVE) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const reveals = document.querySelectorAll('.reveal-up');
             
-            // Usando thresholds amables
             const revealOptions = { root: null, rootMargin: "0px", threshold: 0.15 };
             
             const revealCallback = (entries, observer) => {
