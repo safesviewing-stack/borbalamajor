@@ -3,343 +3,453 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Nombre | Portfolio & CV</title>
-    <!-- Tipografías elegantes de Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Portfolio | Diseño Contemporáneo</title>
+    <!-- Uso estricto de la fuente INTER para un acabado UI/Modernista limpio -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         /* ================= VARIABLES ================= */
         :root {
-            --bg-color: #FAF9F8;
-            --text-color: #2F2E2C;
-            --text-muted: #6C6B67;
-            --accent-rose: #E6D8D6;
-            --accent-sage: #D4DDDB;
-            --accent-beige: #EADFD3;
-            --accent-lavender: #DFDEEA;
+            --bg-color: #FAFAFA; /* Un blanco técnico purísimo y amable */
+            --text-main: #1C1C1C;
+            --text-light: #7E7E7E;
+            --border-color: #E2E2E2;
+
+            /* Tonos pastel ultra suaves para proyectos/interacciones */
+            --rose: #F2EBEA;
+            --sage: #E8EDE9;
+            --beige: #F1EBE6;
+            --lavender: #EDEDF5;
+            --lightblue: #E5EFF2;
             
-            --font-serif: 'Cormorant Garamond', serif;
-            --font-sans: 'DM Sans', sans-serif;
+            --font-main: 'Inter', sans-serif;
+            
+            /* Generosos espaciados modernos */
+            --space-xs: 20px;
+            --space-s: 40px;
+            --space-m: 80px;
+            --space-l: 140px;
+            --space-xl: 200px;
         }
 
         /* ================= BASE ================= */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; font-size: 16px; }
-        body { background-color: var(--bg-color); color: var(--text-color); font-family: var(--font-sans); overflow-x: hidden; line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            font-family: var(--font-main); 
+            font-weight: 300;
+            line-height: 1.5; 
+            overflow-x: hidden; 
+        }
+        
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+        a:hover { opacity: 0.6; }
         ul { list-style: none; }
-        
-        /* Contenedores y Estructura */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-        section { padding: 120px 0; }
-        
-        h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 500; letter-spacing: -0.02em; }
-        p { font-weight: 300; color: var(--text-color); font-size: 1.1rem; }
 
-        /* ================= ANIMACIONES ================= */
-        /* Aparición progresiva al hacer Scroll (Controlado por JS) */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+        
+        /* Uso radical del espacio blanco entre bloques */
+        section { padding: var(--space-xl) 0; }
+
+        /* Tipografía Moderna: tracking negativo en los títulos (letter-spacing: -0.03em) */
+        h1, h2, h3, h4, h5 { font-weight: 400; letter-spacing: -0.04em; line-height: 1.1; }
+        h1 { font-size: clamp(3rem, 6vw, 5.5rem); margin-bottom: var(--space-s); }
+        h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: var(--space-l); }
+        h3 { font-size: 1.4rem; font-weight: 500; }
+        p { color: var(--text-light); font-size: 1.1rem; line-height: 1.7; }
+
+        /* ================= HEADER (NAVBAR) ================= */
+        header { 
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            padding: var(--space-s) 0; background: rgba(250,250,250,0.85); backdrop-filter: blur(12px); 
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+        .logo { font-size: 1.2rem; font-weight: 500; letter-spacing: -0.02em; }
+        nav ul { display: flex; gap: var(--space-s); font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        /* ================= MICROINTERACCIONES ================= */
+        .reveal-up {
+            opacity: 0; transform: translateY(50px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
-        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+        .reveal-up.is-visible { opacity: 1; transform: translateY(0); }
 
-        /* ================= NAVBAR ================= */
-        header { position: fixed; top: 0; width: 100%; padding: 25px 0; z-index: 100; backdrop-filter: blur(8px); background: rgba(250, 249, 248, 0.85); border-bottom: 1px solid rgba(0,0,0,0.03); transition: all 0.3s; }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-        .logo { font-family: var(--font-serif); font-size: 1.5rem; letter-spacing: 0.05em; }
-        nav ul { display: flex; gap: 40px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; }
-        nav a { position: relative; padding-bottom: 5px; }
-        nav a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 1px; background-color: var(--text-color); transition: width 0.3s ease; }
-        nav a:hover::after { width: 100%; }
+        /* ================= HERO (INICIO) ================= */
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0; }
+        .hero-text { max-width: 850px; }
+        .hero p.subtitle { font-size: 1.4rem; font-weight: 300; max-width: 600px; margin-bottom: var(--space-m); color: var(--text-main); }
+        .hero-line { height: 1px; width: 0%; background: var(--text-main); animation: drawLine 2s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.5s; }
+        @keyframes drawLine { to { width: 100%; } }
 
-        /* ================= HERO (HOME) ================= */
-        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; }
-        .hero-content { text-align: center; max-width: 800px; z-index: 2; }
-        .hero h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; }
-        .hero h1 span { color: var(--text-muted); font-style: italic; }
-        .hero p { font-size: 1.3rem; margin-bottom: 40px; color: var(--text-muted); }
-        /* Detalle orgánico animado de fondo */
-        .organic-shape {
-            position: absolute; width: 45vw; height: 45vw;
-            background: radial-gradient(circle, var(--accent-rose) 0%, rgba(230,216,214,0) 70%);
-            border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.3; z-index: 0;
-            animation: pulseShape 8s ease-in-out infinite alternate; filter: blur(40px);
+        /* ================= PORTFOLIO (GRID ASIMÉTRICO 7 PROYECTOS) ================= */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: var(--space-l) var(--space-xs);
         }
-        @keyframes pulseShape { 0% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; } 100% { transform: translate(-50%, -45%) scale(1.1); opacity: 0.5; } }
+        
+        .project-item { display: flex; flex-direction: column; gap: 20px; cursor: pointer; group; }
+        .project-img {
+            width: 100%; position: relative; overflow: hidden;
+            aspect-ratio: 4/5;
+        }
+        .project-img .bg-color { 
+            position: absolute; width: 100%; height: 100%; top:0; left:0; 
+            transition: transform 0.6s cubic-bezier(0.2, 1, 0.2, 1);
+        }
+        
+        /* Simulación imágenes vacías en tonos sutiles */
+        .p1 .bg-color { background-color: var(--sage); }
+        .p2 .bg-color { background-color: var(--rose); aspect-ratio: 1/1; }
+        .p3 .bg-color { background-color: var(--beige); aspect-ratio: 16/9; }
+        .p4 .bg-color { background-color: var(--lavender); aspect-ratio: 4/5; }
+        .p5 .bg-color { background-color: var(--lightblue); }
+        .p6 .bg-color { background-color: var(--text-main); }
+        .p7 .bg-color { background-color: var(--border-color); }
 
-        /* ================= BOTONES ================= */
+        /* Zoom interior muy delicado en imagen al hacer hover */
+        .project-item:hover .bg-color { transform: scale(1.05); }
+
+        .project-info h3 { transition: color 0.3s ease; margin-bottom: 5px; }
+        .project-info span { font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; font-weight: 500; letter-spacing: 0.05em; }
+
+        /* Distribución visual de los 7 proyectos para máxima modernidad */
+        .p1 { grid-column: 1 / 7; }
+        .p2 { grid-column: 8 / 13; margin-top: 20%;} /* Desalineado hacia abajo */
+        .p3 { grid-column: 2 / 12; } /* Proyecto ancho enorme horizontal */
+        .p4 { grid-column: 1 / 5; }
+        .p5 { grid-column: 6 / 12; margin-top: 15%;}
+        .p6 { grid-column: 2 / 8; }
+        .p7 { grid-column: 9 / 13; margin-top: -10%; } /* Juega con el ritmo */
+
+        /* ================= ACERCA DE MÍ ================= */
+        .about-grid { display: grid; grid-template-columns: 5fr 7fr; gap: var(--space-m); align-items: start; border-top: 1px solid var(--border-color); padding-top: var(--space-m);}
+        .about-text h2 { margin-bottom: var(--space-s); }
+        .about-text p { font-size: 1.3rem; margin-bottom: 30px; }
+        .bio-image { width: 100%; aspect-ratio: 3/4; background: var(--rose); object-fit: cover;}
+
+        /* ================= HABILIDADES (SKILLS) ================= */
+        .skills-section {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-s);
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: var(--space-m);
+        }
+        .skills-grid h4 { color: rgba(255,255,255,0.6); margin-bottom: var(--space-xs); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;}
+        .skill-list li { margin-bottom: 12px; font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;}
+
+        /* ================= CURRÍCULUM ESTRUCTURADO ================= */
+        .cv-list { display: flex; flex-direction: column; width: 100%; }
+        
+        /* Sistema de "tablas / filas" para un CV muy prolijo */
+        .cv-row {
+            display: grid;
+            grid-template-columns: 1fr 2.5fr 3.5fr; /* 3 Columnas */
+            padding: var(--space-s) 0;
+            border-top: 1px solid var(--border-color);
+            transition: background 0.4s ease;
+        }
+        .cv-row:hover { background-color: var(--rose); } /* Efecto cálido femenino sobre fila */
+        
+        .cv-row-header { padding: 0 20px; }
+        .cv-row-header span { display: block; font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; margin-bottom: 5px; font-weight: 500;}
+        .cv-row-header h4 { font-size: 1.2rem; font-weight: 500; color: var(--text-main); }
+        .cv-company { font-size: 1.1rem; color: var(--text-main); }
+        .cv-desc { font-size: 1rem; }
+
+        .section-header { margin-bottom: var(--space-m); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); font-weight: 600;}
+
+        /* Botones / Enlaces CTA */
         .btn {
-            display: inline-block; padding: 14px 36px; border: 1px solid var(--text-color);
-            background: transparent; color: var(--text-color); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;
-            border-radius: 30px; transition: all 0.4s ease; cursor: pointer; position: relative; overflow: hidden; z-index: 1;
+            display: inline-flex; align-items: center; justify-content: center;
+            margin-top: var(--space-m);
+            padding: 16px 32px;
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500;
+            border-radius: 4px; /* Un radio bajo se siente más serio y digital */
+            transition: all 0.3s;
+            cursor: pointer;
         }
-        .btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--text-color); transition: left 0.4s ease; z-index: -1; }
-        .btn:hover { color: var(--bg-color); border-color: transparent; }
-        .btn:hover::before { left: 0; }
+        .btn:hover { background-color: var(--text-light); opacity: 1; }
 
-        /* ================= PORTFOLIO ================= */
-        .section-title { font-size: 2.8rem; margin-bottom: 60px; text-align: center; }
-        .grid-portfolio { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px 40px; }
+        /* ================= FOOTER / CONTACTO ================= */
+        .footer-cta { display: flex; flex-direction: column; align-items: center; text-align: center; border-top: 1px solid var(--border-color); padding-top: var(--space-l); }
+        .footer-cta h2 { margin-bottom: var(--space-s); }
+        .massive-link {
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 400; letter-spacing: -0.05em;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--text-main);
+            line-height: 1; margin-bottom: var(--space-xl);
+            padding-bottom: 10px;
+        }
+        .massive-link:hover { color: #8F9D9B; border-color: #8F9D9B; opacity: 1; } /* Un hover en tono salvia visual */
         
-        .project-card { cursor: pointer; }
-        .project-image-wrapper { width: 100%; overflow: hidden; background-color: var(--accent-sage); aspect-ratio: 4/5; border-radius: 4px; position: relative; }
-        /* Placeholder coloreado para simular tu trabajo */
-        .img-1 { background-color: var(--accent-rose); }
-        .img-2 { background-color: var(--accent-sage); }
-        .img-3 { background-color: var(--accent-lavender); }
-        .img-4 { background-color: var(--accent-beige); }
+        footer { font-size: 0.85rem; color: var(--text-light); text-align: left; padding: 20px 0; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between;}
 
-        .project-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; opacity: 0;}
-        .project-card:hover .project-image-wrapper { box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: box-shadow 0.5s ease; }
-        .project-card:hover img, .project-card:hover .placeholder-color { transform: scale(1.04); }
-        .placeholder-color { width: 100%; height: 100%; transition: transform 0.8s ease; }
-
-        .project-info { margin-top: 25px; display: flex; justify-content: space-between; align-items: baseline; }
-        .project-info h3 { font-size: 1.5rem; font-family: var(--font-serif); }
-        .project-info span { font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.05em; }
-
-        /* ================= CURRÍCULUM (CV) ================= */
-        .cv-wrapper { background: white; padding: 80px 60px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.02); margin-top: 40px; }
-        .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 50px; }
-        .cv-block h4 { font-family: var(--font-sans); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 30px; color: var(--text-muted); padding-bottom: 10px; border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .cv-item { margin-bottom: 25px; }
-        .cv-item .year { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 5px; display: block; }
-        .cv-item h5 { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 5px; }
-        .cv-item p { font-size: 0.95rem; line-height: 1.5; color: #555;}
-        
-        .skills-languages { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .skills-list { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-tag { padding: 8px 16px; border-radius: 20px; border: 1px solid #EADFD3; font-size: 0.85rem; }
-        
-        .cv-action { text-align: center; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 30px;}
-
-        /* ================= ABOUT ================= */
-        .about-grid { display: grid; grid-template-columns: 4fr 5fr; gap: 80px; align-items: center; }
-        .about-image { aspect-ratio: 3/4; background: var(--accent-beige); border-radius: 8px; border-radius: 200px 200px 8px 8px; /* Detalle de forma orgánica en la foto */ position: relative; overflow: hidden; }
-        .about-text h2 { font-size: 2.8rem; margin-bottom: 30px; }
-        .about-text p { margin-bottom: 20px; font-size: 1.1rem; color: #555; }
-        .signature { font-family: var(--font-serif); font-style: italic; font-size: 2rem; margin-top: 30px; color: var(--text-muted); }
-
-        /* ================= CONTACTO & FOOTER ================= */
-        .contact { background-color: var(--text-color); color: var(--bg-color); text-align: center; }
-        .contact h2 { font-size: 3rem; color: var(--bg-color); margin-bottom: 20px;}
-        .contact p { color: #A4A3A1; margin-bottom: 50px; font-size: 1.2rem;}
-        .email-link { font-family: var(--font-serif); font-size: 3vw; border-bottom: 1px solid rgba(255,255,255,0.3); transition: border-color 0.4s; display: inline-block; padding-bottom: 10px; margin-bottom: 80px; }
-        .email-link:hover { border-color: white; }
-        
-        footer { font-size: 0.85rem; color: #6C6B67; text-transform: uppercase; letter-spacing: 0.1em; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px;}
-
-        /* ================= RESPONSIVE ================= */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-            .grid-portfolio { grid-template-columns: 1fr; }
-            .cv-grid { grid-template-columns: 1fr; }
-            .skills-languages { grid-template-columns: 1fr; }
+        /* ================= MEDIA QUERIES (RESPONSIVO) ================= */
+        @media (max-width: 900px) {
+            .portfolio-grid { grid-template-columns: 1fr; gap: var(--space-s); }
+            .project-item[class*="p"] { grid-column: 1 / -1; margin-top: 0; }
             .about-grid { grid-template-columns: 1fr; }
-            .about-image { border-radius: 12px; max-width: 400px; margin: 0 auto; }
-            nav ul { display: none; } /* En un desarrollo completo iría un menú hamburguesa */
+            .skills-grid { grid-template-columns: 1fr; }
+            .cv-row { grid-template-columns: 1fr; gap: 15px; padding: 25px 0;}
+            nav ul { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navegación -->
+    <!-- NAV -->
     <header>
         <div class="nav-content">
-            <div class="logo">m. studio</div>
+            <div class="logo">M/STUDIO</div>
             <nav>
                 <ul>
                     <li><a href="#work">Proyectos</a></li>
-                    <li><a href="#cv">Currículum</a></li>
-                    <li><a href="#about">Sobre Mí</a></li>
+                    <li><a href="#about">Acerca</a></li>
+                    <li><a href="#cv">Experiencia</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Intro (Home) -->
-    <section class="hero" id="home">
-        <div class="organic-shape"></div>
-        <div class="hero-content fade-in-up">
-            <h1>Diseño visual <span>con</span><br>calma y sensibilidad.</h1>
-            <p>Identidades corporativas, producto digital y dirección de arte.<br>Forma, función y emoción trabajando en armonía.</p>
-            <a href="#work" class="btn">Ver Proyectos</a>
+    <!-- HERO INTRO -->
+    <section class="hero container reveal-up" id="home">
+        <div class="hero-text">
+            <h1>Creatividad ordenada. Diseño para marcas atemporales.</h1>
+            <p class="subtitle">Especializada en identidades mínimas, producto digital y dirección de arte. Feminidad con una profunda atención a la cuadrícula y el detalle conceptual.</p>
         </div>
+        <div class="hero-line"></div>
     </section>
 
-    <!-- Portfolio -->
+    <!-- PORTFOLIO -->
     <section id="work" class="container">
-        <h2 class="section-title fade-in-up">Obra & Proyectos</h2>
-        <div class="grid-portfolio">
+        <h2 class="reveal-up">Obras Selectas <span style="color:var(--text-light);"> (7)</span></h2>
+        
+        <div class="portfolio-grid">
+            <!-- P1 -->
+            <a href="#" class="project-item p1 reveal-up">
+                <div class="project-img"><div class="bg-color"></div></div>
+                <div class="project-info">
+                    <h3>Identidad Ética</h3>
+                    <span>Branding Visual — 2025</span>
+                </div>
+            </a>
             
-            <div class="project-card fade-in-up">
-                <div class="project-image-wrapper img-1">
-                    <div class="placeholder-color"></div>
-                </div>
+            <!-- P2 -->
+            <a href="#" class="project-item p2 reveal-up">
+                <div class="project-img"><div class="bg-color"></div></div>
                 <div class="project-info">
-                    <h3>Identidad Botánica</h3>
-                    <span>Branding / 2025</span>
+                    <h3>Skincare Co.</h3>
+                    <span>Dirección de Arte & Pack</span>
                 </div>
-            </div>
+            </a>
 
-            <div class="project-card fade-in-up" style="margin-top: 40px;">
-                <div class="project-image-wrapper img-2">
-                    <div class="placeholder-color"></div>
-                </div>
+            <!-- P3 -->
+            <a href="#" class="project-item p3 reveal-up">
+                <div class="project-img"><div class="bg-color"></div></div>
                 <div class="project-info">
-                    <h3>App Bienestar</h3>
-                    <span>UI / UX Design</span>
+                    <h3>Arquitectura y Silencio</h3>
+                    <span>Diseño Editorial</span>
                 </div>
-            </div>
+            </a>
 
-            <div class="project-card fade-in-up">
-                <div class="project-image-wrapper img-3">
-                    <div class="placeholder-color"></div>
-                </div>
+            <!-- P4 -->
+            <a href="#" class="project-item p4 reveal-up">
+                <div class="project-img"><div class="bg-color"></div></div>
                 <div class="project-info">
-                    <h3>Revista Nórdica</h3>
-                    <span>Editorial</span>
+                    <h3>Loom Web</h3>
+                    <span>UI / UX & Interacción</span>
                 </div>
-            </div>
+            </a>
 
-            <div class="project-card fade-in-up" style="margin-top: 40px;">
-                <div class="project-image-wrapper img-4">
-                    <div class="placeholder-color"></div>
-                </div>
+            <!-- P5 -->
+            <a href="#" class="project-item p5 reveal-up">
+                <div class="project-img"><div class="bg-color"></div></div>
                 <div class="project-info">
-                    <h3>Luz e Interiores</h3>
-                    <span>Dirección de Arte</span>
+                    <h3>Wellness App</h3>
+                    <span>Product Design (App móvil)</span>
                 </div>
-            </div>
+            </a>
 
+            <!-- P6 -->
+            <a href="#" class="project-item p6 reveal-up">
+                <div class="project-img"><div class="bg-color"></div></div>
+                <div class="project-info">
+                    <h3>Exposición Niza</h3>
+                    <span>Tipografía e Identidad de exhibición</span>
+                </div>
+            </a>
+
+            <!-- P7 -->
+            <a href="#" class="project-item p7 reveal-up">
+                <div class="project-img"><div class="bg-color"></div></div>
+                <div class="project-info">
+                    <h3>Auras Místicas</h3>
+                    <span>Modelado 3D e Ilustración Digital</span>
+                </div>
+            </a>
         </div>
     </section>
 
-    <!-- Sobre Mí -->
+    <!-- ACERCA DE MI -->
     <section id="about" class="container">
-        <div class="about-grid fade-in-up">
-            <div class="about-image">
-                <!-- <img src="ruta/a/tu/foto-retrato.jpg" alt="Foto diseñadora"> -->
+        <div class="about-grid reveal-up">
+            <div class="bio-image">
+                <!-- <img src="..." alt="Fotografía"> -->
             </div>
             <div class="about-text">
-                <h2>El proceso como <br>herramienta principal.</h2>
-                <p>Hola, soy Marta, diseñadora con enfoque en lo mínimo y esencial. Mi propósito es crear proyectos que sean atemporales, equilibrando estrategias conceptuales rigurosas con acabados limpios y llenos de aire.</p>
-                <p>Abrazo lo sensible. Me inspiro en la naturaleza muerta, el silencio, el arte moderno, y creo firmemente que la sencillez resuelve la mayoría de ruidos en la comunicación visual y el mundo que nos rodea.</p>
-                <div class="signature">Marta M.</div>
+                <h2>Diseñar quitando ruido.</h2>
+                <p>Hola, soy Marta, diseñadora afincada entre la pantalla de figma y los papeles finos texturizados. Entiendo el diseño contemporáneo como la capacidad matemática de crear emociones estructuradas.</p>
+                <p>Uso el blanco no como vacío, sino como la principal forma del mensaje, equilibrándolo de manera delicada con tonalidades lavanda, cálidos algodones o grises carbón.</p>
             </div>
         </div>
     </section>
 
-    <!-- CV Section -->
-    <section id="cv" class="container" style="padding-top: 40px;">
-        <h2 class="section-title fade-in-up">Trayectoria</h2>
-        <div class="cv-wrapper fade-in-up">
-            
-            <div class="cv-grid">
-                <!-- Columna Experiencia -->
-                <div class="cv-block">
-                    <h4>Experiencia Profesional</h4>
-                    <div class="cv-item">
-                        <span class="year">2023 - Presente</span>
-                        <h5>Senior UI/UX Designer</h5>
-                        <p>Studio Caleidoscopio • Madrid. Liderazgo visual en proyectos corporativos, creación de Design Systems y dirección de arte digital.</p>
-                    </div>
-                    <div class="cv-item">
-                        <span class="year">2020 - 2023</span>
-                        <h5>Graphic & Brand Designer</h5>
-                        <p>Agencia Prisma • Barcelona. Especialista en branding orgánico para sectores de moda ética, gastronomía y cosmética limpia.</p>
-                    </div>
-                    <div class="cv-item">
-                        <span class="year">2018 - 2020</span>
-                        <h5>Diseñadora Junior</h5>
-                        <p>Atelier Neutro • Estudio independiente participando en maquetación editorial e identidad visual gráfica.</p>
-                    </div>
-                </div>
-
-                <!-- Columna Formación -->
-                <div class="cv-block">
-                    <h4>Formación Académica</h4>
-                    <div class="cv-item">
-                        <span class="year">2019 - 2020</span>
-                        <h5>Máster Universitario en Diseño Estratégico</h5>
-                        <p>IED Barcelona. Metodologías ágiles, investigación del usuario (UX) e identidad verbal.</p>
-                    </div>
-                    <div class="cv-item">
-                        <span class="year">2014 - 2018</span>
-                        <h5>Grado Superior en Diseño Gráfico</h5>
-                        <p>ESADA, Andalucía. Graduada con Matrícula de Honor. Especialidad interdisciplinar en tipografía.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Columna Habilidades (Ocupa ambas por grid, o separado internamente) -->
-            <div class="skills-languages cv-block" style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 30px;">
+    <!-- SECCIÓN HABILIDADES (CONTRASTE VISUAL NEGRO/CLARO) -->
+    <section id="skills" class="skills-section">
+        <div class="container reveal-up">
+            <h2>Habilidades Técnicas.</h2>
+            <div class="skills-grid">
                 <div>
-                    <h4>Habilidades Técnicas</h4>
-                    <div class="skills-list">
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Adobe Creative Suite</span>
-                        <span class="skill-tag">Tipografía</span>
-                        <span class="skill-tag">Prototipado Interactivo</span>
-                        <span class="skill-tag">Fotografía & Styling</span>
-                        <span class="skill-tag">Wireframing</span>
-                    </div>
+                    <h4>Herramientas Base</h4>
+                    <ul class="skill-list">
+                        <li>Figma Advanced</li>
+                        <li>Adobe Creative Cloud</li>
+                        <li>Notion & Gestión Agil</li>
+                        <li>Spline / C4D básico</li>
+                    </ul>
                 </div>
                 <div>
-                    <h4>Idiomas</h4>
-                    <div class="skills-list">
-                        <span class="skill-tag">Español (Nativo)</span>
-                        <span class="skill-tag">Inglés (Bilingüe - C1)</span>
-                        <span class="skill-tag">Francés (Avanzado)</span>
-                    </div>
+                    <h4>Capacidades Creativas</h4>
+                    <ul class="skill-list">
+                        <li>Sistemas de Diseño (UI/UX)</li>
+                        <li>Prototipado en Alta Fidelidad</li>
+                        <li>Maquetación Editorial Avanzada</li>
+                        <li>Branding Conceptual</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Lenguaje y Gestión</h4>
+                    <ul class="skill-list">
+                        <li>Castellano, Inglés & Francés</li>
+                        <li>Desarrollo Concepto Cliente</li>
+                        <li>Bases de desarrollo (HTML/CSS)</li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="cv-action">
-                <a href="CV-Diseñadora.pdf" target="_blank" class="btn">Descargar CV en PDF</a>
-            </div>
-            
         </div>
     </section>
 
-    <!-- Contacto / Footer -->
-    <section id="contact" class="contact">
-        <div class="container fade-in-up">
-            <h2>Creemos algo delicado e <br>inteligente juntos.</h2>
-            <p>Actualmente aceptando proyectos de cliente final y colaboraciones freelance.</p>
-            <a href="mailto:hola@mustudio.com" class="email-link">hola@mustudio.com</a>
+    <!-- CURRÍCULUM ACADÉMICO / PROFESIONAL -->
+    <section id="cv" class="container reveal-up">
+        <h2>Recorrido.</h2>
+        
+        <!-- UNIVERSIDADES -->
+        <div class="section-header">01 — Formación Académica</div>
+        <div class="cv-list">
             
-            <footer>
-                <div class="footer-bottom">
-                    &copy; 2026 M. Studio Design. Creado con intención, estética y espacio vital.
+            <div class="cv-row">
+                <div class="cv-row-header">
+                    <span>2021 — 2022</span>
+                    <h4>Máster Universitario</h4>
                 </div>
-            </footer>
+                <div class="cv-company">Escuela ELISAVA — Barcelona</div>
+                <div class="cv-desc"><p>Máster de especialización profesional en Diseño Digital y Experiencia de Usuario (UI/UX). Prototipado, investigación y lógica interaccional.</p></div>
+            </div>
+
+            <div class="cv-row">
+                <div class="cv-row-header">
+                    <span>2017 — 2021</span>
+                    <h4>Grado de Diseño</h4>
+                </div>
+                <div class="cv-company">Universidad Complutense (UCM)</div>
+                <div class="cv-desc"><p>Graduada en Diseño Gráfico integral. Construcción de marcas, desarrollo tipográfico y gráfica audiovisual publicitaria. </p></div>
+            </div>
+
         </div>
+
+        <div style="height: var(--space-s);"></div>
+
+        <!-- EXPERIENCIA LABORAL E INTERNSHIPS -->
+        <div class="section-header">02 — Experiencia Laboral</div>
+        <div class="cv-list">
+
+            <div class="cv-row">
+                <div class="cv-row-header">
+                    <span>2023 — Presente</span>
+                    <h4>Diseñadora Senior</h4>
+                </div>
+                <div class="cv-company">Agencia Moderna, Madrid</div>
+                <div class="cv-desc"><p>Gestión directa y liderazgo creativo visual sobre los portales B2C de marcas tecnológicas y de lujos orgánicos a escala europea.</p></div>
+            </div>
+
+            <div class="cv-row">
+                <div class="cv-row-header">
+                    <span>2021 — 2023</span>
+                    <h4>Diseñadora Gráfica UI</h4>
+                </div>
+                <div class="cv-company">Estudio Blanco, Bcn</div>
+                <div class="cv-desc"><p>Desarrollos completos de e-commerce e interfaces para tiendas cosméticas e iniciativas éticas locales con plataformas en shopify y figma.</p></div>
+            </div>
+
+            <div class="cv-row" style="border-bottom: 1px solid var(--border-color);">
+                <div class="cv-row-header">
+                    <span>2020 — 2021</span>
+                    <h4>Prácticas (Visual)</h4>
+                </div>
+                <div class="cv-company">Firma de Mobiliario Nórdico</div>
+                <div class="cv-desc"><p>Participación activa durante mis prácticas de estudiante conceptualizando campañas promocionales e imagen física gráfica en una marca moderna de muebles interiores.</p></div>
+            </div>
+
+        </div>
+
+        <!-- Boton de PDF Minimalista Moderno -->
+        <a href="CV-Diseno.pdf" target="_blank" class="btn">Visualizar PDF Descargable &nbsp; ↓</a>
     </section>
 
-    <!-- JS para Animación Fade-In progresiva y microinteracciones suaves -->
+    <!-- FOOTER CTA -->
+    <section id="contact" class="container reveal-up" style="padding-bottom: 5vmax;">
+        <div class="footer-cta">
+            <h2>¿Pensando en un proyecto nuevo?</h2>
+            <a href="mailto:info@mstudio.com" class="massive-link">info@mstudio.com</a>
+        </div>
+        <footer>
+            <div>© 2026. Madrid. España.</div>
+            <div>Basado en simplicidad e iteración gráfica.</div>
+        </footer>
+    </section>
+
+    <!-- SCRIPT JS PARA EL MOTOR DE APARICIÓN -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const elements = document.querySelectorAll('.fade-in-up');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
-            const observer = new IntersectionObserver((entries, observer) => {
+            const reveals = document.querySelectorAll('.reveal-up');
+            
+            // Función para dar aparicion a medida que el objeto corta el viewport visual
+            const revealOptions = { root: null, rootMargin: "0px", threshold: 0.1 };
+            
+            const revealCallback = (entries, observer) => {
                 entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        entry.target.classList.add('visible');
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, observerOptions);
+            };
 
-            elements.forEach(el => observer.observe(el));
+            const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+            reveals.forEach(el => revealObserver.observe(el));
         });
     </script>
 </body>
