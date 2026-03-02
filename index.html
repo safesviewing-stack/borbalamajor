@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="es" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>M | B. // Diseño Industrial y Morfología</title>
+
+    <!-- Tipografías elegantes y técnicas -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* === V4 // FEMININE INDUSTRIAL PARAMETRIC ENGINE === */
+        :root {
+            --dark-abyss: #151113; 
+            --tech-grid: rgba(255, 240, 245, 0.03);
+            --border-strict: rgba(230, 215, 220, 0.12);
+            --white-solid: #FDF9FA;
+            --dim-grey: #AFA5A8;
+            
+            --accent-pastel: #F2D3DC; 
+            --cursor-bg: rgba(216, 162, 179, 0.15);
+
+            --font-massive: 'Space Grotesk', sans-serif;
+            --font-data: 'Inter', sans-serif;
+        }
+
+        body.light-mode {
+            --dark-abyss: #FCF9FA;
+            --tech-grid: rgba(0, 0, 0, 0.03);
+            --border-strict: rgba(0, 0, 0, 0.12);
+            --white-solid: #221A1D; 
+            --dim-grey: #7B6F73;
+            
+            /* Tono rosa más oscuro y legible para fondos claros */
+            --accent-pastel: #B05574; 
+            --cursor-bg: rgba(176, 85, 116, 0.12);
+        }
+
+        /* HARD-RESET & CORE CONFIG */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { 
+            scroll-behavior: smooth; 
+            scroll-padding-top: 110px; 
+        }
+
+        body {
+            background-color: var(--dark-abyss); color: var(--white-solid);
+            font-family: var(--font-data); overflow-x: hidden;
+            -webkit-font-smoothing: antialiased; cursor: none; 
+            transition: background-color 0.6s ease, color 0.6s ease; 
+        }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border-strict); border-radius: 10px;}
+
+        /* CSS MÓDULO INTELIGENTE TRADUCTOR MULTIENG */
+        html[lang="en"] .lang-es { display: none !important; }
+        html[lang="es"] .lang-en { display: none !important; }
+
+        /* ====== ANIMACIÓN FRAMER: FONDO DE ARQUITECTURA ====== */
+        .overlay-architecture {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: linear-gradient(var(--tech-grid) 1px, transparent 1px),
+                              linear-gradient(90deg, var(--tech-grid) 1px, transparent 1px);
+            background-size: 7vw 7vw;
+            z-index: -1; pointer-events: none; 
+            opacity: 0;
+            animation: bootGrid 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes bootGrid {
+            0% { opacity: 0; transform: scale(1.05) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* ===== FRAMER ANIMATIONS SCROLL (REVEAL 3D SPRING) ===== */
+        .reveal {
+            opacity: 0; 
+            transform: translateY(60px) scale(0.93) rotateX(-8deg);
+            filter: blur(15px);
+            transform-origin: center top;
+            transition: opacity 1s ease, 
+                        transform 1.3s cubic-bezier(0.175, 0.885, 0.32, 1.05), 
+                        filter 1s ease;
+            will-change: opacity, transform, filter;
+        }
+        .reveal.is-visible {
+            opacity: 1; 
+            transform: translateY(0) scale(1) rotateX(0deg); 
+            filter: blur(0px);
+        }
+
+        .delay-000 { transition-delay: 0ms; }
+        .delay-050 { transition-delay: 50ms; }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-150 { transition-delay: 150ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-250 { transition-delay: 250ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
+        .delay-600 { transition-delay: 600ms; }
+
+        /* ====== ANIMACIÓN FRAMER "LETTER REVEAL" HERO ====== */
+        .hero-line-mask {
+            display: inline-flex; 
+            overflow: hidden; 
+            padding-top: 0.15em; 
+            padding-bottom: 4px;
+            margin-top: -0.05em; 
+            margin-right: -0.04em;
+        }
+        
+        .hero-char {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(120%) rotateX(-50deg) scaleY(1.2) rotateZ(3deg);
+            filter: blur(20px);
+            transform-origin: bottom center;
+            animation: staggerLetterReveal 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            will-change: transform, opacity, filter;
+        }
+
+        @keyframes staggerLetterReveal {
+            0% { opacity: 0; transform: translateY(120%) rotateX(-50deg) scaleY(1.2) rotateZ(3deg); filter: blur(20px); }
+            100% { opacity: 1; transform: translateY(0) rotateX(0deg) scaleY(1) rotateZ(0deg); filter: blur(0px); }
+        }
+
+        .ethereal-subtitle-anim {
+            opacity: 0; transform: translateY(30px) scale(0.95) rotateX(-15deg); filter: blur(12px);
+            animation: etherealSubtitleSweep 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 1s; 
+        }
+        
+        @keyframes etherealSubtitleSweep {
+            0% { opacity: 0; transform: translateY(30px) scale(0.95) rotateX(-15deg); filter: blur(12px); }
+            100% { opacity: 1; transform: translateY(0) scale(1) rotateX(0deg); filter: blur(0px); }
+        }
+
+        /* ====== CURSOR ELEGANTE MAGNÉTICO ====== */
+        #cursor-dot {
+            width: 8px; height: 8px; background: var(--accent-pastel); 
+            border-radius: 50%; position: fixed; pointer-events: none; 
+            transform: translate(-50%, -50%); z-index: 9999;
+            transition: opacity 0.3s;
+        }
+        #cursor-ring {
+            width: 30px; height: 30px; border: 1px solid var(--accent-pastel); 
+            border-radius: 50%; position: fixed; pointer-events: none; opacity: 0.7;
+            transform: translate(-50%, -50%); z-index: 9998; 
+            transition: width 0.35s cubic-bezier(0.2, 1, 0.3, 1), height 0.35s cubic-bezier(0.2, 1, 0.3, 1), background-color 0.3s, opacity 0.3s, border-color 0.3s;
+        }
+
+        /* ====== MAIN NAV / SMART HEADER REDISEÑADO ====== */
+        @keyframes headerBoot {
+            0% { opacity: 0; top: -30px; }
+            100% { opacity: 1; top: 18px; }
+        }
+
+        #main-header {
+            position: fixed;
+            top: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: max-content;
+            padding: 8px 42px;   
+
+            background: rgba(21, 17, 19, 0.78);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            border: 1px solid var(--border-strict);
+            border-radius: 999px;
+
+            display: flex;
+            align-items: center;
+            gap: 40px;           
+
+            z-index: 1000;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease;
+
+            opacity: 0; 
+            animation: headerBoot 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards; 
+        }
+
+        body.light-mode #main-header { background: rgba(252, 249, 250, 0.75); }
+
+        #main-header.header-hidden {
+            transform: translate(-50%, -150%); 
+        }
+
+        .logo-b {
+            font-family: var(--font-massive); font-size: 1.25rem; 
+            font-weight: 500; color: var(--white-solid); letter-spacing: 0px;
+            margin-left: -5px; padding: 10px 0; 
+            display: inline-flex;
+            cursor: none; text-decoration: none; position: relative; display:flex; gap: 5px; align-items: center;
+        }
+        .logo-b span.accent { color: var(--accent-pastel); font-weight:700;}
+
+        .nav-links { 
+            position: relative; 
+            display: flex; gap: 1.5vw; align-items: center; 
+        }
+
+        /* ====== PÍLDORA ROSA (INDICADOR) ====== */
+        .nav-indicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0; 
+            pointer-events: none;
+            opacity: 0; 
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                        width 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                        height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                        opacity 0.4s ease;
+        }
+
+        .nav-indicator::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--accent-pastel);
+            border-radius: 999px;
+            transform: scale(0.5); 
+            opacity: 0;
+            transition: transform 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.15), 
+                        opacity 0.5s ease;
+        }
+
+        .nav-indicator.is-active { opacity: 1; }
+        .nav-indicator.is-active::before { transform: scale(1); opacity: 1; }
+
+        .nav-links a {
+            position: relative;
+            z-index: 1; 
+            padding: 8px 16px;
+            border-radius: 999px;
+            color: var(--dim-grey);
+            font-weight: 400;
+            transition: color 0.3s ease, font-weight 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+        }
+
+        .nav-links a.active {
+            color: var(--dark-abyss);
+            font-weight: 600;
+        }
+
+        .nav-links a:hover:not(.active) {
+            color: var(--white-solid);
+            transform: translateY(-1px);
+        }
+
+        body.light-mode .nav-links a.active { color: var(--white-solid); }
+        body.light-mode .nav-links a:hover:not(.active) { color: var(--dark-abyss); }
+        
+        .header-controls { display: flex; gap: 12px; align-items: center;}
+        
+        .header-btn {
+            background: transparent; border: 1.2px solid var(--border-strict); color: var(--dim-grey);
+            font-family: var(--font-data); font-size: 0.7rem; letter-spacing: 1.5px;
+            border-radius: 40px; padding: 7px 18px; text-transform: uppercase;
+            transition: all 0.35s ease; cursor: none; font-weight: 500; height:34px; display: flex; justify-content: center; align-items: center;
+        }
+        .header-btn:hover { color: var(--dark-abyss); background: var(--accent-pastel); border-color: var(--accent-pastel); }
+
+        .lang-switch-lbl { opacity: 0.4; font-weight: 400; transition: opacity 0.3s, font-weight 0.3s, color 0.3s; }
+        html[lang="es"] .lang-switch-lbl.es, html[lang="en"] .lang-switch-lbl.en { opacity: 1; font-weight: 700; color: var(--accent-pastel); }
+        .lang-sep { opacity: 0.3; margin: 0 4px; pointer-events: none;}
+
+        #toggle-lang-btn:hover .lang-switch-lbl.es, 
+        #toggle-lang-btn:hover .lang-switch-lbl.en, 
+        #toggle-lang-btn:hover .lang-sep { color: var(--dark-abyss); }
+        html[lang="es"] #toggle-lang-btn:hover .lang-switch-lbl.es,
+        html[lang="en"] #toggle-lang-btn:hover .lang-switch-lbl.en { opacity: 1; font-weight: 700; color: var(--white-solid); }
+
+        @media(max-width: 900px){
+            .nav-links { display: none; } 
+            #main-header { padding: 12px 5vw; }
+            .logo-b { margin-left: 0; }
+        }
+
+        /* ============ ARQUITECTURA DEL DOM ============ */
+        #content-layer { position: relative; z-index: 10; width: 100%; }
+
+        section { 
+            margin-top: 24vh;
+            padding: 15vh 5vw 28vh 5vw; 
+            width: 100%; 
+            display: flex; flex-direction: column; position: relative;
+        }
+        
+        /* Título Principal de la página (Hero) */
+        .huge-title {
+            font-family: var(--font-massive); font-size: clamp(3.6rem, 14vw, 15vw);
+            line-height: 0.92; 
+            font-weight: 600; 
+            letter-spacing: -0.04em; text-transform: uppercase;
+            color: var(--white-solid); margin: 0; padding: 0; white-space: nowrap;
+        }
+        
+        .huge-title.fade { color: rgba(175, 165, 168, 0.55); /* más profundo */ text-indent: 0;}
+        
+        /* Contenedor Flex de los títulos de sección */
+        .section-head { 
+            border-bottom: 1px solid var(--border-strict); padding-bottom: 20px; 
+            margin-bottom: 6vh; margin-top: 5px; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:10px;
+        }
+
+        /* TIPOGRAFÍA UNIFICADA PARA TODOS LOS TÍTULOS DE SECCIÓN (Mismo que portfolio) */
+        .section-head .huge-title {
+            font-size: clamp(3.6rem, 12vw, 13vw); /* Tamaño masivo, idéntico para todos */
+            font-weight: 700; /* Grosor unificado */
+            line-height: 1;
+            letter-spacing: -0.04em;
+            white-space: normal; /* Evita desbordamientos en móviles para palabras largas */
+            word-wrap: break-word;
+        }
+
+        .section-label { 
+            font-size: 0.7rem; font-family: var(--font-data); color: var(--accent-pastel); 
+            display: inline-block; letter-spacing: 3px; font-weight: 500; text-transform: uppercase; margin-bottom: 15px; 
+        }
+
+        /* ===== BOTONES ELEGANTES ===== */
+        .btn {
+            background: transparent; color: var(--white-solid); font-family: var(--font-data); 
+            text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px;
+            border: 1px solid var(--white-solid); padding: 16px 42px;
+            border-radius: 40px; position: relative; overflow: hidden; 
+            display: inline-flex; justify-content: center; font-weight: 400; 
+            cursor: none; text-decoration: none; text-align: center; align-items: center; z-index: 1;
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+            transition: border-color 0.8s ease, transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+        }
+        
+        .btn:active { transform: scale(0.95); }
+
+        .btn span.inner { 
+            position: relative; z-index: 2; display: inline-block;
+            transition: color 0.6s ease, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .btn::before {
+            content: ''; position: absolute; left: 50%; top: 120%; 
+            width: 150%; padding-bottom: 150%; 
+            background: var(--accent-pastel); z-index: 0; 
+            border-radius: 50%;
+            transform: translate(-50%, 0) scale(0.1); 
+            transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1), top 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .btn:hover { border-color: var(--accent-pastel); }
+        .btn:hover::before { transform: translate(-50%, -50%) scale(1); top: 50%; }
+        .btn:hover span.inner { color: var(--dark-abyss); font-weight: 500; transform: translateY(-2px);}
+
+        /* == HERO == */
+        #hero { 
+            min-height: 100vh; 
+            justify-content: flex-end; 
+            padding-top: 0;
+            margin-top: 0;
+            padding-bottom: 12vh; 
+            position: relative; 
+        }
+
+        #hero .hero-line-mask {
+    overflow: visible;
+}
+
+
+        #hero .hero-line-mask {
+    padding-right: 0.08em;
+}
+        /* == BIO / NARRATIVA CÁLIDA & FOTO == */
+        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 8vw; margin-top: 2vh; }
+        .about-narrative { color: var(--dim-grey); font-size: 1.05rem; font-weight: 400; line-height: 1.7; letter-spacing: 0.13px; text-align: justify;}
+        .about-narrative p {margin-bottom:1.5rem;  text-align: justify;}
+        
+        .about-photo-wrapper {
+            width: 100%; overflow: hidden; aspect-ratio: 4/5; 
+            position: relative; border-radius: 8px;
+            cursor: none;
+        }
+
+        /* == GALERÍA DE IMÁGENES == */
+        .portfolio-gallery {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 4vw; margin-top: 2vh;
+        }
+
+        .project-card {
+            width: 100%; position: relative; display: flex; flex-direction: column; cursor: none; text-decoration: none; 
+        }
+
+        .project-card-image-box {
+            width: 100%; overflow: hidden; aspect-ratio: 4/5; 
+            position: relative; border-radius: 8px; 
+        }
+
+        /* ====== ANIMACIÓN FRAMER: IMÁGENES MASK REVEAL ====== */
+        .project-card-image-box img,
+        .about-photo-wrapper img {
+            width: 100%; height: 100%; object-fit: cover;
+            filter: sepia(30%) grayscale(60%) contrast(1.1) brightness(0.9);
+            clip-path: inset(18% 18% 18% 18% round 12px);
+            transform: scale(1.25);
+            transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+        }
+
+        .reveal.is-visible .project-card-image-box img,
+        .reveal.is-visible.about-photo-wrapper img {
+            clip-path: inset(0% 0% 0% 0% round 8px);
+            transform: scale(1);
+        }
+
+        .project-card:hover .project-card-image-box img,
+        .about-photo-wrapper:hover img {
+            clip-path: inset(0% 0% 0% 0% round 8px);
+            transform: scale(1.04); 
+            filter: sepia(0%) grayscale(0%) contrast(1) brightness(1.05); 
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease; 
+        }
+
+        .project-meta { display: flex; justify-content: space-between; align-items:flex-start; padding-top: 20px;}
+        .project-text-left { display: flex; flex-direction: column; gap: 5px; }
+        .project-title { font-family: var(--font-massive); font-size: 1.4rem; color: var(--white-solid); text-transform: uppercase; font-weight:500;}
+        .project-tags { font-size: 0.7rem; color: var(--dim-grey); text-transform: uppercase; letter-spacing: 1.5px; font-weight:400;}
+        .project-num { font-family: var(--font-data); font-size: 0.8rem; color: var(--accent-pastel); font-weight:500;}
+
+        @media(max-width: 800px) {
+             .portfolio-gallery { grid-template-columns: 1fr; gap: 6vh; }
+        }
+
+        /* == TIMELINE CV Y ANIMACIÓN CHULA DE ENTRADA == */
+        .timeline-grid {
+            display: grid; grid-template-columns: 280px 1fr; gap: 3vw;
+            border-bottom: 1px solid var(--border-strict); 
+            transition: background 0.4s ease, border-color 0.4s ease; padding: 5vh 0; cursor:none;
+            position: relative; 
+        }
+
+        .timeline-grid::after {
+            content: ''; position: absolute; left: 0; top: 0; width: 1px; height: 0;
+            background: var(--border-strict);
+            transition: height 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .timeline-grid.is-visible::after { height: 100%; }
+
+        .timeline-grid::before {
+            content: ''; position: absolute; left: -1.5px; top: 0; width: 4px; height: 0;
+            background: var(--accent-pastel); border-radius: 2px; z-index: 2;
+            transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .timeline-grid.is-visible:hover::before { height: 100%; } 
+
+        .timeline-years { 
+            padding-left: 2.5vw; font-family: var(--font-massive); font-size: 2.5rem; letter-spacing: -1px; color: var(--white-solid); line-height:1;
+            opacity: 0; transform: translateX(-30px); filter: blur(8px);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease, opacity 0.8s ease, color 0.4s ease;
+        }
+        .timeline-years span { 
+            font-size: 0.8rem; color:var(--accent-pastel); font-weight:400; font-family: var(--font-data); letter-spacing:2px; display:block; margin-top:10px; text-transform:uppercase;
+            transition: color 0.4s ease;
+        }
+        
+        .timeline-content { 
+            padding-left: 2vw; padding-right:20px; 
+            opacity: 0; transform: translateX(30px); filter: blur(8px);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease, opacity 0.8s ease;
+        }
+
+        .timeline-content h3, .timeline-content .company, .timeline-content p {
+            opacity: 0; 
+            transform: translateY(20px) rotateX(-20deg);
+            transform-origin: left top;
+            transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.05), color 0.4s ease;
+        }
+        .timeline-content h3 { font-family: var(--font-massive); font-size: 1.3rem; font-weight:500; text-transform: uppercase; margin-bottom: 8px; color: var(--white-solid); line-height: 1.3;}
+        .timeline-content .company { color: var(--dim-grey); font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 20px; font-weight: 500; text-transform:uppercase;}
+        .timeline-content p { color: var(--dim-grey); font-size: 1rem; max-width: 700px; line-height: 1.7; font-weight: 300;  text-align: justify;}
+
+        /* AL REVELAR (SCROLL) */
+        .timeline-grid.is-visible .timeline-years { opacity: 1; transform: translateX(0); filter: blur(0); }
+        .timeline-grid.is-visible .timeline-content { opacity: 1; transform: translateX(0); filter: blur(0); }
+        .timeline-grid.is-visible .timeline-content h3,
+        .timeline-grid.is-visible .timeline-content .company,
+        .timeline-grid.is-visible .timeline-content p { opacity: 1; transform: translateY(0) rotateX(0deg); }
+
+        /* ORQUESTACIÓN EN CASCADA */
+        .timeline-grid.delay-100::after { transition-delay: 50ms; }
+        .timeline-grid.delay-100 .timeline-years { transition-delay: 50ms; }
+        .timeline-grid.delay-100 .timeline-content { transition-delay: 100ms; }
+        .timeline-grid.delay-100 .timeline-content h3 { transition-delay: 150ms; }
+        .timeline-grid.delay-100 .timeline-content .company { transition-delay: 200ms; }
+        .timeline-grid.delay-100 .timeline-content p { transition-delay: 250ms; }
+        
+        .timeline-grid.delay-200::after { transition-delay: 100ms; }
+        .timeline-grid.delay-200 .timeline-years { transition-delay: 100ms; }
+        .timeline-grid.delay-200 .timeline-content { transition-delay: 150ms; }
+        .timeline-grid.delay-200 .timeline-content h3 { transition-delay: 200ms; }
+        .timeline-grid.delay-200 .timeline-content .company { transition-delay: 250ms; }
+        .timeline-grid.delay-200 .timeline-content p { transition-delay: 300ms; }
+
+        .timeline-grid.delay-300::after { transition-delay: 150ms; }
+        .timeline-grid.delay-300 .timeline-years { transition-delay: 150ms; }
+        .timeline-grid.delay-300 .timeline-content { transition-delay: 200ms; }
+        .timeline-grid.delay-300 .timeline-content h3 { transition-delay: 250ms; }
+        .timeline-grid.delay-300 .timeline-content .company { transition-delay: 300ms; }
+        .timeline-grid.delay-300 .timeline-content p { transition-delay: 350ms; }
+
+        /* INTERACCIÓN HOVER */
+        .timeline-grid.is-visible:hover { background: var(--tech-grid); border-bottom-color: var(--accent-pastel); }
+        
+        .timeline-grid.is-visible:hover .timeline-years { 
+            transform: translateX(10px) scale(1.02); color: var(--accent-pastel); 
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease !important; 
+        }
+        .timeline-grid.is-visible:hover .timeline-years span { color: var(--white-solid); }
+        
+        .timeline-grid.is-visible:hover .timeline-content { 
+            transform: translateX(18px); 
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important; 
+        }
+        
+        .timeline-grid.is-visible:hover .timeline-content h3,
+        .timeline-grid.is-visible:hover .timeline-content .company,
+        .timeline-grid.is-visible:hover .timeline-content p {
+            transition: color 0.3s ease !important; 
+        }
+        
+        .timeline-grid.is-visible:hover .timeline-content h3 { color: var(--accent-pastel); }
+        .timeline-grid.is-visible:hover .timeline-content p { color: #ECECEC; } 
+        body.light-mode .timeline-grid.is-visible:hover .timeline-content p { color: var(--dark-abyss); }
+
+        @media(max-width: 900px){
+            .timeline-grid { grid-template-columns: 1fr; padding: 4vh 0; gap:2vh;}
+            .timeline-content { padding-left: 4vw;} 
+            .timeline-years { padding-left: 4vw;}
+            
+            .timeline-grid.is-visible:hover .timeline-content { transform: translateX(8px); }
+            .timeline-grid.is-visible:hover .timeline-years { transform: translateX(8px) scale(1.02); }
+        }
+
+        /* == DISEÑO FRAMER BENTO CONTACTO == */
+        .contact-wrap { display: flex; flex-direction: column; gap: 6vh; margin-top: 4vh; }
+
+        .contact-bento {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2vw;
+            width: 100%;
+        }
+
+        .contact-bento-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-strict);
+            padding: 4.5vh 3vw;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-decoration: none;
+            cursor: none;
+            overflow: hidden;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        body.light-mode .contact-bento-card { background: rgba(0, 0, 0, 0.02); }
+
+        .contact-bento-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        body.light-mode .contact-bento-card:hover { background: rgba(0, 0, 0, 0.04); }
+
+        .c-tag { 
+            font-size: 0.65rem; color: var(--dim-grey); text-transform: uppercase; 
+            letter-spacing: 2px; margin-bottom: 2vh; font-weight: 500;
+        }
+        .c-title { 
+            font-family: var(--font-massive); font-size: clamp(1.3rem, 2.5vw, 1.8rem); 
+            color: var(--white-solid); font-weight: 500; transition: color 0.4s ease; margin-bottom: 5px; 
+        }
+        .c-desc { 
+            font-family: var(--font-data); font-size: 0.9rem; color: var(--dim-grey); font-weight: 400;
+        }
+
+        /* Color Triggers Interacción Glassmorphism */
+        #card-linkedin:hover { border-color: rgba(10, 102, 194, 0.5); box-shadow: 0 15px 35px -10px rgba(10, 102, 194, 0.15); }
+        #card-linkedin:hover .c-title { color: #0A66C2; }
+
+        #card-mail:hover { border-color: rgba(242, 211, 220, 0.6); box-shadow: 0 15px 35px -10px rgba(242, 211, 220, 0.15); }
+        #card-mail:hover .c-title { color: var(--accent-pastel); }
+
+        #card-phone:hover { border-color: rgba(37, 211, 102, 0.5); box-shadow: 0 15px 35px -10px rgba(37, 211, 102, 0.15); }
+        #card-phone:hover .c-title { color: #25D366; }
+
+        @media(max-width: 900px){
+            .contact-bento { gap: 3vh; grid-template-columns: 1fr; }
+            .contact-bento-card { padding: 4vh 6vw; }
+        }
+
+        /* == FOOTER CENTRADO PERFECTO == */
+        footer {
+            padding: 8vh 5vw; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 15px; border-top: 1px solid var(--border-strict); margin-top: 5vh;
+        }
+        
+        footer.reveal {
+            transition: opacity 0.5s ease, 
+                        transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.05), 
+                        filter 0.5s ease;
+        }
+
+        .footer-logo { font-family: var(--font-massive); font-size: 1.5rem; color: var(--white-solid); }
+        .footer-text { font-family: var(--font-data); color: var(--dim-grey); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; font-weight:400;}
+    </style>
+</head>
+<body>
+
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        if (!window.location.hash) {
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+    <div class="overlay-architecture"></div>
+    <div id="cursor-dot"></div><div id="cursor-ring"></div>
+
+    <!-- MAIN NAV HEADER -->
+    <header id="main-header">
+        <a href="#hero" class="logo-b hover-trigger">M | <span class="accent">B.</span></a>
+        
+        <div class="nav-links">
+            <a href="#about" class="hover-trigger"><span class="lang-es">Sobre mí</span><span class="lang-en">About me</span></a>
+            <a href="#portfolio" class="hover-trigger"><span class="lang-es">Portfolio</span><span class="lang-en">Portfolio</span></a>
+            <a href="#cv" class="hover-trigger"><span class="lang-es">Trayectoria</span><span class="lang-en">Trajectory</span></a>
+            <a href="#contact" class="hover-trigger"><span class="lang-es">Contacto</span><span class="lang-en">Connect</span></a>
+        </div>
+        
+        <div class="header-controls">
+            <button id="toggle-theme-btn" class="header-btn theme-btn-min hover-trigger">☼ / ☾</button>
+            <button id="toggle-lang-btn" class="header-btn hover-trigger">
+                <span class="lang-switch-lbl es">ES</span>
+                <span class="lang-sep">|</span>
+                <span class="lang-switch-lbl en">EN</span>
+            </button>
+        </div>
+    </header>
+
+    <main id="content-layer">
+        
+        <!--[HERO SECT] -->
+        <section id="hero">
+            <div class="huge-title">
+                <span class="hero-line-mask">
+                    <span class="hero-char" style="animation-delay: 0.10s;">B</span>
+                    <span class="hero-char" style="animation-delay: 0.16s;">O</span>
+                    <span class="hero-char" style="animation-delay: 0.22s;">R</span>
+                    <span class="hero-char" style="animation-delay: 0.28s;">B</span>
+                    <span class="hero-char" style="animation-delay: 0.34s;">Á</span>
+                    <span class="hero-char" style="animation-delay: 0.40s;">L</span>
+                    <span class="hero-char" style="animation-delay: 0.46s;">A</span>
+                </span>
+            </div>
+            
+            <div class="huge-title fade">
+                <span class="hero-line-mask">
+                    <span class="hero-char" style="animation-delay: 0.52s;">M</span>
+                    <span class="hero-char" style="animation-delay: 0.58s;">A</span>
+                    <span class="hero-char" style="animation-delay: 0.64s;">J</span>
+                    <span class="hero-char" style="animation-delay: 0.70s;">O</span>
+                    <span class="hero-char" style="animation-delay: 0.76s;">R</span>
+                </span>
+            </div>
+
+            <div class="ethereal-subtitle-anim" style="font-family:var(--font-data); font-size: clamp(1rem, 2vw, 1.2rem); margin-top:35px; font-weight:400; letter-spacing:2px; text-transform:uppercase;">
+                 <span class="lang-es" style="color:var(--accent-pastel);">Portfolio / </span> <span class="lang-es">Ingeniería & Diseño Industrial</span>
+                 <span class="lang-en" style="color:var(--accent-pastel);">Portfolio / </span> <span class="lang-en">Engineering & Industrial Design</span>
+            </div>
+        </section>
+
+        <!--[ABOUT SECT] -->
+        <section id="about">
+            <span class="section-label reveal">[ 00. FILOSOFÍA // ESSENCE ]</span>
+            <div class="section-head reveal delay-050">
+                <span class="huge-title"><span class="lang-es">SOBRE MÍ</span><span class="lang-en">ABOUT ME</span></span>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-narrative">
+                    <p class="reveal delay-100 lang-es">Soy Borbála, una joven de 23 años de Hungría, graduada de la Universidad Técnica de Budapest (BME) y actualmente en búsqueda de oportunidades profesionales en España. Aunque mi formación es más técnica, me apasiona combinar lo artístico y lo técnico. Me considero una persona emotiva, lo que me permite comprender mejor a los usuarios y crear soluciones más empáticas y funcionales. Disfruto trabajar en equipo, ya que valoro la colaboración y el intercambio de ideas. Además, soy muy detallista y creo que la atención a los pequeños aspectos del diseño marca la diferencia. Hablo inglés y español con fluidez, además de mi idioma natal, el húngaro, lo que me permite adaptarme fácilmente a entornos internacionales y multiculturales. Siempre busco aprender y adaptarme para seguir desarrollandome constantemente mediante nuevos objetivos y oportunidades de manera continuada.</p>
+                    <p class="reveal delay-100 lang-en">I’m Borbála, a 23-year-old industrial designer from Hungary, graduated from the Budapest University of Technology and Economics (BME), and currently seeking professional opportunities in Spain. Although my background is more technical, I’m deeply passionate about combining artistic sensibility with technical precision. I consider myself an emotionally aware person, which allows me to better understand users and create more empathetic and functional solutions. I enjoy working in teams, as I value collaboration and the exchange of ideas. I’m also highly detail-oriented, and I believe that attention to small aspects of design makes a meaningful difference. I speak English and Spanish fluently, in addition to my native language, Hungarian, which enables me to adapt easily to international and multicultural environments. I’m always eager to learn and evolve, continuously developing myself through new goals and everyday opportunities.</p>
+                </div>
+
+                <div class="about-photo-wrapper hover-trigger reveal delay-300">
+<img src="profile.jpg" alt="Borbála Major">                </div>
+            </div>
+        </section>
+
+        <!--[PORTFOLIO GALERÍA] -->
+        <section id="portfolio">
+            <span class="section-label reveal">[ 01. REGISTRO VISUAL // VISUAL ARCHIVE ]</span>
+            
+            <div class="section-head reveal delay-050">
+                <span class="huge-title"><span class="lang-es">PROYECTOS</span><span class="lang-en">PROJECTS</span></span>
+                <span style="font-family:var(--font-data); color:var(--dim-grey); font-size:0.8rem; font-weight:400; padding-bottom:5px; text-transform:uppercase;">[ 6 ÍTEMS ]</span>
+            </div>
+
+            <div class="portfolio-gallery">
+
+    <!-- 01 · Eliptria -->
+    <a href="eliptria.html" class="project-card hover-trigger reveal delay-000">
+        <div class="project-card-image-box">
+            <img src="eliptria.jpg" alt="Eliptria">
+        </div>
+        <div class="project-meta">
+            <div class="project-text-left">
+                <span class="project-title">
+                    <span class="lang-es">Eliptria</span>
+                    <span class="lang-en">Eliptria</span>
+                </span>
+                <span class="project-tags">
+                    <span class="lang-es">Grifería</span>
+                    <span class="lang-en">Faucet Design</span>
+                </span>
+            </div>
+            <div class="project-num">01.</div>
+        </div>
+    </a>
+
+    <!-- 02 · Lumora -->
+    <a href="lumora.html" class="project-card hover-trigger reveal delay-050">
+        <div class="project-card-image-box">
+            <img src="lampara1.jpg" alt="Lumora">
+        </div>
+        <div class="project-meta">
+            <div class="project-text-left">
+                <span class="project-title">
+                    <span class="lang-es">Lumora</span>
+                    <span class="lang-en">Lumora</span>
+                </span>
+                <span class="project-tags">
+                    <span class="lang-es">Iluminación</span>
+                    <span class="lang-en">Lighting Design</span>
+                </span>
+            </div>
+            <div class="project-num">02.</div>
+        </div>
+    </a>
+
+    <!-- 03 · Node -->
+    <a href="node.html" class="project-card hover-trigger reveal delay-100">
+        <div class="project-card-image-box">
+            <img src="profile9.jpg" alt="Node">
+        </div>
+        <div class="project-meta">
+            <div class="project-text-left">
+                <span class="project-title">
+                    <span class="lang-es">Node</span>
+                    <span class="lang-en">Node</span>
+                </span>
+                <span class="project-tags">
+                    <span class="lang-es">Diseño de mobiliario</span>
+                    <span class="lang-en">Furniture Design</span>
+                </span>
+            </div>
+            <div class="project-num">03.</div>
+        </div>
+    </a>
+
+    <!-- 04 · Serie Sixay -->
+    <a href="sixay.html" class="project-card hover-trigger reveal delay-150">
+        <div class="project-card-image-box">
+            <img src="profile8.jpg" alt="Serie Sixay">
+        </div>
+        <div class="project-meta">
+            <div class="project-text-left">
+                <span class="project-title">
+                    <span class="lang-es">Serie Sixay</span>
+                    <span class="lang-en">Sixay Series</span>
+                </span>
+                <span class="project-tags">
+                    <span class="lang-es">Diseño de mobiliario</span>
+                    <span class="lang-en">Furniture Design</span>
+                </span>
+            </div>
+            <div class="project-num">04.</div>
+        </div>
+    </a>
+
+    <!-- 05 · Baori -->
+    <a href="baori.html" class="project-card hover-trigger reveal delay-200">
+        <div class="project-card-image-box">
+            <img src="profile5.jpg" alt="Baori">
+        </div>
+        <div class="project-meta">
+            <div class="project-text-left">
+                <span class="project-title">
+                    <span class="lang-es">Baori</span>
+                    <span class="lang-en">Baori</span>
+                </span>
+                <span class="project-tags">
+                    <span class="lang-es">Diseño interior</span>
+                    <span class="lang-en">Interior Design</span>
+                </span>
+            </div>
+            <div class="project-num">05.</div>
+        </div>
+    </a>
+
+    <!-- 06 · Kate Club -->
+    <a href="kateclub.html" class="project-card hover-trigger reveal delay-250">
+        <div class="project-card-image-box">
+            <img src="cartel4.jpg" alt="Kate Club">
+        </div>
+        <div class="project-meta">
+            <div class="project-text-left">
+                <span class="project-title">
+                    <span class="lang-es">Kate Club</span>
+                    <span class="lang-en">Kate Club</span>
+                </span>
+                <span class="project-tags">
+                    <span class="lang-es">Diseño gráfico</span>
+                    <span class="lang-en">Graphic Design</span>
+                </span>
+            </div>
+            <div class="project-num">06.</div>
+        </div>
+    </a>
+
+    <!-- 07 · Syncro -->
+    <a href="syncro.html" class="project-card hover-trigger reveal delay-300">
+        <div class="project-card-image-box">
+            <img src="profile10.jpg" alt="Syncro">
+        </div>
+        <div class="project-meta">
+            <div class="project-text-left">
+                <span class="project-title">
+                    <span class="lang-es">Syncro</span>
+                    <span class="lang-en">Syncro</span>
+                </span>
+                <span class="project-tags">
+                    <span class="lang-es">Electrónica / Concepto</span>
+                    <span class="lang-en">Electronic / Concept</span>
+                </span>
+            </div>
+            <div class="project-num">07.</div>
+        </div>
+    </a>
+
+</div>
+        </section>
+
+
+        <!--[CV SECT / LÍNEA DE TIEMPO CON ANIMACIÓN CASCADA] -->
+        <section id="cv">
+            <span class="section-label reveal">[ 02. CRONOLOGÍA // TIMELINE ]</span>
+            <div class="section-head reveal delay-050">
+                <span class="huge-title"><span class="lang-es">TRAYECTORIA</span><span class="lang-en">TRAJECTORY</span></span>
+            </div>
+
+            <div class="timeline-grid hover-trigger reveal delay-100" style="border-top: 1px solid var(--border-strict);">
+                <div class="timeline-years">2022-2026 
+                    <span class="lang-es">ACADÉMICO</span><span class="lang-en">ACADEMIC</span>
+                </div>
+                <div class="timeline-content">
+                    <h3><span class="lang-es">Grado en Ingeniería de Diseño Industrial y desarrollo de productos</span><span class="lang-en">Bachelor’s Degree in Industrial Design Engineering and Product Development</span></h3>
+                    <div class="company">UNIVERSIDAD DE TECNOLOGÍA Y ECONOMÍA DE BUDAPEST (BME)</div>
+                    <p>
+                        <span class="lang-es">Graduada en Diseño Industrial por la Universidad de Tecnología y Economía de Budapest (BME), con una formación interdisciplinar en diseño de producto, procesos de fabricación y desarrollo técnico.</span>
+                        <span class="lang-en">Graduated in Industrial Design from the Budapest University of Technology and Economics (BME), with interdisciplinary training in product design, manufacturing processes, and technical development.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-grid hover-trigger reveal delay-200">
+                <div class="timeline-years">2025 
+                    <span class="lang-es">ACADÉMICO</span><span class="lang-en">ACADEMIC</span>
+                </div>
+                <div class="timeline-content">
+                    <h3><span class="lang-es">Grado en Ingeniería de Diseño Industrial y desarrollo de productos (Erasmus)</span><span class="lang-en">Bachelor’s Degree in Industrial Design Engineering and Product Development (Erasmus)</span></h3>
+                    <div class="company">UNIVERSIDAD POLITÉCNICA DE VALÉNCIA (UPV)</div>
+                    <p>
+                        <span class="lang-es">Formación académica en Diseño Industrial cursada durante medio año en la Universitat Politècnica de València (UPV), mediante un programa Erasmus en la Universidad de Tecnología y Economía de Budapest (BME).</span>
+                        <span class="lang-en">Academic training in Industrial Design completed for half a year at the Universitat Politècnica de València (UPV) through an Erasmus exchange program with the Budapest University of Technology and Economics (BME).</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-grid hover-trigger reveal delay-300" style="border-bottom:none;">
+                <div class="timeline-years">2025 
+                    <span class="lang-es">LABORAL</span><span class="lang-en">WORK</span>
+                </div>
+                <div class="timeline-content">
+                    <h3><span class="lang-es">Experiencia profesional en empresa Sixay</span><span class="lang-en">Professional experience at Sixay company</span></h3>
+                    <div class="company">SIXAY FURNITURE</div>
+                    <p>
+                        <span class="lang-es">Experiencia profesional de medio año en la empresa Sixay, enfocada al diseño de mobiliario, con participación activa en el desarrollo de productos, diseño técnico, optimización de componentes y trabajo colaborativo multidisciplinar.</span>
+                        <span class="lang-en">Six months of professional experience at Sixay, focused on furniture design, with active participation in product development, technical design, component optimization, and multidisciplinary collaborative work.</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="reveal delay-100" style="margin-top: 5vh;">
+                <a href="curriculum.pdf" class="btn hover-trigger" download>
+                    <span class="inner">
+                        <span class="lang-es">Ver CV detallado</span>
+                        <span class="lang-en">View detailed CV</span>
+                    </span>
+                 </a>
+            </div>
+        </section>
+
+
+        <!--[CONTACT SECT CON BENTO GRID ESTILO FRAMER] -->
+        <section id="contact">
+            <span class="section-label reveal">[ 03. CONTACTO // CONNECT ]</span>
+            <div class="section-head reveal delay-050">
+                <span class="huge-title"><span class="lang-es">CONTACTO</span><span class="lang-en">CONNECT</span></span>
+            </div>
+
+            <div class="contact-wrap">
+                <div class="contact-bento">
+                    
+                    <!-- Tarjeta LinkedIn -->
+                    <div class="reveal delay-050">
+                        <a id="card-linkedin" href="https://www.linkedin.com/in/borb%C3%A1la-major/" target="_blank" class="contact-bento-card hover-trigger">
+                            <span class="c-tag">
+                                <span class="lang-es">Red Profesional</span>
+                                <span class="lang-en">Professional Network</span>
+                            </span>
+                            <span class="c-title">LinkedIn ↗</span>
+                            <span class="c-desc">M. Borbála</span>
+                        </a>
+                    </div>
+
+                    <!-- Tarjeta Email -->
+                    <div class="reveal delay-100">
+                        <a id="card-mail" href="mailto:majorbori@gmail.com" class="contact-bento-card hover-trigger">
+                            <span class="c-tag">
+                                <span class="lang-es">Correo Directo</span>
+                                <span class="lang-en">Direct Mail</span>
+                            </span>
+                            <span class="c-title">majorbori@gmail.com ↗</span>
+                            <span class="c-desc">
+                                <span class="lang-es">Bandeja principal</span>
+                                <span class="lang-en">Main inbox</span>
+                            </span>
+                        </a>
+                    </div>
+
+                    <!-- Tarjeta Teléfono -->
+                    <div class="reveal delay-150">
+                        <div id="card-phone" class="contact-bento-card hover-trigger">
+                            <span class="c-tag">
+                                <span class="lang-es">Teléfono / WhatsApp</span>
+                                <span class="lang-en">Phone / WhatsApp</span>
+                            </span>
+                            <span class="c-title">+36 308 203 716</span>
+                            <span class="c-desc">
+                                <span class="lang-es">Disponible</span>
+                                <span class="lang-en">Available</span>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- FOOTER CÉNTRICO -->
+        <footer class="reveal">
+            <div class="footer-logo">M | B.</div>
+            <div class="footer-text">
+                <span class="lang-es">Borbála Major · Ingeniera en diseño industrial</span>
+                <span class="lang-en">Borbála Major · Industrial Design Engineer</span>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        if (!window.location.hash) {
+            window.scrollTo(0, 0);
+        }
+
+        let isPageLoading = true;
+        let isClickScrolling = false;
+        let lastScrollY = window.scrollY;
+
+        setTimeout(() => { isPageLoading = false; }, 1500);
+
+        window.addEventListener('pageshow', (event) => {
+            const header = document.getElementById('main-header');
+            if (!header) return;
+            
+            header.classList.remove('header-hidden');
+            
+            header.style.animation = 'none';
+            void header.offsetWidth; 
+            header.style.animation = null; 
+
+            isPageLoading = true;
+            setTimeout(() => { isPageLoading = false; }, 1500);
+            
+            lastScrollY = window.scrollY;
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            function lockHeaderDuringScroll(targetId) {
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                isClickScrolling = true;
+                const headerMain = document.getElementById('main-header');
+                headerMain.classList.remove('header-hidden');
+
+                let lastY = window.scrollY;
+                let stillCounter = 0;
+
+                function detectScrollEnd() {
+                    const currentY = window.scrollY;
+
+                    if (Math.abs(currentY - lastY) < 1) {
+                        stillCounter++;
+                    } else {
+                        stillCounter = 0;
+                    }
+
+                    lastY = currentY;
+
+                    if (stillCounter > 6) {
+                        isClickScrolling = false;
+                        return;
+                    }
+
+                    requestAnimationFrame(detectScrollEnd);
+                }
+
+                requestAnimationFrame(detectScrollEnd);
+            }
+            
+            const curDot = document.getElementById('cursor-dot');
+            const curRing = document.getElementById('cursor-ring');
+            let mX = window.innerWidth / 2, mY = window.innerHeight / 2;
+            let rX = mX, rY = mY;
+
+            document.addEventListener('mousemove', (e) => {
+                mX = e.clientX; mY = e.clientY;
+                curDot.style.left = `${mX}px`; curDot.style.top = `${mY}px`;
+            });
+
+            const loopCursor = () => {
+                rX += (mX - rX) * 0.15; 
+                rY += (mY - rY) * 0.15;
+                curRing.style.left = `${rX}px`; curRing.style.top = `${rY}px`;
+                requestAnimationFrame(loopCursor);
+            };
+            loopCursor();
+
+            document.querySelectorAll('.hover-trigger, button, a').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                   curRing.style.width = '64px'; curRing.style.height = '64px';
+                   curRing.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--cursor-bg').trim(); 
+                   curRing.style.borderWidth = '0';
+                   curDot.style.transform = 'translate(-50%, -50%) scale(1.6)';
+                   curDot.style.opacity = '0.3';
+                });
+                el.addEventListener('mouseleave', () => {
+                   curRing.style.width = '40px'; curRing.style.height = '40px';
+                   curRing.style.backgroundColor = 'transparent';
+                   curRing.style.borderWidth = '1px';
+                   curDot.style.transform = 'translate(-50%, -50%) scale(1.0)';
+                   curDot.style.opacity = '1';
+                });
+            });
+
+            document.addEventListener('mousedown', ()=> { curRing.style.transform = `translate(-50%, -50%) scale(0.65)`; });
+            document.addEventListener('mouseup', ()=> { curRing.style.transform = `translate(-50%, -50%) scale(1.0)`; });
+
+
+            const navLinksContainer = document.querySelector('.nav-links');
+            const navLinksArray = document.querySelectorAll('.nav-links a');
+            
+            const navIndicator = document.createElement('div');
+            navIndicator.classList.add('nav-indicator');
+            navLinksContainer.appendChild(navIndicator);
+
+            let isIndicatorReady = false; 
+
+            const updateNavIndicator = () => {
+                if (!isIndicatorReady) return;
+
+                const activeLink = document.querySelector('.nav-links a.active');
+                if (activeLink) {
+                    navIndicator.style.width = `${activeLink.offsetWidth}px`;
+                    navIndicator.style.height = `${activeLink.offsetHeight}px`;
+                    navIndicator.style.transform = `translate(${activeLink.offsetLeft}px, ${activeLink.offsetTop}px)`;
+                    navIndicator.classList.add('is-active'); 
+                } else {
+                    navIndicator.classList.remove('is-active');
+                }
+            };
+
+            if (window.location.hash) {
+                const targetLink = document.querySelector(`.nav-links a[href="${window.location.hash}"]`);
+                if (targetLink) {
+                    navLinksArray.forEach(l => l.classList.remove('active'));
+                    targetLink.classList.add('active');
+                }
+            }
+
+            setTimeout(() => {
+                isIndicatorReady = true;
+                updateNavIndicator();
+            }, 750);
+
+            window.addEventListener('resize', updateNavIndicator);
+
+
+            const headerMain = document.getElementById('main-header');
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', () => {
+                    lockHeaderDuringScroll(anchor.getAttribute('href'));
+
+                    if (anchor.closest('.nav-links')) {
+                        navLinksArray.forEach(l => l.classList.remove('active'));
+                        anchor.classList.add('active');
+                        if(!isIndicatorReady) isIndicatorReady = true; 
+                        updateNavIndicator();
+                    } else if (anchor.classList.contains('logo-b')) {
+                        navLinksArray.forEach(l => l.classList.remove('active'));
+                        if(!isIndicatorReady) isIndicatorReady = true;
+                        updateNavIndicator();
+                    }
+                });
+            });
+
+            window.addEventListener('scroll', () => {
+                if (isPageLoading || isClickScrolling) {
+                    lastScrollY = window.scrollY;
+                    return;
+                }
+                
+                let currentScrollY = window.scrollY;
+
+                if (currentScrollY <= 0) {
+                    headerMain.classList.remove('header-hidden');
+                } 
+                else if (currentScrollY > lastScrollY && currentScrollY > 60) {
+                    headerMain.classList.add('header-hidden');
+                } 
+                else if (currentScrollY < lastScrollY) {
+                    headerMain.classList.remove('header-hidden');
+                }
+
+                lastScrollY = currentScrollY;
+            }, { passive: true });
+
+            let scrollEndTimeout;
+
+            window.addEventListener('scroll', () => {
+                clearTimeout(scrollEndTimeout);
+
+                scrollEndTimeout = setTimeout(() => {
+                    isClickScrolling = false;
+                }, 200);
+            }, { passive: true });
+
+
+            const sections = document.querySelectorAll('section');
+
+            const activeSectionOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+
+            const activeSectionObserver = new IntersectionObserver((entries) => {
+                if (isClickScrolling) return;
+
+                let hasChanges = false;
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinksArray.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${entry.target.id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                        hasChanges = true;
+                    }
+                });
+                
+                if(hasChanges) updateNavIndicator();
+            }, activeSectionOptions);
+
+            sections.forEach(sec => activeSectionObserver.observe(sec));
+
+
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealOptions = {
+                threshold: 0.05, 
+                rootMargin: "0px 0px 50px 0px"
+            };
+
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => observer.observe(el));
+
+
+            const btnThemeToggle = document.getElementById('toggle-theme-btn');
+            let isLightMode = false;
+
+            btnThemeToggle.addEventListener('click', () => {
+                isLightMode = !isLightMode;
+                document.body.classList.toggle('light-mode', isLightMode);
+                curRing.style.width = '64px'; curRing.style.height = '64px'; 
+                curRing.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--cursor-bg').trim(); 
+            });
+
+
+            let curLangModeStrSysESENLogicVal = 'es';
+            const btnLangToggle = document.getElementById('toggle-lang-btn');
+            const contentContainerDOM = document.getElementById('content-layer');
+
+            btnLangToggle.addEventListener('click', () => {
+                contentContainerDOM.style.transition = 'opacity 0.5s cubic-bezier(0.8, 0, 0.2, 1), transform 0.5s cubic-bezier(0.8, 0, 0.2, 1), filter 0.5s cubic-bezier(0.8, 0, 0.2, 1)';
+                contentContainerDOM.style.opacity = '0';
+                contentContainerDOM.style.transform = 'translateY(15px) scale(0.97)';
+                contentContainerDOM.style.filter = 'blur(10px)';
+
+                 setTimeout(() => {
+                    curLangModeStrSysESENLogicVal = curLangModeStrSysESENLogicVal === 'es' ? 'en' : 'es';
+                    document.documentElement.lang = curLangModeStrSysESENLogicVal;
+
+                    requestAnimationFrame(() => updateNavIndicator());
+
+                    contentContainerDOM.style.opacity = '1';
+                    contentContainerDOM.style.transform = 'translateY(0px) scale(1)';
+                    contentContainerDOM.style.filter = 'blur(0px)';
+                    
+                    setTimeout(() => { contentContainerDOM.style.transition = ''; }, 600);
+                 }, 450);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>SYNCRO | M | B. // Proyecto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --dark-abyss: #151113; --tech-grid: rgba(255, 240, 245, 0.03); --border-strict: rgba(230, 215, 220, 0.12); --white-solid: #FDF9FA; --dim-grey: #AFA5A8; --accent-pastel: #F2D3DC; --cursor-bg: rgba(216, 162, 179, 0.15); --font-massive: 'Space Grotesk', sans-serif; --font-data: 'Inter', sans-serif; }
+        body.light-mode { --dark-abyss: #FCF9FA; --tech-grid: rgba(0, 0, 0, 0.03); --border-strict: rgba(0, 0, 0, 0.12); --white-solid: #221A1D; --dim-grey: #7B6F73; --accent-pastel: #B05574; --cursor-bg: rgba(194, 130, 150, 0.12); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--dark-abyss); color: var(--white-solid); font-family: var(--font-data); overflow-x: hidden; -webkit-font-smoothing: antialiased; cursor: none; transition: background-color 0.4s ease, color 0.4s ease; }
+        html[lang="en"] .lang-es, html[lang="es"] .lang-en { display: none !important; }
+        ::-webkit-scrollbar { width: 4px; } ::-webkit-scrollbar-thumb { background: var(--border-strict); border-radius: 10px; }
+        
+        .overlay-architecture { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: linear-gradient(var(--tech-grid) 1px, transparent 1px), linear-gradient(90deg, var(--tech-grid) 1px, transparent 1px); background-size: 7vw 7vw; z-index: -1; pointer-events: none; opacity: 0; animation: bootGrid 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes bootGrid { 0% { opacity: 0; transform: scale(1.05) translateY(20px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
+        
+        .reveal { opacity: 0; transform: translateY(60px) scale(0.95) rotateX(-5deg); filter: blur(10px); transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.05), filter 0.6s ease; will-change: opacity, transform, filter; }
+        .reveal.is-visible { opacity: 1; transform: translateY(0) scale(1) rotateX(0deg); filter: blur(0px); }
+        .delay-050 { transition-delay: 30ms; } .delay-100 { transition-delay: 60ms; } .delay-150 { transition-delay: 90ms; } .delay-200 { transition-delay: 120ms; } .delay-250 { transition-delay: 150ms; } .delay-300 { transition-delay: 180ms; }
+        
+        #cursor-dot { width: 8px; height: 8px; background: var(--accent-pastel); border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; transition: opacity 0.2s;}
+        #cursor-ring { width: 40px; height: 40px; border: 1px solid var(--accent-pastel); border-radius: 50%; position: fixed; pointer-events: none; opacity: 0.7; transform: translate(-50%, -50%); z-index: 9998; transition: width 0.2s cubic-bezier(0.2, 1, 0.3, 1), height 0.2s cubic-bezier(0.2, 1, 0.3, 1), background-color 0.2s, opacity 0.2s; }
+        
+        #main-header { position: fixed; top: 18px; left: 50%; transform: translateX(-50%); width: max-content; padding: 8px 12px 8px 24px; background: rgba(21, 17, 19, 0.78); backdrop-filter: blur(16px); border: 1px solid var(--border-strict); border-radius: 999px; display: flex; align-items: center; gap: 40px; z-index: 1000; animation: headerBoot 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards; opacity: 0; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease; }
+        body.light-mode #main-header { background: rgba(252, 249, 250, 0.75); }
+        @keyframes headerBoot { 0% { opacity: 0; top: -30px; } 100% { opacity: 1; top: 18px; } }
+        .header-hidden { transform: translate(-50%, -150%) !important; }
+        
+        .back-link { color: var(--dim-grey); font-size: 0.8rem; letter-spacing: 1px; font-weight: 500; text-transform: uppercase; text-decoration: none; cursor: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s ease, transform 0.2s ease; }
+        .back-link span.arrow { font-size: 1.1rem; line-height: 1; margin-bottom: 2px; }
+        .back-link:hover { color: var(--white-solid); transform: translateX(-3px); }
+        .header-controls { display: flex; gap: 12px; align-items: center; }
+        .header-btn { background: transparent; border: 1.2px solid var(--border-strict); color: var(--dim-grey); font-family: var(--font-data); font-size: 0.7rem; letter-spacing: 1.5px; border-radius: 40px; padding: 7px 18px; text-transform: uppercase; transition: all 0.2s ease; cursor: none; font-weight: 500; height: 34px; display: flex; align-items: center; justify-content: center; }
+        .header-btn:hover { color: var(--dark-abyss); background: var(--accent-pastel); border-color: var(--accent-pastel); }
+        .lang-switch-lbl { opacity: 0.4; font-weight: 400; transition: opacity 0.2s; }
+        html[lang="es"] .lang-switch-lbl.es, html[lang="en"] .lang-switch-lbl.en { opacity: 1; font-weight: 700; color: var(--accent-pastel); }
+        .lang-sep { opacity: 0.3; margin: 0 4px; pointer-events: none; }
+        
+        #content-layer { padding-top: 20vh; position: relative; z-index: 10; width: 100%; transition: opacity 0.3s, transform 0.3s, filter 0.3s; }
+        .container { width: 90%; max-width: 1000px; margin: auto; padding-bottom: 10vh; }
+        .section-label { font-size: 0.7rem; color: var(--accent-pastel); display: block; letter-spacing: 3px; font-weight: 500; text-transform: uppercase; margin-bottom: 25px; }
+        .project-title { font-family: var(--font-massive); font-size: clamp(3rem, 8vw, 9vw); line-height: 0.95; font-weight: 500; letter-spacing: -0.04em; text-transform: uppercase; border-bottom: 1px solid var(--border-strict); padding-bottom: 25px; margin-bottom: 8vh; }
+        
+        .project-img-wrapper { width: 100%; overflow: hidden; border-radius: 8px; margin-bottom: 8vh; position: relative; cursor: none; }
+        .project-img-wrapper img { width: 100%; height: auto; display: block; filter: grayscale(40%); clip-path: inset(12% 12% 12% 12% round 8px); transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease; transform: scale(1.15); }
+        .reveal.is-visible.project-img-wrapper img { clip-path: inset(0% 0% 0% 0% round 8px); transform: scale(1); }
+        .project-img-wrapper:hover img { transform: scale(1.03); filter: grayscale(0%) brightness(1.02); }
+        
+        .project-text { font-size: 1.05rem; line-height: 1.7; color: var(--dim-grey); text-align: left; margin-bottom: 10vh; max-width: 800px; margin-left: 0; margin-right: 0; }
+        footer { padding: 8vh 5vw; border-top: 1px solid var(--border-strict); display: flex; flex-direction: column; align-items: center; gap: 15px; text-align: center; margin-top: 5vh;}
+        .footer-logo { font-family: var(--font-massive); font-size: 1.5rem; color: var(--white-solid); }
+        .footer-text { font-family: var(--font-data); color: var(--dim-grey); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="overlay-architecture"></div>
+    <div id="cursor-dot"></div><div id="cursor-ring"></div>
+    <header id="main-header">
+        <a href="index.html#portfolio" class="back-link hover-trigger"><span class="arrow">←</span><span class="lang-es">Volver</span><span class="lang-en">Back</span></a>
+        <div class="header-controls">
+            <button id="toggle-theme-btn" class="header-btn hover-trigger">☼ / ☾</button>
+            <button id="toggle-lang-btn" class="header-btn hover-trigger"><span class="lang-switch-lbl es">ES</span><span class="lang-sep">|</span><span class="lang-switch-lbl en">EN</span></button>
+        </div>
+    </header>
+    <main id="content-layer">
+        <div class="container">
+            <span class="section-label reveal">[ 07.01 PROYECTO // PROJECT ]</span>
+            <h1 class="project-title reveal delay-050">SYNCRO</h1>
+            <div class="project-img-wrapper reveal delay-100 hover-trigger"><img src="profile10.jpg" alt="Reloj Deportivo"></div>
+            <p class="project-text reveal delay-150">
+                <span class="lang-es">Syncro es un proyecto de diseño centrado en el desarrollo formal de un reloj deportivo para su uso tanto en actividad física como en el día a día. El trabajo se enfocó en definir una geometría limpia, equilibrada y apta para ambos sexos, evitando una apariencia excesivamente técnica. El resultado es un reloj versátil que mantiene su identidad deportiva sin desentonar en contextos urbanos y cotidianos.</span>
+                <span class="lang-en">Syncro is a design project focused on the formal development of a sports watch for both physical activity and everyday use. The work aimed to define a clean, balanced geometry suitable for all genders, avoiding an overly technical appearance. The result is a versatile watch that maintains its sporty identity without clashing in urban contexts.</span>
+            </p>
+            <p class="project-text reveal delay-200">
+                <span class="lang-es">El resultado es un reloj versátil que mantiene su identidad deportiva sin desentonar en contextos urbanos y cotidianos, optimizando la ergonomía y la legibilidad mediante un lenguaje visual minimalista y coherente.</span>
+                <span class="lang-en">The result is a versatile watch that maintains its sporty identity without clashing in urban and everyday contexts, optimizing ergonomics and readability through a minimalist and coherent visual language.</span>
+            </p>
+        </div>
+        <footer class="reveal delay-100"><div class="footer-logo">M | B.</div><div class="footer-text"><span class="lang-es">Borbála Major · Ingeniera en diseño industrial</span><span class="lang-en">Borbála Major · Industrial Design Engineer</span></div></footer>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; } window.scrollTo(0, 0);
+            const curDot = document.getElementById('cursor-dot'), curRing = document.getElementById('cursor-ring');
+            let mX = 0, mY = 0, rX = 0, rY = 0;
+            document.addEventListener('mousemove', e => { mX = e.clientX; mY = e.clientY; curDot.style.left = `${mX}px`; curDot.style.top = `${mY}px`; });
+            const loop = () => { rX += (mX - rX) * 0.15; rY += (mY - rY) * 0.15; curRing.style.left = `${rX}px`; curRing.style.top = `${rY}px`; requestAnimationFrame(loop); }; loop();
+            document.querySelectorAll('.hover-trigger, button, a').forEach(el => {
+                el.addEventListener('mouseenter', () => { curRing.style.width = '64px'; curRing.style.height = '64px'; curRing.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--cursor-bg').trim(); curRing.style.borderWidth = '0'; curDot.style.opacity = '0.3'; });
+                el.addEventListener('mouseleave', () => { curRing.style.width = '40px'; curRing.style.height = '40px'; curRing.style.backgroundColor = 'transparent'; curRing.style.borderWidth = '1px'; curDot.style.opacity = '1'; });
+            });
+            const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }}); }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            document.getElementById('toggle-theme-btn').addEventListener('click', () => document.body.classList.toggle('light-mode'));
+            let curLang = 'es'; document.getElementById('toggle-lang-btn').addEventListener('click', () => {
+                const layer = document.getElementById('content-layer');
+                layer.style.transition = 'opacity 0.3s cubic-bezier(0.8, 0, 0.2, 1), transform 0.3s cubic-bezier(0.8, 0, 0.2, 1), filter 0.3s cubic-bezier(0.8, 0, 0.2, 1)';
+                layer.style.opacity = '0'; layer.style.transform = 'translateY(15px) scale(0.97)'; layer.style.filter = 'blur(10px)';
+                setTimeout(() => { curLang = curLang === 'es' ? 'en' : 'es'; document.documentElement.lang = curLang; layer.style.opacity = '1'; layer.style.transform = 'translateY(0) scale(1)'; layer.style.filter = 'blur(0)'; setTimeout(() => { layer.style.transition = ''; }, 350); }, 250);
+            });
+            let lastS = 0; const h = document.getElementById('main-header');
+            window.addEventListener('scroll', () => { const s = window.scrollY; if(s > lastS && s > 60) h.classList.add('header-hidden'); else h.classList.remove('header-hidden'); lastS = s; }, {passive:true});
+        });
+    </script>
+</body>
+</html>
