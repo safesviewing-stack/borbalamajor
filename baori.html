@@ -6,6 +6,7 @@
     <title>BAORI | M | B. // Proyecto</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Se han eliminado todas las variables de la cuadrícula (--tech-grid) */
         :root { --dark-abyss: #151113; --border-strict: rgba(230, 215, 220, 0.12); --white-solid: #FDF9FA; --dim-grey: #AFA5A8; --accent-pastel: #F2D3DC; --cursor-bg: rgba(216, 162, 179, 0.15); --font-massive: 'Space Grotesk', sans-serif; --font-data: 'Inter', sans-serif; }
         body.light-mode { --dark-abyss: #FCF9FA; --border-strict: rgba(0, 0, 0, 0.12); --white-solid: #221A1D; --dim-grey: #7B6F73; --accent-pastel: #B05574; --cursor-bg: rgba(194, 130, 150, 0.12); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -13,6 +14,7 @@
         html[lang="en"] .lang-es, html[lang="es"] .lang-en { display: none !important; }
         ::-webkit-scrollbar { width: 4px; } ::-webkit-scrollbar-thumb { background: var(--border-strict); border-radius: 10px; }
         
+        /* Animaciones y elementos restantes de la interfaz (sin la cuadrícula del fondo) */
         .reveal { opacity: 0; transform: translateY(60px) scale(0.95) rotateX(-5deg); filter: blur(10px); transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.05), filter 0.6s ease; will-change: opacity, transform, filter; }
         .reveal.is-visible { opacity: 1; transform: translateY(0) scale(1) rotateX(0deg); filter: blur(0px); }
         .delay-050 { transition-delay: 30ms; } .delay-100 { transition-delay: 60ms; } .delay-150 { transition-delay: 90ms; } .delay-200 { transition-delay: 120ms; } .delay-250 { transition-delay: 150ms; } .delay-300 { transition-delay: 180ms; }
@@ -52,6 +54,8 @@
     </style>
 </head>
 <body>
+    <!-- Se eliminó <div class="overlay-architecture"></div> que generaba la cuadrícula visual -->
+    
     <div id="cursor-dot"></div><div id="cursor-ring"></div>
     <header id="main-header">
         <a href="index.html#portfolio" class="back-link hover-trigger"><span class="arrow">←</span><span class="lang-es">Volver</span><span class="lang-en">Back</span></a>
