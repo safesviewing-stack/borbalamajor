@@ -6,37 +6,118 @@
     <title>NODE | M | B. // Proyecto</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --dark-abyss: #151113; --tech-grid: rgba(255, 240, 245, 0.03); --border-strict: rgba(230, 215, 220, 0.12); --white-solid: #FDF9FA; --dim-grey: #AFA5A8; --accent-pastel: #F2D3DC; --cursor-bg: rgba(216, 162, 179, 0.15); --font-massive: 'Space Grotesk', sans-serif; --font-data: 'Inter', sans-serif; }
-        body.light-mode { --dark-abyss: #FCF9FA; --tech-grid: rgba(0, 0, 0, 0.03); --border-strict: rgba(0, 0, 0, 0.12); --white-solid: #221A1D; --dim-grey: #7B6F73; --accent-pastel: #B05574; --cursor-bg: rgba(194, 130, 150, 0.12); }
+        :root { 
+            --dark-abyss: #151113; 
+            --tech-grid: rgba(255, 240, 245, 0.03); 
+            --border-strict: rgba(230, 215, 220, 0.12); 
+            --white-solid: #FDF9FA; 
+            --dim-grey: #AFA5A8; 
+            --accent-pastel: #F2D3DC; 
+            --cursor-bg: rgba(216, 162, 179, 0.15); 
+            --font-massive: 'Space Grotesk', sans-serif; 
+            --font-data: 'Inter', sans-serif; 
+        }
+        
+        body.light-mode { 
+            --dark-abyss: #FCF9FA; 
+            --tech-grid: rgba(0, 0, 0, 0.03); 
+            --border-strict: rgba(0, 0, 0, 0.12); 
+            --white-solid: #221A1D; 
+            --dim-grey: #7B6F73; 
+            --accent-pastel: #B05574; 
+            --cursor-bg: rgba(194, 130, 150, 0.12); 
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--dark-abyss); color: var(--white-solid); font-family: var(--font-data); overflow-x: hidden; -webkit-font-smoothing: antialiased; cursor: none; transition: background-color 0.4s ease, color 0.4s ease; }
+        
+        body { 
+            background-color: var(--dark-abyss); 
+            color: var(--white-solid); 
+            font-family: var(--font-data); 
+            overflow-x: hidden; 
+            -webkit-font-smoothing: antialiased; 
+            cursor: none; 
+            transition: background-color 0.4s ease, color 0.4s ease; 
+        }
+        
         html[lang="en"] .lang-es, html[lang="es"] .lang-en { display: none !important; }
-        ::-webkit-scrollbar { width: 4px; } ::-webkit-scrollbar-thumb { background: var(--border-strict); border-radius: 10px; }
+        ::-webkit-scrollbar { width: 4px; } 
+        ::-webkit-scrollbar-thumb { background: var(--border-strict); border-radius: 10px; }
         
-        .overlay-architecture { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: linear-gradient(var(--tech-grid) 1px, transparent 1px), linear-gradient(90deg, var(--tech-grid) 1px, transparent 1px); background-size: 7vw 7vw; z-index: -1; pointer-events: none; opacity: 0; animation: bootGrid 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        @keyframes bootGrid { 0% { opacity: 0; transform: scale(1.05) translateY(20px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
+        .overlay-architecture { 
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; 
+            background-image: linear-gradient(var(--tech-grid) 1px, transparent 1px), linear-gradient(90deg, var(--tech-grid) 1px, transparent 1px); 
+            background-size: 7vw 7vw; z-index: -1; pointer-events: none; opacity: 0; 
+            animation: bootGrid 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+        }
+        @keyframes bootGrid { 
+            0% { opacity: 0; transform: scale(1.05) translateY(20px); } 
+            100% { opacity: 1; transform: scale(1) translateY(0); } 
+        }
         
-        .reveal { opacity: 0; transform: translateY(60px) scale(0.95) rotateX(-5deg); filter: blur(10px); transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.05), filter 0.6s ease; will-change: opacity, transform, filter; }
+        .reveal { 
+            opacity: 0; transform: translateY(60px) scale(0.95) rotateX(-5deg); filter: blur(10px); 
+            transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.05), filter 0.6s ease; 
+            will-change: opacity, transform, filter; 
+        }
         .reveal.is-visible { opacity: 1; transform: translateY(0) scale(1) rotateX(0deg); filter: blur(0px); }
         .delay-050 { transition-delay: 30ms; } .delay-100 { transition-delay: 60ms; } .delay-150 { transition-delay: 90ms; } .delay-200 { transition-delay: 120ms; } .delay-250 { transition-delay: 150ms; } .delay-300 { transition-delay: 180ms; }
         
         #cursor-dot { width: 8px; height: 8px; background: var(--accent-pastel); border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; transition: opacity 0.2s;}
         #cursor-ring { width: 40px; height: 40px; border: 1px solid var(--accent-pastel); border-radius: 50%; position: fixed; pointer-events: none; opacity: 0.7; transform: translate(-50%, -50%); z-index: 9998; transition: width 0.2s cubic-bezier(0.2, 1, 0.3, 1), height 0.2s cubic-bezier(0.2, 1, 0.3, 1), background-color 0.2s, opacity 0.2s; }
         
-        #main-header { position: fixed; top: 18px; left: 50%; transform: translateX(-50%); width: max-content; padding: 8px 12px 8px 24px; background: rgba(21, 17, 19, 0.78); backdrop-filter: blur(16px); border: 1px solid var(--border-strict); border-radius: 999px; display: flex; align-items: center; gap: 40px; z-index: 1000; animation: headerBoot 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards; opacity: 0; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease; }
+        #main-header { 
+            position: fixed; top: 18px; left: 50%; transform: translateX(-50%); 
+            width: max-content; padding: 8px 12px 8px 24px; 
+            background: rgba(21, 17, 19, 0.78); backdrop-filter: blur(16px); 
+            border: 1px solid var(--border-strict); border-radius: 999px; 
+            display: flex; align-items: center; gap: 40px; z-index: 1000; 
+            animation: headerBoot 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards; 
+            opacity: 0; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease; 
+        }
         body.light-mode #main-header { background: rgba(252, 249, 250, 0.75); }
         @keyframes headerBoot { 0% { opacity: 0; top: -30px; } 100% { opacity: 1; top: 18px; } }
         .header-hidden { transform: translate(-50%, -150%) !important; }
         
-        .back-link { color: var(--dim-grey); font-size: 0.8rem; letter-spacing: 1px; font-weight: 500; text-transform: uppercase; text-decoration: none; cursor: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s ease, transform 0.2s ease; }
+        .back-link { 
+            color: var(--dim-grey); font-size: 0.8rem; letter-spacing: 1px; font-weight: 500; text-transform: uppercase; text-decoration: none; cursor: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s ease, transform 0.2s ease; 
+        }
         .back-link span.arrow { font-size: 1.1rem; line-height: 1; margin-bottom: 2px; }
         .back-link:hover { color: var(--white-solid); transform: translateX(-3px); }
+        body.light-mode .back-link:hover { color: var(--white-solid); }
+
         .header-controls { display: flex; gap: 12px; align-items: center; }
-        .header-btn { background: transparent; border: 1.2px solid var(--border-strict); color: var(--dim-grey); font-family: var(--font-data); font-size: 0.7rem; letter-spacing: 1.5px; border-radius: 40px; padding: 7px 18px; text-transform: uppercase; transition: all 0.2s ease; cursor: none; font-weight: 500; height: 34px; display: flex; align-items: center; justify-content: center; }
+        
+        .header-btn { 
+            background: transparent; border: 1.2px solid var(--border-strict); color: var(--dim-grey); 
+            font-family: var(--font-data); font-size: 0.7rem; letter-spacing: 1.5px; 
+            border-radius: 40px; padding: 7px 18px; text-transform: uppercase; 
+            transition: all 0.35s ease; cursor: none; font-weight: 500; height: 34px; display: flex; align-items: center; justify-content: center; 
+        }
+        
         .header-btn:hover { color: var(--dark-abyss); background: var(--accent-pastel); border-color: var(--accent-pastel); }
-        .lang-switch-lbl { opacity: 0.4; font-weight: 400; transition: opacity 0.2s; }
+        
+        /* OVERRIDE: Hover de botones en modo claro (rosa clarito y texto blanco) */
+        body.light-mode .header-btn:hover { background: #CD849C; border-color: #CD849C; color: #FDF9FA; }
+
+        .lang-switch-lbl { opacity: 0.4; font-weight: 400; transition: opacity 0.3s, font-weight 0.3s, color 0.3s; }
         html[lang="es"] .lang-switch-lbl.es, html[lang="en"] .lang-switch-lbl.en { opacity: 1; font-weight: 700; color: var(--accent-pastel); }
-        .lang-sep { opacity: 0.3; margin: 0 4px; pointer-events: none; }
+        .lang-sep { opacity: 0.3; margin: 0 4px; pointer-events: none;}
+
+        #toggle-lang-btn:hover .lang-switch-lbl.es, 
+        #toggle-lang-btn:hover .lang-switch-lbl.en, 
+        #toggle-lang-btn:hover .lang-sep { color: var(--dark-abyss); }
+        
+        html[lang="es"] #toggle-lang-btn:hover .lang-switch-lbl.es,
+        html[lang="en"] #toggle-lang-btn:hover .lang-switch-lbl.en { opacity: 1; font-weight: 700; color: var(--white-solid); }
+
+        /* OVERRIDE: Colores correctos de texto (blanco) al hacer hover en el botón de idioma en modo claro */
+        body.light-mode #toggle-lang-btn:hover .lang-switch-lbl.es, 
+        body.light-mode #toggle-lang-btn:hover .lang-switch-lbl.en, 
+        body.light-mode #toggle-lang-btn:hover .lang-sep { color: rgba(253, 249, 250, 0.7); }
+
+        html[lang="es"] body.light-mode #toggle-lang-btn:hover .lang-switch-lbl.es,
+        html[lang="en"] body.light-mode #toggle-lang-btn:hover .lang-switch-lbl.en { opacity: 1; font-weight: 700; color: #FDF9FA; }
         
         #content-layer { padding-top: 20vh; position: relative; z-index: 10; width: 100%; transition: opacity 0.3s, transform 0.3s, filter 0.3s; }
         .container { width: 90%; max-width: 1000px; margin: auto; padding-bottom: 10vh; }
@@ -57,87 +138,169 @@
 <body>
     <div class="overlay-architecture"></div>
     <div id="cursor-dot"></div><div id="cursor-ring"></div>
+    
     <header id="main-header">
-        <a href="index.html#portfolio" class="back-link hover-trigger"><span class="arrow">←</span><span class="lang-es">Volver</span><span class="lang-en">Back</span></a>
+        <a href="index.html#portfolio" class="back-link hover-trigger">
+            <span class="arrow">←</span>
+            <span class="lang-es">Volver</span>
+            <span class="lang-en">Back</span>
+        </a>
         <div class="header-controls">
             <button id="toggle-theme-btn" class="header-btn hover-trigger">☼ / ☾</button>
-            <button id="toggle-lang-btn" class="header-btn hover-trigger"><span class="lang-switch-lbl es">ES</span><span class="lang-sep">|</span><span class="lang-switch-lbl en">EN</span></button>
+            <button id="toggle-lang-btn" class="header-btn hover-trigger">
+                <span class="lang-switch-lbl es">ES</span>
+                <span class="lang-sep">|</span>
+                <span class="lang-switch-lbl en">EN</span>
+            </button>
         </div>
     </header>
+
     <main id="content-layer">
         <div class="container">
             
             <span class="section-label reveal">[ 05.01 PROYECTO // PROJECT ]</span>
 
-<h1 class="project-title reveal delay-050">NODE</h1>
+            <h1 class="project-title reveal delay-050">NODE</h1>
 
-<div class="project-img-wrapper reveal delay-100 hover-trigger">
-    <img src="profile9.jpg" alt="NODE">
-</div>
+            <div class="project-img-wrapper reveal delay-100 hover-trigger">
+                <img src="profile9.jpg" alt="NODE">
+            </div>
 
-<p class="project-text reveal delay-150">
-    <span class="lang-es">
-        NODE es un sistema de mobiliario modular basado en una geometría triangular que permite combinar sus piezas para crear configuraciones tridimensionales, como cubos u otras formas multifuncionales. Esta estructura formal proporciona al sistema una gran versatilidad tanto en términos de espacio como de funcionalidad.
-    </span>
-    <span class="lang-en">
-        NODE is a modular furniture system based on triangular geometry that allows its pieces to be combined to create three-dimensional configurations, such as cubes or other multifunctional shapes. This formal structure provides the system with great versatility.
-    </span>
-</p>
+            <p class="project-text reveal delay-150">
+                <span class="lang-es">
+                    NODE es un sistema de mobiliario modular basado en una geometría triangular que permite combinar sus piezas para crear configuraciones tridimensionales, como cubos u otras formas multifuncionales. Esta estructura formal proporciona al sistema una gran versatilidad tanto en términos de espacio como de funcionalidad.
+                </span>
+                <span class="lang-en">
+                    NODE is a modular furniture system based on triangular geometry that allows its pieces to be combined to create three-dimensional configurations, such as cubes or other multifunctional shapes. This formal structure provides the system with great versatility.
+                </span>
+            </p>
 
-<div class="project-img-wrapper reveal delay-200 hover-trigger">
-    <img src="taburete.jpg" alt="NODE · Taburete">
-</div>
+            <div class="project-img-wrapper reveal delay-200 hover-trigger">
+                <img src="taburete.jpg" alt="NODE · Taburete">
+            </div>
 
-<p class="project-text reveal delay-250">
-    <span class="lang-es">
-        La configuración funcional más básica del sistema es un taburete, compuesto por la unión de dos módulos triangulares. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y una estructura sólida pese a su aparente simplicidad.
-    </span>
-    <span class="lang-en">
-        The most basic functional configuration is a stool, made of two triangular modules. This solution preserves the system's identity, ensuring ergonomics, visual lightness and a solid structure despite its apparent simplicity.
-    </span>
-</p>
+            <p class="project-text reveal delay-250">
+                <span class="lang-es">
+                    La configuración funcional más básica del sistema es un taburete, compuesto por la unión de dos módulos triangulares. Esta solución conserva la identidad del sistema, garantizando ergonomía, ligereza visual y una estructura sólida pese a su aparente simplicidad.
+                </span>
+                <span class="lang-en">
+                    The most basic functional configuration is a stool, made of two triangular modules. This solution preserves the system's identity, ensuring ergonomics, visual lightness and a solid structure despite its apparent simplicity.
+                </span>
+            </p>
 
-<div class="project-img-wrapper reveal delay-300 hover-trigger">
-    <img src="plano1.jpg" alt="NODE · Plano técnico 1">
-</div>
+            <div class="project-img-wrapper reveal delay-300 hover-trigger">
+                <img src="plano1.jpg" alt="NODE · Plano técnico 1">
+            </div>
 
-<div class="project-img-wrapper reveal delay-300 hover-trigger">
-    <img src="plano2.jpg" alt="NODE · Plano técnico 2">
-</div>
+            <div class="project-img-wrapper reveal delay-300 hover-trigger">
+                <img src="plano2.jpg" alt="NODE · Plano técnico 2">
+            </div>
 
-<p class="project-text reveal delay-350">
-    <span class="lang-es">
-        Los planos técnicos del sistema NODE definen la geometría modular, las proporciones y los criterios constructivos necesarios para su correcta fabricación, permitiendo la repetición, escalabilidad y coherencia formal del sistema.
-    </span>
-    <span class="lang-en">
-        The technical drawings of the NODE system define the modular geometry, proportions and constructive criteria required for correct manufacturing, enabling repetition, scalability and formal coherence.
-    </span>
-</p>
+            <p class="project-text reveal delay-350">
+                <span class="lang-es">
+                    Los planos técnicos del sistema NODE definen la geometría modular, las proporciones y los criterios constructivos necesarios para su correcta fabricación, permitiendo la repetición, escalabilidad y coherencia formal del sistema.
+                </span>
+                <span class="lang-en">
+                    The technical drawings of the NODE system define the modular geometry, proportions and constructive criteria required for correct manufacturing, enabling repetition, scalability and formal coherence.
+                </span>
+            </p>
         </div>
-        <footer class="reveal delay-100"><div class="footer-logo">M | B.</div><div class="footer-text"><span class="lang-es">Borbála Major · Ingeniera en diseño industrial</span><span class="lang-en">Borbála Major · Industrial Design Engineer</span></div></footer>
+        
+        <footer class="reveal delay-100">
+            <div class="footer-logo">M | B.</div>
+            <div class="footer-text">
+                <span class="lang-es">Borbála Major · Ingeniera en diseño industrial</span>
+                <span class="lang-en">Borbála Major · Industrial Design Engineer</span>
+            </div>
+        </footer>
     </main>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; } window.scrollTo(0, 0);
-            const curDot = document.getElementById('cursor-dot'), curRing = document.getElementById('cursor-ring');
+            
+            const curDot = document.getElementById('cursor-dot');
+            const curRing = document.getElementById('cursor-ring');
             let mX = 0, mY = 0, rX = 0, rY = 0;
-            document.addEventListener('mousemove', e => { mX = e.clientX; mY = e.clientY; curDot.style.left = `${mX}px`; curDot.style.top = `${mY}px`; });
-            const loop = () => { rX += (mX - rX) * 0.15; rY += (mY - rY) * 0.15; curRing.style.left = `${rX}px`; curRing.style.top = `${rY}px`; requestAnimationFrame(loop); }; loop();
+            
+            document.addEventListener('mousemove', e => { 
+                mX = e.clientX; 
+                mY = e.clientY; 
+                curDot.style.left = `${mX}px`; 
+                curDot.style.top = `${mY}px`; 
+            });
+            
+            const loop = () => { 
+                rX += (mX - rX) * 0.15; 
+                rY += (mY - rY) * 0.15; 
+                curRing.style.left = `${rX}px`; 
+                curRing.style.top = `${rY}px`; 
+                requestAnimationFrame(loop); 
+            }; 
+            loop();
+            
             document.querySelectorAll('.hover-trigger, button, a').forEach(el => {
-                el.addEventListener('mouseenter', () => { curRing.style.width = '64px'; curRing.style.height = '64px'; curRing.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--cursor-bg').trim(); curRing.style.borderWidth = '0'; curDot.style.opacity = '0.3'; });
-                el.addEventListener('mouseleave', () => { curRing.style.width = '40px'; curRing.style.height = '40px'; curRing.style.backgroundColor = 'transparent'; curRing.style.borderWidth = '1px'; curDot.style.opacity = '1'; });
+                el.addEventListener('mouseenter', () => { 
+                    curRing.style.width = '64px'; 
+                    curRing.style.height = '64px'; 
+                    curRing.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--cursor-bg').trim(); 
+                    curRing.style.borderWidth = '0'; 
+                    curDot.style.opacity = '0.3'; 
+                });
+                el.addEventListener('mouseleave', () => { 
+                    curRing.style.width = '40px'; 
+                    curRing.style.height = '40px'; 
+                    curRing.style.backgroundColor = 'transparent'; 
+                    curRing.style.borderWidth = '1px'; 
+                    curDot.style.opacity = '1'; 
+                });
             });
-            const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }}); }, { threshold: 0.1 });
+            
+            const observer = new IntersectionObserver(entries => { 
+                entries.forEach(entry => { 
+                    if(entry.isIntersecting) { 
+                        entry.target.classList.add('is-visible'); 
+                        observer.unobserve(entry.target); 
+                    }
+                }); 
+            }, { threshold: 0.1 });
+            
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-            document.getElementById('toggle-theme-btn').addEventListener('click', () => document.body.classList.toggle('light-mode'));
-            let curLang = 'es'; document.getElementById('toggle-lang-btn').addEventListener('click', () => {
-                const layer = document.getElementById('content-layer');
-                layer.style.transition = 'opacity 0.3s cubic-bezier(0.8, 0, 0.2, 1), transform 0.3s cubic-bezier(0.8, 0, 0.2, 1), filter 0.3s cubic-bezier(0.8, 0, 0.2, 1)';
-                layer.style.opacity = '0'; layer.style.transform = 'translateY(15px) scale(0.97)'; layer.style.filter = 'blur(10px)';
-                setTimeout(() => { curLang = curLang === 'es' ? 'en' : 'es'; document.documentElement.lang = curLang; layer.style.opacity = '1'; layer.style.transform = 'translateY(0) scale(1)'; layer.style.filter = 'blur(0)'; setTimeout(() => { layer.style.transition = ''; }, 350); }, 250);
+            
+            document.getElementById('toggle-theme-btn').addEventListener('click', () => {
+                document.body.classList.toggle('light-mode');
             });
-            let lastS = 0; const h = document.getElementById('main-header');
-            window.addEventListener('scroll', () => { const s = window.scrollY; if(s > lastS && s > 60) h.classList.add('header-hidden'); else h.classList.remove('header-hidden'); lastS = s; }, {passive:true});
+            
+            let curLangModeStrSysESENLogicVal = 'es';
+            const btnLangToggle = document.getElementById('toggle-lang-btn');
+            const contentContainerDOM = document.getElementById('content-layer');
+
+            btnLangToggle.addEventListener('click', () => {
+                contentContainerDOM.style.transition = 'opacity 0.5s cubic-bezier(0.8, 0, 0.2, 1), transform 0.5s cubic-bezier(0.8, 0, 0.2, 1), filter 0.5s cubic-bezier(0.8, 0, 0.2, 1)';
+                contentContainerDOM.style.opacity = '0';
+                contentContainerDOM.style.transform = 'translateY(15px) scale(0.97)';
+                contentContainerDOM.style.filter = 'blur(10px)';
+
+                 setTimeout(() => {
+                    curLangModeStrSysESENLogicVal = curLangModeStrSysESENLogicVal === 'es' ? 'en' : 'es';
+                    document.documentElement.lang = curLangModeStrSysESENLogicVal;
+
+                    contentContainerDOM.style.opacity = '1';
+                    contentContainerDOM.style.transform = 'translateY(0px) scale(1)';
+                    contentContainerDOM.style.filter = 'blur(0px)';
+                    
+                    setTimeout(() => { contentContainerDOM.style.transition = ''; }, 600);
+                 }, 450);
+            });
+            
+            let lastS = 0; 
+            const h = document.getElementById('main-header');
+            window.addEventListener('scroll', () => { 
+                const s = window.scrollY; 
+                if(s > lastS && s > 60) h.classList.add('header-hidden'); 
+                else h.classList.remove('header-hidden'); 
+                lastS = s; 
+            }, {passive:true});
         });
     </script>
 </body>
