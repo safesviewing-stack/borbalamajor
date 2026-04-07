@@ -261,6 +261,7 @@
 
         /* OVERRIDE: Texto blanco para la sección activa sobre la burbuja rosa en modo claro */
         body.light-mode .nav-links a.active { color: #FDF9FA; }
+        body.light-mode .nav-links a:hover:not(.active) { color: var(--dark-abyss); }
         
         .header-controls { display: flex; gap: 12px; align-items: center;}
         
@@ -373,6 +374,11 @@
         .btn:hover { border-color: var(--accent-pastel); }
         .btn:hover::before { transform: translate(-50%, -50%) scale(1); top: 50%; }
         .btn:hover span.inner { color: var(--dark-abyss); font-weight: 500; transform: translateY(-2px);}
+
+        /* OVERRIDE: CV Button in light mode */
+        body.light-mode .btn:hover { border-color: #CD849C; }
+        body.light-mode .btn::before { background: #CD849C; }
+        body.light-mode .btn:hover span.inner { color: #FDF9FA; }
 
         /* == HERO == */
         #hero { 
@@ -546,8 +552,8 @@
         }
         
         .timeline-grid.is-visible:hover .timeline-content h3 { color: var(--accent-pastel); }
-        .timeline-grid.is-visible:hover .timeline-content p { color: #ECECEC; } 
-        body.light-mode .timeline-grid.is-visible:hover .timeline-content p { color: var(--dark-abyss); }
+        .timeline-grid.is-visible:hover .timeline-content p { color: var(--dim-grey); } 
+        body.light-mode .timeline-grid.is-visible:hover .timeline-content p { color: var(--dim-grey); }
 
         @media(max-width: 900px){
             .timeline-grid { grid-template-columns: 1fr; padding: 4vh 0; gap:2vh;}
