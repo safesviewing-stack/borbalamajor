@@ -31,7 +31,7 @@
             --white-solid: #221A1D; 
             --dim-grey: #7B6F73;
             
-            /* Tono rosa más oscuro y legible para fondos claros */
+            /* Tono rosa para el cursor y elementos básicos en modo claro */
             --accent-pastel: #B05574; 
             --cursor-bg: rgba(176, 85, 116, 0.12);
         }
@@ -235,6 +235,9 @@
         .nav-indicator.is-active { opacity: 1; }
         .nav-indicator.is-active::before { transform: scale(1); opacity: 1; }
 
+        /* OVERRIDE: Burbuja de sección activa más clarita en modo claro */
+        body.light-mode .nav-indicator::before { background: #CD849C; }
+
         .nav-links a {
             position: relative;
             z-index: 1; 
@@ -256,10 +259,8 @@
             transform: translateY(-1px);
         }
 
-        /* OVERRIDES MODO CLARO PARA LAS BURBUJAS DE NAVEGACIÓN Y TEXTOS */
+        /* OVERRIDE: Texto blanco para la sección activa sobre la burbuja rosa en modo claro */
         body.light-mode .nav-links a.active { color: #FDF9FA; }
-        body.light-mode .nav-links a:hover:not(.active) { color: var(--dark-abyss); }
-        body.light-mode .nav-indicator::before { background: #C06D88; }
         
         .header-controls { display: flex; gap: 12px; align-items: center;}
         
@@ -269,11 +270,10 @@
             border-radius: 40px; padding: 7px 18px; text-transform: uppercase;
             transition: all 0.35s ease; cursor: none; font-weight: 500; height:34px; display: flex; justify-content: center; align-items: center;
         }
-        
         .header-btn:hover { color: var(--dark-abyss); background: var(--accent-pastel); border-color: var(--accent-pastel); }
-        
-        /* OVERRIDE HOVER BOTONES HEADER EN MODO CLARO (BURBUJAS MÁS CLARAS Y TEXTO BLANCO) */
-        body.light-mode .header-btn:hover { background: #C06D88; border-color: #C06D88; color: #FDF9FA; }
+
+        /* OVERRIDE: Hover de botones en modo claro (rosa clarito y texto blanco) */
+        body.light-mode .header-btn:hover { background: #CD849C; border-color: #CD849C; color: #FDF9FA; }
 
         .lang-switch-lbl { opacity: 0.4; font-weight: 400; transition: opacity 0.3s, font-weight 0.3s, color 0.3s; }
         html[lang="es"] .lang-switch-lbl.es, html[lang="en"] .lang-switch-lbl.en { opacity: 1; font-weight: 700; color: var(--accent-pastel); }
@@ -286,9 +286,13 @@
         html[lang="es"] #toggle-lang-btn:hover .lang-switch-lbl.es,
         html[lang="en"] #toggle-lang-btn:hover .lang-switch-lbl.en { opacity: 1; font-weight: 700; color: var(--white-solid); }
 
-        /* OVERRIDE TEXTO BLANCO EN EL BOTÓN DE IDIOMA EN MODO CLARO AL HACER HOVER */
+        /* OVERRIDE: Colores correctos de texto (blanco) al hacer hover en el botón de idioma en modo claro */
+        body.light-mode #toggle-lang-btn:hover .lang-switch-lbl.es, 
+        body.light-mode #toggle-lang-btn:hover .lang-switch-lbl.en, 
+        body.light-mode #toggle-lang-btn:hover .lang-sep { color: rgba(253, 249, 250, 0.7); }
+
         html[lang="es"] body.light-mode #toggle-lang-btn:hover .lang-switch-lbl.es,
-        html[lang="en"] body.light-mode #toggle-lang-btn:hover .lang-switch-lbl.en { color: #FDF9FA; }
+        html[lang="en"] body.light-mode #toggle-lang-btn:hover .lang-switch-lbl.en { opacity: 1; font-weight: 700; color: #FDF9FA; }
 
         @media(max-width: 900px){
             .nav-links { display: none; } 
