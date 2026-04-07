@@ -256,8 +256,10 @@
             transform: translateY(-1px);
         }
 
-        body.light-mode .nav-links a.active { color: var(--white-solid); }
+        /* OVERRIDES MODO CLARO PARA LAS BURBUJAS DE NAVEGACIÓN Y TEXTOS */
+        body.light-mode .nav-links a.active { color: #FDF9FA; }
         body.light-mode .nav-links a:hover:not(.active) { color: var(--dark-abyss); }
+        body.light-mode .nav-indicator::before { background: #C06D88; }
         
         .header-controls { display: flex; gap: 12px; align-items: center;}
         
@@ -267,7 +269,11 @@
             border-radius: 40px; padding: 7px 18px; text-transform: uppercase;
             transition: all 0.35s ease; cursor: none; font-weight: 500; height:34px; display: flex; justify-content: center; align-items: center;
         }
+        
         .header-btn:hover { color: var(--dark-abyss); background: var(--accent-pastel); border-color: var(--accent-pastel); }
+        
+        /* OVERRIDE HOVER BOTONES HEADER EN MODO CLARO (BURBUJAS MÁS CLARAS Y TEXTO BLANCO) */
+        body.light-mode .header-btn:hover { background: #C06D88; border-color: #C06D88; color: #FDF9FA; }
 
         .lang-switch-lbl { opacity: 0.4; font-weight: 400; transition: opacity 0.3s, font-weight 0.3s, color 0.3s; }
         html[lang="es"] .lang-switch-lbl.es, html[lang="en"] .lang-switch-lbl.en { opacity: 1; font-weight: 700; color: var(--accent-pastel); }
@@ -276,8 +282,13 @@
         #toggle-lang-btn:hover .lang-switch-lbl.es, 
         #toggle-lang-btn:hover .lang-switch-lbl.en, 
         #toggle-lang-btn:hover .lang-sep { color: var(--dark-abyss); }
+        
         html[lang="es"] #toggle-lang-btn:hover .lang-switch-lbl.es,
         html[lang="en"] #toggle-lang-btn:hover .lang-switch-lbl.en { opacity: 1; font-weight: 700; color: var(--white-solid); }
+
+        /* OVERRIDE TEXTO BLANCO EN EL BOTÓN DE IDIOMA EN MODO CLARO AL HACER HOVER */
+        html[lang="es"] body.light-mode #toggle-lang-btn:hover .lang-switch-lbl.es,
+        html[lang="en"] body.light-mode #toggle-lang-btn:hover .lang-switch-lbl.en { color: #FDF9FA; }
 
         @media(max-width: 900px){
             .nav-links { display: none; } 
@@ -370,13 +381,10 @@
         }
 
         #hero .hero-line-mask {
-    overflow: visible;
-}
+            overflow: visible;
+            padding-right: 0.08em;
+        }
 
-
-        #hero .hero-line-mask {
-    padding-right: 0.08em;
-}
         /* == BIO / NARRATIVA CÁLIDA & FOTO == */
         .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 8vw; margin-top: 2vh; }
         .about-narrative { color: var(--dim-grey); font-size: 1.05rem; font-weight: 400; line-height: 1.7; letter-spacing: 0.13px; text-align: justify;}
@@ -684,7 +692,7 @@
                 </span>
             </div>
 
-            <div class="ethereal-subtitle-anim" style="font-family:var(--font-data); font-size: clamp(1rem, 2vw, 1.2rem); margin-top:35px; font-weight:400; letter-spacing:2px; text-transform:uppercase; margin-left: 10px; /* AJUSTA AQUÍ */">
+            <div class="ethereal-subtitle-anim" style="font-family:var(--font-data); font-size: clamp(1rem, 2vw, 1.2rem); margin-top:35px; font-weight:400; letter-spacing:2px; text-transform:uppercase; margin-left: 10px;">
                  <span class="lang-es" style="color:var(--accent-pastel);">Portfolio / </span> <span class="lang-es">Ingeniería & Diseño Industrial</span>
                  <span class="lang-en" style="color:var(--accent-pastel);">Portfolio / </span> <span class="lang-en">Engineering & Industrial Design</span>
             </div>
