@@ -245,7 +245,8 @@
             border-radius: 999px;
             color: var(--dim-grey);
             font-weight: 400;
-            transition: color 0.3s ease, font-weight 0.3s ease, transform 0.2s ease;
+            /* Se eliminó la transición en font-weight para evitar desfases en el cálculo del script */
+            transition: color 0.3s ease, transform 0.2s ease;
             text-decoration: none;
         }
 
@@ -1149,7 +1150,12 @@
             }, 750);
 
             window.addEventListener('resize', updateNavIndicator);
-
+            
+            if (document.fonts) {
+                document.fonts.ready.then(() => {
+                    if (isIndicatorReady) updateNavIndicator();
+                });
+            }
 
             const headerMain = document.getElementById('main-header');
 
