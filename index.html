@@ -932,7 +932,7 @@
             </div>
             
             <div class="reveal delay-100" style="margin-top: 5vh;">
-                <a href="Curriculum_Borbala_Major.pdf" class="btn hover-trigger" download>
+                <a id="btn-download-cv" href="Curriculum_Borbala_Major.pdf" class="btn hover-trigger" download>
                     <span class="inner">
                         <span class="lang-es">Ver CV detallado</span>
                         <span class="lang-en">View detailed CV</span>
@@ -1280,6 +1280,11 @@
                  setTimeout(() => {
                     curLangModeStrSysESENLogicVal = curLangModeStrSysESENLogicVal === 'es' ? 'en' : 'es';
                     document.documentElement.lang = curLangModeStrSysESENLogicVal;
+
+                    const btnCv = document.getElementById('btn-download-cv');
+                    if (btnCv) {
+                        btnCv.href = curLangModeStrSysESENLogicVal === 'es' ? 'Curriculum_Borbala_Major.pdf' : 'Curriculum_Borbala_Major_EN.pdf';
+                    }
 
                     requestAnimationFrame(() => updateNavIndicator());
 
